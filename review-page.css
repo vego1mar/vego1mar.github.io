@@ -1,0 +1,56 @@
+@font-face {
+    font-family: "Ubuntu Regular";
+    src: url("./fonts/Ubuntu-Regular.ttf");
+}
+
+body {
+    font-family: "Ubuntu Regular", sans;
+}
+
+.sidebar {
+    height: 100%;
+    width: 230px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    padding-top: 20px;
+}
+
+.sidebar p {
+    padding: 6px 8px 6px 16px;
+    text-decoration: none;
+    font-size: 15px;
+    color: #f1f1f1;
+    display: block;
+}
+
+.sidebar a {
+    text-decoration: none;
+}
+.sidebar a:visited {
+    color: white;
+}
+
+.sidebar a:hover {
+    color: #f1f1f1;
+}
+
+.main {
+    margin-left: 230px;
+    margin-right: 40%;
+    font-size: 15px;
+    padding: 0px 10px;   /* Increased text to enable scrolling */
+}
+
+@media screen and (max-height: 450px) {
+    .sidebar {
+        padding-top: 15px;
+    }
+
+    .sidebar a {
+        font-size: 14px;
+    }
+}
