@@ -1,6 +1,6 @@
 @font-face {
     font-family: "Ubuntu Regular";
-    src: url("./fonts/Ubuntu-Regular.ttf");
+    src: url("../fonts/Ubuntu-Regular.ttf");
 }
 
 body {
@@ -29,6 +29,7 @@ body {
 
 .sidebar a {
     text-decoration: none;
+    color: white;
 }
 .sidebar a:visited {
     color: white;
@@ -40,7 +41,7 @@ body {
 
 .main {
     margin-left: 230px;
-    margin-right: 40%;
+    margin-right: 10%;
     font-size: 15px;
     padding: 0px 10px;   /* Increased text to enable scrolling */
 }
