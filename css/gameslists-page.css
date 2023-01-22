@@ -1,0 +1,105 @@
+@font-face {
+    font-family: "Ubuntu Regular";
+    src: url("../fonts/Ubuntu-Regular.ttf");
+}
+body {
+    font-family: "Ubuntu Regular", sans;
+}
+
+.sidebar {
+    height: 100%;
+    width: 230px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    padding-top: 20px;
+}
+.sidebar p {
+    padding: 6px 8px 6px 16px;
+    text-decoration: none;
+    font-size: 15px;
+    color: #f1f1f1;
+    display: block;
+}
+
+/* Disable anchor underscore */
+.sidebar a {
+    text-decoration: none;
+    color: white;
+}
+.sidebar a:visited {
+    color: white;
+}
+.sidebar a:hover {
+    color: red;
+}
+
+/* Page text section */
+.main {
+    margin-left: 230px;
+    margin-right: 1%;
+    font-size: 15px;
+    padding: 0px 10px;   /* Increased text to enable scrolling */
+}
+
+/* Disable anchors underscode */
+.main a {
+    text-decoration: none;
+    color: black;
+}
+.main a:visited {
+    color: black;
+}
+.main a:hover {
+    color: #008080;
+}
+
+/* Adjust sidebar on small screens */
+@media screen and (max-height: 450px) {
+    .sidebar {
+        padding-top: 15px;
+    }
+    .sidebar a {
+        font-size: 14px;
+    }
+}
+
+/* Align a single list item to (left, right) */
+.left {
+    float: left;
+}
+.right {
+    float: right;
+}
+.main p {
+    overflow: hidden;
+}
+
+/* Highlight list item on mouse hover */
+.main ul li:hover {
+    background-color: lavender;
+}
+
+/* Table grid formatting */
+table {
+    font-family: "Ubuntu Regular", sans;
+    border-collapse: collapse;
+    width: 100%;
+    table-layout: fixed;
+}
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+    vertical-align: middle;
+}
+tr {
+    display: block;
+    overflow: scroll;
+}
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
