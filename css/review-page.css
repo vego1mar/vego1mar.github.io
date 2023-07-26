@@ -55,3 +55,11 @@ body {
         font-size: 14px;
     }
 }
+
+.codeline {
+    background-color: grey;
+    color: white;
+    font-family: "ubuntu mono", monospace;
+    border-radius: 3px;
+    padding: 1px 3px 1px 3px;
+}
