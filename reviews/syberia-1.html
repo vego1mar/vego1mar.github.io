@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <title>recenzja</title>
+    <meta charset="utf-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../css/review-page.css">
+</head>
+
+<body>
+    <div class="sidebar">
+        <p>producent:<br>microids</p>
+        <p>wydawca:<br>microids</p>
+        <p>data wydania:<br>2002-09-01</p>
+        <p>rozmiar:<br>1.2 gb</p>
+        <p>dyrektor kreatywny:<br>benoît sokal</p>
+        <p>kompozytorzy:<br>dimitri bodiansky, nicholas varley</p>
+        <p>silnik:<br>virtools</p>
+        <p>dołącz do kate walker, która podróżuje do odległych miejsc i czasów w tej ponadczasowej podróży, aby odkryć jej prawdziwe przeznaczenie</p>
+        <p>
+            <a href="https://store.steampowered.com/app/46500/Syberia/">steam</a><br>
+            <a href="https://www.gog.com/game/syberia">epic-games</a><br>
+            <a href="https://steamdb.info/app/46500/">steamdb</a><br>
+            <a href="https://www.protondb.com/app/46500">protondb</a><br>
+            <a href="https://www.pcgamingwiki.com/wiki/Syberia">pcgamingwiki</a><br>
+            <a href="https://howlongtobeat.com/game/9521">howlongtobeat</a><br>
+            <a href="https://en.wikipedia.org/wiki/Syberia_(video_game)">wiki</a><br>
+            <a href="https://www.metacritic.com/game/syberia/">metacritic</a><br>
+            <a href="https://www.imdb.com/title/tt0436810/fullcredits">imdb</a><br>
+            <a href="https://www.gry-online.pl/gry/syberia/zb2ed#pc">gryonline</a><br>
+        </p>
+        <p><a href="./table-of-content.html" target="_self">link:spis-treści</a></p>
+    </div>
+
+    <div class="main">
+        <h2>syberia 1</h2>
+        <p>starocie, nudnawe przez swe tempo, lecz nadrabiające interesującym klimatem, który nie wiadomo do czego prowadzi; są tutaj tak naprawdę tylko trzy lokacje: miasteczko, uniwersytet i kopalnia; im dalej w las z fabułą, tym krócej w nich spędzamy czasu; do tego mamy siedem podłożonych głosów po polskiemu;</p>
+
+        <h3>najważniejszy mankament</h3>
+        <ul>
+            <li>domyślnie maksymalna dostępna rodzielczość to 800x600; gra się wtedy w małym okienku; można jednak spróbować zmusić grę do uruchomienia się na pełnym ekranie, tworząc plik <span class="codeline">player.ini</span> z zawartością <span class="codeline">800 600 32 1 BaseCMO.cmo</span> — <a href="https://www.pcgamingwiki.com/wiki/Syberia#Windowed">link</a>, <a href="https://steamcommunity.com/app/46500/discussions/0/864961721876609627/">link</a>, <a href="https://steamcommunity.com/app/46500/discussions/0/558746995043591835/">link</a>, <a href="https://steamcommunity.com/app/46500/discussions/0/2860219962081757614/">link</a>, <a href="https://steamcommunity.com/app/46500/discussions/0/144512942755451010/">link</a>, <a href="https://steamcommunity.com/app/46500/discussions/0/864961721876609627/">link</a></li>
+            <li>niestety, to czasem nie działa, ale gdy już działa to używanie alt+tab reskaluje ponownie grę do 800x600;</li>
+            <li>na windowsie można wtedy spróbować uruchomić grę w trybie kompatybilności — <a href="https://www.pcgamingwiki.com/wiki/Syberia#Problems_launching_game_on_Windows_10">link</a></li>
+            <li>mogą się też pojawić problemy z judderem (desynchronizacją audio/wideo); wtedy wystarczy ograniczyć klatkaż do 30/60 klatek — <a href="https://www.pcgamingwiki.com/wiki/Syberia#Irregular_game_speed_and_desynchronized_sound">link</a></li>
+            <li>pomóc może, ale nie musi, modyfikacja z teksturami o wyższej rozdzielczości — <a href="https://steamcommunity.com/app/46500/discussions/0/1736593325993072625/">link</a></li>
+            <li>w przypadku linuxa z kolei można spróbować następujących opcji uruchamiania: <span class="codeline">DXVK_FRAME_RATE=30 PROTON_USE_WINED3D=1 xdotool selectwindow windowunmap & %command%</span>, gdzie zależnością jest <span class="codeline">xdotool</span></li>
+            <li>alternatywnie można spróbować narzucić odpowiednie wymiary obrazu: <span class="codeline">gamescope -w 800 -h 600 -W 1920 -H 1080 -n -f -- %command%</span> — <a href="https://github.com/Plagman/gamescope</li>">link</a>
+            <li>ostateczną opcją rozpaczy byłaby zmiana trybu wyświetlania monitora: <span class="codeline">xrandr --output DisplayPort-0 --set "scaling mode" "Full aspect"</span></li>
+        </ul>
+
+        <h3>co należałoby mieć na uwadze</h3>
+        <ul>
+            <li>przypomnienie po latach dla laików: należy użyć dwukliku, by postać pobiegła zamiast iść</li>
+            <li>zagadki są mniej więcej regionalizowane do ustalonych obszarów, tzn. rozwiązanie wszystkich zagadek na tym terenie znajduje się na tym terenie; czasem jednakowoż należy użyć telefonu, który to, skądinąd, posiada listę numerów (przewijaną strzałką)</li>
+            <li>nie można przewijać animacji, co nuży</li>
+            <li>łatwo przeoczyć niektórze rzeczy, bo zlewają się z tłem</li>
+            <li>z niektórymi elementami można wejść w interakcję dopiero przy odpowiednim ujęciu kamery (na innej planszy)</li>
+            <li>czasem przydałyby się podpowiedzi, i oczywiście istnieją solucje — <a href="http://www.przygodoskop.pl/022/solucja.htm | https://steamcommunity.com/sharedfiles/filedetails/?id=1923974914">link</a></li>
+        </ul>
+
+        <h3>inne spostrzeżenia</h3>
+        <ul>
+            <li>brygida turowska daje się usłyszeć jako główny głos — <a href="https://dubbingpedia.pl/wiki/Syberia">link</a></li>
+            <li>w grze przewijają się ładne, artystyczne notatki do poczytania; niestety, radość tę przyćmiewają fantazyjne czcionki utrudniające czytanie</li>
+            <li>miejscami kontynuowane dialogi nie mają wiele sensu o tyle, że kolejne opcje nie odnoszą się do poprzednich, przeto postać może pytać dwa razy o to samo jak gdyby już o tym nie wiedziała</li>
+            <li>muzyka zwraca uwagę na siebie tu i ówdzie</li>
+            <li>można włączyć licznik fpsów tyldą</li>
+            <li>innym ważkim problemem, na jaki można natrafić, jest blokowanie się możliwości kontynuowania fabuły; w moim przypadku dotyczyło to tego, że nie można było dostać pieniędzy od rektorów, pomimo tego iż estrada została naprawiona; pomógło tutaj zapisanie i zrestartowanie gry; innych też dotyczyły tego typu kłopoty; — <a href="https://www.gog.com/forum/syberia_series/cant_get_money_in_barrockstadt_syberia_1">link</a>, <a href="https://steamcommunity.com/app/46500/discussions/0/348293161791781575/">link</a></li>
+        </ul>
+
+        <hr>
+        <footer>2024-01-18</footer>
+    </div>
+</body>
+
+</html>
