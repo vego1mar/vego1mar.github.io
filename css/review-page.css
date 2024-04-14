@@ -22,7 +22,7 @@ body {
 .sidebar p {
     padding: 6px 8px 6px 16px;
     text-decoration: none;
-    font-size: 13.5px;
+    font-size: 13px;
     color: #f1f1f1;
     display: block;
 }
@@ -42,7 +42,7 @@ body {
 .main {
     margin-left: 250px;
     margin-right: 10%;
-    font-size: 15px;
+    font-size: 14px;
     padding: 0px 10px;   /* Increased text to enable scrolling */
 }
 
@@ -57,7 +57,7 @@ body {
 }
 
 .codeline {
-    background-color: grey;
+    background-color: darkcyan;
     color: white;
     font-family: "ubuntu mono", monospace;
     border-radius: 3px;
