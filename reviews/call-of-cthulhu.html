@@ -49,7 +49,6 @@
         <p>
             dla jednych ta gra po prostu działa, inni zaś mają z nią sporo wszelakiej maści problemów:
             <ul>
-                <li><a href="https://steamcommunity.com/app/399810/discussions/0/3034851680600771379/">call of cthulhu crashes each time I run it</a></li>
                 <li><a href="https://steamcommunity.com/app/399810/discussions/0/3808407060884549489/">game crashes after 1 min by itself</a></li>
                 <li><a href="https://steamcommunity.com/app/399810/discussions/0/3824162051009865237/">really bad fog implementation?</a></li>
                 <li><a href="https://steamcommunity.com/app/399810/discussions/0/3838801919844844004/">not fit for purpose on win11!</a></li>
@@ -105,7 +104,8 @@
                 <li><a href="https://steamcommunity.com/app/399810/discussions/0/1743355067110720934/">cutscenes</a></li>
             </ul>
         </p>
-        <p>jeżeli chodzi o opcje uruchamiania, to w razie problemów można spróbować:<br><span class="codeline">OPENSSL_ia32cap=0x20000000 PROTON_NO_ESYNC=1 %command%</span>;<br>
+        <p>jeżeli chodzi o opcje uruchamiania, to w razie problemów można spróbować:<br>
+            <span class="codeline">OPENSSL_ia32cap=0x20000000 PROTON_NO_ESYNC=1 %command%</span>;
             <ul>
                 <li><a href="https://www.protondb.com/app/399810">call of cthulhu – protondb</a></li>
                 <li><a href="https://www.pcgamingwiki.com/wiki/Call_of_Cthulhu#Crashes_with_Intel_hybrid_cores_.2812th_and_above.29">crashes with intel hybrid cores</a></li>
@@ -115,9 +115,21 @@
             dodatkowo, skalowanie rozdzielczości działa dla tej gry wyjątkowo dobrze:<br>
             <span class="codeline">WINE_FULLSCREEN_FSR_CUSTOM_MODE=1920x1080 %command%</span>;
         </p>
-        <p>zapisy stanu gry trafiają do:<br>
-            <span class="codeline">%AppData%/Local/CallOfCthulhu/Saved</span>
+
+        <br>
+        <h3># sprawa dla billa</h3>
+        <p>w przypadku nieuzasadnionych kraszy:<br>
+            <span class="codeline">cmd.exe /c "set openssl_ia32cap=:~0x20000000 && %command%"</span>
+            <ul>
+                <li><a href="https://support.gog.com/hc/en-us/articles/360019775837-Game-does-not-launch-Intel-10th-gen-CPU-or-newer?product=gog">game does not launch - intel 10th gen cpu or newer</a></li>
+                <li><a href="https://steamcommunity.com/app/399810/discussions/0/4139438416063556816/">game keeps crashing</a></li>
+                <li><a href="https://steamcommunity.com/app/399810/discussions/0/3034851680600771379/">call of cthulhu crashes each time I run it</a></li>
+            </ul>
         </p>
+
+        <br>
+        <h3># zapisy stanu gry</h3>
+        <p><span class="codeline">%AppData%/Local/CallOfCthulhu/Saved</span></p>
 
         <br>
         <hr>
