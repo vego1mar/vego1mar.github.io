@@ -61,10 +61,14 @@ body {
     color: white;
     font-family: "ubuntu mono", monospace;
     border-radius: 3px;
-    padding: 1px 3px 1px 3px;
+    padding: 0px 0px 1px 1px;
 }
 
 img {
     width: 50vw;
     height: auto;
+}
+
+td {
+    border-bottom: 1px solid #ddd;
 }
