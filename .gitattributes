@@ -1,2 +1,4 @@
 media/call-of-cthulhu/ filter=lfs diff=lfs merge=lfs -text
 media/dishonored-2/ filter=lfs diff=lfs merge=lfs -text
+media/arcania-gothic-4/ filter=lfs diff=lfs merge=lfs -text
+screenshots/arcania-gothic-4/ filter=lfs diff=lfs merge=lfs -text
