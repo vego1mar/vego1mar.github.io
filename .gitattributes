@@ -4,5 +4,6 @@ media/arcania-gothic-4/ filter=lfs diff=lfs merge=lfs -text
 screenshots/arcania-gothic-4/ filter=lfs diff=lfs merge=lfs -text
 media/dreamfall-chapters/ filter=lfs diff=lfs merge=lfs -text
 screenshots/dreamfall-chapters/ filter=lfs diff=lfs merge=lfs -text
-
+media/shco/ filter=lfs diff=lfs merge=lfs -text
 screenshots/shco/ filter=lfs diff=lfs merge=lfs -text
+
