@@ -105,3 +105,31 @@ pre.listing-block code::before {
     font-size: 12px;
     color: cornflowerblue;
 }
+
+.h3_roadmap_td1 {
+    width: 15%;
+}
+.h3_roadmap_td2 {
+    width: 20%;
+}
+.h3_contracts_td1 {
+    width: 35%;
+}
+.h3_contracts_td2 {
+    width: 15%;
+}
+.h3_contracts_td3 {
+    width: 5%;
+}
+.h3_contracts_td4 {
+    width: 9%;
+}
+.h3_featured {
+    background-color: whitesmoke;
+}
+
+table {
+    table-layout: fixed; 
+    width: 100%;
+}
+
