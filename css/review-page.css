@@ -127,6 +127,18 @@ pre.listing-block code::before {
 .h3_featured {
     background-color: whitesmoke;
 }
+.h3_chall_1 {
+    width: 17%;
+}
+.h3_chall_2 {
+    width: 33%;
+}
+.h3_chall_3 {
+    width: 13%;
+}
+.h3_chall_4 {
+    width: 9%;
+}
 
 table {
     table-layout: fixed; 
