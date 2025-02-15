@@ -6,15 +6,163 @@
     <meta charset="utf-8"> 
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="../css/review-page.css">
+
+    <style>
+        .epi_td {
+            width: 14%;
+            text-align: right;
+        }
+        .epi_td_2 {
+            padding-left: 7%;
+        }
+        .epi_table {
+            table-layout: fixed; 
+            width: 50%;
+        }
+        .centered {
+            text-align: center;
+        }
+        .s1_achiev_td_1 {
+            width: 20%;
+        }
+        .s1_achiev_td_2 {
+            width: 30%;
+        }
+        .s2_achiev_td_1 {
+            width: 20%;
+        }
+        .s2_achiev_td_2 {
+            width: 40%;
+        }
+        .tests_td_1 {
+            width: 18%;
+        }
+        .tests_td_2 {
+            width: 12%;
+        }
+
+        /* https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_popup */
+        .popup {
+            position: relative;
+            display: inline-block;
+            cursor: pointer;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+        /* https://www.w3schools.com/howto/howto_js_popup.asp */
+        .popup .popuptext {
+            visibility: hidden;
+            width: 400px;
+            background-color: #555;
+            color: #fff;
+            text-align: center;
+            border-radius: 6px;
+            padding: 8px 0;
+            position: absolute;
+            z-index: 1;
+            bottom: 125%;
+            left: 50%;
+            margin-left: -80px;
+        }
+        /* Toggle this class - hide and show the popup */
+        .popup .show {
+            visibility: visible;
+            -webkit-animation: fadeIn 1s;
+            animation: fadeIn 1s;
+        }
+        /* Add animation (fade in the popup) */
+        @-webkit-keyframes fadeIn {
+            from {opacity: 0;} 
+            to {opacity: 1;}
+        }
+        @keyframes fadeIn {
+            from {opacity: 0;}
+            to {opacity:1 ;}
+        }
+    </style>
+    
+    <script>
+        function on_popup_nora() {
+          var popup = document.getElementById("popup_nora");
+          popup.classList.toggle("show");
+        }
+        function on_popup_envy_and_sandy() {
+          var popup = document.getElementById("popup_envy_and_sandy");
+          popup.classList.toggle("show");
+        }
+        function on_popup_madame_rose_4() {
+          var popup = document.getElementById("popup_madame_rose_4");
+          popup.classList.toggle("show");
+        }
+        function on_popup_madame_rose_3() {
+          var popup = document.getElementById("popup_madame_rose_3");
+          popup.classList.toggle("show");
+        }
+        function on_popup_josy_art() {
+          var popup = document.getElementById("popup_josy_art");
+          popup.classList.toggle("show");
+        }
+        function on_popup_sage_art() {
+          var popup = document.getElementById("popup_sage_art");
+          popup.classList.toggle("show");
+        }
+        function on_popup_riona_25() {
+          var popup = document.getElementById("popup_riona_25");
+          popup.classList.toggle("show");
+        }
+        function on_popup_riona_32() {
+          var popup = document.getElementById("popup_riona_32");
+          popup.classList.toggle("show");
+        }
+        function on_popup_maya2() {
+          var popup = document.getElementById("popup_maya2");
+          popup.classList.toggle("show");
+        }
+        function on_popup_heather4() {
+          var popup = document.getElementById("popup_heather4");
+          popup.classList.toggle("show");
+        }
+        function on_popup_isabella_ep5() {
+          var popup = document.getElementById("popup_isabella_ep5");
+          popup.classList.toggle("show");
+        }
+        function on_popup_josy_ep7() {
+          var popup = document.getElementById("popup_josy_ep7");
+          popup.classList.toggle("show");
+        }
+        function on_popup_sage_ep7() {
+          var popup = document.getElementById("popup_sage_ep7");
+          popup.classList.toggle("show");
+        }
+        function on_popup_lily_ep8() {
+          var popup = document.getElementById("popup_lily_ep8");
+          popup.classList.toggle("show");
+        }
+        function on_popup_sandy_ep8() {
+          var popup = document.getElementById("popup_sandy_ep8");
+          popup.classList.toggle("show");
+        }
+    </script>
+
 </head>
 
 <body>
     <div class="sidebar">
         <p>dr pinkcake</p>
         <p>dr pinkcake</p>
-        <p>2020-02-14</p>
-        <p>6.21g</p>
-        <p>renpy 7</p>
+        <p>
+            ● sezon 1<br>
+            2020-02-14<br>
+            7 gb
+        </p>
+        <p>
+            ● sezon 2<br>
+            2022-01-06<br>
+            6 gb</p>
+        <p>13 gb</p>
+        <p>renpy</p>
         <br>
         <p>
             <a href="./table-of-content.html" target="_self">» spis_treści</a><br>
@@ -24,16 +172,36 @@
 
     <div class="main">
         <h2>being a dik</h2>
-        <p>dzieje się tutaj i co chwilę jest to coś nowego, a do tego możemy się próbować z aktywnościami pobocznymi; w istocie, to całkiem dobrze zbalansowana gra; w przeciwieństwie do plejady innych powieści wizualnych tę naprawdę można nazwać grą; mamy tu wybory określające dwie ścieżki, parę minigier, testy szkolne, ukryte grafiki, sporo osiągnięć (w tym kilka mniej oczywistych); fabuła obfituje w pewne subtelne niedopowiedzenia, co czyni opowiadanie ciekawym, gdy gra zwraca na to uwagę;</p>
+
+        <ul>
+            <li><a href="#season-1" target="_self">sezon 1</a></li>
+            <li><a href="#season-2" target="_self">sezon 2</a></li>
+            <li><a href="#all-seasons" target="_self">międzysezonowe</a></li>
+            <li><a href="#other-matters" target="_self">inne kwestie</a></li>
+        </ul>
         <br>
 
-        <h3># zwiastun premierowy</h3>
+        <h3># zwiastuny sezonów</h3>
         <ul>
             <li><a href="https://www.youtube.com/watch?v=n73Fll6sDLo">being a dik - adult game trailer</a></li>
+            <li><a href="https://video.cloudflare.steamstatic.com/store_trailers/256763942/movie480_vp9.webm?t=1660649867">season 1 – steam trailer</a></li>
+            <li><a href="https://video.cloudflare.steamstatic.com/store_trailers/256845828/movie480_vp9.webm?t=1629206292">season 2 – steam trailer</a></li>
+            <li><a href="https://video.cloudflare.steamstatic.com/store_trailers/257048111/movie480_vp9.webm?t=1733497232">season 3 – steam trailer</a></li>
          </ul>
         <br>
 
-        <h3># sezon 1 | uwagi</h3>
+
+    <!-- season 1 -->
+    <div>
+
+        <hr id="season-1">
+        <p class="centered">sezon 1</p>
+        <hr>
+
+        <p>dzieje się tutaj i co chwilę jest to coś nowego, a do tego możemy się próbować z aktywnościami pobocznymi; w istocie, to całkiem dobrze zbalansowana gra; w przeciwieństwie do plejady innych powieści wizualnych tę naprawdę można nazwać grą; mamy tu wybory określające dwie ścieżki, parę minigier, testy szkolne, ukryte grafiki, sporo osiągnięć (w tym kilka mniej oczywistych); fabuła obfituje w pewne subtelne niedopowiedzenia, co czyni opowiadanie ciekawym, gdy gra zwraca na to uwagę;</p>
+        <br>
+
+        <h3># uwagi</h3>
         <p>w ambiencie daje się czasem usłyszeć klawesyn;</p>
         <p>na samym początku uświadczymy udźwiękowioną postać wprowadzającą;</p>
         <p>czcionka mogła by być ładniejsza do czytania;</p>
@@ -49,7 +217,7 @@
         <p>wszystko wydaje się ze sobą powiązane, tj. mechaniki gry zostały ze sobą dobrze połączone, by nie sprawiać wrażenia iż coś jest niepotrzebne;</p>
         <br>
 
-        <h3># sezon 1 | minigry</h3>
+        <h3># minigry</h3>
         <p>można grać w minigry za które zdobywa się pieniądze; niektóre z nich są na czas;</p>
         <p>ogółem należy stwierdzić iż minigry są dość pokraczne; to po prostu kwestia tego, że renpy się do tego nie nadaje; jest przystosowany do obsługi powieści wizualnych a nie płynnej rozgrywki;</p>
         <p>testy są zadziwiająco trudne, aczkolwiek jest to raczej zabawa w zgadywanie, refleks albo pamięć;</p>
@@ -62,21 +230,21 @@
         <p>środkowy przycisk myszka przy puzzlach pauzuje tę minigrę;</p>
         <br>
 
-        <h3># sezon 1 | osiągnięcia</h3>
+        <h3># osiągnięcia</h3>
         <p>44 osiągnięcia;</p>
         <br>
         <table>
             <caption>niezdobyte osiągnięcia po pierwszym przejściu gry</caption>
-            <tr><td style="width: 20%;"></td><td style="width: 30%;"></td><td></td></tr>
+            <tr><td class="s1_achiev_td_1"></td><td class="s1_achiev_td_2"></td><td></td></tr>
             <tr><td>poor again</td><td>spend $20</td><td>take notes, brawler skill points, pink rose, quinn services, dates</td></tr>
-            <tr><td>being a dick</td><td>100% major dick choices</td><td>_</td></tr>
-            <tr><td>drink! drink! drink!</td><td>100% all drinking games</td><td>_</td></tr>
+            <tr><td>being a dick</td><td>100% major dick choices</td><td></td></tr>
+            <tr><td>drink! drink! drink!</td><td>100% all drinking games</td><td>including free roam drinking in derek, sage, isabella paths</td></tr>
             <tr><td>slap me!</td><td>got all 3 slaps</td><td>ask camilla, anal with lilly, anal with rose</td></tr>
-            <tr><td>jailbreak</td><td>unlocked all wallpapers</td><td>_</td></tr>
-            <tr><td>your majesty</td><td>wore the helmet at every opportunity</td><td>_</td></tr>
-            <tr><td>roommate beatdown</td><td>beat troy on hard difficulty setting</td><td>_</td></tr>
-            <tr><td>vice presidential beatdown</td><td>beat dawe on hard difficulty setting</td><td>_</td></tr>
-            <tr><td>presidential beatdown</td><td>beat chad on hard difficulty setting</td><td>_</td></tr>
+            <tr><td>jailbreak</td><td>unlocked all wallpapers</td><td>get all pics from texting with girls (sms and swypper)</td></tr>
+            <tr><td>your majesty</td><td>wore the helmet at every opportunity</td><td></td></tr>
+            <tr><td>roommate beatdown</td><td>beat troy on hard difficulty setting</td><td></td></tr>
+            <tr><td>vice presidential beatdown</td><td>beat dawe on hard difficulty setting</td><td></td></tr>
+            <tr><td>presidential beatdown</td><td>beat chad on hard difficulty setting</td><td></td></tr>
         </table>
         <br>
         <ul>
@@ -92,43 +260,607 @@
          </ul>
         <br>
 
-        <h3># sezon 2 | osiągnięcia</h3>
-        <p>54 osiągnięcia;</p>
+    </div>
+
+    <!-- season 2 -->
+    <div>
+
+        <hr id="season-2">
+        <p class="centered">sezon 2</p>
+        <hr>
+
+        <p>drugi sezon oferuje więcej tego samego wykonanego nieco lepiej; więcej artyzmu, elementów komediowych, minigier, ale i również więcej kontekstu o postaciach i wyborów mających znaczenie dopiero po pewnym czasie; biorąc pod uwagę iż opowiadanie powstało zawczasu to poleciam w ciemno;</p>
         <br>
+
+        <h3># uwagi ogólne</h3>
+        <p>2. sezon stanowi pewną całość z 1-szym, toteż zaczyna się on tam, gdze ten drugi się kończy; nie można rozpocząć gry od tego momentu, aczkolwiek należało by dodać iż dla sezonu 3. planowany jest osobny launcher;</p>
+        <p>dowiadujemy się więcej o tym, co się działo w przeszłości, a co wpływa na postaci obecnie; do tej pory pojawiały się jedynie imiona, teraz również padają nazwiska, co jest zamierzone, jako że niektóre koneksje rodzinne są interesujące;</p>
+        <p>do tego dochodzi pamiętnik lynette (matki głównej postaci), który najwyraźniej zmierza do ujawnienia jakiegoś sekretu związanego z zięciem i jego podejściem; to przy pokazji pokazuje jakiś charakter protagonisty, pomimo tego że nie posiada on imienia;</p>
+        <p>miejscami bywa dość artystycznie, co w szczególności tyczy się fragmentu z przybliżeniem na muchę w pokoju quinn; nie wydaje się to do niczego konkretnego zmierzać, poza przerywnikowym efekciarstwem;</p>
+        <p>niemniej, w tę dozę artyzmu wpisują się niejako „znajdźki” w postaci obrazów jacoba; są to grafiki dziewcząt w stylu malarza-artysty, które trzeba odblokować odpowiednimi decyzjami, a potem kupić; rendery te służą za tapety w 2. drugim sezonie, tak jak w 1. dotyczyło to zdjęć z sms-owania; pretekstem ku temu jest nowy smartfon otrzymany jako prezent na urodziny;</p>
+        <p>obrazu sytuacji dopełnia ambient będący częściej dopasowywany do sytuacji; muzyka przestaje grać, gdy dzieje się coś niespodziewanego, jest bardziej emocjonalna gwoli emocjonujących wydarzeń; w szczególności zapadła mi tu w pamięć piosnka „a beautiful syndrome” (chill study); to podejście współgra z recitalem jill, przedstawionym jako seria klasycznych utworów na fortepian ze zmieniającymi się kadrami;</p>
+        <p>z samym recitalem wiąże się nauka utworów na gitarze, albowiem występ może się nie odbyć; istnieje więcej tego typu wyborów, przy czym dotyczą one raczej zagadnień nieznaczących dla głównego wątku, np. stalker rony czy zdjęcie kutasa na tablecie tybalta;</p>
+        <p>jak najbardziej dochodzą do tego nowe wątki komediowe, zarówno te krótkie słowne, jak i te bardziej zwizualizowane; nie mogło się obyć bez dawe'go, idiotyzmów w domu starców, czy nowej odsłonie dungeons & gremlins z ikoniczną królową lodu;</p>
+        <p>nie zabrakło też nowych minigier, jakkolwiek nie zachwyca sterowanie ze względu na toporność renpy'a do takich rzeczy; mamy zatem malowanie płotu, smażenie naleśników, ciągnącą się dłużej zabawę w strategiczne sprzątanie posiadłości, jak i również znacznie bardziej znajdźkowate poszukiwanie ukrytych przycisków na imprezach (pack quest);</p>
         <ul>
-            <li><a href="https://truesteamachievements.com/game/Being-a-DIK-Season-1/achievements">being a dik achievements</a></li>
-            <li><a href="#">xx</a></li>
+            <li><a href="https://www.youtube.com/watch?v=lhenU6PqqgY">Chill Study - A Beautiful Syndrome</a></li>
+            <li><a href="https://www.youtube.com/playlist?list=PLaRodrL9sITxO66VK_n_Bei_S5kW22wIQ">Being a DIK - Soundtrack complete</a></li>
+            <li><a href="https://steamcommunity.com/app/1126320/discussions/0/4034726433722175731/">Jill's room with suit is locked</a></li>
+            <li><a href="https://attachments.f95zone.to/2023/01/2320724_Official_Walkthrough_-_Season_3_-_Patreon.pdf">The complete official guide - Season 3, Interlude & Episode 9</a></li>
         </ul>
         <br>
 
+         <h3># osiągnięcia w ramach masteringu</h3>
+         <p>54 osiągnięcia w sezonie 2-gim;</p>
+         <p>ogółem zdobycie wszystkich osiągnięć jest dość męczące, bo wymaga dobrego zaplanowania przejścia gry w danej ścieżce; inaczej trzeba będzie tego dokonywać wielokrotnie, co nie jest szczególnie szybkie i zachwycające, aczkolwiek można natknąć się na drobne zmiany w dialogach i niuanse w nastawieniu postaci;</p>
+         <ul>
+             <li><a href="https://truesteamachievements.com/game/Being-a-DIK-Season-1/achievements">being a dik achievements</a></li>
+         </ul>
+         <br>
+
+         <table>
+            <caption>mordobicie</caption>
+            <tr><td class="s2_achiev_td_1"></td><td class="s2_achiev_td_2"></td><td></td></tr>
+            <tr><td>Big bully beatdown</td><td>Beat Caleb on Hard difficulty setting</td><td></td></tr>
+            <tr><td>DIK beatdown</td><td>Beat Tommy on Hard difficulty setting</td><td></td></tr>
+            <tr><td>HOT beatdown</td><td>Successfully sparred with Sage on Hard difficulty setting</td><td></td></tr>
+            <tr><td>Catlike reflexes</td><td>Won the beach ball game on the hardest difficulty</td><td>Maya & Josy path</td></tr>
+         </table>
+         <p>szanse znacząco zwiększają wydane punkty na zręczność w bijatyce (brawler); poza tym trzeba być nieco szybszym we wprowadzaniu ciągu strzałek; gra z użyciem piłki plażowej jest dostępna tylko w ramach ścieżki z mayą i josy;</p>
+         <br>
+
+         <table>
+            <caption>trójkafelkowiec</caption>
+            <tr><td class="s2_achiev_td_1"></td><td class="s2_achiev_td_2"></td><td></td></tr>
+            <tr><td>Triple Tile Adept</td><td>Reached turn 15 in Triple Tile on Normal difficulty</td><td></td></tr>
+            <tr><td>Triple Tile Master</td><td>Reached turn 100 in Triple Tile on Normal difficulty</td><td></td></tr>
+         </table>
+         <p>ta minigra wymaga nieco zaangażowania i dobrego rng; osiągnięcie 100. poziomu dodaje trwale nagrodę w postaci trofeum na biurku głównej postaci w uprzątniętym pokoju;</p>
+         <ul>
+            <li><a href="https://steamcommunity.com/app/1126320/discussions/0/6462188749579943837/">Triple Tile Game High Score?</a></li>
+            <li><a href="https://steamcommunity.com/app/1126320/discussions/0/3191365090835306277/">Anyone else addicted to Triple Tile minigame?</a></li>
+            <li><a href="https://steamcommunity.com/app/1126320/discussions/0/4637112519823999319/">So, I have 12 steam achievements left to get....</a></li>
+         </ul>
+         <br>
+
+         <table>
+            <caption>minigry</caption>
+            <tr><td class="s2_achiev_td_1"></td><td class="s2_achiev_td_2"></td><td></td></tr>
+            <tr><td>Nothing but net</td><td>Beat the high score in the basketball game</td><td></td></tr>
+            <tr><td>Masterful chef</td><td>Got 600 points in the pancake flipping game</td><td></td></tr>
+         </table>
+         <p>w przypadku tych gier można zapisywać grę pomiędzy kolejnymi próbami;</p>
+         <br>
+
+         <table>
+            <caption>tenis</caption>
+            <tr><td class="s2_achiev_td_1"></td><td class="s2_achiev_td_2"></td><td></td></tr>
+            <tr><td>In your face</td><td>Won a tennis match through force</td><td></td></tr>
+         </table>
+         <p>podczas meczu tenisa z tybaltem zamiast celować w piłkę z napisem hit, wystarczy wybrać 2-3 razy głowę rzeczonego; straci on wtedy swe zęby a mecz przedwcześnie się zakończy;</p>
+         <ul>
+            <li><a href="https://steamcommunity.com/app/1126320/discussions/0/2247805152849593402/">Tennis hard game problem</a></li>
+         </ul>
+         <br>
+
+         <table>
+            <caption>strateg</caption>
+            <tr><td class="s2_achiev_td_1"></td><td class="s2_achiev_td_2"></td><td></td></tr>
+            <tr><td>Strategist</td><td>Won the mansion game with at least 250,000 points</td><td></td></tr>
+         </table>
+         <p>trzeba dobrać statystyki postaci do wykonywanych sprzątań, tak by za każdym razem kończyło się to zakończonym zadaniem; aby zyskać więcej punktów należy przydzielić postaci do zadania nawet jeżeli nie są do niego potrzebne; możliwe prace zarobkowe są losowane po przydzieleniu punktów doświadczenia i zawsze istnieje jedna taka, która ma niskie wymagania i jest za $3;</p>
+         <ul>
+            <li><a href="https://steamcommunity.com/sharedfiles/filedetails/?id=2736195223">Strategist Achievement Guide</a></li>
+            <li><a href="https://steamcommunity.com/sharedfiles/filedetails/?id=2727838713">Detailed Strategy guide for the Mansion</a></li>
+            <li><a href="https://gamepretty.com/being-a-dik-season-2-guide-all-answers-locations/">Being a DIK Season 2 Guide (All Answers & Locations)</a></li>
+         </ul>
+         <br>
+
+         <table>
+            <caption>królowa lodu</caption>
+            <tr><td class="s2_achiev_td_1"></td><td class="s2_achiev_td_2"></td><td></td></tr>
+            <tr><td>Ice king</td><td>Became the Ice King in Dungeons and Gremlins</td><td></td></tr>
+         </table>
+         <p>w epizodzie 6. należy uzyskać kod do drzwi od zbirów, w komnacie zaczarować jabłko, oddać je królowej;</p>
+         <br>
+
+         <table>
+            <caption>chlanie</caption>
+            <tr><td class="s2_achiev_td_1"></td><td class="s2_achiev_td_2"></td><td></td></tr>
+            <tr><td>Drink! Drink! Drink!</td><td>100% all drinking games</td><td>season 1</td></tr>
+            <tr><td>Steady hand</td><td>100% the drinking game in Season 2</td><td></td></tr>
+         </table>
+         <p>wymagane jest zaliczenie wszystkich popijaw, włącznie tych dobrowolnych w akademiku; najwyraźniej dotyczy to też osobno ścieżki dereka, sage, isabelli; w sezonie 2. łatwo pominąć szoty w barze macallen z nicole i sandy z powodu flirtowania z jill;</p>
+         <ul>
+            <li><a href="https://attachments.f95zone.to/2023/01/2321205_Official_Walkthrough_-_Season_1_-_Ep_1-4.pdf">The complete official guide – Season 1, Episodes 1-4</a></li>
+         </ul>
+         <br>
+
+         <table>
+            <caption>bar macallen</caption>
+            <tr><td class="s2_achiev_td_1"></td><td class="s2_achiev_td_2"></td><td></td></tr>
+            <tr>
+                <td>Swyper hookup</td>
+                <td>I'll try everything once</td>
+                <td>
+                    <div class="popup" onclick="on_popup_nora()">» Nora
+                        <span class="popuptext" id="popup_nora">“Succeed with Nora on Swyper; see the episode 5 section of this guide. Don’t go out on a date with Jill in episode 6; either dismiss her earlier or choose to help Sage when she asks you out. When Tommy gives you a fake ID, accept it. As you end the free roam event at MacAllen’s bar, you will spot Nora. Choose to go for it, and the scene will unlock.”</span>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>Lamb chop</td>
+                <td>That's a filet of beef</td>
+                <td>
+                    <div class="popup" onclick="on_popup_envy_and_sandy()">» Envy & Sandy
+                        <span class="popuptext" id="popup_envy_and_sandy">“Succeed with Nicole on Swyper in episodes 4 and 5; see the episode 4 and episode 5 sections of the guides. Don’t go out on a date with Jill in episode 6; either dismiss her earlier or choose to help Sage when she asks you out. When Tommy gives you a fake ID, accept it. Have Nicole sit on your lap during the event at MacAllen’s bar. End the free roam event, and you will buy shots for Nicole and Sandy. When she asks you to follow them back home to her place, accept.”</span>
+                    </div>
+                </td>
+            </tr>
+         </table>
+         <p>w epizodzie 4. i 5. ukończyć z sukcesem czat z nicole na swyperze; w epizodzie 5. ukończyć z sukcesem czat z norą na swyperze; odmówić randce z jill w epizodzie 6. lub zignorować ją całkowicie; przyjąć fałszywy dowód od tommy'ego; pozwolić nicole usiąść głównej postaci na kolanach w barze macallen; po zakończeniu swobodnej eksploracji (free roam) wejść w interakcję z norą; wziąć szoty od barmana i zgodzić się by udać się do domu nicole;</p>
+         <ul>
+            <li><a href="https://www.studocu.com/ph/document/holy-cross-of-davao-college/bachelor-of-secondary-education/official-walkthrough-season-2-ep-5-8/69281255">The complete official guide - Season 2 - Ep 5-8</a></li>
+         </ul>
+         <br>
+
+         <table>
+            <caption>grabieżca skarbców</caption>
+            <tr><td class="s2_achiev_td_1"></td><td class="s2_achiev_td_2"></td><td></td></tr>
+            <tr><td>Vault Looter 5</td><td>Opened Vault Episode 5</td><td>4226</td></tr>
+            <tr><td>Vault Looter 6</td><td>Opened Vault Episode 6</td><td>4463</td></tr>
+            <tr><td>Vault Looter 7</td><td>Opened Vault Episode 7</td><td>1159</td></tr>
+            <tr><td>Vault Looter 8</td><td>Opened Vault Episode 8</td><td>3211</td></tr>
+            <tr><td>Vault Looter Season 2</td><td>Opened all vaults in Season 2</td><td></td></tr>
+         </table>
+         <ul>
+            <li><a href="https://steamcommunity.com/sharedfiles/filedetails/?id=2321871635">vault combinations</a></li>
+         </ul>
+         <br>
+
+         <table>
+            <caption>quest z przyciskami na imprezach</caption>
+            <tr><td class="s2_achiev_td_1"></td><td class="s2_achiev_td_2"></td><td></td></tr>
+            <tr><td>Pack Quest DIKs</td><td>Completed Pack Quest in Episode 6</td><td></td></tr>
+            <tr><td>Pack Quest HOTs</td><td>Completed Pack Quest in Episode 7</td><td></td></tr>
+            <tr><td>Pack Quest Dorms</td><td>Completed Pack Quest in Episode 8</td><td></td></tr>
+            <tr><td>Pack Quest Season 2</td><td>Completed all Pack Quests in Season 2</td><td></td></tr>
+         </table>
+         <ul>
+            <li><a href="https://steamcommunity.com/sharedfiles/filedetails/?id=2831730637">[ENG] Items for Pack Quest</a></li>
+            <li><a href="https://attachments.f95zone.to/2021/04/1162275_Walkthrough_Being_a_DIK.pdf">Unofficial game guide 1-6</a></li>
+         </ul>
+         <br>
+
+         <table>
+            <caption>zajęcia akademickie</caption>
+            <tr><td class="s2_achiev_td_1"></td><td class="s2_achiev_td_2"></td><td></td></tr>
+            <tr><td>I see the pattern</td><td>100% Math classes in Season 2</td><td></td></tr>
+            <tr><td>Well-spoken</td><td>100% English classes in Season 2</td><td></td></tr>
+            <tr><td>Wasted credits</td><td>100% Gender studies classes in Season 2</td><td></td></tr>
+            <tr><td>Perfect student</td><td>100% Perfect classes in Season 2</td><td></td></tr>
+         </table>
+         <ul>
+            <li><a href="https://steamcommunity.com/sharedfiles/filedetails/?id=2714856687">answers for math, english & gender studies</a></li>
+            <li><a href="https://www.studocu.com/ph/document/holy-cross-of-davao-college/bachelor-of-secondary-education/official-walkthrough-season-2-ep-5-8/69281255">The complete official guide - Season 2 - Ep 5-8</a></li>
+         </ul>
+         <br>
+
+         <table>
+            <caption>portfel</caption>
+            <tr><td class="s2_achiev_td_1"></td><td class="s2_achiev_td_2"></td><td></td></tr>
+            <tr><td>Fat wallet</td><td>Upgraded the wallet to max level</td><td></td></tr>
+         </table>
+         <p>ulepszyć portfel można trzykrotnie za $1, $3, $5, co ostatecznie pozwala na posiadanie przy sobie łącznie $10; wymaga grania w minigry (brawler, triple tile, puzzle); na puzzle pomocne jest oszustwo tasowania (shuffle cheat) od dereka;</p>
+         <br>
+
+         <table>
+            <caption>tendencje</caption>
+            <tr><td class="s2_achiev_td_1"></td><td class="s2_achiev_td_2"></td><td></td></tr>
+            <tr><td>Devoted DIK</td><td>Attained a permanent DIK affinity</td><td></td></tr>
+            <tr><td>Devoted CHICK</td><td>Attained a permanent CHICK affinity</td><td></td></tr>
+         </table>
+         <p>wymaga konsekwentnego wybierania jedynie decyzji typu dik/chick;</p>
+         <br>
+
+         <table>
+            <caption>usługi vip</caption>
+            <tr><td class="s2_achiev_td_1"></td><td class="s2_achiev_td_2"></td><td></td></tr>
+            <tr><td>DIK Champion</td><td>Got more points than Derek during Hell Week</td><td></td></tr>
+            <tr>
+                <td>Madame Rose</td>
+                <td>Accepted Madame Rose</td>
+                <td>
+                    <div class="popup" onclick="on_popup_madame_rose_4()">» #1
+                        <span class="popuptext" id="popup_madame_rose_4">“You must be on the others’ branch and have accepted Madame Rose’s services in episode 7 to be able to unlock this lewd scene. Call Madame Rose during the final free roam event at the DIK mansion and purchase assjob from her for $4.”</span>
+                    </div>
+                    , 
+                    <div class="popup" onclick="on_popup_madame_rose_3()">» #2
+                        <span class="popuptext" id="popup_madame_rose_3">“You must be on the others’ branch and have accepted Madame Rose’s services in episode 7 to be able to unlock this lewd scene. Call Madame Rose during the final free roam event at the DIK mansion and purchase pussylicking from her for $3.”</span>
+                    </div>
+                </td>
+            </tr>
+         </table>
+         <p>należy posiadać przepustkę vip do pink rose jako nagrodę za większą punktację w ramach piekielnego tygodnia (hell week); jeżeli nie zgłosimy się dobrowolnie do pracy ze starymi ludźmi to udamy się do pink rose, a tamże, później, po posprzątaniu, znajdziemy się w loży vip i powita nas w końcu madame rose, gdzie należy przyjąć jej ofertę; w epizodzie 8., po wyborze ścieżki „inne” (others) przy stole w posiadłości, będziemy mogli do niej zadzwonić; dojdą dwie nowe możliwości (assjob $4, pussylicking $3); jej opcje są drogie, lecz sprawdzenie wszystkich odblokowuje obraz jacoba;</p>
+         <ul>
+            <li><a href="https://www.studocu.com/ph/document/holy-cross-of-davao-college/bachelor-of-secondary-education/official-walkthrough-season-2-ep-5-8/69281255">The complete official guide - Season 2 - Ep 5-8</a></li>
+         </ul>
+         <br>
+
+         <table>
+            <caption>zakończenia</caption>
+            <tr><td class="s2_achiev_td_1"></td><td class="s2_achiev_td_2"></td><td></td></tr>
+            <tr><td>Bumpy road</td><td>Chose to go down the bumpy road</td><td></td></tr>
+            <tr><td>Connected</td><td>Chose to go down the connected road</td><td></td></tr>
+            <tr><td>Troubled road</td><td>Chose to go down the troubled road</td><td></td></tr>
+            <tr><td>Unknown road</td><td>Chose to go down the unknown road</td><td></td></tr>
+         </table>
+         <p>w epizodzie 8. przy stole w posiadłości musimy dokonać wyboru za którym dziewczęciem gonimy; do wyboru jest: sage, isabella, jill, maya & josy, others; innymi słowy drogi: liściasta, wyboista, powiązana, zmartwiona, nieznana; jest to nawiązanie do dialogów z tymi postaciami;</p>
+         <p>droga sage wiąże się z rozmową trzymając w dłoni liść klonu; w przypadku belli metaforą jest wyboista droga jako że jest to romans z nauczycielką; jill będzie mówić o tym iż w jej życiu najważniejsze wydarzenia wydają się ze sobą łączyć w formę przeznaczenia; kłopot z ojcem mayi będzie powodować wieczne zmartwienia odnośnie josy; nieznana droga po prostu wyraża niezdecydowanie;</p>
+         <br>
+
+         <table>
+            <caption>tapety na smartfon</caption>
+            <tr><td class="s2_achiev_td_1"></td><td class="s2_achiev_td_2"></td><td></td></tr>
+            <tr><td>Jailbreak</td><td>Unlocked all wallpapers</td><td>Season 1</td></tr>
+            <tr><td>Pimp my phone</td><td>Unlocked all wallpapers in Season 2</td><td></td></tr>
+         </table>
+         <p>uzyskanie wszystkich tapet na smartfona w sezonie 1. wymaga uzyskania wszystkich opcjonalnych zdjęć w ramach pisania sms-ów z innymi; w sezonie 2. zamienia się to na zebranie wszyskich obrazów jacoba (2d art shop), których wymagania są rozpisane; w tym drugim przypadku jest to nieco bardziej kłopotliwe ze względu na kilka wersji (zwyczajową, częściową, gołą), których uzyskanie wymaga spełnienia innych wymagań, a po ich odblokowaniu trzeba je jeszcze kupić do zaliczenia osiągnięcia;</p>
+         <ul>
+            <caption>kłopotliwe obrazy do zebrania</caption>
+            <li>
+                <div class="popup" onclick="on_popup_josy_art()">» josy
+                    <span class="popuptext" id="popup_josy_art">“To unlock Josy’s 2D art, get her lewd scenes in episode 7. One wallpaper is unlocked after her lewd scene in your room, and the second one after her second lewd scene at the HOTs.”</span>
+                </div>
+                ｜ 1. tapetę odblokowuje się po scenie w pokoju głównej postaci, a 2. po scenie w domu hot w basenie w epizodzie 7. (wymaga ścieżki maya & josy);
+            </li>
+            <li>
+                <div class="popup" onclick="on_popup_sage_art()">» sage
+                    <span class="popuptext" id="popup_sage_art">“To unlock Sage’s 2D art, first off, be her fuck buddy. One wallpaper is unlocked after her sparring scene in your room. The second wallpaper is unlocked after you get her full lewd scene at the HOTs’ party.”</span>
+                </div>
+                ｜ należy być jej kumplem od seksu (fuck buddy); 1. tapetę uzyskuje się po scenie sparringu, 2. po pełnej scenie seksu na imprezie hot w epizodzie 7. (sage musi być pierwszą do interakcji);
+            </li>
+            <li>
+                madame rose ｜ po uzyskaniu wszystkich interakcji w epizodzie 8.
+            </li>
+         </ul>
+         <ul>
+            <li><a href="https://steamcommunity.com/app/1126320/discussions/0/3451465085378163266/">How to I get 'Pimp my laptop' achievement?</a></li>
+         </ul>
+         <br>
+
+         <table>
+            <caption>odpicuj mi laptopa</caption>
+            <tr><td class="s2_achiev_td_1"></td><td class="s2_achiev_td_2"></td><td></td></tr>
+            <tr><td>Pimp my laptop</td><td>Unlocked all laptop wallpapers in Season 2</td><td></td></tr>
+         </table>
+         <p>odpicowanie laptopa jest silnie powiązane ze zdobyciem obrazów jacoba; np. doprowadzenie do sprośnej sceny z isabellą odblokowuje jej obraz u jacoba (który można w tym momencie kupić), jak i tapetę na laptopie (którą można teraz odblokować); laptop znajduje się w pokoju rusty'ego za obrazem, lecz nie zawsze można wejść z nim w interakcję (w praktyce możliwość sprawdzenia laptopa jest ograniczona do określonych momentów w grze); ostatnią tapetę będzie można odblokować po odblokowaniu całej reszty;</p>
+         <br>
+
+         <table>
+            <caption>zbieracz świerszczyków</caption>
+            <tr><td class="s2_achiev_td_1"></td><td class="s2_achiev_td_2"></td><td></td></tr>
+            <tr><td>Magazine collector Season 2</td><td>Unlocked all special renders in Season 2</td><td></td></tr>
+         </table>
+         <p>w praktyce jedynie dwa rendery riony podczas imprezy hot są kłopotliwe do zdobycia;</p>
+         <ul>
+            <caption>kłopotliwe rendery</caption>
+            <li>
+                <div class="popup" onclick="on_popup_riona_25()">» riona #25
+                    <span class="popuptext" id="popup_riona_25">“During the third free roam event at the HOTs, it’s in the closet between Sage’s and Quinn’s rooms. To unlock the door, get the key from the counter in Sarah’s and Melanie’s room.”</span>
+                </div>
+                ｜ w graciarni, małym pomieszczeniu między pokojem sage i quinn; klucz do drzwi znajduje się na lodówce w pokoju sary i melanie, po prawej stronie ekranu; w tym pokoju, w którym przebywa chad z alexem;
+            </li>
+            <li>
+                <div class="popup" onclick="on_popup_riona_32()">» riona #32
+                    <span class="popuptext" id="popup_riona_32">“Between the vanity box and the skull painting in Riona and Camila’s room.”</span>
+                </div>
+                ｜ pomiędzy pudełkiem na kosmetyki a obrazem czaszki w pokoju riony i camili; rzecz w tym, że nie można tego dokonać z perspektywy wejścia do pomieszczenia; trzeba przybliżyć się do biurka riony;
+            </li>
+         </ul>
+         <figure>
+            <img src='../screenshots/being-a-dik/20250128010006_1.jpg' alt='20250128010006_1.jpg' />
+            <figcaption>rewards season 1+2</figcaption>
+        </figure>
+        <ul>
+            <li><a href="https://steamcommunity.com/sharedfiles/filedetails/?id=2831788613">all special renders</a></li>
+            <li><a href="https://steamcommunity.com/app/1126320/discussions/0/2292842508243774606/">Anyone know what the key from the HOT house opens?</a></li>
+            <li><a href="https://www.studocu.com/ph/document/holy-cross-of-davao-college/bachelor-of-secondary-education/official-walkthrough-season-2-ep-5-8/69281255">The complete official guide - Season 2 - Ep 5-8</a></li>
+        </ul>
+        <br>
+
+        <table>
+            <caption>scenarzysta</caption>
+            <tr><td class="s2_achiev_td_1"></td><td class="s2_achiev_td_2"></td><td></td></tr>
+            <tr><td>Been there, done her</td><td>Unlock all scenes</td><td>Season 1</td></tr>
+            <tr><td>Been there, done her too</td><td>Unlocked all scenes in Season 2</td><td></td></tr>
+        </table>
+        <p>w sezonie 1. kłotliwym jest jedynie doprowadzenie do sceny z mayą i podsłuchiwanie heather;</p>
+        <ul>
+            <li>
+                <div class="popup" onclick="on_popup_maya2()">» Maya ep2
+                    <span class="popuptext" id="popup_maya2">“There are several steps needed to unlock the second lewd scene with Maya in episode 2. First off, you need to ensure that you don’t have Massive DIK or Massive CHICK status when you reach this scene. Use the episode 2 walkthrough if you need help with reaching the correct status. To reach the scene, choose to go home to Maya after the shot battle with Derek. After dancing with Maya, try to kiss her. The scene will unlock when you lie in bed together.”</span>
+                </div>
+                ｜ należy zachować status neutralny; wybierz zostać z mayą po walce na szoty z derekiem; po krótkim tańcu z mayą spróbuj ją pocałować; leżąc na łóżku zapytaj ją czy chciałaby się całować;
+            </li>
+            <li>
+                <div class="popup" onclick="on_popup_heather4()">» Heather ep4
+                    <span class="popuptext" id="popup_heather4">“To unlock this scene, you must have chosen to stay with Sage in the end of episode 3. During the free-roam event at the HOTs, head upstairs to the living room, where you find Heather asleep on the couch. Choose “Put blanket on her”. If you have DIK affinity, you will tell her off when she yells at you. After she leaves, head downstairs to her room, which is located right of the kitchen door in the screen that also shows the stairs to the basement. Choose “Put ear against door” and “Peek” to unlock the scene.”</span>
+                </div>
+                ｜ wybierz zostać z sage pod koniec epizodu 3.; idź na górę i przykryj heather kocem (put blanket on her); idź na dół do jej pokoju przy kuchni i podsłuchuj (put ear against door > peek);
+            </li>
+        </ul>
+        <figure>
+            <img src='../screenshots/being-a-dik/20250128010019_1.jpg' alt='20250128010019_1.jpg' />
+            <figcaption>scenes episodes 1-3</figcaption>
+        </figure>
+        <figure>
+            <img src='../screenshots/being-a-dik/20250128010029_1.jpg' alt='20250128010029_1.jpg' />
+            <figcaption>scenes episodes 4-5</figcaption>
+        </figure>
+        <p>w sezonie 2. można pominąć znacznie więcej scen: z isabellą w saunie, z sage na przyjęciu hot, z lily i sandy w pink rose; przede wszystkim jednak niejasnym jest iż dungeons & gremlins posiada sceny seksu;</p>
+        <ul>
+            <li>
+                <div class="popup" onclick="on_popup_isabella_ep5()">» Isabella ep5
+                    <span class="popuptext" id="popup_isabella_ep5">“Join Isabella in the sauna. If you have kissed her in episode 3, you can choose to make a move on her. Doing that will unlock the lewd scene.”</span>
+                </div>
+                ｜ połacuj ją w epizodzie 3.; dołącz do niej w saunie po porannej jodze z nią i jill;
+            </li>
+            <li>
+                Dungeons & Gremlins #dik ｜
+                w epizodzie 6. uzyskaj przynależność dik (dik affinity); użyj uroku na postaciach, a potem je uwiedź; dokonaj tego na morii (quinn), sprzedawczyni owoców (cathy), garncarce (camila), kowalce (riona), barmance (jade), dziewkach (sarah i melanie) – w tym przypadku za 70 sztuk srebra; to odblokuje 6 scen;
+            </li>
+            <li>
+                Dungeons & Gremlins #chick ｜
+                w epizodzie 6. wejdź na ścieżkę maya & josy; użyj uroku na nich obydwu; to nie zadziała jeśli uwiodło się morię (quinn); to odblokuje 2 sceny;
+            </li>
+            <li>
+                <div class="popup" onclick="on_popup_josy_ep7()">» Josy #2 ep7
+                    <span class="popuptext" id="popup_josy_ep7">“This lewd scene is unlocked by spending extra time with Josy. During the second free roam event in your room. Answer Josy’s text and ask her if you can come over. Exit the free roam event and choose to go to Josy. When you’re in the pool, choose to move in close, and the lewd scene will unlock, but only if you’re a part of Josy’s and Maya’s relationship.”</span>
+                </div>
+                ｜ wkrocz na ścieżkę maya & josy; w epizodzie 7. wybierz spędzić dodatkowy czas z josy pisząc do niej sms; przebywając w basenie przybliż się do niej;
+            </li>
+            <li>
+                <div class="popup" onclick="on_popup_sage_ep7()">» Sage 100% ep7
+                    <span class="popuptext" id="popup_sage_ep7">“Sage’s lewd scene is unlocked at the HOTs’ party free roam event. Talk to Sage in the living room. Talk to her again outside of her dorm. During the scene that follows, you can get the lewd scene if you’re her fuck buddy or if you choose to pursue Sage when she asks you. To get the full version of her lewd scene, you can’t have had any other lewd scene at the HOTs’ party before Sage’s scene.”</span>
+                </div>
+                ｜ w epizodzie 7. podczas imprezy hot porozmawiaj z sage w salonie, gdy siedzi razem z josy, a potem przy jej pokoju; uzyskanie pełnej sceny wymaga, by nie doszło wcześniej do żadnej innej seksualnej interakcji na imprezie; sage musi być pierwsza;
+            </li>
+            <li>
+                <div class="popup" onclick="on_popup_lily_ep8()">» Lily ep8
+                    <span class="popuptext" id="popup_lily_ep8">“To unlock this lewd scene, you must have fucked Lily in episode 7. After cleaning at the Pink Rose, choose to see Lily before leaving. Tell the drunken customer to relax, and the lewd scene will unlock.”</span>
+                </div>
+                ｜ pieprz się z lily w epizodzie 7.; po sprzątaniu w pink rose zobacz się z lily przed wyjściem; powiedz pijanemu by się uspokoił a dostaniesz od niego butelką w głowę;
+            </li>
+            <li>
+                <div class="popup" onclick="on_popup_sandy_ep8()">» Sandy ep8
+                    <span class="popuptext" id="popup_sandy_ep8">“To unlock this lewd scene you must either have fucked Envy and Sandy in episode 6 or have DIK affinity. After cleaning at the Pink Rose, choose to see Sandy before leaving to unlock the lewd scene. If you didn’t fuck Envy and Sandy in episode 6, it will cost you $$ to unlock the scene.”</span>
+                </div>
+                ｜ posiadaj przynależność dik albo doprowadź do trójkąta z envy i sandy w epizodzie 6.; po sprzątaniu w pink rose pójdź odwiedzić sandy przed wyjściem; bez wcześniejszego trójkąta będzie to kosztować $2;
+            </li>
+        </ul>
+        <figure>
+            <img src='../screenshots/being-a-dik/20250128010035_1.jpg' alt='20250128010035_1.jpg' />
+            <figcaption>scenes episodes 5-7</figcaption>
+        </figure>
+        <figure>
+            <img src='../screenshots/being-a-dik/20250128010045_1.jpg' alt='20250128010045_1.jpg' />
+            <figcaption>scenes episodes 7-8</figcaption>
+        </figure>
+        <figure>
+            <img src='../screenshots/being-a-dik/20250128010049_1.jpg' alt='20250128010049_1.jpg' />
+            <figcaption>scenes episodes 8 till season 2</figcaption>
+        </figure>
+        <ul>
+            <li><a href="https://attachments.f95zone.to/2023/01/2321205_Official_Walkthrough_-_Season_1_-_Ep_1-4.pdf">The complete official guide – Season 1, Episodes 1-4</a></li>
+            <li><a href="https://www.studocu.com/ph/document/holy-cross-of-davao-college/bachelor-of-secondary-education/official-walkthrough-season-2-ep-5-8/69281255">The complete official guide - Season 2 - Ep 5-8</a></li>
+        </ul>
+        <br>
+
+    <br>
+
+    </div>
+
+    <!-- all seasons -->
+    <div>
+
+         <hr id="all-seasons">
+         <p class="centered">międzysezonowe</p>
+         <hr>
+         <br>
+
+         <h3># imiona postaci</h3>
+         <p>
+            russell “rusty” burgmeister<br>
+            jill royce<br>
+            tybalt archibald stewart burke<br>
+            isabella roberts<br>
+            mona davis<br>
+            cathy jones<br>
+            philip hoff<br>
+            derek bailey<br>
+            maya victoria bailey<br>
+         </p>
+         <br>
+
+         <h3># epizody</h3>
+         <table class="epi_table">
+             <caption>season 1</caption>
+             <tr><td class="epi_td">1</td><td class="epi_td_2">the initiation</td></tr>
+             <tr><td class="epi_td">2</td><td class="epi_td_2">maggot brothers</td></tr>
+             <tr><td class="epi_td">3</td><td class="epi_td_2">100%</td></tr>
+             <tr><td class="epi_td">4</td><td class="epi_td_2">when worlds collide</td></tr>
+         </table>
+         <br>
+         <table class="epi_table">
+             <caption>season 2</caption>
+             <tr><td class="epi_td">5</td><td class="epi_td_2">hotheaded</td></tr>
+             <tr><td class="epi_td">6</td><td class="epi_td_2">damage control</td></tr>
+             <tr><td class="epi_td">7</td><td class="epi_td_2">true colors</td></tr>
+             <tr><td class="epi_td">8</td><td class="epi_td_2">crossroads</td></tr>
+         </table>
+         <br>
+         <br>
+
+         <h3># odpowiedzi na testy chronologicznie</h3>
+         <table>
+            <tr><td class="tests_td_1"></td><td class="tests_td_2"></td><td></td></tr>
+            <tr>
+                <td>english class #1</td>
+                <td>episode 1</td>
+                <td>git his hit its lit sit ｜ gilt gist gits hilt hits list shit sigh silt slit this ｜ sight light hilts ｜ slight lights</td>
+            </tr>
+            <tr>
+                <td>math class #1</td>
+                <td>episode 1</td>
+                <td>c b d a d c</td>
+            </tr>
+            <tr>
+                <td>gender studies #1</td>
+                <td>episode 1</td>
+                <td>danielle ｜ 2 years old, brown ｜ franz ｜ you never told me ｜ $12 ｜ glasses ｜ linda, 240 lbs ｜ 2 months ｜ your boyfriend jaime ｜ 13</td>
+            </tr>
+            <tr>
+                <td>english class #2</td>
+                <td>episode 2</td>
+                <td>her pee per rep see she ｜ here hers peer reps seep seer ｜ peers sheep sheer spree ｜ herpes sphere</td>
+            </tr>
+            <tr>
+                <td>math class #2</td>
+                <td>episode 2</td>
+                <td>c a a a c c d d a d</td>
+            </tr>
+            <tr>
+                <td>gender studies #2</td>
+                <td>episode 2</td>
+                <td>chocolate ｜ 5 ｜ 3 ｜ diet orange ｜ fries ｜ whiskers ｜ lemons ｜ 0 ｜ 5 years ｜ blue shirt with white dots</td>
+            </tr>
+            <tr>
+                <td>math class #3</td>
+                <td>episode 3</td>
+                <td>b a a b c d b d a d</td>
+            </tr>
+            <tr>
+                <td>english class #3</td>
+                <td>episode 3</td>
+                <td>act ant can cat gin git nag nit tag tic tan tin ｜ agin anti cant inca gain gait gnat tang ting ｜ acing actin antic giant ｜ acting</td>
+            </tr>
+            <tr>
+                <td>english class #4</td>
+                <td>episode 4</td>
+                <td>leo eon one son sos ｜ eons lens less lone lose loss noel nose ones sole sons ｜ loses noels noses soles ｜ lesson</td>
+            </tr>
+            <tr>
+                <td>math class #4</td>
+                <td>episode 4</td>
+                <td>b d a d b a c b d a</td>
+            </tr>
+            <tr>
+                <td>gender studies #3</td>
+                <td>episode 4</td>
+                <td>karen rebecca johnson ｜ conflicts or dogs ｜ 7 years ｜ cows ｜ librarian ｜ your mom ｜ 19 years and 2 months ｜ 2 years ｜ 44 db ｜ history and latin</td>
+            </tr>
+            <tr>
+                <td>gender studies #4</td>
+                <td>episode 6</td>
+                <td>w&w ｜ burgers ｜ paris ｜ skinny cunt ｜ social anxiety disorder ｜ veterinarian ｜ the answers for maya´s question are what you answered to her in episode 1</td>
+            </tr>
+            <tr>
+                <td>math class #5</td>
+                <td>episode 6</td>
+                <td>c b a d b c d a b b</td>
+            </tr>
+            <tr>
+                <td>english class #5</td>
+                <td>episode 6</td>
+                <td>den doe dog ego end eon gel god led leg log nod nog old one ｜ done gold gone lend loge lone long node noel ogle ｜ lodge longe ogled olden ｜ dongle golden longed</td>
+            </tr>
+            <tr>
+                <td>math class #6</td>
+                <td>episode 7</td>
+                <td>b d b c c a d c a d</td>
+            </tr>
+            <tr>
+                <td>gender studies #5</td>
+                <td>episode 7</td>
+                <td>in junior high school ｜ lisp ｜ 232 lbs before dump ｜ vegan ｜ pineapple and lime ｜ 30 % ｜ 3 times ｜ 5 inches ｜ 6 minutes ｜ 6 inches</td>
+            </tr>
+            <tr>
+                <td>math class #7</td>
+                <td>episode 8</td>
+                <td>b a c d b c c a b a</td>
+            </tr>
+            <tr>
+                <td>gender studies #6</td>
+                <td>episode 8</td>
+                <td>alvin ｜ gordon, 69 and d9 ｜ fried chickens and cashews, 56th street ｜ 6 ｜ middle girl ｜ 18 burgers and 6 pizzas ｜ sugar, honey and lard ｜ $2.99 and 10 boxes ｜ jenny ｜ 5 seconds ｜ gender misconceptions</td>
+            </tr>
+            <tr>
+                <td>math class #8</td>
+                <td>episode 8</td>
+                <td>b b b c b a b b b b</td>
+            </tr>
+            <tr>
+                <td>english class #6</td>
+                <td>episode 8</td>
+                <td>tea tab let lab eat bat ate alt ale bet ｜ teat tale teal late beta belt beat bale able abet ｜ table latte bleat betta ｜ battle tablet</td>
+            </tr>
+         </table>
+         <br>
+         <br>
+
+    </div>
+
+    <!-- other matters -->
+    <div>
+
+         <hr id="other-matters">
+         <p class="centered">inne kwestie</p>
+         <hr>
 
          <h3># sprawa dla linusa</h3>
 
-         <p>użyty proton:</p>
-         <pre class="listing-block">
- <code>ge-proton9-9</code>
- <code>https://github.com/GloriousEggroll/proton-ge-custom/releases/tag/GE-Proton9-9</code>
- <code>c3e2c383145171fe9dca636eda0b1127f87a5fd365e629bd64abce9577c2cf72f795a5c42fbbf0d3871423381ce0d7783418984ed435a4a347ff835a1c0dd47d</code>
- <code></code>
- <code>ge-proton9-19</code>
- <code>https://github.com/GloriousEggroll/proton-ge-custom/releases/tag/GE-Proton9-19</code>
- <code>12005fbee734e4c0c55b710dd3d30330ae710598c4e189cb5b80fa0ba70384523dbf7003bc72906eb0b20d900f2fcd60914a42a2416d9408c924cb1e6e272a8a</code>
-         </pre>
+<p>gdyby ktoś bardzo chciał wymusić pełny ekran to podaję hasło:</p>
+<pre class="listing-block">
+<code><span style="color:green;"># https://www.protondb.com/app/1126320</span></code>
+<code><span style="color:blue;">LD_PRELOAD</span>= <span style="color:teal;">gamescope</span> -f -W 2560 -H 1440 -r 200 -- <span style="font-weight: 600;">%command%</span></code>
+</pre>
 
-         <p>zapisy stanu gry:</p>
-         <pre class="listing-block">
-<code>https://www.pcgamingwiki.com/wiki/Being_a_DIK</code>
-<code>steam_library/steamapps/common/Being a DIK/game/saves</code>
-<code>~/.renpy/BeingaDIK-1535311495</code>
-         </pre>
+<p>użyty proton:</p>
+<pre class="listing-block">
+<code><span style="color:teal;">xdg-open</span> https://github.com/GloriousEggroll/proton-ge-custom/releases/tag/GE-Proton9-9</code>
+<code><span style="color:teal;">xdg-open</span> https://github.com/GloriousEggroll/proton-ge-custom/releases/tag/GE-Proton9-19</code>
+</pre>
 
-         <p>kopia zapasowa:</p>
-         <pre class="listing-block">
-<code>7z a -ttar /home/edissu/library-hppc/roboczy/being a dick.tar "/run/media/edissu/games/SteamLibrary/steamapps/common/Being a DIK/game/saves"</code>
-         </pre>
+<p>zapisy stanu gry:</p>
+<pre class="listing-block">
+<code><span style="color:green;"># https://www.pcgamingwiki.com/wiki/Being_a_DIK</span></code>
+<code><span style="color:teal;">file</span> <span style="color:brown;">--brief</span> "$HOME/.steam/root/steamapps/common/Being a DIK/game/saves"</code>
+<code><span style="color:teal;">file</span> <span style="color:brown;">--brief</span> ~/.renpy/BeingaDIK-1535311495</code>
+</pre>
+
+<p>kopia zapasowa:</p>
+<pre class="listing-block">
+<code><span style="color:teal;">7z</span> a -ttar <span style="color:blue;">\</span></code>
+<code>"/home/edissu/library-hppc/roboczy/being a dick.tar" <span style="color:blue;">\</span></code>
+<code>"/run/media/edissu/games/SteamLibrary/steamapps/common/Being a DIK/game/saves"</code>
+</pre>
+
+    <br>
+
+    <h3># dyskusje uczestniczące</h3>
+    <ul>
+        <li><a href="https://steamcommunity.com/app/1126320/discussions/0/594010736966035947/">FFS!!!!</a></li>
+    </ul>
+    <br>
+
+    </div>
 
         <hr>
-        <footer>2024-11-28</footer>
+        <footer>
+            2024-11-28<br>
+            2025-01-08
+        </footer>
     </div>
 </body>
 
