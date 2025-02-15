@@ -80,20 +80,24 @@ figcaption {
     text-align: left;
 }
 
+/* 
+https://stackoverflow.com/questions/13676587/html-pre-tag-values-get-horizontal-scroll-bars-how-to-format-it 
+https://stackoverflow.com/questions/4652654/how-to-turn-off-word-wrapping-in-html
+*/
 pre.listing-block {
     white-space: pre-wrap;
     font-family: "jetbrains mono nl", "calling code", monospace;
     background-color: ghostwhite;
+    overflow-x: auto;
+    word-wrap: normal;
+    /* white-space: pre-wrap; */
 }
-
 pre.listing-block::before {
     counter-reset: listing;
 }
-
 pre.listing-block code {
     counter-increment: listing-counter;
 }
-
 pre.listing-block code::before {
     content: counter(listing-counter) "  ";
     display: inline-block;
@@ -101,47 +105,12 @@ pre.listing-block code::before {
     padding-left: auto;
     margin-left: auto;
     text-align: right;
-    font-weight: bold;
+    /* font-weight: bold; */
     font-size: 12px;
-    color: cornflowerblue;
-}
-
-.h3_roadmap_td1 {
-    width: 18%;
-}
-.h3_roadmap_td2 {
-    width: 18%;
-}
-.h3_contracts_td1 {
-    width: 35%;
-}
-.h3_contracts_td2 {
-    width: 15%;
-}
-.h3_contracts_td3 {
-    width: 5%;
-}
-.h3_contracts_td4 {
-    width: 9%;
-}
-.h3_featured {
-    background-color: whitesmoke;
-}
-.h3_chall_1 {
-    width: 17%;
-}
-.h3_chall_2 {
-    width: 33%;
-}
-.h3_chall_3 {
-    width: 13%;
-}
-.h3_chall_4 {
-    width: 9%;
+    color: black;
 }
 
 table {
     table-layout: fixed; 
     width: 100%;
 }
-
