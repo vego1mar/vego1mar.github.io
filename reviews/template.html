@@ -2,14 +2,23 @@
 <html lang="pl">
 
 <head>
-    <title>recenzja</title>
+    <title>❌recenzja❌</title>
     <meta charset="utf-8"> 
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="../css/review-page.css">
+
+    <style>
+        .achievement_td_1 {
+            width: 20%;
+        }
+        .achievement_td_2 {
+            width: 30%;
+        }
+    </style>
 </head>
 
 <body>
-    <div class="sidebar">
+    <section class="sidebar">
         <p>__producent__</p>
         <p>__wydawca__</p>
         <p>__data__</p>
@@ -19,69 +28,129 @@
         <p>__silnik__</p>
         <br>
         <p>
-            <a href="./table-of-content.html" target="_self">» spis_treści</a><br>
+            <a href="./table-of-content.html" target="_self">» spis treści</a><br>
             <a href="https://www.gry-online.pl/news-gra.asp?ID=____">» wiadomości</a><br>
             <a href="https://steamcommunity.com/app/____/discussions/">» dyskusje</a><br>
         </p>
-    </div>
+    </section>
 
-    <div class="main">
+    <main class="main">
+        <section id="lead-text">
         <h2>tytuł gry</h2>
         <p>__lead__</p>
         <br>
+        </section>
 
-        <h3># zwiastun premierowy</h3>
-        <video controls width="96%">
-            <source src="../media/___" type="video/webm" alt="__yt_id___">
-        </video>
-        <br>
 
-        <h3># uwagi</h3>
-        <p>___</p>
+        <section id="trailers">
+        <h3># zwiastuny</h3>
+        <ul>
+            <li><a href="#">___</a></li>
+        </ul>
         <br>
+        </section>
+
+
+        <section id="table-of-content">
+        <h3># spis treści</h3>
+        <ul>
+            <li><a href="#h3-general-notes" target="_self">uwagi ogólne</a></li>
+            <li><a href="#h3-???" target="_self">___</a></li>
+            <li><a href="#h3-achievements" target="_self">osiągnięcia</a></li>
+            <li><a href="#h3-linux-matters" target="_self">sprawa dla linusa</a></li>
+            <li><a href="#h3-discussions" target="_self">wątki dyskusji</a></li>
+        </ul>
+        <br>
+        </section>
 
         <!-- 
+        <video controls class="video_">
+            <source src="../media/" type="video/mp4" alt="">
+            <figcaption></figcaption>
+        </video>
+        
         <figure>
-            <img src='../screenshots/___' alt='___.jpg' />
-            <figcaption>___desc___</figcaption>
+            <img src='../screenshots/ac-mirage/' alt='' />
+            <figcaption></figcaption>
         </figure>
-
-        <ul>
-            <li><a href="___">___</a></li>
-         </ul>
          -->
 
-         <h3># sprawa dla linusa</h3>
-         <p>opcje uruchamiania:</p>
-         <pre class="listing-block">
-<code># ___</code>
-         </pre>
 
-         <p>użyty proton:</p>
-         <pre class="listing-block">
- <code>ge-proton9-9</code>
- <code>https://github.com/GloriousEggroll/proton-ge-custom/releases/tag/GE-Proton9-9</code>
- <code>c3e2c383145171fe9dca636eda0b1127f87a5fd365e629bd64abce9577c2cf72f795a5c42fbbf0d3871423381ce0d7783418984ed435a4a347ff835a1c0dd47d</code>
-         </pre>
+        <article id="h3-general-notes">
+        <h3># uwagi ogólne</h3>
+        <p>___</p>
+        <br>
+        <figure>
+            <img src='../screenshots/___' alt='___jpg__' />
+            <figcaption>___desc___</figcaption>
+        </figure>
+        <br>
+        <ul>
+            <li><a href="#">___</a></li>
+        </ul>
+        <br>
+        </article>
 
-         <p>zapisy stanu gry:</p>
-         <pre class="listing-block">
-<code></code>
-         </pre>
 
-         <p>plik konfiguracyjny:</p>
-         <pre class="listing-block">
-<code></code>
-        </pre>
+        <article id="h3-achievements">
+        <h3># osiągnięcia</h3>
+        <p>___</p>
+        <ul>
+            <li><a href="#">___</a></li>
+        </ul>
+        <br>
+        <table>
+            <caption>__tytuł__</caption>
+            <tr><td class="achievement_td_1">1</td><td class="achievement_td_2">2</td><td class="">3</td></tr>
+            <tr><td>1</td><td>2</td><td>3</td></tr>
+        </table>
+        <br>
+        </article>
 
-         <p>kopia zapasowa:</p>
-         <pre class="listing-block">
-<code></code>
-         </pre>
+
+        <article id="h3-linux-matters">
+        <h3># sprawa dla linusa</h3>
+
+        <article>
+        <h4>opcje uruchamiania</h4>
+<pre class="listing-block">
+<code><span style="color:green;"># url:protondb</span></code>
+<code><span style="color:green;"># https://github.com/GloriousEggroll/proton-ge-custom/releases/tag/GE-Proton9-25</span></code>
+<code>DXVK_ASYNC=1 PROTON_ENABLE_NVAPI=1 PROTON_HIDE_NVIDIA_GPU=0 <span style="color:blue;">%command%</span> -dx12</code>
+</pre>
+        </article>
+
+        <article>
+            <h4>ścieżki</h4>
+<pre class="listing-block">
+<code><span style="color:green;"># url:pcgamingwiki</span></code>
+<code><span style="color:teal;">file</span> <span style="color:brown;">--brief</span> "$<span style="color:blue;">HOME</span>/.steam/root/steamapps/common/&lt;game&gt;/game/saves"</code>
+<code>&lt;SteamLibrary&gt;/steamapps/compatdata/3035570/pfx/ → &lt;UbisoftConnect&gt;\savegames\&lt;user-id&gt;\6100\</code>
+</pre>
+
+        <p>zapis stanu gry:</p>
+<pre class="listing-block">
+<code><span style="color:teal;">7z</span> a -ttar \</code>
+<code>"$<span style="color:blue;">HOME</span>/library/roboczy/ac mirage.tar" \</code>
+<code>"/run/media/$<span style="color:blue;">USER</span>/games/SteamLibrary/steamapps/.../savegames"</code>
+</pre>
+        </article>
+
+        </article>
+
+
+        <article id="h3-discussions">
+        <h3># wątki dyskusji</h3>
+        <ul>
+            <li><a href="#">___</a></li>
+        </ul>
+        <br>
+        </article>
+        
 
         <hr>
-        <footer>___data recezji___</footer>
-    </div>
+        <footer>___data_recezji___</footer>
+    </main>
 </body>
 
 </html>
