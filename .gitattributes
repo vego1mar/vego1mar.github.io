@@ -8,3 +8,5 @@ media/shco/ filter=lfs diff=lfs merge=lfs -text
 screenshots/shco/ filter=lfs diff=lfs merge=lfs -text
 media/syberia-twb/ filter=lfs diff=lfs merge=lfs -text
 media/fetish-locator-3/ filter=lfs diff=lfs merge=lfs -text
+media/ac-mirage/dom[[:space:]]qiyan.mp4 filter=lfs diff=lfs merge=lfs -text
+media/ac-mirage/orli[[:space:]]strzelec.mp4 filter=lfs diff=lfs merge=lfs -text
