@@ -29,8 +29,6 @@
         <br>
         <p>
             <a href="./table-of-content.html" target="_self">» spis treści</a><br>
-            <a href="https://www.gry-online.pl/news-gra.asp?ID=____">» wiadomości</a><br>
-            <a href="https://steamcommunity.com/app/____/discussions/">» dyskusje</a><br>
         </p>
     </section>
 
@@ -42,23 +40,34 @@
         </section>
 
 
-        <section id="trailers">
-        <h3># zwiastuny</h3>
+        <article>
+        <h3># informacje</h3>
+
         <ul>
-            <li><a href="#">___</a></li>
+            <li><a href="https://www.gry-online.pl/news-gra.asp?ID=">wiadomości</a> – gry-online</li>
+            <li><a href="https://www.protondb.com/app/">protondb</a> – appid</li>
+            <li><a href="https://www.pcgamingwiki.com/wiki/">pcgamingwiki</a> – gamename</li>
+            <li><a href="https://steamcommunity.com/app/__appid__/discussions/">dyskusje</a> – steam</li>
+            <li><a href="https://www.youtube.com/playlist?list=">__name__</a> – kompozytor</li>
+
+            <li><a href="#">zwiastun 1</a></li>
+            <li><a href="#">zwiastun 2</a></li>
+            <li><a href="#">recenzja 1</a></li>
+            <li><a href="#">recenzja 2</a></li>
         </ul>
+
+        </article>
         <br>
-        </section>
 
 
         <section id="table-of-content">
         <h3># spis treści</h3>
         <ul>
-            <li><a href="#h3-general-notes" target="_self">uwagi ogólne</a></li>
-            <li><a href="#h3-???" target="_self">___</a></li>
-            <li><a href="#h3-achievements" target="_self">osiągnięcia</a></li>
-            <li><a href="#h3-linux-matters" target="_self">sprawa dla linusa</a></li>
-            <li><a href="#h3-discussions" target="_self">wątki dyskusji</a></li>
+            <li><a href="#general-notes" target="_self">uwagi ogólne</a></li>
+            <li><a href="#???" target="_self">___</a></li>
+            <li><a href="#achievements" target="_self">osiągnięcia</a></li>
+            <li><a href="#linux-matters" target="_self">sprawa dla linusa</a></li>
+            <li><a href="#discussions" target="_self">wątki dyskusji</a></li>
         </ul>
         <br>
         </section>
@@ -76,7 +85,7 @@
          -->
 
 
-        <article id="h3-general-notes">
+        <article id="general-notes">
         <h3># uwagi ogólne</h3>
         <p>___</p>
         <br>
@@ -92,7 +101,7 @@
         </article>
 
 
-        <article id="h3-achievements">
+        <article id="achievements">
         <h3># osiągnięcia</h3>
         <p>___</p>
         <ul>
@@ -108,25 +117,28 @@
         </article>
 
 
-        <article id="h3-linux-matters">
+        <article id="linux-matters">
         <h3># sprawa dla linusa</h3>
 
-        <article>
-        <h4>opcje uruchamiania</h4>
-<pre class="listing-block">
-<code><span style="color:green;"># url:protondb</span></code>
-<code><span style="color:green;"># https://github.com/GloriousEggroll/proton-ge-custom/releases/tag/GE-Proton9-25</span></code>
-<code>DXVK_ASYNC=1 PROTON_ENABLE_NVAPI=1 PROTON_HIDE_NVIDIA_GPU=0 <span style="color:blue;">%command%</span> -dx12</code>
-</pre>
-        </article>
+        <ul>
+            <li><a href="https://www.protondb.com/app/__appid__">protondb</a> – appid</li>
+            <li><a href="https://www.pcgamingwiki.com/wiki/">pcgamingwiki</a> – gamename</li>
+            <li><a href="https://github.com/GloriousEggroll/proton-ge-custom/releases/tag/GE-Proton10-3">ge-proton10-3</a></li>
+        </ul>
+        <br>
 
-        <article>
-            <h4>ścieżki</h4>
+        <p>opcje uruchamiania:</p>
 <pre class="listing-block">
-<code><span style="color:green;"># url:pcgamingwiki</span></code>
+<code>DXVK_ASYNC=1 <span style="color:blue;">%command%</span> -dx12</code>
+</pre>
+        <br>
+
+        <p>ścieżki:</p>
+<pre class="listing-block">
 <code><span style="color:teal;">file</span> <span style="color:brown;">--brief</span> "$<span style="color:blue;">HOME</span>/.steam/root/steamapps/common/&lt;game&gt;/game/saves"</code>
 <code>&lt;SteamLibrary&gt;/steamapps/compatdata/3035570/pfx/ → &lt;UbisoftConnect&gt;\savegames\&lt;user-id&gt;\6100\</code>
 </pre>
+        <br>
 
         <p>zapis stanu gry:</p>
 <pre class="listing-block">
@@ -134,12 +146,12 @@
 <code>"$<span style="color:blue;">HOME</span>/library/roboczy/ac mirage.tar" \</code>
 <code>"/run/media/$<span style="color:blue;">USER</span>/games/SteamLibrary/steamapps/.../savegames"</code>
 </pre>
-        </article>
+        <br>
 
         </article>
 
 
-        <article id="h3-discussions">
+        <article id="discussions">
         <h3># wątki dyskusji</h3>
         <ul>
             <li><a href="#">___</a></li>
