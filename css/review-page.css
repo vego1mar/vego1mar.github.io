@@ -86,7 +86,7 @@ https://stackoverflow.com/questions/4652654/how-to-turn-off-word-wrapping-in-htm
 */
 pre.listing-block {
     white-space: pre-wrap;
-    font-family: "jetbrains mono nl", "calling code", monospace;
+    font-family: "jetbrains mono", "calling code", monospace;
     background-color: ghostwhite;
     overflow-x: auto;
     word-wrap: normal;
