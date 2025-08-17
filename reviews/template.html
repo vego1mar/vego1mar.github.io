@@ -2,18 +2,52 @@
 <html lang="pl">
 
 <head>
-    <title>❌recenzja❌</title>
+    <title>❌❌❌❌</title>
     <meta charset="utf-8"> 
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="../css/review-page.css">
+    <link rel="stylesheet" href="../css/review-page-minimum.css">
 
     <style>
-        .achievement_td_1 {
-            width: 20%;
+        /* global tags */
+        img {
+            width: 50vw;
+            height: auto;
         }
-        .achievement_td_2 {
+        figcaption {
+            font-size: 12px;
+            text-align: left;
+        }
+
+        /* achievements */
+        .achievements {
+            table-layout: fixed; 
+            width: 100%;
+            text-align: left;
+        }
+        .achievements--name {
             width: 30%;
+            text-align: center;
+            vertical-align: middle;
         }
+        table.achievements td {
+            padding-top: 10px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #ddd;
+        }
+        .achievement-gained {
+            background-color: #D1FFB8;
+        }
+
+        /* soundtrack */
+        .soundtrack-ost {
+            table-layout: fixed;
+            width: 60%;
+            padding-left: 20%;
+        }
+        .soundtrack-ost--name {
+            width: 80%;
+        }
+
     </style>
 </head>
 
@@ -23,8 +57,6 @@
         <p>__wydawca__</p>
         <p>__data__</p>
         <p>__rozmiar__</p>
-        <p>__kompozytor__</p>
-        <p>__reżyser__</p>
         <p>__silnik__</p>
         <br>
         <p>
@@ -34,134 +66,174 @@
 
     <main class="main">
         <section id="lead-text">
-        <h2>tytuł gry</h2>
+        <h2>__tytuł_gry__</h2>
         <p>__lead__</p>
         <br>
         </section>
 
 
-        <article>
+
+        <article class="informacje">
         <h3># informacje</h3>
 
         <ul>
-            <li><a href="https://www.gry-online.pl/news-gra.asp?ID=">wiadomości</a> – gry-online</li>
-            <li><a href="https://www.protondb.com/app/">protondb</a> – appid</li>
-            <li><a href="https://www.pcgamingwiki.com/wiki/">pcgamingwiki</a> – gamename</li>
-            <li><a href="https://steamcommunity.com/app/__appid__/discussions/">dyskusje</a> – steam</li>
-            <li><a href="https://www.youtube.com/playlist?list=">__name__</a> – kompozytor</li>
+            <li>steamcommunity.com: <a href="https://steamcommunity.com/app/__appid__/discussions/">dyskusje</a></li>
+            <li>gry-online.pl: <a href="https://www.gry-online.pl/news-gra.asp?ID=">wiadomości</a></li>
+            <li>@__profileid__: <a href="https://www.youtube.com/playlist?list=">__name__</a></li>
+            <br>
 
-            <li><a href="#">zwiastun 1</a></li>
-            <li><a href="#">zwiastun 2</a></li>
-            <li><a href="#">recenzja 1</a></li>
-            <li><a href="#">recenzja 2</a></li>
+            <li>@__profileid__: <a href="https://www.youtube.com/watch?v=">__zwiastun__</a></li>
+            <br>
+
+            <li>@__profileid__: <a href="https://www.youtube.com/watch?v=">__name__</a></li>
         </ul>
+        <br>
 
         </article>
         <br>
+
 
 
         <section id="table-of-content">
         <h3># spis treści</h3>
         <ul>
-            <li><a href="#general-notes" target="_self">uwagi ogólne</a></li>
-            <li><a href="#???" target="_self">___</a></li>
-            <li><a href="#achievements" target="_self">osiągnięcia</a></li>
-            <li><a href="#linux-matters" target="_self">sprawa dla linusa</a></li>
-            <li><a href="#discussions" target="_self">wątki dyskusji</a></li>
+            <li><a href="#" target="_self">__xxx__</a></li>
+            <li><a href="#" target="_self">__xxx__</a></li>
+            <li><a href="#" target="_self">__xxx__</a></li>
+            <li><a href="#" target="_self">__xxx__</a></li>
+            <li><a href="#osiagniecia" target="_self">osiągnięcia</a></li>
+            <li><a href="#soundtrack" target="_self">ścieżka dźwiękowa</a></li>
+            <li><a href="#sprawa-dla-linusa" target="_self">sprawa dla linusa</a></li>
+            <li><a href="#modyfikacje" target="_self">modyfikacje</a></li>
+            <li><a href="#watki-dyskusji" target="_self">wątki dyskusji</a></li>
         </ul>
         <br>
         </section>
 
+
+
         <!-- 
-        <video controls class="video_">
-            <source src="../media/" type="video/mp4" alt="">
-            <figcaption></figcaption>
-        </video>
-        
         <figure>
-            <img src='../screenshots/ac-mirage/' alt='' />
-            <figcaption></figcaption>
+            <img src='../screenshots/' alt='' />
+            <figcaption>__cap__</figcaption>
         </figure>
          -->
-
-
-        <article id="general-notes">
-        <h3># uwagi ogólne</h3>
-        <p>___</p>
+        <article id="">
+        <h3># ___</h3>
+        <p></p>
         <br>
-        <figure>
-            <img src='../screenshots/___' alt='___jpg__' />
-            <figcaption>___desc___</figcaption>
-        </figure>
-        <br>
-        <ul>
-            <li><a href="#">___</a></li>
-        </ul>
         <br>
         </article>
 
 
-        <article id="achievements">
+
+        <article id="osiagniecia">
         <h3># osiągnięcia</h3>
-        <p>___</p>
-        <ul>
-            <li><a href="#">___</a></li>
-        </ul>
-        <br>
-        <table>
-            <caption>__tytuł__</caption>
-            <tr><td class="achievement_td_1">1</td><td class="achievement_td_2">2</td><td class="">3</td></tr>
-            <tr><td>1</td><td>2</td><td>3</td></tr>
+        <p></p>
+
+        <table class="achievements">
+            <caption><b>__cap__</b></caption>
+            <tr>
+                <td class="achievements--name"></td>
+                <td></td>
+            </tr>
+            <tr class="achievement-gained">
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+            </tr>
         </table>
         <br>
+
+        <br>
         </article>
 
 
-        <article id="linux-matters">
+
+        <article id="soundtrack">
+        <h3># ścieżka dźwiękowa</h3>
+
+        <p></p>
+        <br>
+
+        <table class="soundtrack-ost">
+            <caption>*️⃣ __cap__</caption>
+            <tr>
+                <td class="soundtrack-ost--name"></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td><a href="https://www.youtube.com/watch?v=">__name__</a></td>
+                <td>00:00</td>
+            </tr>
+        </table>
+
+        <br>
+        </article>
+
+
+
+        <article id="sprawa-dla-linusa">
         <h3># sprawa dla linusa</h3>
 
+<pre class="listing-block">
+<code>__GL_SHADER_DISK_CACHE_SKIP_CLEANUP=1 PROTON_USE_NTSYNC=1 PROTON_USE_WOW64=1 DXVK_FRAME_RATE=90 DXVK_ASYNC=1 WINE_FULLSCREEN_FSR_MODE=performance gamemoderun <span style="color:blue;">%command%</span> -dx12</code>
+</pre>
         <ul>
-            <li><a href="https://www.protondb.com/app/__appid__">protondb</a> – appid</li>
-            <li><a href="https://www.pcgamingwiki.com/wiki/">pcgamingwiki</a> – gamename</li>
-            <li><a href="https://github.com/GloriousEggroll/proton-ge-custom/releases/tag/GE-Proton10-3">ge-proton10-3</a></li>
+            <li>appid = <a href="https://www.protondb.com/app/__appid__">__appid__</a></li>
+            <li><a href="https://github.com/GloriousEggroll/proton-ge-custom/releases/tag/GE-Proton10-11">ge-proton10-11</a></li>
         </ul>
         <br>
 
-        <p>opcje uruchamiania:</p>
 <pre class="listing-block">
-<code>DXVK_ASYNC=1 <span style="color:blue;">%command%</span> -dx12</code>
+<code># &lt;SteamLibrary&gt;/steamapps/compatdata/__appid__/pfx/ → %USERPROFILE%\AppData\LocalLow\</code>
+<code># &lt;SteamLibrary&gt;/steamapps/compatdata/__appid__/pfx/ → %LOCALAPPDATA%\SH3RE\Saved\SaveGames\</code>
+<code></code>
+<code><span style="color:teal;">7z</span> a -t7z ~/library/roboczy/__game__/"2508xx game.7z" \</code>
+<code>"/run/media/$USER/games/SteamLibrary/steamapps/compatdata/__appid__/pfx/drive_c/users/steamuser/AppData/"</code>
 </pre>
+        <ul>
+            <li><a href="https://www.pcgamingwiki.com/wiki/">__gamename__</a></li>
+        </ul>
         <br>
 
-        <p>ścieżki:</p>
-<pre class="listing-block">
-<code><span style="color:teal;">file</span> <span style="color:brown;">--brief</span> "$<span style="color:blue;">HOME</span>/.steam/root/steamapps/common/&lt;game&gt;/game/saves"</code>
-<code>&lt;SteamLibrary&gt;/steamapps/compatdata/3035570/pfx/ → &lt;UbisoftConnect&gt;\savegames\&lt;user-id&gt;\6100\</code>
-</pre>
         <br>
-
-        <p>zapis stanu gry:</p>
-<pre class="listing-block">
-<code><span style="color:teal;">7z</span> a -ttar \</code>
-<code>"$<span style="color:blue;">HOME</span>/library/roboczy/ac mirage.tar" \</code>
-<code>"/run/media/$<span style="color:blue;">USER</span>/games/SteamLibrary/steamapps/.../savegames"</code>
-</pre>
-        <br>
-
         </article>
 
 
-        <article id="discussions">
-        <h3># wątki dyskusji</h3>
+
+        <article id="modyfikacje">
+        <h3># modyfikacje</h3>
+
         <ul>
-            <li><a href="#">___</a></li>
+            <li><a href=""></a></li>
+            <li><a href=""></a></li>
         </ul>
+        <br>
+        
+        <br>
+        </article>
+
+
+
+        <article id="watki-dyskusji">
+        <h3># wątki dyskusji</h3>
+
+        <ul>
+            <li><a href="#"></a></li>
+            <li><a href="#"></a></li>
+        </ul>
+        <br>
+
         <br>
         </article>
         
 
         <hr>
-        <footer>___data_recezji___</footer>
+        <footer>___2025-xx-xx___</footer>
     </main>
 </body>
 
