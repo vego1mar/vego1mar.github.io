@@ -9,6 +9,12 @@
 
     <style>
         /* global tags */
+        h1 {
+            font-size: 23px;
+        }
+        h2 {
+            font-size: 18px;
+        }
         img {
             width: 50vw;
             height: auto;
@@ -30,8 +36,8 @@
             vertical-align: middle;
         }
         table.achievements td {
-            padding-top: 10px;
-            padding-bottom: 10px;
+            padding-top: 1px;
+            padding-bottom: 1px;
             border-bottom: 1px solid #ddd;
         }
         .achievement-gained {
@@ -72,8 +78,8 @@
         </section>
 
 
-
-        <article class="informacje">
+        <region class="informacje">
+        <article>
         <h3># informacje</h3>
 
         <ul>
@@ -81,17 +87,15 @@
             <li>gry-online.pl: <a href="https://www.gry-online.pl/news-gra.asp?ID=">wiadomości</a></li>
             <li>@__profileid__: <a href="https://www.youtube.com/playlist?list=">__name__</a></li>
             <br>
-
             <li>@__profileid__: <a href="https://www.youtube.com/watch?v=">__zwiastun__</a></li>
+            <li>steam: <a href="https://video.steamstatic.com/store_trailers/__appid__/movie_max_vp9.webm">zwiastun 1</a></li>
             <br>
-
-            <li>@__profileid__: <a href="https://www.youtube.com/watch?v=">__name__</a></li>
         </ul>
         <br>
 
         </article>
         <br>
-
+        </region>
 
 
         <section id="table-of-content">
@@ -101,15 +105,14 @@
             <li><a href="#" target="_self">__xxx__</a></li>
             <li><a href="#" target="_self">__xxx__</a></li>
             <li><a href="#" target="_self">__xxx__</a></li>
-            <li><a href="#osiagniecia" target="_self">osiągnięcia</a></li>
-            <li><a href="#soundtrack" target="_self">ścieżka dźwiękowa</a></li>
+            <li><a href="#osiągnięcia" target="_self">osiągnięcia</a></li>
+            <li><a href="#ścieżka-dźwiękowa" target="_self">ścieżka dźwiękowa</a></li>
             <li><a href="#sprawa-dla-linusa" target="_self">sprawa dla linusa</a></li>
             <li><a href="#modyfikacje" target="_self">modyfikacje</a></li>
-            <li><a href="#watki-dyskusji" target="_self">wątki dyskusji</a></li>
+            <li><a href="#wątki-dyskusji" target="_self">wątki dyskusji</a></li>
         </ul>
         <br>
         </section>
-
 
 
         <!-- 
@@ -118,120 +121,132 @@
             <figcaption>__cap__</figcaption>
         </figure>
          -->
-        <article id="">
-        <h3># ___</h3>
-        <p></p>
-        <br>
-        <br>
-        </article>
 
 
+        <region id="">
+            <article>
+                <h3># ___</h3>
+        
+                <p></p>
+                <br>
 
-        <article id="osiagniecia">
-        <h3># osiągnięcia</h3>
-        <p></p>
-
-        <table class="achievements">
-            <caption><b>__cap__</b></caption>
-            <tr>
-                <td class="achievements--name"></td>
-                <td></td>
-            </tr>
-            <tr class="achievement-gained">
-                <td></td>
-                <td></td>
-            </tr>
-            <tr>
-                <td></td>
-                <td></td>
-            </tr>
-        </table>
-        <br>
-
-        <br>
-        </article>
+                <br>
+            </article>
+        </region>
 
 
+        <region id="osiągnięcia">
+            <article>
+                <h3># osiągnięcia</h3>
+                <p></p>
+        
+                <table class="achievements">
+                    <caption><b>__cap__</b></caption>
+                    <tr>
+                        <td class="achievements--name"></td>
+                        <td></td>
+                    </tr>
+                    <tr class="achievement-gained">
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </table>
+                <br>
+        
+                <br>
+            </article>
+        </region>
 
-        <article id="soundtrack">
-        <h3># ścieżka dźwiękowa</h3>
 
-        <p></p>
-        <br>
+        <region id="ścieżka-dźwiękowa">
+            <article>
+                <h3># ścieżka dźwiękowa</h3>
+        
+                <p></p>
+                <br>
+        
+                <table class="soundtrack-ost">
+                    <caption>*️⃣ __cap__</caption>
+                    <tr>
+                        <td class="soundtrack-ost--name"></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.youtube.com/watch?v=">__name__</a></td>
+                        <td>00:00</td>
+                    </tr>
+                </table>
+        
+                <br>
+            </article>
+        </region>
 
-        <table class="soundtrack-ost">
-            <caption>*️⃣ __cap__</caption>
-            <tr>
-                <td class="soundtrack-ost--name"></td>
-                <td></td>
-            </tr>
-            <tr>
-                <td><a href="https://www.youtube.com/watch?v=">__name__</a></td>
-                <td>00:00</td>
-            </tr>
-        </table>
 
-        <br>
-        </article>
-
-
-
-        <article id="sprawa-dla-linusa">
-        <h3># sprawa dla linusa</h3>
-
-<pre class="listing-block">
+        <region id="sprawa-dla-linusa">
+            <article>
+                <h3># sprawa dla linusa</h3>
+        
+                <pre class="listing-block">
 <code>__GL_SHADER_DISK_CACHE_SKIP_CLEANUP=1 PROTON_USE_NTSYNC=1 PROTON_USE_WOW64=1 DXVK_FRAME_RATE=90 DXVK_ASYNC=1 WINE_FULLSCREEN_FSR_MODE=performance gamemoderun <span style="color:blue;">%command%</span> -dx12</code>
-</pre>
-        <ul>
-            <li>appid = <a href="https://www.protondb.com/app/__appid__">__appid__</a></li>
-            <li><a href="https://github.com/GloriousEggroll/proton-ge-custom/releases/tag/GE-Proton10-11">ge-proton10-11</a></li>
-        </ul>
-        <br>
-
-<pre class="listing-block">
+                </pre>
+                <ul>
+                    <li>appid = <a href="https://www.protondb.com/app/__appid__">__appid__</a></li>
+                    <li><a
+                            href="https://github.com/GloriousEggroll/proton-ge-custom/releases/tag/GE-Proton10-11">ge-proton10-11</a>
+                    </li>
+                </ul>
+                <br>
+        
+                <pre class="listing-block">
 <code># &lt;SteamLibrary&gt;/steamapps/compatdata/__appid__/pfx/ → %USERPROFILE%\AppData\LocalLow\</code>
 <code># &lt;SteamLibrary&gt;/steamapps/compatdata/__appid__/pfx/ → %LOCALAPPDATA%\SH3RE\Saved\SaveGames\</code>
 <code></code>
 <code><span style="color:teal;">7z</span> a -t7z ~/library/roboczy/__game__/"2508xx game.7z" \</code>
 <code>"/run/media/$USER/games/SteamLibrary/steamapps/compatdata/__appid__/pfx/drive_c/users/steamuser/AppData/"</code>
-</pre>
-        <ul>
-            <li><a href="https://www.pcgamingwiki.com/wiki/">__gamename__</a></li>
-        </ul>
-        <br>
-
-        <br>
-        </article>
-
-
-
-        <article id="modyfikacje">
-        <h3># modyfikacje</h3>
-
-        <ul>
-            <li><a href=""></a></li>
-            <li><a href=""></a></li>
-        </ul>
-        <br>
+        </pre>
+                <ul>
+                    <li><a href="https://www.pcgamingwiki.com/wiki/">__gamename__</a></li>
+                    <li>User File System – <a href="https://steamdb.info/app/1975280/ufs/">Save File Locations</a></li>
+                </ul>
+                <br>
         
-        <br>
-        </article>
+                <br>
+            </article>
+        </region>
 
 
-
-        <article id="watki-dyskusji">
-        <h3># wątki dyskusji</h3>
-
-        <ul>
-            <li><a href="#"></a></li>
-            <li><a href="#"></a></li>
-        </ul>
-        <br>
-
-        <br>
-        </article>
+        <region id="modyfikacje">
+            <article>
+                <h3># modyfikacje</h3>
         
+                <ul>
+                    <li><a href=""></a></li>
+                </ul>
+                <br>
+        
+                <br>
+            </article>
+        </region>
 
+
+        <region id="wątki-dyskusji">
+            <article>
+                <h3># wątki dyskusji</h3>
+        
+                <ul>
+                    <li><a href="#"></a></li>
+                </ul>
+                <br>
+        
+                <br>
+            </article>
+        </region>
+
+        
         <hr>
         <footer>___2025-xx-xx___</footer>
     </main>
