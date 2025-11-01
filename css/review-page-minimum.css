@@ -17,6 +17,7 @@ body {
     background-color: #111;
     overflow-x: hidden;
     padding-top: 20px;
+    font-family: "ubuntu", sans-serif;
 }
 .sidebar p {
     padding: 6px 8px 6px 16px;
@@ -42,6 +43,7 @@ body {
     margin-right: 10%;
     font-size: 14px;
     padding: 0px 10px;
+    font-family: "ubuntu", sans-serif;
 }
 @media screen and (max-height: 450px) {
     .sidebar {
@@ -54,11 +56,16 @@ body {
 
 
 pre.listing-block {
-    white-space: pre-wrap;
     font-family: "jetbrains mono", "calling code", "adwaita mono", monospace;
     background-color: ghostwhite;
     overflow-x: auto;
+    overflow-y: hidden;
+    white-space: pre;
     word-wrap: normal;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-right: 10px;
+    border: 1px solid olive;
 }
 pre.listing-block::before {
     counter-reset: listing;
@@ -67,13 +74,13 @@ pre.listing-block code {
     counter-increment: listing-counter;
 }
 pre.listing-block code::before {
-    content: counter(listing-counter) "  ";
+    content: counter(listing-counter) "   ";
     display: inline-block;
     width: 4em;
-    padding-left: auto;
+    padding-left: 0px;
     margin-left: auto;
     text-align: right;
     font-size: 12px;
-    color: black;
+    color: olive;
 }
 
