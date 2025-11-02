@@ -201,7 +201,7 @@ table.achievements td {
         width: 70%;
     }
 }
-@media only screen and (min-width: 1251px) and (max-width: 1900px) {
+@media only screen and (min-width: 1251px) and (max-width: 1450px) {
     .sidebar {
         width: 200px;
     }
@@ -210,6 +210,11 @@ table.achievements td {
     }
     .soundtrack-ost {
         width: 50%;
+    }
+}
+@media only screen and (min-width: 1451px) and (max-width: 1900px) {
+    .soundtrack-ost {
+        width: 45%;
     }
 }
 @media only screen and (min-width: 1901px) {
