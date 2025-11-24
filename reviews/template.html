@@ -4,63 +4,11 @@
 <head>
     <title>❌❌❌❌</title>
     <meta charset="utf-8"> 
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="../css/review-page-minimum.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="../css/review-page-colorful.css">
 
     <style>
-        /* global tags */
-        h1 {
-            font-size: 23px;
-        }
-        h2 {
-            font-size: 18px;
-        }
-        img {
-            width: 50vw;
-            height: auto;
-        }
-        figcaption {
-            font-size: 12px;
-            text-align: left;
-        }
-
-        /* achievements */
-        .achievements {
-            table-layout: fixed; 
-            width: 100%;
-            text-align: left;
-        }
-        .achievements--name {
-            width: 30%;
-            text-align: center;
-            vertical-align: middle;
-        }
-        table.achievements td {
-            padding-top: 1px;
-            padding-bottom: 1px;
-            border-bottom: 1px solid #ddd;
-        }
-        .achievement-gained {
-            background-color: #D1FFB8;
-        }
-
-        /* soundtrack */
-        .soundtrack-ost {
-            table-layout: fixed;
-            width: 60%;
-            padding-left: 20%;
-        }
-        .soundtrack-ost--name {
-            width: 80%;
-        }
-        .soundtrack-ost td:nth-child(2) {
-            text-align: end;
-        }
-        .soundtrack-ost caption {
-            text-align: left;
-            padding-left: 30%;
-        }
-
+        /* css właściwy wyłącznie dla tej strony */
     </style>
 </head>
 
@@ -70,11 +18,6 @@
         <p>__wydawca__</p>
         <p>__data__</p>
         <p>__rozmiar__</p>
-        <p>__silnik__</p>
-        <br>
-        <p>
-            <a href="./table-of-content.html" target="_self">» spis treści</a><br>
-        </p>
     </section>
 
     <main class="main">
@@ -90,12 +33,12 @@
         <h3># informacje</h3>
 
         <ul>
-            <li>steamcommunity.com: <a href="https://steamcommunity.com/app/__appid__/discussions/">dyskusje</a></li>
-            <li>gry-online.pl: <a href="https://www.gry-online.pl/news-gra.asp?ID=">wiadomości</a></li>
-            <li>@__profileid__: <a href="https://www.youtube.com/playlist?list=">__name__</a></li>
+            <li><a href="https://steamcommunity.com/app/__appid__/discussions/">steam dyskusje</a></li>
+            <li><a href="https://www.gry-online.pl/news-gra.asp?ID=">wiadomości</a></li>
+            <li><a href="https://www.youtube.com/">__name__</a></li>
             <br>
-            <li>@__profileid__: <a href="https://www.youtube.com/watch?v=">__zwiastun__</a></li>
-            <li>steam: <a href="https://video.steamstatic.com/store_trailers/__appid__/movie_max_vp9.webm">zwiastun 1</a></li>
+            <li><a href="https://www.youtube.com/watch?v=">__zwiastun__</a></li>
+            <li><a href="https://video.steamstatic.com/store_trailers/__appid__/movie_max_vp9.webm">zwiastun??</a></li>
             <br>
         </ul>
         <br>
@@ -106,28 +49,44 @@
 
 
         <section id="table-of-content">
+        <div class="region-blue">
         <h3># spis treści</h3>
         <ul>
             <li><a href="#" target="_self">__xxx__</a></li>
-            <li><a href="#" target="_self">__xxx__</a></li>
-            <li><a href="#" target="_self">__xxx__</a></li>
-            <li><a href="#" target="_self">__xxx__</a></li>
             <li><a href="#osiągnięcia" target="_self">osiągnięcia</a></li>
             <li><a href="#ścieżka-dźwiękowa" target="_self">ścieżka dźwiękowa</a></li>
-            <li><a href="#sprawa-dla-linusa" target="_self">sprawa dla linusa</a></li>
-            <li><a href="#modyfikacje" target="_self">modyfikacje</a></li>
+            <li><a href="#linux" target="_self">sprawa dla linusa</a></li>
             <li><a href="#wątki-dyskusji" target="_self">wątki dyskusji</a></li>
         </ul>
         <br>
+        </div>
         </section>
 
 
         <!-- 
-        <figure>
-            <img src='../screenshots/' alt='' />
+        <a href="../screenshots/" target="_blank">
+        <figure class="fighover">
+            <img src='../screenshots/' alt=''/>
             <figcaption>__cap__</figcaption>
         </figure>
-         -->
+        </a>
+
+        <figure class="fighover">
+            <img src='../screenshots/' alt=''/>
+            <figcaption>__cap__</figcaption>
+        </figure>
+
+        <article class="region-grey">
+        <div class="region-white">
+        -->
+
+
+        <a href="../screenshots/" target="_blank">
+        <figure class="fighover">
+            <img src='../screenshots/' alt='xxxx'/>
+            <figcaption>__cap__</figcaption>
+        </figure>
+        </a>
 
 
         <region id="">
@@ -153,13 +112,9 @@
                         <td class="achievements--name"></td>
                         <td></td>
                     </tr>
-                    <tr class="achievement-gained">
-                        <td></td>
-                        <td></td>
-                    </tr>
                     <tr>
-                        <td></td>
-                        <td></td>
+                        <td>Aa</td>
+                        <td>Bb</td>
                     </tr>
                 </table>
                 <br>
@@ -177,7 +132,7 @@
                 <br>
         
                 <table class="soundtrack-ost">
-                    <caption>*️⃣ __cap__</caption>
+                    <caption>__cap__</caption>
                     <tr>
                         <td class="soundtrack-ost--name"></td>
                         <td></td>
@@ -193,49 +148,33 @@
         </region>
 
 
-        <region id="sprawa-dla-linusa">
+        <region id="linux">
             <article>
-                <h3># sprawa dla linusa</h3>
+            <h3># linux</h3>
         
-                <pre class="listing-block">
+<pre class="listing-block">
 <code>__GL_SHADER_DISK_CACHE_SKIP_CLEANUP=1 PROTON_USE_NTSYNC=1 PROTON_USE_WOW64=1 DXVK_FRAME_RATE=90 DXVK_ASYNC=1 WINE_FULLSCREEN_FSR_MODE=performance gamemoderun <span style="color:blue;">%command%</span> -dx12</code>
-                </pre>
-                <ul>
-                    <li>appid = <a href="https://www.protondb.com/app/__appid__">__appid__</a></li>
-                    <li><a
-                            href="https://github.com/GloriousEggroll/proton-ge-custom/releases/tag/GE-Proton10-11">ge-proton10-11</a>
-                    </li>
-                </ul>
-                <br>
+</pre>
+            <ul>
+                <li><a href="https://www.protondb.com/app/__appid__">appid = __appid__</a></li>
+                <li><a
+                        href="https://github.com/GloriousEggroll/proton-ge-custom/releases/tag/GE-Proton10-25">ge-proton10-25</a>
+                </li>
+            </ul>
+            <br>
         
-                <pre class="listing-block">
+<pre class="listing-block">
 <code># &lt;SteamLibrary&gt;/steamapps/compatdata/__appid__/pfx/ → %USERPROFILE%\AppData\LocalLow\</code>
 <code># &lt;SteamLibrary&gt;/steamapps/compatdata/__appid__/pfx/ → %LOCALAPPDATA%\SH3RE\Saved\SaveGames\</code>
-<code></code>
-<code><span style="color:teal;">7z</span> a -t7z ~/library/roboczy/__game__/"2508xx game.7z" \</code>
-<code>"/run/media/$USER/games/SteamLibrary/steamapps/compatdata/__appid__/pfx/drive_c/users/steamuser/AppData/"</code>
-        </pre>
-                <ul>
-                    <li><a href="https://www.pcgamingwiki.com/wiki/">__gamename__</a></li>
-                    <li>User File System – <a href="https://steamdb.info/app/1975280/ufs/">Save File Locations</a></li>
-                </ul>
-                <br>
-        
-                <br>
-            </article>
-        </region>
-
-
-        <region id="modyfikacje">
-            <article>
-                <h3># modyfikacje</h3>
-        
-                <ul>
-                    <li><a href=""></a></li>
-                </ul>
-                <br>
-        
-                <br>
+<code><span style="color:teal;">7z</span> a -t7z ~/library/roboczy/"25mmxx game.7z" "/run/media/$USER/games/SteamLibrary/steamapps/compatdata/__appid__/pfx/drive_c/users/steamuser/AppData/"</code>
+</pre>
+            <ul>
+                <li><a href="https://steamdb.info/app/1975280/ufs/">save file locations</a></li>
+                <li><a href="https://www.pcgamingwiki.com/wiki/">__pcgamingwiki__</a></li>
+            </ul>
+            <br>
+    
+            <br>
             </article>
         </region>
 

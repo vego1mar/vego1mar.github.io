@@ -70,7 +70,6 @@ a {
 
 /* listing – kod źródłowy */
 pre.listing-block {
-    font-family: "jetbrains mono", "calling code", "adwaita mono", "ubuntu mono", monospace;
     background-color: ghostwhite;
     overflow-x: auto;
     overflow-y: hidden;
@@ -86,6 +85,8 @@ pre.listing-block::before {
 }
 pre.listing-block code {
     counter-increment: listing-counter;
+    font-family: "calling code", "ubuntu mono", monospace;
+    font-size: 14px;
 }
 pre.listing-block code::before {
     content: counter(listing-counter) "   ";
@@ -175,6 +176,10 @@ table.achievements td {
 }
 .soundtrack-ost tr:nth-child(even) {
     background-color: ghostwhite;
+}
+.soundtrack-ost caption {
+    font-weight: bold;
+    text-align: left;
 }
 
 
