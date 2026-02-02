@@ -1,0 +1,2351 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <title>helping the hotties</title>
+    <meta charset="utf-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <style>
+        @font-face {
+            font-family: "ubuntu", sans-serif;
+            src: url("../fonts/Ubuntu-Regular.ttf");
+        }
+        body {
+            font-family: "ubuntu", sans-serif;
+        }
+        h1 {
+            font-size: 25px;
+        }
+        h2 {
+            font-size: 20px;
+        }
+
+        .main-content {
+            margin-left: 10%;
+            margin-right: 10%;
+            font-size: 14px;
+            padding: 0px 10px;
+            font-family: "ubuntu", sans-serif;
+        }
+
+        .region-grey {
+            background-color: whitesmoke;
+        }
+        .region-blue {
+            background-color: aliceblue;
+        }
+        .region-white {
+            background-color: white;
+        }
+        #table-of-content a {
+            text-decoration: none;
+            color: blue;
+        }
+        a {
+            text-decoration: none;
+            color: teal;
+        }
+        p {
+            line-height: 1.4;
+        }
+
+        .code-line {
+            font-family: "jetbrains mono", "ubuntu mono", monospace;
+            background-color: gainsboro;
+            border: 0px solid olive;
+        }
+        pre.listing-block {
+            background-color: ghostwhite;
+            overflow-x: auto;
+            overflow-y: hidden;
+            white-space: pre;
+            word-wrap: normal;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            padding-right: 10px;
+            border: 1px solid olive;
+        }
+        pre.listing-block::before {
+            counter-reset: listing;
+        }
+        pre.listing-block code {
+            counter-increment: listing-counter;
+            font-family: "calling code", "ubuntu mono", monospace;
+            font-size: 14px;
+        }
+        pre.listing-block code::before {
+            content: counter(listing-counter) "   ";
+            display: inline-block;
+            width: 4em;
+            padding-left: 0px;
+            margin-left: auto;
+            text-align: right;
+            font-size: 12px;
+            color: olive;
+        }
+        
+        .images-horizontal {
+            table-layout: fixed; 
+            display: block;
+            width: 100%;
+            overflow-x: scroll; 
+            overflow-y: hidden;
+            scroll-snap-align: center;
+        }
+        .images-horizontal a {
+            text-decoration: none;
+            color: black;
+        } 
+        .images-horizontal figcaption {
+            padding-top: 5px;
+        }
+
+        img {
+            width: 50vw;
+            height: auto;
+        }
+        figcaption {
+            font-size: 12px;
+            text-align: left;
+        }
+        .fighover figure {
+            display: inline-block;
+            border: 1px;
+            margin: 10px;
+        }
+        .fighover figure, .fighover img {
+            vertical-align: top;
+            width: 29vw;
+        }
+        .fighover figure, .fighover figcaption {
+            border: 1px;
+            text-align: center;
+        }
+
+        .achievements {
+            table-layout: fixed; 
+            width: 90%;
+            text-align: left;
+        }
+        .achievements--name {
+            text-align: center;
+            vertical-align: middle;
+        }
+        .achievements caption {
+            text-align: left;
+            padding-left: 1px;
+            font-weight: bold;
+        }
+        table.achievements td {
+            padding-top: 1px;
+            padding-bottom: 1px;
+            border-bottom: 1px solid rgba(128, 128, 0, 0.2);
+        }
+        .achievements td:nth-child(1) {
+            padding-left: 11px;
+            width: 70%;
+        }
+        .achievements td:nth-child(2) {
+            padding-left: 11px;
+            width: 100%;
+        }
+
+        @media only screen and (min-width: 1px) and (max-width: 920px) {
+            .soundtrack-ost {
+                width: 100%;
+            }
+        }
+        @media only screen and (min-width: 921px) and (max-width: 1250px) {
+            .soundtrack-ost {
+                width: 70%;
+            }
+        }
+        @media only screen and (min-width: 1251px) and (max-width: 1450px) {
+            .soundtrack-ost {
+                width: 50%;
+            }
+        }
+        @media only screen and (min-width: 1451px) and (max-width: 1900px) {
+            .soundtrack-ost {
+                width: 45%;
+            }
+        }
+        @media only screen and (min-width: 1901px) {
+            .soundtrack-ost {
+                width: 30%;
+            }
+        }
+
+        details {
+            border: 1px solid olive;
+            border-radius: 8px;
+            box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.12);
+            margin-bottom: 8px;
+        }
+        details[open] summary {
+            margin-bottom: 10px;
+        }
+        summary {
+            cursor: pointer;
+            transition: all 150ms ease-in-out;
+            padding: 12px;
+        }
+        .accordion pre, .accordion p, .accordion table {
+            margin-left: 2%;
+            margin-right: 2%;
+        }
+
+        article div p, article div details, article details {
+            margin-left: 1%;
+            margin-right: 1%;
+        }
+        details figure {
+            display: block;
+            text-align: center;
+        }
+
+        .dictionary {
+            table-layout: fixed; 
+            width: 90%;
+            text-align: left;
+        }
+        .dictionary--term {
+            width: 30%;
+            text-align: center;
+            vertical-align: middle;
+        }
+        table.dictionary td {
+            padding-top: 1px;
+            padding-bottom: 2px;
+            border-bottom: 1px solid rgba(128, 128, 0, 0.2);
+        }
+    </style>
+</head>
+
+<body>
+    <main class="main-content">
+        <section id="lead-text">
+        <h2>helping the hotties 1.0.4.10.8 (2023)</h2>
+        <p>zadziwiająco dobre jak na wybraną konwencję, aczkolwiek nieco przydługie; niemniej, gra zdradza w swych szczegółach sensowny zamysł na całość; postaci są całkiem ładne, przy czym tła często bywają rozmyte; pojedyncza minigra i swobodna eksploracja są dość męczące w swej powtarzalności; to samo dotyczy języka mieszającego mowę potoczną ze sformułowaniami typowymi dla literatury; istnieje tu parę mechanik, każda jest klikalna aż do przesady – jest tego zbyt wiele by to nie nużyło; gra oferuje jakość nieco powyżej przeciętnej;</p>
+        <br>
+        </section>
+
+
+        <region class="informacje">
+        <article>
+        <h3># informacje</h3>
+
+        <ul>
+            <li><a href="https://steamcommunity.com/app/1590730/discussions/">steam discussions</a></li>
+            <li><a href="https://www.gog.com/forum/helping_the_hotties#1758272192">community discussions</a></li>
+            <li><a href="https://video.steamstatic.com/store_trailers/256889709/movie_max_vp9.webm">helping the hotties</a></li>
+            <li><a href="https://video.steamstatic.com/store_trailers/256962331/movie_max_vp9.webm">helping the hotties explicit trailer</a></li>
+            <br>
+            <li><a href="http://xred.games/">xred.games</a></li>
+            <li><a href="http://store.steampowered.com/app/1590730/">steam</a></li>
+            <li><a href="https://www.patreon.com/xred">patreon</a></li>
+            <li><a href="https://discord.gg/PdAHVs2cfW">discord</a></li>
+            <li><a href="https://twitter.com/xRedGamess">twitter</a></li>
+            <li><a href="https://www.youtube.com/channel/UCYrI07llfkyh9pS3DxHRZTQ/videos">@xredgames69</a></li>
+            <li><a href="https://www.twitch.tv/realxredgames">twitch</a></li>
+            <li><a href="https://subscribestar.adult/xred-games">subscribe star</a></li>
+            <li><a href="https://xred.itch.io/">itch.io</a></li>
+            <br>
+        </ul>
+        <br>
+
+        </article>
+        <br>
+        </region>
+
+
+        <section id="table-of-content">
+        <div class="region-blue">
+        <h3># spis treści</h3>
+        <ul>
+            <li><a href="#postaci" target="_self">postaci</a></li>
+            <li><a href="#mechaniki" target="_self">mechaniki</a></li>
+            <li><a href="#wizualia" target="_self">wizualia</a></li>
+            <li><a href="#uwagi-ogólne" target="_self">uwagi ogólne</a></li>
+            <li><a href="#słowniczek" target="_self">słowniczek</a></li>
+            <li><a href="#osiągnięcia" target="_self">osiągnięcia</a></li>
+            <li><a href="#linux" target="_self">linux</a></li>
+        </ul>
+        <br>
+        </div>
+        </section>
+
+
+        
+        <region id="postaci">
+        <article>
+            <h3># postaci</h3>
+
+            <details class="accordion"> <!-- główny bohater -->
+                <summary>główny bohater</summary>
+                <p>główny bohater – z wielkim kutasem i myślący często o seksie;</p>
+                <figure>
+                    <source srcset="../screenshots/helping-the-hotties/051-mc.png" type="image/png">
+                    <img loading="lazy" srcset="../screenshots/helping-the-hotties/051-mc.png" alt="051-mc.png">
+                </figure>
+                <br>
+            </details>
+
+            <details class="accordion"> <!-- jane -->
+                <summary>jane</summary>
+                <p>jane – dziewczyna głównego bohatera;</p>
+                <figure>
+                    <source srcset="../screenshots/helping-the-hotties/019-jane.png" type="image/png">
+                    <img loading="lazy" srcset="../screenshots/helping-the-hotties/019-jane.png" alt="019-jane.png">
+                </figure>
+                <br>
+            </details>
+
+            <details class="accordion"> <!-- eve daniels -->
+                <summary>eve</summary>
+                <p>eve daniels – psycholożka w obozie dla trudnej młodzieży;</p>
+                <figure>
+                    <source srcset="../screenshots/helping-the-hotties/062-eve.png" type="image/png">
+                    <img loading="lazy" srcset="../screenshots/helping-the-hotties/062-eve.png" alt="062-eve.png">
+                </figure>
+                <br>
+            </details>
+
+            <details class="accordion"> <!-- emily -->
+                <summary>emily</summary>
+                <p>emily – nieco rozpuszczone acz pocieszne dziewczę znane głównemu bohaterowi od dzieciństwa;</p>
+                <figure>
+                    <source srcset="../screenshots/helping-the-hotties/199-emily.png" type="image/png">
+                    <img loading="lazy" srcset="../screenshots/helping-the-hotties/199-emily.png" alt="199-emily.png">
+                </figure>
+                <figure>
+                    <source srcset="../screenshots/helping-the-hotties/284-emily.png" type="image/png">
+                    <img loading="lazy" srcset="../screenshots/helping-the-hotties/284-emily.png" alt="284-emily.png">
+                </figure>
+                <br>
+            </details>
+
+            <details class="accordion"> <!-- kiara -->
+                <summary>kiara</summary>
+                <p>kiara – charakterologiczny kontrapunkt dla emily;</p>
+                <figure>
+                    <source srcset="../screenshots/helping-the-hotties/138-kiara.png" type="image/png">
+                    <img loading="lazy" srcset="../screenshots/helping-the-hotties/138-kiara.png" alt="138-kiara.png">
+                </figure>
+                <br>
+            </details>
+
+            <details class="accordion"> <!-- naomi -->
+                <summary>naomi</summary>
+                <p>naomi – z majętnego domu i z poczuciem wyższości;</p>
+                <figure>
+                    <source srcset="../screenshots/helping-the-hotties/286-naomi.png" type="image/png">
+                    <img loading="lazy" srcset="../screenshots/helping-the-hotties/286-naomi.png" alt="286-naomi.png">
+                </figure>
+                <br>
+            </details>
+
+            <details class="accordion"> <!-- violet moore -->
+                <summary>violet</summary>
+                <p>violet moore – trenowała sport wyczynowy;</p>
+                <figure>
+                    <source srcset="../screenshots/helping-the-hotties/159-violet.png" type="image/png">
+                    <img loading="lazy" srcset="../screenshots/helping-the-hotties/159-violet.png" alt="159-violet.png">
+                </figure>
+                <br>
+            </details>
+
+            <details class="accordion"> <!-- belle taylor -->
+                <summary>belle</summary>
+                <p>belle taylor – doskwiera jej hipererotyzm albo po prostu nimfomania;</p>
+                <figure>
+                    <source srcset="../screenshots/helping-the-hotties/150-belle.png" type="image/png">
+                    <img loading="lazy" srcset="../screenshots/helping-the-hotties/150-belle.png" alt="150-belle.png">
+                </figure>
+                <figure>
+                    <source srcset="../screenshots/helping-the-hotties/267-belle.png" type="image/png">
+                    <img loading="lazy" srcset="../screenshots/helping-the-hotties/267-belle.png" alt="267-belle.png">
+                </figure>
+                <br>
+            </details>
+
+            <details class="accordion"> <!-- stacy jones -->
+                <summary>stacy</summary>
+                <p>stacy jones – wyznawczyni religii przebijającego płomienia (puncturing flame);</p>
+                <figure>
+                    <source srcset="../screenshots/helping-the-hotties/120-stacy.png" type="image/png">
+                    <img loading="lazy" srcset="../screenshots/helping-the-hotties/120-stacy.png" alt="120-stacy.png">
+                </figure>
+                <figure>
+                    <source srcset="../screenshots/helping-the-hotties/121-stacy.png" type="image/png">
+                    <img loading="lazy" srcset="../screenshots/helping-the-hotties/121-stacy.png" alt="121-stacy.png">
+                </figure>
+                <br>
+            </details>
+
+            <br>
+        </article>
+        </region>
+
+
+        <region id="mechaniki">
+        <article class="region-grey">
+            <h3># mechaniki</h3>
+
+            <div> <!-- alternatywne kadry -->
+            <p>gra oferuje alternatywne kadrowanie (różne kąty kamery), również podczas animacji;</p>
+            <details class="accordion"> 
+                <summary>alternatywne kadry</summary>
+                <figure>
+                    <source srcset="../screenshots/helping-the-hotties/117-emily.png" type="image/png">
+                    <img loading="lazy" srcset="../screenshots/helping-the-hotties/117-emily.png" alt="117-emily.png">
+                </figure>
+                <figure>
+                    <source srcset="../screenshots/helping-the-hotties/118-emily.png" type="image/png">
+                    <img loading="lazy" srcset="../screenshots/helping-the-hotties/118-emily.png" alt="118-emily.png">
+                </figure>
+                <figure>
+                    <source srcset="../screenshots/helping-the-hotties/119-emily.png" type="image/png">
+                    <img loading="lazy" srcset="../screenshots/helping-the-hotties/119-emily.png" alt="119-emily.png">
+                </figure>
+                <figure>
+                    <source srcset="../screenshots/helping-the-hotties/4-emily.png" type="image/png">
+                    <img loading="lazy" srcset="../screenshots/helping-the-hotties/4-emily.png" alt="4-emily.png">
+                </figure>
+                <figure>
+                    <source srcset="../screenshots/helping-the-hotties/5-emily.png" type="image/png">
+                    <img loading="lazy" srcset="../screenshots/helping-the-hotties/5-emily.png" alt="5-emily.png">
+                </figure>
+                <figure>
+                    <source srcset="../screenshots/helping-the-hotties/6-emily.png" type="image/png">
+                    <img loading="lazy" srcset="../screenshots/helping-the-hotties/6-emily.png" alt="6-emily.png">
+                </figure>
+                <figure>
+                    <source srcset="../screenshots/helping-the-hotties/7-emily.png" type="image/png">
+                    <img loading="lazy" srcset="../screenshots/helping-the-hotties/7-emily.png" alt="7-emily.png">
+                </figure>
+                <br>
+            </details>
+            <br>
+            </div>
+
+            <div> <!-- x-ray -->
+            <p>uzupełniane jest to prześwietlaniem (x-ray) – nagą wersją sceny;</p>
+            <details class="accordion"> 
+                <summary>halucynacyjne fantazje</summary>
+                <figure>
+                    <source srcset="../screenshots/helping-the-hotties/054-emily-a.png" type="image/png">
+                    <img loading="lazy" srcset="../screenshots/helping-the-hotties/054-emily-a.png" alt="054-emily-a.png">
+                </figure>
+                <figure>
+                    <source srcset="../screenshots/helping-the-hotties/055-emily-b.png" type="image/png">
+                    <img loading="lazy" srcset="../screenshots/helping-the-hotties/055-emily-b.png" alt="055-emily-b.png">
+                </figure>
+                <figure>
+                    <source srcset="../screenshots/helping-the-hotties/095-belle-a.png" type="image/png">
+                    <img loading="lazy" srcset="../screenshots/helping-the-hotties/095-belle-a.png" alt="095-belle-a.png">
+                </figure>
+                <figure>
+                    <source srcset="../screenshots/helping-the-hotties/096-belle-b.png" type="image/png">
+                    <img loading="lazy" srcset="../screenshots/helping-the-hotties/096-belle-b.png" alt="096-belle-b.png">
+                </figure>
+                <figure>
+                    <source srcset="../screenshots/helping-the-hotties/156-naomi-a.png" type="image/png">
+                    <img loading="lazy" srcset="../screenshots/helping-the-hotties/156-naomi-a.png" alt="156-naomi-a.png">
+                </figure>
+                <figure>
+                    <source srcset="../screenshots/helping-the-hotties/157-naomi-b.png" type="image/png">
+                    <img loading="lazy" srcset="../screenshots/helping-the-hotties/157-naomi-b.png" alt="157-naomi-b.png">
+                </figure>
+                <br>
+            </details>
+            <br>
+            </div>
+
+            <div> <!-- sceny seksu -->
+            <p>sceny seksu wykorzystują tę samą stylistykę klikalnych opcji, przy czym można dodatkowo sparować z grą urządzenie erotyczne lovense;</p>
+            <br>
+            </div>
+
+            <div> <!-- minigra -->
+            <p>co jakiś czas pojawia się możliwość obcowania z minigrą z wężykiem, która jest frustrująco trudna przez swe wykrywanie kolizji i limit czasowy;</p>
+            <details class="accordion"> 
+                <summary>minigra</summary>
+                <figure>
+                    <source srcset="../screenshots/helping-the-hotties/034-minigame.png" type="image/png">
+                    <img loading="lazy" srcset="../screenshots/helping-the-hotties/034-minigame.png" alt="034-minigame.png">
+                </figure>
+                <br>
+            </details>
+            <br>
+            </div>
+
+            <div> <!-- free roam -->
+            <p>w ramach swobodnej eksploracji (free roam) możemy mierzyć się ze zbieractwem godnym kleptomana, albowiem majtek do znalezienia jest całe multum; pokazuje się nam nawet mapę, lecz jest ona absolutnie zbędna;</p>
+            <details class="accordion"> 
+                <summary>free roam</summary>
+                <figure>
+                    <source srcset="../screenshots/helping-the-hotties/037-panties.png" type="image/png">
+                    <img loading="lazy" srcset="../screenshots/helping-the-hotties/037-panties.png" alt="037-panties.png">
+                </figure>
+                <figure>
+                    <source srcset="../screenshots/helping-the-hotties/300-photo-collection.png" type="image/png">
+                    <img loading="lazy" srcset="../screenshots/helping-the-hotties/300-photo-collection.png" alt="300-photo-collection.png">
+                </figure>
+                <br>
+            </details>
+            <ul>
+                <li><a href="https://steamcommunity.com/app/1590730/discussions/0/3463848715764154067/">collectibles</a></li>
+                <li><a href="https://steamcommunity.com/app/1590730/discussions/0/4514381284533294168/">unlocking collectibles, rewards, my collections</a></li>
+                <li><a href="https://kosgames.com/helping-the-hotties-walkthrough-achievement-guide-v1-0-updated-44665/">walkthrough & achievement guide</a></li>
+                <li><a href="https://www.scribd.com/document/747034132/Helping-the-Hotties-Walkthrough-Guide-GameGill">walkthrough & guide</a></li>
+            </ul>
+            <br>
+            </div>
+
+            <div> <!-- wydłużanie rozgrywki -->
+            <p>by przedłużyć spędzony czas wprowadzono misje nastawione na wielokrotne przechodzenie gry; jest to powiązane z dziennikiem, w którym możemy przeczytać podsumowanie fabuły do tej pory czy biogramy postaci, jednakowoż tekst jest zbyt mały by było to czytelne, a czcionką nie można manipulować; wybory mają znaczenie, a różnorodnych ścieżek jest całkiem sporo, choć ostatecznie finał jest zawsze taki sam;</p>
+            <details class="accordion"> 
+                <summary>wydłużanie rozgrywki</summary>
+                <figure>
+                    <source srcset="../screenshots/helping-the-hotties/092-missions.png" type="image/png">
+                    <img loading="lazy" srcset="../screenshots/helping-the-hotties/092-missions.png" alt="092-missions.png">
+                </figure>
+                <figure>
+                    <source srcset="../screenshots/helping-the-hotties/248-summary.png" type="image/png">
+                    <img loading="lazy" srcset="../screenshots/helping-the-hotties/248-summary.png" alt="248-summary.png">
+                </figure>
+                <br>
+            </details>
+            <br>
+            </div>
+
+            <div> <!-- dlc -->
+            <p>nie zabrakło i podpowiedzi; w szczególności tych oferowanych jako dlc;</p>
+            <details class="accordion"> 
+                <summary>dlc</summary>
+                <figure>
+                    <source srcset="../screenshots/helping-the-hotties/256-walkthrough.png" type="image/png">
+                    <img loading="lazy" srcset="../screenshots/helping-the-hotties/256-walkthrough.png" alt="256-walkthrough.png">
+                </figure>
+                <br>
+            </details>
+            <ul>
+                <li><a href="https://www.gog.com/en/game/helping_the_hotties_official_walkthrough">official walkthrough</a></li>
+            </ul>
+            <br>
+            </div>
+
+            <br>
+        </article>
+        </region>
+
+
+        <region id="wizualia">
+        <article>
+            <h3># wizualia</h3>
+
+            <div> <!-- animacje -->
+            <p>animacje są zasadniczo poprawne, acz w niektórych przypadkach wyraźnie widać migotanie i niedociągnięcia zapętlania;</p>
+            <p>zdarza się iż dziewczęta mrugają oczętami;</p>
+            <br>
+            </div>
+
+            <div> <!-- cycki -->
+            <p>kamerzysta ma niejako natręctwo by podkreślać cycki, które wyglądają nawet przyjemnie;</p>
+            <details class="accordion"> 
+                <summary>cycki</summary>
+                <figure>
+                    <source srcset="../screenshots/helping-the-hotties/056-emily.png" type="image/png">
+                    <img loading="lazy" srcset="../screenshots/helping-the-hotties/056-emily.png" alt="056-emily.png">
+                </figure>
+                <figure>
+                    <source srcset="../screenshots/helping-the-hotties/204-emily-kiara.png" type="image/png">
+                    <img loading="lazy" srcset="../screenshots/helping-the-hotties/204-emily-kiara.png" alt="204-emily-kiara.png">
+                </figure>
+                <figure>
+                    <source srcset="../screenshots/helping-the-hotties/135-belle.png" type="image/png">
+                    <img loading="lazy" srcset="../screenshots/helping-the-hotties/135-belle.png" alt="135-belle.png">
+                </figure>
+                <br>
+            </details>
+            <br>
+            </div>
+
+            <div> <!-- gołe pupy -->
+            <p>oczywiście, i gołej dupy nie zabrakło, tyle że chyba ma to być nieco bardziej artystyczne; być może jest tego nieco zbyt wiele;</p>
+            <details class="accordion"> 
+                <summary>pupy</summary>
+                <figure>
+                    <source srcset="../screenshots/helping-the-hotties/083-belle.png" type="image/png">
+                    <img loading="lazy" srcset="../screenshots/helping-the-hotties/083-belle.png" alt="083-belle.png">
+                </figure>
+                <figure>
+                    <source srcset="../screenshots/helping-the-hotties/166-violet.png" type="image/png">
+                    <img loading="lazy" srcset="../screenshots/helping-the-hotties/166-violet.png" alt="166-violet.png">
+                </figure>
+                <figure>
+                    <source srcset="../screenshots/helping-the-hotties/217-stacy-emily.png" type="image/png">
+                    <img loading="lazy" srcset="../screenshots/helping-the-hotties/217-stacy-emily.png" alt="217-stacy-emily.png">
+                </figure>
+                <figure>
+                    <source srcset="../screenshots/helping-the-hotties/228-emily.png" type="image/png">
+                    <img loading="lazy" srcset="../screenshots/helping-the-hotties/228-emily.png" alt="228-emily.png">
+                </figure>
+                <br>
+            </details>
+            <br>
+            </div>
+
+            <div> <!-- foodporn -->
+            <p>jest i foodporn, tyle że wygląda raczej kanciasto;</p>
+            <details class="accordion"> 
+                <summary>foodporn</summary>
+                <figure>
+                    <source srcset="../screenshots/helping-the-hotties/189-foodporn.png" type="image/png">
+                    <img loading="lazy" srcset="../screenshots/helping-the-hotties/189-foodporn.png" alt="189-foodporn.png">
+                </figure>
+                <figure>
+                    <source srcset="../screenshots/helping-the-hotties/227-foodporn.png" type="image/png">
+                    <img loading="lazy" srcset="../screenshots/helping-the-hotties/227-foodporn.png" alt="227-foodporn.png">
+                </figure>
+                <br>
+            </details>
+            <br>
+            </div>
+
+            <div> <!-- smartfony -->
+            <p>być może również oczekuję zbyt wiele, niemniej każdy smartfon wygląda identycznie, a na zegarze w pokoju jest zawsze 12:00 bez względu na porę dnia;</p>
+            <br>
+            </div>
+
+            <br>
+        </article>
+        </region>
+
+
+        <region id="uwagi-ogólne">
+        <article class="region-grey">
+            <h3># uwagi ogólne</h3>
+
+            <div> <!-- dubbing -->
+            <p>wszystkie dziewczęta są w pełni zdubbingowane; to nie dotyczy głównej postaci, niejako klasycznie; jednak, zdarzało mi się iż po wczytywaniu sejwa nagle głosów brakowało; poza tym, zdarzają się różne poziomy głośności i urywane kwestie – głos bywa przyciszony, albo prezentuje inną jakość nagrania, albo nie ma głosu do pojedynczego zdania; dodatkowo występuje drobna niezgodność tekstu z wypowiadanymi słowami; tudzież, wydaje się że głos naomi jest również głosem eve;</p>
+            <p>ambient jakiś występuje, a nawet dają się słyszeć generyczne efekty tła, jednak próżno szukać informacji o zestawie użytych utworów;</p>
+            <br>
+            </div>
+
+            <div> <!-- różne -->
+            <p>gra wymusza wpisanie imienia i jednocześnie może być ono puste;</p>
+            <p>zdarzają się niespójności; niektóre informacje pojawiają się nawet jeżeli ich nie zdobyliśmy, nie wybraliśmy opcji które do nich prowadzą; w szczególności dotyczy to sesji, gdzie miały być cztery, a kończy się na trzech;</p>
+            <p>użyty język zawiera sporo kolokwializmów i sformułowań potocznych odnośnie postaci, przemieszanych ze zwrotami z literatury pięknej odnośnie narratora;</p>
+            <p>„nagrody gog” w menu pokazują wszystkie sceny i możliwości, pozwalając od razu na ich ogranie, nie trzeba ich odblokowywać;</p>
+            <p>kolory interfejsu (pod klawiszem h) zmieniają się w zależności od rozmówcy, lecz są zbyt mało kontrastujące, bo czasem tekst zlewa się z tłem; dodatkowo zdarza się iż ów tekst jest przykrywany przez tenże interfejs, bo jest go zbyt wiele;</p>
+            <br>
+            </div>
+
+            <div> <!-- gog -->
+            <p>steam, w porównaniu z gog, oferuje dwa dodatkowe dlc (storytime, wallpaper pack); nie jest jasnym czy wersja gog już je zawiera czy też nie;</p>
+            <ul>
+                <li><a href="https://www.gog.com/pl/game/helping_the_hotties_demo">demo</a></li>
+                <li><a href="https://www.gog.com/en/game/helping_the_hotties_official_walkthrough">official walkthrough</a></li>
+                <li><a href="https://www.gog.com/en/game/helping_the_hotties_4k_hifi_upgrade">4k hifi upgrade</a></li>
+                <li><a href="https://store.steampowered.com/app/3276160/Helping_the_Hotties_Storytime/">storytime</a></li>
+                <li><a href="https://store.steampowered.com/app/3858680/Helping_the_Hotties__Wallpaper_Pack/">wallpaper pack</a></li>
+            </ul>
+            <br>
+            </div>
+
+            <br>
+        </article>
+        </region>
+
+
+        <region id="słowniczek">
+        <article>
+            <h3># słowniczek</h3>
+
+            <div> <!-- pojęcia -->
+            <details class="accordion"> 
+                <summary>pojęcia</summary>
+                <table class="dictionary">
+                    <colgroup>
+                        <col span="1" class="dictionary--term">
+                        <col span="1">
+                    </colgroup>
+                    <tr>
+                        <td><a href="https://pl.wikipedia.org/wiki/Brie_(ser)">brie</a></td>
+                        <td>ser brie</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://akademiasmaku.pl/przepis/acai-bowl,4921">acai bowl</a></td>
+                        <td>brazylijski koktajl</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://pl.wikipedia.org/wiki/Mieczyk">gladiolus</a></td>
+                        <td>mieczyk (kwiat)</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://en.wikipedia.org/wiki/Apeiron">apeiron</a></td>
+                        <td>nieskończoność</td>
+                    </tr>
+                </table>
+                <br>
+            </details>
+            <br>
+            </div>
+
+            <div> <!-- sformułowania i zwroty -->
+            <details class="accordion"> 
+                <summary>sformułowania i zwroty</summary>
+                <table class="dictionary">
+                    <colgroup>
+                        <col span="1" class="dictionary--term">
+                        <col span="1">
+                    </colgroup>
+                    <tr>
+                        <td><a href="https://www.slangsphere.com/what-does-hung-mean-in-slang/">is hung</a></td>
+                        <td>ma dużego penisa</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://idioms.thefreedictionary.com/blow+a+fuse">to blow a fuse</a></td>
+                        <td>przepalić bezpiecznik; zareagować z furią okazując brak samokontroli;</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.merriam-webster.com/dictionary/jolt">jolts to her feet</a></td>
+                        <td>podrywa się na nogi; jolts of pleasure – wstrząsy przyjemności</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://idioms.thefreedictionary.com/screwing+with">screwing with you</a></td>
+                        <td>żartuje sobie z ciebie próbując skonfundować</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://idioms.thefreedictionary.com/all+brawn+and+no+brain">all brawn</a></td>
+                        <td>same mięśnie; brawn – salceson;</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://idioms.thefreedictionary.com/to+reel+someone+in">to reel you in</a></td>
+                        <td>wciągnąć, nawinąć, nęcić</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://idioms.thefreedictionary.com/rat+out">rat out</a></td>
+                        <td>donieść na kogoś</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.dictionary.com/browse/bogart">bogart</a></td>
+                        <td>przywłaszczać dolę dla siebie; wymuszać; miętosić;</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://dictionary.cambridge.org/us/dictionary/english/bust-chops">busting my chops</a></td>
+                        <td>krytykować w prześmiewczy sposób</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.wordnik.com/words/bombshell">bombshell</a></td>
+                        <td>szrapnel; ktoś bardzo atrakcyjny; ktoś kto zaskakuje znienacka;</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://en.wiktionary.org/wiki/scurry_away">scurries away</a></td>
+                        <td>uciekać szybko, wiać</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.merriam-webster.com/dictionary/sulk">sulking</a></td>
+                        <td>strzelać focha</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://dictionary.cambridge.org/dictionary/english/snuff-out">snuff out</a></td>
+                        <td>rozwiać nadzieję, zdmuchnąć (świecę), wykitować</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.phrases.org.uk/meanings/the-whole-shebang.html">the whole shebang</a></td>
+                        <td>cały ten bałagan</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://en.wiktionary.org/wiki/cup_of_joe">cup of joe</a></td>
+                        <td>filiżanka kawy</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://nosweatshakespeare.com/quotes/famous/hell-hath-no-fury-like-a-woman-scorned/">hell hath no
+                                fury (like a woman scorned)</a></td>
+                        <td>nie ma większego gniewu od kobiety której miłość została odrzucona</td>
+                    </tr>
+                    <tr>
+                        <td><a
+                                href="https://www.oreateai.com/blog/understanding-pissy-more-than-just-a-mood/61c7f1cf22c8809ad1b602294f2814b9">don’t
+                                get pissy</a></td>
+                        <td>nie denerwuj się (w związku z błahostką)</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.britannica.com/dictionary/reckon">to be reckoned with</a></td>
+                        <td>być branym pod uwagę</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://idioms.thefreedictionary.com/get+a+grip">get a grip</a></td>
+                        <td>weź się w garść</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.merriam-webster.com/dictionary/mushy">get all mushy</a></td>
+                        <td>nadmiernie czuły lub emocjonalny</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://dictionary.cambridge.org/dictionary/english/fazed">being fased</a></td>
+                        <td>być zaniepokojonym, zaskoczonym przez kogoś</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.merriam-webster.com/dictionary/saunter">saunter towards the door</a></td>
+                        <td>powłóczyć w kierunku drzwi</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://dictionary.cambridge.org/us/dictionary/english/petty-jealousy">over petty jealousy</a></td>
+                        <td>z powodu błahej zazdrości</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://dictionary.cambridge.org/dictionary/english/go-overboard">went overboard</a></td>
+                        <td>przesadził</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.slangsphere.com/understanding-whiplash-the-slang-meaning-and-cultural-implications/">gives
+                                you whiplash</a></td>
+                        <td>powoduje u ciebie nagłą zmianę emocji, wywołuje poczucie przytłoczenia tempem</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.merriam-webster.com/thesaurus/eyeing">is eyeing you for help</a></td>
+                        <td>zerka na ciebie z prośbą o pomoc</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.merriam-webster.com/dictionary/appalled">clearly appalled</a></td>
+                        <td>wyraźnie przerażony/zszokowany</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://bestpositions4you.com/glossary/romantic-straddle-meaning/">to straddle his lap</a></td>
+                        <td>usiąść okrakiem na jego kolanach</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.fastslang.com/straddle">to straddle her</a></td>
+                        <td>sprawić by rozłożyła przed nim nogi</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://hinative.com/questions/21617313">scoots closer</a></td>
+                        <td>przesuwa się bliżej</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.merriam-webster.com/dictionary/plop%20down">plops herself down on the chair</a></td>
+                        <td>usadowiła się na krześle</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://dictionary.cambridge.org/us/dictionary/english/embellish">embellish the things you saw</a>
+                        </td>
+                        <td>upiększyć rzeczy które widziałeś; przeinaczać (opowiadanie);</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://pomaka.com/2020/11/24/what-does-im-pulling-your-leg-mean/">i’m just pulling your leg</a>
+                        </td>
+                        <td>tylko sobie z ciebie żartuję</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.merriam-webster.com/dictionary/off%20the%20mark">be way off the mark</a></td>
+                        <td>mieć bardzo nietrafione myśli, być w błędzie</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.dictionary.com/e/slang/bust-a-nut/">bust a nut</a></td>
+                        <td>być podnieconym, ejakulować</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://idioms.thefreedictionary.com/hook+up+with+you">to hook up with you</a></td>
+                        <td>umówić się z tobą, uprawiać przygodny seks</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://ell.stackexchange.com/questions/168219/pacing-the-room">pacing the room</a></td>
+                        <td>chodzić wte i we wte po pokoju</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.definitions.net/definition/musing">musing to herself</a></td>
+                        <td>rozmyślając nad sobą, być pochłoniętym myślami</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.fastslang.com/snap-back-to-reality">snaps back to reality</a></td>
+                        <td>wraca do rzeczywistości (po byciu pochłoniętym przez własne fantazje i urojenia); „wracać na ziemię”;</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://dictionary.reverso.net/english-definition/scrutinizing">scrutinizing gaze</a></td>
+                        <td>badawcze spojrzenie, krytyczna obserwacja</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.wordnik.com/words/jerking">head jerks in your direction</a></td>
+                        <td>szarpnięła głową w twą stroną</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://dictionary.cambridge.org/dictionary/english/feigning">feigning curiosity</a></td>
+                        <td>udając zainteresowanie</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.merriam-webster.com/dictionary/layman's%20terms">in layman’s terms</a></td>
+                        <td>w terminach potocznych, w języku dla laików</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://biologyinsights.com/where-is-the-crook-of-the-neck-location-and-anatomy/">to nibble at the
+                                crook of her neck</a></td>
+                        <td>podgryzać ją w zgięciu szyi</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://iere.org/what-is-bucking-your-hips-mean/">bucking hips</a></td>
+                        <td>poruszając biodrami</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.fastslang.com/swell-guy">swell guy</a></td>
+                        <td>świetny facet; swell – wypęcznienie, wypuchnięcie</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://oxfordlanguageclub.com/page/blog/word-of-the-day-falter">falters on the way up</a></td>
+                        <td>chwieje się w drodze na górę; waha się w osiągnięciu celu;</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://idioms.thefreedictionary.com/in+a+rut">rut inside her</a></td>
+                        <td>być w niej, utknąć w powtarzalnym zachowaniu</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.dictionary.com/browse/prang">orgasm prang into like</a></td>
+                        <td>orgazm wdarł się niczym</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.merriam-webster.com/dictionary/quip">she quips at you</a></td>
+                        <td>dowcipkuje sobie z ciebie, figlarnie drażni się z tobą, ripostuje żartobliwie</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://dictionary.cambridge.org/dictionary/english/skulking">skulking around</a></td>
+                        <td>skrywać się, skradać, chować, unikać wykrycia</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://dictionary.cambridge.org/dictionary/english/rev-up">revved up</a></td>
+                        <td>pobudzać</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://dictionary.cambridge.org/dictionary/english/rub-off-on">rub off on you</a></td>
+                        <td>spłynąć po ciebie (jak woda po kaczce)</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://dictionary.cambridge.org/dictionary/english/rip-off">be ripped off</a></td>
+                        <td>zostać oszukanym (na pieniądze), przepłacić</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.merriam-webster.com/dictionary/uncalled-for">uncalled for</a></td>
+                        <td>niepotrzebnie, oferowany bez uzasadnienia</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://idioms.thefreedictionary.com/over+yonder">over yonder</a></td>
+                        <td>tamtędy</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://idioms.thefreedictionary.com/take+a+toll+on">take a toll</a></td>
+                        <td>mieć szkodliwy wpływ</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://idioms.thefreedictionary.com/slack+off">slacking off</a></td>
+                        <td>ociągać się, obijać</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://idioms.thefreedictionary.com/lumped+together">lumped together</a></td>
+                        <td>zgrupowane razem, zbrylowane; traktować jednako;</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://dictionary.reverso.net/english-definition/scurry+off">scurry off</a></td>
+                        <td>pośpieszać, uciekać</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.merriam-webster.com/dictionary/ajar">door ajar</a></td>
+                        <td>lekko uchylone drzwi</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.dictionary.com/browse/fizzle-out">fizzled out</a></td>
+                        <td>wygasło, wypaliło się</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://idioms.thefreedictionary.com/singling+out">singling out</a></td>
+                        <td>wyróżniać, faworyzować</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://dictionary.reverso.net/english-definition/pang+of+remorse">pangs of remorse</a></td>
+                        <td>wyrzuty sumienia</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://idioms.thefreedictionary.com/usher+out">usher out</a></td>
+                        <td>wyprowadzony (by wprowadzić kogoś innego)</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.merriam-webster.com/dictionary/dazzle">dazzled by</a></td>
+                        <td>zaślepiony przez</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://dictionary.cambridge.org/dictionary/english/in-tow">in tow</a></td>
+                        <td>w parze z, w towarzystwie kogoś, ręka w rękę, podążać za czyimś prowadzeniem</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://en.wikipedia.org/wiki/Rorschach_test">ink blotch</a></td>
+                        <td>plama atramentowa</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.merriam-webster.com/dictionary/divert/distract%20attention">divert attenion</a></td>
+                        <td>odwracać uwagę</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.merriam-webster.com/dictionary/rub%20off">rubbed off</a></td>
+                        <td>starło się</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.merriam-webster.com/dictionary/go%20overboard">go overboard</a></td>
+                        <td>przesadzić</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://dictionary.cambridge.org/dictionary/english/tag-along">tag along</a></td>
+                        <td>podążać, dołączyć, śledzić</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.merriam-webster.com/dictionary/to%20no%20avail">to no avail</a></td>
+                        <td>bezskutecznie</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.merriam-webster.com/dictionary/ahold">ahold of</a></td>
+                        <td>otrzymać, wejść w posiadanie</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://dictionary.cambridge.org/dictionary/english/pounce-on">pounce on</a></td>
+                        <td>rzucić się na, zaakceptować z entuzjazmem, bezzwłocznie skrytykować pomyłkę</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://idioms.thefreedictionary.com/ease+her+mind">to ease her mind</a></td>
+                        <td>uspokoić jej umysł; ease – ulżyć, rozluźniać</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.merriam-webster.com/dictionary/lacing">lacing words</a></td>
+                        <td>łączenie słów; lacing – sznurowanie;</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.aboutworld.us/do-not-indulge-meaning/">don’t indulge her</a></td>
+                        <td>nie rozpieszczaj jej, nie pobłażaj jej, nie dogadzaj jej</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://en.wikipedia.org/wiki/Stone_skipping">skipping stones</a></td>
+                        <td>przeskakiwać kamienie, puszczać kamienie na wodę</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.merriam-webster.com/dictionary/animosity">animosity in the air</a></td>
+                        <td>atmosfera wrogości</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.britannica.com/dictionary/fondle">fondling her breasts</a></td>
+                        <td>pieszczenie jej piersi</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.merriam-webster.com/dictionary/composure">gathers her composure</a></td>
+                        <td>odzyskuje panowanie nad sobą</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://idioms.thefreedictionary.com/you+prick+up+your+ears">pricks up your eyes</a></td>
+                        <td>wytęża wzrok</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.merriam-webster.com/dictionary/unsettling">mildly unsettling</a></td>
+                        <td>lekko niepokojące</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://ludwig.guru/s/to+get+on+board+with">get on board with this</a></td>
+                        <td>dołączyć do tego, zgadzać się, być zaangażowanym</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://dictionary.cambridge.org/dictionary/english/catch-off-guard">catches you off guard</a></td>
+                        <td>zaskakuje cię</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://idioms.thefreedictionary.com/what+are+you+getting+at">what are you getting at?</a></td>
+                        <td>do czego zmierzasz? co insynuujesz?</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://idioms.thefreedictionary.com/be+up+to+something">you are up to something</a></td>
+                        <td>coś knujesz</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.merriam-webster.com/dictionary/propped">propped arms</a></td>
+                        <td>podparte ramiona</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.merriam-webster.com/dictionary/doe-eyed">doe eyes</a></td>
+                        <td>wielkie niewinnie wyglądające oczy, oczy łani</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.collinsdictionary.com/dictionary/english/sheepish-smile">smiles sheepishly</a></td>
+                        <td>uśmiecha się nieśmiało, uśmiecha się będąc zażenowaną</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.merriam-webster.com/dictionary/up-front">be upfront with me</a></td>
+                        <td>bądź ze mną szczery</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://dictionary.cambridge.org/dictionary/english/confines">confines of pants</a></td>
+                        <td>kresy spodni</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.merriam-webster.com/dictionary/oozing">oozing blood</a></td>
+                        <td>sącząca się krew; ooze – maź;</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://idioms.thefreedictionary.com/make+it+up+to+you">i’ll make it up to you</a></td>
+                        <td>wynagrodzę ci to, wyświadczę ci przysługę</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://ludwig.guru/s/devious+smile">devious smile</a></td>
+                        <td>podstępny uśmiech</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://idioms.thefreedictionary.com/ramming+something+into">ramming onto</a></td>
+                        <td>wbijając się w, zdrzerzając się z, penetrować</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.collinsdictionary.com/dictionary/english/utter-a-word">utters a word</a></td>
+                        <td>głosi słowo</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://dictionary.reverso.net/english-definition/prop+oneself+up">prop up by the elbow</a></td>
+                        <td>podeprzeć się łokciem (by utrzymać ciało w górze)</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://dictionary.cambridge.org/dictionary/english/sidetracked">get sidetracked</a></td>
+                        <td>zboczyć z tematu</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.merriam-webster.com/dictionary/tint">tint of red</a></td>
+                        <td>odcień czerwieni</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.merriam-webster.com/dictionary/stern">stern nod</a></td>
+                        <td>stanowcze skinienie głową</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://absolutewrite.com/forums/index.php?threads/what-does-furrowed-eyebrows-mean.289909/">furrows
+                                her brow</a></td>
+                        <td>marszczy brwi; furrow – bruzda;</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.merriam-webster.com/dictionary/sappy">sappy love story</a></td>
+                        <td>sentymentalna historia miłosna, ckliwa opowiastka</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://ell.stackexchange.com/questions/299029/what-does-cock-an-eyebrow-actually-mean">cocks an
+                                eyebrow</a></td>
+                        <td>unosi brew (jedną)</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://ludwig.guru/s/fond+smile">fond smile</a></td>
+                        <td>serdeczny uśmiech, czuły uśmiech</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.merriam-webster.com/dictionary/brooding">brooding woods</a></td>
+                        <td>ponure lasy</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.collinsdictionary.com/dictionary/english/nimble-fingered">her nimble fingers</a></td>
+                        <td>jej zwinne palce</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.dictionary.com/browse/coaxing">coaxing you</a></td>
+                        <td>namawia cię, przypochlebia się, zręcznie kierunkuje</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.merriam-webster.com/dictionary/wanton">wanton look</a></td>
+                        <td>swawolny/rozpustny/sprośny wygląd</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://ludwig.guru/s/unwavering+eyes">unwavering eyes</a></td>
+                        <td>niezachwiany wyraz oczu, pewne siebie spojrzenie</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://idioms.thefreedictionary.com/gush+out+of">gushing out</a></td>
+                        <td>wytryskując (niekontrolowanie)</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://idioms.thefreedictionary.com/dopey">dopey expression</a></td>
+                        <td>głupi/odurzony/zmęczony wyraz twarzy</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://sexopedia.co/chaste-kiss/">chaste kiss</a></td>
+                        <td>niewinny pocałunek</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.merriam-webster.com/dictionary/saunter">sauntering back</a></td>
+                        <td>przechadzając się z powrotem, włócząc się bezczynnie z powrotem</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://dictionary.cambridge.org/dictionary/english/muster-up">muster up</a></td>
+                        <td>zebrać się</td>
+                    </tr>
+                </table>
+                <br>
+            </details>
+            <br>
+            </div>
+
+            <div> <!-- słowa -->
+            <details class="accordion"> 
+                <summary>słowa</summary>
+                <table class="dictionary">
+                    <colgroup>
+                        <col span="1" class="dictionary--term">
+                        <col span="1">
+                    </colgroup>
+                    <tr>
+                        <td><a href="https://www.merriam-webster.com/dictionary/shindig">shindig</a></td>
+                        <td>wystawna impreza</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.merriam-webster.com/dictionary/hone">hone</a></td>
+                        <td>doskonalić, wyostrzać</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.merriam-webster.com/dictionary/bid">bade</a></td>
+                        <td>nakazał, zaoferował</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.merriam-webster.com/dictionary/prowling">prowls</a></td>
+                        <td>grasuje, zaczaja się, skrada</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.dictionary.com/browse/groan">groan</a></td>
+                        <td>jęk, stęk</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.dictionary.com/browse/giggle">giggle</a></td>
+                        <td>chichot</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.dictionary.com/browse/slurp">slurp</a></td>
+                        <td>siurp, chlupot</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.dictionary.com/browse/quiver">quiver</a></td>
+                        <td>drżenie</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.dictionary.com/browse/sprawl">sprawls</a></td>
+                        <td>rozkłada się, rozciąga</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.dictionary.com/browse/surreal">surreal</a></td>
+                        <td>surrealistyczne, dziwaczne</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.dictionary.com/browse/vague">vague</a></td>
+                        <td>mglisty, mętny, nijaki, niejasny</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.dictionary.com/browse/delinquent">delinquent</a></td>
+                        <td>przestępca, sprawca</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.dictionary.com/browse/nudge">nudge</a></td>
+                        <td>szturchnięcie, trącenie łokciem, kuksaniec</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.dictionary.com/browse/embarrass">embarrassed</a></td>
+                        <td>zażenowany, skrępowany, zakłopotany</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.dictionary.com/browse/brat">brat</a></td>
+                        <td>bachor, brzdąc, irytujące dziecko</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.dictionary.com/browse/impressionable">impressionable</a></td>
+                        <td>wrażliwy, czuły</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.dictionary.com/browse/startled">startled</a></td>
+                        <td>zaskoczony</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.dictionary.com/browse/bickering">bickering</a></td>
+                        <td>kłócić się zrzędliwie</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.dictionary.com/browse/briskly">briskly</a></td>
+                        <td>raźnie, energicznie, fertycznie</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.dictionary.com/browse/wheat">wheat</a></td>
+                        <td>pszenica</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.dictionary.com/browse/dumbfounded">dumbfounded</a></td>
+                        <td>oszołomiony</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.dictionary.com/browse/charred">charred</a></td>
+                        <td>zwęglony, spalony</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.dictionary.com/browse/intrude">intruding</a></td>
+                        <td>wtrącać się</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.dictionary.com/browse/maintenance">maintenance</a></td>
+                        <td>konserwacja, utrzymanie</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.dictionary.com/browse/scoff">scoff</a></td>
+                        <td>szydzić, wykpić, drwić, natrząsać się</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.dictionary.com/browse/inadequacy">inadequacies</a></td>
+                        <td>niedoskonałości</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.dictionary.com/browse/prance">prances</a></td>
+                        <td>podskakuje (jak koń); dumnieć, paradować;</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.dictionary.com/browse/pout">pout</a></td>
+                        <td>dąsy, nadęcie warg, kwaśna mina</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.dictionary.com/browse/grumble">grumble</a></td>
+                        <td>zrzędzić, burczeć, utyskiwać</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.dictionary.com/browse/fuss">fuss</a></td>
+                        <td>zamieszanie, wrzawa, heca</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.dictionary.com/browse/sniffle">sniffle</a></td>
+                        <td>pociągać nosem</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.dictionary.com/browse/smooch">smooch</a></td>
+                        <td>całus</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.dictionary.com/browse/abs">abs</a></td>
+                        <td>mięśnie brzucha</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.dictionary.com/browse/flint">flint</a></td>
+                        <td>krzemień, krzesiwo</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.dictionary.com/browse/lucid">lucid</a></td>
+                        <td>przejrzysty, przystępny, jasny, klarowny</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.dictionary.com/browse/bland">bland</a></td>
+                        <td>mdły, dobrotliwy</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.dictionary.com/browse/gullible">gullible</a></td>
+                        <td>łatwowierny, naiwny</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.dictionary.com/browse/sly">sly</a></td>
+                        <td>chytry, szelmowski, szczwany, cwaniacki, filuterny</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.thesaurus.com/browse/munching">munching</a></td>
+                        <td>chrupanie, pałaszowanie</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.dictionary.com/browse/queasy">queasy</a></td>
+                        <td>przewrażliwony, odczuwający mdłości</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.dictionary.com/browse/benign">benign</a></td>
+                        <td>życzliwe, łagodne</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.dictionary.com/browse/drowsy">drowsy</a></td>
+                        <td>senny, ospały</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.dictionary.com/browse/wallow">wallow</a></td>
+                        <td>tarzać się, pławić, nurzać</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.dictionary.com/browse/obnoxious">obnoxious</a></td>
+                        <td>obrzydliwy, nieznośny</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.dictionary.com/browse/smitten">smitten</a></td>
+                        <td>zauroczony, zakochany</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.dictionary.com/browse/musk">musk</a></td>
+                        <td>piżmo</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.dictionary.com/browse/wheeze">wheezing</a></td>
+                        <td>świszczący oddech</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.merriam-webster.com/dictionary/miniscule">miniscule</a></td>
+                        <td>maleńki</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.dictionary.com/browse/vertigo">vertigo</a></td>
+                        <td>zawrót głowy</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.dictionary.com/browse/unscathed">unscathed</a></td>
+                        <td>bez szwanku</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.dictionary.com/browse/well-endowed">well-endowed</a></td>
+                        <td>dobrze wyposażony</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.dictionary.com/browse/squirm">squirm</a></td>
+                        <td>wiercić się</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.dictionary.com/browse/snoop">snoop</a></td>
+                        <td>zwędzić, podejrzeć, wściubiać nos</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.dictionary.com/browse/whoosh">whooshes</a></td>
+                        <td>szumi</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.dictionary.com/browse/kelp">kelp</a></td>
+                        <td>wodorosty morskie</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.dictionary.com/browse/scaredy-cat">scaredy-cat</a></td>
+                        <td>strachliwy kot</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.dictionary.com/browse/menace">menacingly</a></td>
+                        <td>groźnie</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.dictionary.com/browse/callus">calluses</a></td>
+                        <td>odciski stóp</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.dictionary.com/browse/tipsy">tipsy</a></td>
+                        <td>podpity, pijany, nietrzeźwy</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.dictionary.com/browse/infatuated">infatuated</a></td>
+                        <td>rozmiłowany, zaślepiony, zakochany</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.dictionary.com/browse/tenacious">tenacious</a></td>
+                        <td>wytrwały, czepliwy</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.dictionary.com/browse/orifice">orifice</a></td>
+                        <td>otwór</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.dictionary.com/browse/adorned">adorned</a></td>
+                        <td>strojny, przyozdobiony</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.dictionary.com/browse/unfettered">unfettered</a></td>
+                        <td>nieskrępowany, nieograniczony</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.dictionary.com/browse/perpetual">perpetual</a></td>
+                        <td>wieczysty, nieustanny</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.dictionary.com/browse/scarry">scarring</a></td>
+                        <td>bliznowacenie</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.dictionary.com/browse/shrill">shrill</a></td>
+                        <td>przenikliwy, piskliwy, przeraźliwy, przeszywający, przejmujący</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.dictionary.com/browse/shamble">shambling</a></td>
+                        <td>chwiejny</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.dictionary.com/browse/enthralled">enthralled</a></td>
+                        <td>ujarzmiony</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.dictionary.com/browse/trot">trot</a></td>
+                        <td>kłusować, trucht</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.dictionary.com/browse/excruciating">excruciatingly</a></td>
+                        <td>okropnie</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.dictionary.com/browse/glint">glint</a></td>
+                        <td>migot, błysk, iskra</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.dictionary.com/browse/gazebo">gazebo</a></td>
+                        <td>balkon, altana</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.dictionary.com/browse/inconspicuous">inconspicuously</a></td>
+                        <td>skromnie</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.dictionary.com/browse/yank">yank</a></td>
+                        <td>szarpać</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.dictionary.com/browse/prodding">prodding</a></td>
+                        <td>szturchanie</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.dictionary.com/browse/distressed">distressed</a></td>
+                        <td>strapiony</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.dictionary.com/browse/fondly">fondly</a></td>
+                        <td>czule, miłościwie</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.dictionary.com/browse/groggy">grogginess</a></td>
+                        <td>wycieńczenie</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.dictionary.com/browse/loony">loony</a></td>
+                        <td>pomylona, zbzikowana, szalona</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.dictionary.com/browse/ensnare">ensnared</a></td>
+                        <td>uwikłany</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.dictionary.com/browse/fling">fling</a></td>
+                        <td>afekt, szaleństwo, gwałtowność; rzucać ze złością;</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.dictionary.com/browse/flustered">flustered</a></td>
+                        <td>zmieszany, podenerwowany</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.dictionary.com/browse/attentive">attentive</a></td>
+                        <td>pilny, dbały, uważny</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.dictionary.com/browse/limelight">limelight</a></td>
+                        <td>światła reflektorów</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.dictionary.com/browse/solace">solace</a></td>
+                        <td>pocieszenie, ulga</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.dictionary.com/browse/corolla">corolla</a></td>
+                        <td>korona (kwiatu)</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://sjp.pwn.pl/slowniki/pretensjonalny.html">pretentious</a></td>
+                        <td>pretensjonalny (zachowujący się sztucznie, krygujący się, zbyt wyszukany, świadczący o złym guście);</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.dictionary.com/browse/palpable">palpable</a></td>
+                        <td>namacalny</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.merriam-webster.com/dictionary/rigged">rigged</a></td>
+                        <td>sfałszowany</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.dictionary.com/browse/drab">drab</a></td>
+                        <td>bezbarwny, monotonny, szary</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.dictionary.com/browse/bask">basks</a></td>
+                        <td>wygrzewa się</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.dictionary.com/browse/evoke">evoke</a></td>
+                        <td>przywoływać</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.dictionary.com/browse/grueling">grueling</a></td>
+                        <td>wyczerpujące</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.dictionary.com/browse/giddy">giddy, giddiness</a></td>
+                        <td>przyprawiający o zawrot głowy, roztrzepany; roztargnienie, lekkomyślność</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.dictionary.com/browse/revel">reveling</a></td>
+                        <td>rozkoszować się</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.dictionary.com/browse/disheartened">disheartened</a></td>
+                        <td>zniechęcony</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.dictionary.com/browse/preliminary">preliminary</a></td>
+                        <td>wstępny, przygotowawczy</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.dictionary.com/browse/limp">limp</a></td>
+                        <td>zwiotczały</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.dictionary.com/browse/sullenly">sullenly</a></td>
+                        <td>ponuro</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.dictionary.com/browse/gleefully">gleefully</a></td>
+                        <td>radośnie (psotnie)</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.dictionary.com/browse/floppy">floppy</a></td>
+                        <td>rozlazły</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.dictionary.com/browse/serenity">serenity</a></td>
+                        <td>ukojenie</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.dictionary.com/browse/pent-up">pent-up</a></td>
+                        <td>stłumiony</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.dictionary.com/browse/prevailing">prevailing</a></td>
+                        <td>przeważający</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.dictionary.com/browse/divulge">divulging</a></td>
+                        <td>ujawnianie</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.dictionary.com/browse/alleviate">alleviated</a></td>
+                        <td>złagodzone</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.dictionary.com/browse/posh">posh</a></td>
+                        <td>wyposzczony, szykowny</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.dictionary.com/browse/confide">confide</a></td>
+                        <td>zwierzać się</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.dictionary.com/browse/contempt">contempt</a></td>
+                        <td>pogarda, lekceważenie</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.dictionary.com/browse/stonewalling">stonewalling</a></td>
+                        <td>stawianie oporu</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.dictionary.com/browse/shabby">shabby</a></td>
+                        <td>obskurny, nędzny, nikczemny, wyświechtany</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.dictionary.com/browse/ominous">ominous</a></td>
+                        <td>złowieszczy</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.dictionary.com/browse/ridicule">ridicule</a></td>
+                        <td>kpić, szydzić, wyśmiewać</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.dictionary.com/browse/apprehension">apprehension</a></td>
+                        <td>obawa, przeczucie</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.dictionary.com/browse/pester">pestering</a></td>
+                        <td>nękanie</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.thefreedictionary.com/tripped">tripped</a></td>
+                        <td>potknął się</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.dictionary.com/browse/sweltering">sweltering</a></td>
+                        <td>upalny</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.dictionary.com/browse/bunch">bunch</a></td>
+                        <td>garść, grono, kiść, wiązka</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.dictionary.com/browse/trudge">trudge</a></td>
+                        <td>brnąć</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.dictionary.com/browse/glisten">glistening</a></td>
+                        <td>lśniący, błyszczący, migocący</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.dictionary.com/browse/gorgeous">gorgeous</a></td>
+                        <td>przepiękna, okazała</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.dictionary.com/browse/incorrigible">incorrigible</a></td>
+                        <td>niepoprawny</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.dictionary.com/browse/tardiness">tardiness</a></td>
+                        <td>opieszałość</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.dictionary.com/browse/morsel">morsel</a></td>
+                        <td>kąsek</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.dictionary.com/browse/torpor">torpor</a></td>
+                        <td>odrętwienie, niemrawość, letarg</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.dictionary.com/browse/vocation">vocation</a></td>
+                        <td>powołanie</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.dictionary.com/browse/relish">relish</a></td>
+                        <td>smakować, lubować się</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.dictionary.com/browse/deviant">deviant</a></td>
+                        <td>zboczeniec</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.dictionary.com/browse/lithe">lithe</a></td>
+                        <td>gibki, smukły</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.dictionary.com/browse/graze">graze</a></td>
+                        <td>muskać, ocierać</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.dictionary.com/browse/disheveled">disheveled</a></td>
+                        <td>rozczochrany, rozwichrzony</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.dictionary.com/browse/elated">elated</a></td>
+                        <td>podniecony, dumny</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.dictionary.com/browse/crusty">crusty</a></td>
+                        <td>zrzędny, nieprzystępny</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.dictionary.com/browse/glimmer">glimmer</a></td>
+                        <td>przebłysk, płomyk</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.dictionary.com/browse/inkling">inkling</a></td>
+                        <td>poczucie, przypuszczenie</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.dictionary.com/browse/bewilderment">bewilderment</a></td>
+                        <td>oszołomienie</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.dictionary.com/browse/cerebral">cerebral</a></td>
+                        <td>mózgowy, retrofleksyjny</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.dictionary.com/browse/zest">zest</a></td>
+                        <td>werwa, animusz, swada</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.dictionary.com/browse/compulsion">compulsion</a></td>
+                        <td>przymus (wewnętrzny)</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.dictionary.com/browse/affliction">affliction</a></td>
+                        <td>schorzenie</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.dictionary.com/browse/butterfingers">butterfingered</a></td>
+                        <td>ślamazarny</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.merriam-webster.com/dictionary/scrubbing">scrubbing</a></td>
+                        <td>szorować</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.dictionary.com/browse/chickpea">chickpeas (garbanzo)</a></td>
+                        <td>ciecierzyca</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.dictionary.com/browse/retort">retort</a></td>
+                        <td>riposta, ostra odpowiedź</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.dictionary.com/browse/preoccupy">preoccupyies</a></td>
+                        <td>zaprząta cię</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.dictionary.com/browse/endearing">endearing</a></td>
+                        <td>ujmujące</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.dictionary.com/browse/misnomer">misnomer</a></td>
+                        <td>błędna nazwa</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.dictionary.com/browse/stunning">stunning</a></td>
+                        <td>oszałamiający</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.dictionary.com/browse/dismissive">dismissive</a></td>
+                        <td>lekceważący</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.dictionary.com/browse/resolute">resolute</a></td>
+                        <td>zdecydowana, śmiała</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.dictionary.com/browse/oblivious">oblivious</a></td>
+                        <td>niepomny</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.merriam-webster.com/dictionary/dumbass">dumbass</a></td>
+                        <td>idiota</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.dictionary.com/browse/commence">commence</a></td>
+                        <td>rozpocząć, inicjować</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.dictionary.com/browse/tentative">tentative</a></td>
+                        <td>niepewny, próbny</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.dictionary.com/browse/mewl">mewl</a></td>
+                        <td>zawodzenie, kwilenie, miauczenie</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.dictionary.com/browse/collarbone">collarbone</a></td>
+                        <td>obojczyk</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.dictionary.com/browse/whimper">whimpers</a></td>
+                        <td>skomli</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.dictionary.com/browse/savor">savoring</a></td>
+                        <td>delektowanie się</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://dictionary.cambridge.org/dictionary/english/transfixed">transfixed</a></td>
+                        <td>zafascynowany, zauroczony (powabem)</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.dictionary.com/browse/splutter">splutter</a></td>
+                        <td>bulgot</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.dictionary.com/browse/languid">languid</a></td>
+                        <td>ospały, opieszały</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.dictionary.com/browse/swollen">swollen</a></td>
+                        <td>spuchnięty, nabrzmiały</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.dictionary.com/browse/hoarse">hoarse</a></td>
+                        <td>ochrypły</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.dictionary.com/browse/groin">groin</a></td>
+                        <td>krocze</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.dictionary.com/browse/snuggly">snuggly</a></td>
+                        <td>przytulnie</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.dictionary.com/browse/sloppy">sloppy</a></td>
+                        <td>niechlujny, niestaranny</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.dictionary.com/browse/yelp">yelp</a></td>
+                        <td>skowyt</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://dictionary.cambridge.org/dictionary/english/spurt?q=spurting">spurting</a></td>
+                        <td>tryskający</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.dictionary.com/browse/heave">heave</a></td>
+                        <td>pęcznieć, falować</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.dictionary.com/browse/recuperate">recuperate</a></td>
+                        <td>odzyskać siły</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.dictionary.com/browse/timid">timid</a></td>
+                        <td>bojaźliwy, płochliwy</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.dictionary.com/browse/racy">racy</a></td>
+                        <td>pikantny, sugestywny</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.dictionary.com/browse/mulch">mulch</a></td>
+                        <td>ściółka, chochoł</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://dictionary.cambridge.org/dictionary/english/inebriated">inebriated</a></td>
+                        <td>w stanie upojenia alkoholowego</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.dictionary.com/browse/dour">dour</a></td>
+                        <td>srogi, zimny, uparty</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.dictionary.com/browse/livid">livid</a></td>
+                        <td>widocznie wściekły (zaczerwieniony)</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.dictionary.com/browse/segue">segue</a></td>
+                        <td>płynnie przejść</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.dictionary.com/browse/voraciously">voraciously</a></td>
+                        <td>żarłocznie</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.dictionary.com/browse/hellbent">hellbent</a></td>
+                        <td>piekielnie zdeterminowany</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.dictionary.com/browse/condescension">condescension</a></td>
+                        <td>łaskawość</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.dictionary.com/browse/soot">soot</a></td>
+                        <td>sadza</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.dictionary.com/browse/enunciate">enunciate</a></td>
+                        <td>wysławiać się, wypowiadać się, wygłaszać</td>
+                    </tr>
+                </table>
+                <br>
+            </details>
+            <br>
+            </div>
+
+            <br>
+        </article>
+        </region>
+
+
+        <region id="osiągnięcia">
+        <article class="region-grey">
+        <h3># osiągnięcia</h3>
+
+        <details class="accordion">
+            <summary>achievements</summary>
+
+            <table class="achievements"> <!-- base-->
+                <caption>base</caption>
+                <tr>
+                    <td class="achievements--name"></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>master agent</td>
+                    <td>unlocking the master bedroom is easy</td>
+                </tr>
+                <tr>
+                    <td>kiara’s secrets</td>
+                    <td>going through kiara's stuff is interesting</td>
+                </tr>
+                <tr>
+                    <td>they’re here</td>
+                    <td>the girls arrived-wait, girls?!</td>
+                </tr>
+                <tr>
+                    <td>a gentleman always knocks</td>
+                    <td>always knock first!</td>
+                </tr>
+                <tr>
+                    <td>hi, emily</td>
+                    <td>hmm… maybe i should knock next time</td>
+                </tr>
+                <tr>
+                    <td>hi, kiara</td>
+                    <td>nice to see them-you, i meant you!</td>
+                </tr>
+                <tr>
+                    <td>don’t jump like this</td>
+                    <td>you’ll break your neck</td>
+                </tr>
+                <tr>
+                    <td>hi, eve</td>
+                    <td>so good to see eve after all this time</td>
+                </tr>
+                <tr>
+                    <td>x-ray everything</td>
+                    <td>that must be some kind of a superpower</td>
+                </tr>
+                <tr>
+                    <td>awww!</td>
+                    <td>guess i am a good boyfriend</td>
+                </tr>
+                <tr>
+                    <td>that was good</td>
+                    <td>happy girl, happy life</td>
+                </tr>
+                <tr>
+                    <td>oh, jane…</td>
+                    <td>jane finally arrived in my room</td>
+                </tr>
+            </table>
+            <br>
+
+            <table class="achievements"> <!-- update #1 -->
+                <caption>update #1</caption>
+                <tr>
+                    <td class="achievements--name"></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>belle’s secret fan</td>
+                    <td>spy on belle</td>
+                </tr>
+                <tr>
+                    <td>burn! burn! burn!!!</td>
+                    <td>stacy’s fiery awakening</td>
+                </tr>
+                <tr>
+                    <td>no funny business</td>
+                    <td>you don’t need that with me around…</td>
+                </tr>
+                <tr>
+                    <td>call me maybe</td>
+                    <td>never take a woman’s cellphone</td>
+                </tr>
+                <tr>
+                    <td>pat-down</td>
+                    <td>search them, search them good</td>
+                </tr>
+            </table>
+            <br>
+            
+            <table class="achievements"> <!-- update #2 -->
+                <caption>update #2</caption>
+                <tr>
+                    <td class="achievements--name"></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>phone scanner on</td>
+                    <td>i know phones, they have pictures</td>
+                </tr>
+                <tr>
+                    <td>goal oriented</td>
+                    <td>focus and dedication, nothing can stop me</td>
+                </tr>
+                <tr>
+                    <td>betman</td>
+                    <td>take the bet</td>
+                </tr>
+                <tr>
+                    <td>the judge</td>
+                    <td>soft, yet firm…</td>
+                </tr>
+                <tr>
+                    <td>sleep accessory</td>
+                    <td>if you can’t sleep, leave it on repeat</td>
+                </tr>
+                <tr>
+                    <td>free stacy</td>
+                    <td>you can’t say no to a crae-crae</td>
+                </tr>
+            </table>
+            <br>
+
+            <table class="achievements"> <!-- update #3 -->
+                <caption>update #3</caption>
+                <tr>
+                    <td class="achievements--name"></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>that lasted long…</td>
+                    <td>i guess you had to tell her… snitch</td>
+                </tr>
+                <tr>
+                    <td>respecting privacy</td>
+                    <td>well, you didn’t have to read it, but at least you’re not sharing it with others… or?</td>
+                </tr>
+                <tr>
+                    <td>utah beach</td>
+                    <td>flashbacks of time back at normandy '44</td>
+                </tr>
+                <tr>
+                    <td>jenny english</td>
+                    <td>wanted to be jamey bond, but failed…</td>
+                </tr>
+            </table>
+            <br>
+
+            <table class="achievements"> <!-- update #4 -->
+                <caption>update #4</caption>
+                <tr>
+                    <td class="achievements--name"></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>kamasutra</td>
+                    <td>explore all the positions</td>
+                </tr>
+                <tr>
+                    <td>sacrifice</td>
+                    <td>fire to those who believe</td>
+                </tr>
+                <tr>
+                    <td>pose for me</td>
+                    <td>girls with phones are dangerous</td>
+                </tr>
+                <tr>
+                    <td>staying clean</td>
+                    <td>i don’t need my hands, i’ve got something better on my mind</td>
+                </tr>
+                <tr>
+                    <td>good manners</td>
+                    <td>good manners go a long way!</td>
+                </tr>
+            </table>
+            <br>
+
+            <table class="achievements"> <!-- update #5 -->
+                <caption>update #5</caption>
+                <tr>
+                    <td class="achievements--name"></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>determination</td>
+                    <td>nothing like a determined woman</td>
+                </tr>
+                <tr>
+                    <td>a gentle touch</td>
+                    <td>i have a thing for shy girls</td>
+                </tr>
+                <tr>
+                    <td>a sexy surprise</td>
+                    <td>who doesn’t like surprises?</td>
+                </tr>
+                <tr>
+                    <td>confession booth</td>
+                    <td>forgive her father, for she has sinned</td>
+                </tr>
+                <tr>
+                    <td>the toymaster</td>
+                    <td>there are more ways to pleasure a woman</td>
+                </tr>
+                <tr>
+                    <td>the spymaster</td>
+                    <td>always be resourceful</td>
+                </tr>
+                <tr>
+                    <td>the gentleman</td>
+                    <td>it’s nice to be helpful</td>
+                </tr>
+                <tr>
+                    <td>master negotiator</td>
+                    <td>secrets cannot escape me</td>
+                </tr>
+            </table>
+            <br>
+
+            <table class="achievements"> <!-- update #6 -->
+                <caption>update #6</caption>
+                <tr>
+                    <td class="achievements--name"></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>seaman</td>
+                    <td>it’s sea-man!</td>
+                </tr>
+                <tr>
+                    <td>maybe-to-be-counselor</td>
+                    <td>you did really well</td>
+                </tr>
+                <tr>
+                    <td>happy three friends</td>
+                    <td>three’s company!</td>
+                </tr>
+                <tr>
+                    <td>yogi</td>
+                    <td>you’re really flexible… or are you?</td>
+                </tr>
+                <tr>
+                    <td>dream warrior</td>
+                    <td>break the spell of illusion</td>
+                </tr>
+            </table>
+            <br>
+
+            <table class="achievements"> <!-- update #7 -->
+                <caption>update #7</caption>
+                <tr>
+                    <td class="achievements--name"></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>beautifully handsome</td>
+                    <td>wording matters</td>
+                </tr>
+                <tr>
+                    <td>e-girl experience</td>
+                    <td>what’s on the menu?</td>
+                </tr>
+                <tr>
+                    <td>creature of habit</td>
+                    <td>training paid off</td>
+                </tr>
+                <tr>
+                    <td>when you wish upon a star</td>
+                    <td>no request is too extreme</td>
+                </tr>
+                <tr>
+                    <td>call me sexy</td>
+                    <td>hey, i just met you, and this is crazy</td>
+                </tr>
+            </table>
+            <br>
+
+            <table class="achievements"> <!-- update #8 -->
+                <caption>update #8</caption>
+                <tr>
+                    <td class="achievements--name"></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>proper goodbye</td>
+                    <td>and a memorable one</td>
+                </tr>
+                <tr>
+                    <td>flattering angle</td>
+                    <td>take a shot</td>
+                </tr>
+                <tr>
+                    <td>king dancer</td>
+                    <td>consult a doctor before beginning an exercise regime</td>
+                </tr>
+                <tr>
+                    <td>live for the applause</td>
+                    <td>way that you cheer and scream for me</td>
+                </tr>
+                <tr>
+                    <td>knighted</td>
+                    <td>truly deserving of the title</td>
+                </tr>
+            </table>
+            <br>
+
+            <table class="achievements"> <!-- update #9 -->
+                <caption>update #9</caption>
+                <tr>
+                    <td class="achievements--name"></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>helped the hotties</td>
+                    <td>you did it! you actually did it!</td>
+                </tr>
+                <tr>
+                    <td>therapist-in-training</td>
+                    <td>and they said this wouldn’t be a walk in the park</td>
+                </tr>
+                <tr>
+                    <td>midnight eclipse of the heart</td>
+                    <td>i dream of something wild</td>
+                </tr>
+                <tr>
+                    <td>eeny, meeny, miny, moe</td>
+                    <td>you win nonetheless</td>
+                </tr>
+                <tr>
+                    <td>girl’s room</td>
+                    <td>pink wallpapers are the best!</td>
+                </tr>
+                <tr>
+                    <td>rules? what rules?</td>
+                    <td>rules are meant to be broken</td>
+                </tr>
+                <tr>
+                    <td>fair play</td>
+                    <td>obedience is its own reward</td>
+                </tr>
+                <tr>
+                    <td>hard work pays off</td>
+                    <td>work hard, play harder</td>
+                </tr>
+                <tr>
+                    <td>tryhard</td>
+                    <td>too sweaty</td>
+                </tr>
+            </table>
+            <br>
+
+            <table class="achievements"> <!-- update #10 -->
+                <caption>update #10</caption>
+                <tr>
+                    <td class="achievements--name"></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>buckle-up</td>
+                    <td>did you enjoy the ride?</td>
+                </tr>
+                <tr>
+                    <td>hard goodbye</td>
+                    <td>saying goodbye isn’t always easy</td>
+                </tr>
+                <tr>
+                    <td>the interviewer</td>
+                    <td>please talk into the microphone</td>
+                </tr>
+                <tr>
+                    <td>spin a bottle</td>
+                    <td>truth or dare?</td>
+                </tr>
+            </table>
+            <br>
+        </details>
+
+        <ul>
+            <li><a href="https://steamdb.info/app/1590730/stats/">steam api achievements</a></li>
+            <li><a href="https://www.gog.com/forum/helping_the_hotties/achievements_not_unlocking">achievements not unlocking</a></li>
+            <li><a href="https://www.gog.com/forum/helping_the_hotties/missing_achievement_average_helper">missing achievement “average helper”</a></li>
+            <li><a href="https://www.scribd.com/document/751422298/Hhotties-Official-Walkthrough-1-10add">helping the hotties official walkthrough</a></li>
+        </ul>
+        <br>
+        </article>
+        </region>
+
+
+        <region id="linux">
+        <article>
+        <h3># linux</h3>
+    
+<pre class="listing-block">
+<code># <span style="color:blue;">%USERPROFILE%</span>/AppData/Roaming/RenPy/HelpingTheHotties-1591000312</code>
+<code># ~/.renpy/HelpingTheHotties-1591000312</code>
+<code><span style="color:teal;">7z</span> a -t7z ~/library/roboczy/"251104 helping the hotties".7z "/run/media/<span style="color:blue;">$USER</span>/games/heroic-library/Helping the Hotties/game/game/saves"</code>
+</pre>
+        <ul>
+            <li><a href="https://steamdb.info/app/1590730/ufs/">save file locations</a></li>
+            <li><a href="https://www.gogdb.org/product/1237982317">gogid = 1237982317</a></li>
+        </ul>
+        <br>
+
+        <br>
+        </article>
+        </region>
+
+        
+        <hr>
+        <footer>2026-02-01</footer>
+    </main>
+</body>
+
+</html>
