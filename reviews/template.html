@@ -8,9 +8,84 @@
     <link rel="stylesheet" href="../css/review-page-colorful.css">
 
     <style>
-        /* css właściwy wyłącznie dla tej strony */
+        @font-face {
+            font-family: "ubuntu", sans-serif;
+            src: url("../fonts/Ubuntu-Regular.ttf");
+        }
+        body {
+            font-family: "ubuntu", sans-serif;
+        }
+        h1 {
+            font-size: 25px;
+        }
+        h2 {
+            font-size: 20px;
+        }
 
-        /* 
+        .main-content {
+            margin-left: 10%;
+            margin-right: 10%;
+            font-size: 14px;
+            padding: 0px 10px;
+            font-family: "ubuntu", sans-serif;
+        }
+
+        .region-grey {
+            background-color: whitesmoke;
+        }
+        .region-blue {
+            background-color: aliceblue;
+        }
+        .region-white {
+            background-color: white;
+        }
+        #table-of-content a {
+            text-decoration: none;
+            color: blue;
+        }
+        a {
+            text-decoration: none;
+            color: teal;
+        }
+        p {
+            line-height: 1.4;
+        }
+
+        .code-line {
+            font-family: "jetbrains mono", "ubuntu mono", monospace;
+            background-color: gainsboro;
+            border: 0px solid olive;
+        }
+        pre.listing-block {
+            background-color: ghostwhite;
+            overflow-x: auto;
+            overflow-y: hidden;
+            white-space: pre;
+            word-wrap: normal;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            padding-right: 10px;
+            border: 1px solid olive;
+        }
+        pre.listing-block::before {
+            counter-reset: listing;
+        }
+        pre.listing-block code {
+            counter-increment: listing-counter;
+            font-family: "calling code", "ubuntu mono", monospace;
+            font-size: 14px;
+        }
+        pre.listing-block code::before {
+            content: counter(listing-counter) "   ";
+            display: inline-block;
+            width: 4em;
+            padding-left: 0px;
+            margin-left: auto;
+            text-align: right;
+            font-size: 12px;
+            color: olive;
+        }
+        
         .images-horizontal {
             table-layout: fixed; 
             display: block;
@@ -26,9 +101,83 @@
         .images-horizontal figcaption {
             padding-top: 5px;
         }
-        */
 
-        /*
+        img {
+            width: 50vw;
+            height: auto;
+        }
+        figcaption {
+            font-size: 12px;
+            text-align: left;
+        }
+        .fighover figure {
+            display: inline-block;
+            border: 1px;
+            margin: 10px;
+        }
+        .fighover figure, .fighover img {
+            vertical-align: top;
+            width: 29vw;
+        }
+        .fighover figure, .fighover figcaption {
+            border: 1px;
+            text-align: center;
+        }
+
+        .achievements {
+            table-layout: fixed; 
+            width: 90%;
+            text-align: left;
+        }
+        .achievements--name {
+            text-align: center;
+            vertical-align: middle;
+        }
+        .achievements caption {
+            text-align: left;
+            padding-left: 1px;
+            font-weight: bold;
+        }
+        table.achievements td {
+            padding-top: 1px;
+            padding-bottom: 1px;
+            border-bottom: 1px solid rgba(128, 128, 0, 0.2);
+        }
+        .achievements td:nth-child(1) {
+            padding-left: 11px;
+            width: 70%;
+        }
+        .achievements td:nth-child(2) {
+            padding-left: 11px;
+            width: 100%;
+        }
+
+        @media only screen and (min-width: 1px) and (max-width: 920px) {
+            .soundtrack-ost {
+                width: 100%;
+            }
+        }
+        @media only screen and (min-width: 921px) and (max-width: 1250px) {
+            .soundtrack-ost {
+                width: 70%;
+            }
+        }
+        @media only screen and (min-width: 1251px) and (max-width: 1450px) {
+            .soundtrack-ost {
+                width: 50%;
+            }
+        }
+        @media only screen and (min-width: 1451px) and (max-width: 1900px) {
+            .soundtrack-ost {
+                width: 45%;
+            }
+        }
+        @media only screen and (min-width: 1901px) {
+            .soundtrack-ost {
+                width: 30%;
+            }
+        }
+
         details {
             border: 1px solid olive;
             border-radius: 8px;
@@ -43,7 +192,35 @@
             transition: all 150ms ease-in-out;
             padding: 12px;
         }
-        */
+        .accordion pre, .accordion p, .accordion table {
+            margin-left: 2%;
+            margin-right: 2%;
+        }
+
+        article div p, article div details, article details {
+            margin-left: 1%;
+            margin-right: 1%;
+        }
+        details figure {
+            display: block;
+            text-align: center;
+        }
+
+        .dictionary {
+            table-layout: fixed; 
+            width: 90%;
+            text-align: left;
+        }
+        .dictionary--term {
+            width: 30%;
+            text-align: center;
+            vertical-align: middle;
+        }
+        table.dictionary td {
+            padding-top: 1px;
+            padding-bottom: 2px;
+            border-bottom: 1px solid rgba(128, 128, 0, 0.2);
+        }
     </style>
 </head>
 
@@ -99,24 +276,11 @@
 
 
         <!-- 
-            <a href="../screenshots/" target="_blank">
             <figure class="fighover">
-                <img src="../screenshots/" alt=""/>
+                <source srcset="../screenshots/" type="image/webp">
+                <img loading="lazy" srcset="../screenshots/" alt=""/>
                 <figcaption>__cap__</figcaption>
             </figure>
-            </a>
-
-            <figure class="fighover">
-                <img loading="lazy" src="../screenshots/" alt=""/>
-                <figcaption>__cap__</figcaption>
-            </figure>
-
-            <a href="../screenshots/" target="_blank">
-            <figure class="fighover">
-                <img loading="lazy" src='../screenshots/' alt='xxxx'/>
-                <figcaption>__cap__</figcaption>
-            </figure>
-            </a>
 
             <colgroup>
                 <col span="1" class="--name">
@@ -124,6 +288,11 @@
 
             <article class="region-grey">
             <div class="region-white">
+
+            <details class="accordion"> 
+                <summary></summary>
+                <br>
+            </details>
         -->
 
 
