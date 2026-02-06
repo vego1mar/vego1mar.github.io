@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <title>julia in japan</title>
+    <meta charset="utf-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <style>
+        @font-face {
+            font-family: "ubuntu", sans-serif;
+            src: url("../fonts/Ubuntu-Regular.ttf");
+        }
+        body {
+            font-family: "ubuntu", sans-serif;
+        }
+        h1 {
+            font-size: 25px;
+        }
+        h2 {
+            font-size: 20px;
+        }
+
+        .main-content {
+            margin-left: 10%;
+            margin-right: 10%;
+            font-size: 14px;
+            padding: 0px 10px;
+            font-family: "ubuntu", sans-serif;
+        }
+
+        .region-grey {
+            background-color: whitesmoke;
+        }
+        .region-blue {
+            background-color: aliceblue;
+        }
+        .region-white {
+            background-color: white;
+        }
+        #table-of-content a {
+            text-decoration: none;
+            color: blue;
+        }
+        a {
+            text-decoration: none;
+            color: teal;
+        }
+        p {
+            line-height: 1.4;
+        }
+
+        .code-line {
+            font-family: "jetbrains mono", "ubuntu mono", monospace;
+            background-color: gainsboro;
+            border: 0px solid olive;
+        }
+        pre.listing-block {
+            background-color: ghostwhite;
+            overflow-x: auto;
+            overflow-y: hidden;
+            white-space: pre;
+            word-wrap: normal;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            padding-right: 10px;
+            border: 1px solid olive;
+        }
+        pre.listing-block::before {
+            counter-reset: listing;
+        }
+        pre.listing-block code {
+            counter-increment: listing-counter;
+            font-family: "calling code", "ubuntu mono", monospace;
+            font-size: 14px;
+        }
+        pre.listing-block code::before {
+            content: counter(listing-counter) "   ";
+            display: inline-block;
+            width: 4em;
+            padding-left: 0px;
+            margin-left: auto;
+            text-align: right;
+            font-size: 12px;
+            color: olive;
+        }
+        
+        .images-horizontal {
+            table-layout: fixed; 
+            display: block;
+            width: 100%;
+            overflow-x: scroll; 
+            overflow-y: hidden;
+            scroll-snap-align: center;
+        }
+        .images-horizontal a {
+            text-decoration: none;
+            color: black;
+        } 
+        .images-horizontal figcaption {
+            padding-top: 5px;
+        }
+
+        img {
+            width: 50vw;
+            height: auto;
+        }
+        figcaption {
+            font-size: 12px;
+            text-align: left;
+        }
+        .fighover figure {
+            display: inline-block;
+            border: 1px;
+            margin: 10px;
+        }
+        .fighover figure, .fighover img {
+            vertical-align: top;
+            width: 29vw;
+        }
+        .fighover figure, .fighover figcaption {
+            border: 1px;
+            text-align: center;
+        }
+
+        .achievements {
+            table-layout: fixed; 
+            width: 90%;
+            text-align: left;
+        }
+        .achievements--name {
+            text-align: center;
+            vertical-align: middle;
+        }
+        .achievements caption {
+            text-align: left;
+            padding-left: 1px;
+            font-weight: bold;
+        }
+        table.achievements td {
+            padding-top: 1px;
+            padding-bottom: 1px;
+            border-bottom: 1px solid rgba(128, 128, 0, 0.2);
+        }
+        .achievements td:nth-child(1) {
+            padding-left: 11px;
+            width: 70%;
+        }
+        .achievements td:nth-child(2) {
+            padding-left: 11px;
+            width: 100%;
+        }
+
+        .soundtrack-ost {
+            table-layout: fixed;
+            margin: auto;
+            width: 50%;
+        }
+        .soundtrack-ost td:nth-child(2) {
+            text-align: end;
+            padding-left: 5px;
+            width: 10%;
+        }
+        .soundtrack-ost tr:nth-child(even) {
+            background-color: ghostwhite;
+        }
+        .soundtrack-ost caption {
+            font-weight: bold;
+            text-align: left;
+            margin-left: -3%;
+        }
+
+        @media only screen and (min-width: 1px) and (max-width: 920px) {
+            .soundtrack-ost {
+                width: 100%;
+            }
+        }
+        @media only screen and (min-width: 921px) and (max-width: 1250px) {
+            .soundtrack-ost {
+                width: 70%;
+            }
+        }
+        @media only screen and (min-width: 1251px) and (max-width: 1450px) {
+            .soundtrack-ost {
+                width: 50%;
+            }
+        }
+        @media only screen and (min-width: 1451px) and (max-width: 1900px) {
+            .soundtrack-ost {
+                width: 45%;
+            }
+        }
+        @media only screen and (min-width: 1901px) {
+            .soundtrack-ost {
+                width: 30%;
+            }
+        }
+
+        details {
+            border: 1px solid olive;
+            border-radius: 8px;
+            box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.12);
+            margin-bottom: 8px;
+        }
+        details[open] summary {
+            margin-bottom: 10px;
+        }
+        summary {
+            cursor: pointer;
+            transition: all 150ms ease-in-out;
+            padding: 12px;
+        }
+        .accordion pre, .accordion p, .accordion table {
+            margin-left: 2%;
+            margin-right: 2%;
+        }
+
+        article div p, article div details, article details {
+            margin-left: 1%;
+            margin-right: 1%;
+        }
+        details figure, div figure {
+            display: block;
+            text-align: center;
+        }
+
+        .dictionary {
+            table-layout: fixed; 
+            width: 90%;
+            text-align: left;
+        }
+        .dictionary--term {
+            width: 30%;
+            text-align: center;
+            vertical-align: middle;
+        }
+        table.dictionary td {
+            padding-top: 1px;
+            padding-bottom: 2px;
+            border-bottom: 1px solid rgba(128, 128, 0, 0.2);
+        }
+    </style>
+</head>
+
+<body>
+    <main class="main-content">
+        <section id="lead-text">
+        <h2>freshwomen season 2: julia in japan (2026)</h2>
+        <p>ogółem dodatek jest infantylny, acz jest i w tym pewna doza rozgrywki;</p>
+        <br>
+        </section>
+
+
+        <region class="informacje">
+        <article>
+        <h3># informacje</h3>
+
+        <ul>
+            <li>kod beta steam: juliainjapanbeta01</li>
+            <li><a href="https://steamcommunity.com/games/3478650/announcements/detail/655966683127612296">free dlc: julia in japan is available now!</a></li>
+            <li><a href="https://www.youtube.com/watch?v=CIVcs_yY6Ys">julia in japan dlc</a></li>
+            <li><a href="https://steamcommunity.com/app/3478650/discussions/0/687494077953973628/">julia in japan</a></li>
+            <li><a href="https://steamcommunity.com/app/3478650/discussions/0/686369147640104376/">rhythm game issues</a></li>
+        </ul>
+        <br>
+
+        </article>
+        <br>
+        </region>
+
+
+        <section id="table-of-content">
+        <div class="region-blue">
+        <h3># spis treści</h3>
+        <ul>
+            <li><a href="#opis-dlc" target="_self">opis dlc</a></li>
+            <li><a href="#ścieżka-dźwiękowa" target="_self">ścieżka dźwiękowa</a></li>
+        </ul>
+        <br>
+        </div>
+        </section>
+
+
+        <region id="opis-dlc">
+        <article>
+            <h3># opis dlc</h3>
+
+            <div> <!-- infantylność -->
+            <p>ogółem dodatek jest infantylny, acz jest i w tym pewna doza rozgrywki; przede wszystkim daje tło fabularne odnośnie charakteru julii williams; stara się to być osadzone w zachwycie nad japońską kulturą, stąd pojawia się dzielnica akihabara w tokio pełna automatów do grania;</p>
+            <br>
+            </div>
+
+            <div> <!-- głosy -->
+            <p>postaci nie mają swych głosów (chociaż aktorzy głosowi są wylistowani w napisach końcowych), lecz istnieją dźwięki czynności i odgłosy tłumu; aczkolwiek same dźwięki są często głośniejsze od ambientu;</p>
+            <br>
+            </div>
+
+            <div> <!-- rozgrywka -->
+            <p>dlc wprowadza nie tylko inny styl graficzny menu, ale i elementy rozgrywki; w szczególności mamy mapę z wyborem aktywności danego dnia; najważniejszym jednakowoż jest gra rytmiczna;</p>
+
+            <details class="accordion">
+                <summary>rozgrywka</summary>
+                <figure>
+                    <source srcset="../screenshots/freshwomen-2-julia-in-japan/27-mapa.png" type="image/png">
+                    <img loading="lazy" srcset="../screenshots/freshwomen-2-julia-in-japan/27-mapa.png" alt="27-mapa.png">
+                </figure>
+                <figure>
+                    <source srcset="../screenshots/freshwomen-2-julia-in-japan/18-gra-rytmiczna.png" type="image/png">
+                    <img loading="lazy" srcset="../screenshots/freshwomen-2-julia-in-japan/18-gra-rytmiczna.png" alt="18-gra-rytmiczna.png">
+                </figure>
+                <figure>
+                    <source srcset="../screenshots/freshwomen-2-julia-in-japan/44-podsumowanie-gry.png" type="image/png">
+                    <img loading="lazy" srcset="../screenshots/freshwomen-2-julia-in-japan/44-podsumowanie-gry.png" alt="44-podsumowanie-gry.png">
+                </figure>
+            </details>
+            <br>
+            </div>
+
+            <div> <!-- gra rytmiczna -->
+            <p>w ramach gry rytmicznej pojawił się nowy ambient w postaci 12 utworów, które są do niej dobrze dobrane; niemniej zwiększony poziom trudności oznacza po prostu szybsze tempo i większą liczbę tokenów jako nagrodę; tokeny można używać jedynie do erotycznej gatchy, która odblokowuje obrazy w galerii (z czego najładniejsze dotyczą naomi);</p>
+
+            <details class="accordion">
+                <summary>zdjęcia naomi z galerii</summary>
+                <figure>
+                    <source srcset="../screenshots/freshwomen-2-julia-in-japan/21-naomi-galeria.png" type="image/png">
+                    <img loading="lazy" srcset="../screenshots/freshwomen-2-julia-in-japan/21-naomi-galeria.png" alt="21-naomi-galeria.png">
+                </figure>
+                <figure>
+                    <source srcset="../screenshots/freshwomen-2-julia-in-japan/54-naomi-galeria.png" type="image/png">
+                    <img loading="lazy" srcset="../screenshots/freshwomen-2-julia-in-japan/54-naomi-galeria.png" alt="54-naomi-galeria.png">
+                </figure>
+                <figure>
+                    <source srcset="../screenshots/freshwomen-2-julia-in-japan/55-naomi-galeria.png" type="image/png">
+                    <img loading="lazy" srcset="../screenshots/freshwomen-2-julia-in-japan/55-naomi-galeria.png" alt="55-naomi-galeria.png">
+                </figure>
+            </details>
+
+            <br>
+            </div>
+
+            <div> <!-- ekspresja twarzy -->
+            <p>z drugiej strony jest to wyraźny zwrot w stronę nadmiernie sztucznej ekspresji twarzy postaci, połączonej z wprowadzaniem stylistyki typowej dla animowanych komiksów; pomimo tego zdarzają się ujęcia, gdy postaci wyglądają ładnie;</p>
+
+            <details class="accordion">
+                <summary>przesadzona ekspresja twarzy</summary>
+                <figure>
+                    <source srcset="../screenshots/freshwomen-2-julia-in-japan/24-ekspresja-himiko.png" type="image/png">
+                    <img loading="lazy" srcset="../screenshots/freshwomen-2-julia-in-japan/24-ekspresja-himiko.png" alt="24-ekspresja-himiko.png">
+                </figure>
+                <figure>
+                    <source srcset="../screenshots/freshwomen-2-julia-in-japan/10-ekspresja-riko.png" type="image/png">
+                    <img loading="lazy" srcset="../screenshots/freshwomen-2-julia-in-japan/10-ekspresja-riko.png" alt="10-ekspresja-riko.png">
+                </figure>
+            </details>
+
+            <details class="accordion">
+                <summary>ładne ujęcia postaci</summary>
+                <figure>
+                    <source srcset="../screenshots/freshwomen-2-julia-in-japan/36-himiko.png" type="image/png">
+                    <img loading="lazy" srcset="../screenshots/freshwomen-2-julia-in-japan/36-himiko.png" alt="36-himiko.png">
+                </figure>
+                <figure>
+                    <source srcset="../screenshots/freshwomen-2-julia-in-japan/17-naomi.png" type="image/png">
+                    <img loading="lazy" srcset="../screenshots/freshwomen-2-julia-in-japan/17-naomi.png" alt="17-naomi.png">
+                </figure>
+                <figure>
+                    <source srcset="../screenshots/freshwomen-2-julia-in-japan/33-himiko.png" type="image/png">
+                    <img loading="lazy" srcset="../screenshots/freshwomen-2-julia-in-japan/33-himiko.png" alt="33-himiko.png">
+                </figure>
+            </details>
+
+            <br>
+            </div>
+
+            <br>
+        </article>
+        </region>
+
+
+        <region id="ścieżka-dźwiękowa">
+        <article>
+            <h3># ścieżka dźwiękowa</h3>
+
+            <table class="soundtrack-ost">
+                <caption>julia in japan</caption>
+                <colgroup>
+                    <col span="1" class="soundtrack-ost--name">
+                    <col span="1">
+                </colgroup>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=Fpux2AU37eY">tombi</a> – macaroom</td>
+                    <td>6:04</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=mlwctXx9aCY">press x twice</a> – lexica</td>
+                    <td>2:33</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=VQr_v1HQoaA">i’ve been thinking</a> – dimitrix</td>
+                    <td>3:38</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=NH2V3q-ntvI">planet rave</a> – cackie jhen</td>
+                    <td>2:44</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=0evG1oBEkio">morning sun</a> – rh3a bluu</td>
+                    <td>3:14</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=9cNQFB0TDfY">swan lake (swan theme)</a> – tchaikovsky</td>
+                    <td>3:00</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=caDOg_h-a5I">modern mozart</a> – will van der crommert</td>
+                    <td>2:40</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=o1Aina85wfI">tropical dreams</a> – pow</td>
+                    <td>2:54</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=yTqOT7zR-_g">tide</a> – ooyy</td>
+                    <td>2:37</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=cbf1RmiTTjg">hey, juliana</a> – cackie jhen</td>
+                    <td>3:02</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=ZdAn3EzRh5c">feel alive</a> – flyin</td>
+                    <td>3:33</td>
+                </tr>
+            </table>
+
+            <br>
+        </article>
+        </region>
+
+        
+        <hr>
+        <footer>2026-02-06</footer>
+    </main>
+</body>
+
+</html>
