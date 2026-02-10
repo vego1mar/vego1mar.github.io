@@ -1,0 +1,793 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <title>valley of memory</title>
+    <meta charset="utf-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <style>
+        @font-face {
+            font-family: "ubuntu", sans-serif;
+            src: url("../fonts/Ubuntu-Regular.ttf");
+        }
+        body {
+            font-family: "ubuntu", sans-serif;
+        }
+        h1 {
+            font-size: 25px;
+        }
+        h2 {
+            font-size: 20px;
+        }
+
+        .main-content {
+            margin-left: 10%;
+            margin-right: 10%;
+            font-size: 14px;
+            padding: 0px 10px;
+            font-family: "ubuntu", sans-serif;
+        }
+
+        .region-grey {
+            background-color: rgb(250, 250, 250);
+        }
+        .region-blue {
+            background-color: aliceblue;
+        }
+        .region-white {
+            background-color: white;
+        }
+        #table-of-content a {
+            text-decoration: none;
+            color: blue;
+        }
+        a {
+            text-decoration: none;
+            color: teal;
+        }
+        p {
+            line-height: 1.4;
+        }
+
+        .code-line {
+            font-family: "jetbrains mono", "ubuntu mono", monospace;
+            background-color: gainsboro;
+            border: 0px solid olive;
+        }
+        pre.listing-block {
+            background-color: ghostwhite;
+            overflow-x: auto;
+            overflow-y: hidden;
+            white-space: pre;
+            word-wrap: normal;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            padding-right: 10px;
+            border: 1px solid olive;
+        }
+        pre.listing-block::before {
+            counter-reset: listing;
+        }
+        pre.listing-block code {
+            counter-increment: listing-counter;
+            font-family: "calling code", "ubuntu mono", monospace;
+            font-size: 14px;
+        }
+        pre.listing-block code::before {
+            content: counter(listing-counter) "   ";
+            display: inline-block;
+            width: 4em;
+            padding-left: 0px;
+            margin-left: auto;
+            text-align: right;
+            font-size: 12px;
+            color: olive;
+        }
+        
+        .images-horizontal {
+            table-layout: fixed; 
+            display: block;
+            width: 100%;
+            overflow-x: scroll; 
+            overflow-y: hidden;
+            scroll-snap-align: center;
+        }
+        .images-horizontal a {
+            text-decoration: none;
+            color: black;
+        } 
+        .images-horizontal figcaption {
+            padding-top: 5px;
+        }
+
+        img {
+            width: 50vw;
+            height: auto;
+        }
+        figcaption {
+            font-size: 12px;
+            text-align: left;
+        }
+        .fighover figure {
+            display: inline-block;
+            border: 1px;
+            margin: 10px;
+        }
+        .fighover figure, .fighover img {
+            vertical-align: top;
+            width: 29vw;
+        }
+        .fighover figure, .fighover figcaption {
+            border: 1px;
+            text-align: center;
+        }
+
+        .achievements {
+            table-layout: fixed; 
+            width: 90%;
+            text-align: left;
+        }
+        .achievements--name {
+            text-align: center;
+            vertical-align: middle;
+        }
+        .achievements caption {
+            text-align: left;
+            padding-left: 1px;
+            font-weight: bold;
+        }
+        table.achievements td {
+            padding-top: 1px;
+            padding-bottom: 1px;
+            border-bottom: 1px solid rgba(128, 128, 0, 0.2);
+        }
+        .achievements td:nth-child(1) {
+            padding-left: 11px;
+            width: 70%;
+        }
+        .achievements td:nth-child(2) {
+            padding-left: 11px;
+            width: 100%;
+        }
+
+        @media only screen and (min-width: 1px) and (max-width: 920px) {
+            .soundtrack-ost {
+                width: 100%;
+            }
+        }
+        @media only screen and (min-width: 921px) and (max-width: 1250px) {
+            .soundtrack-ost {
+                width: 70%;
+            }
+        }
+        @media only screen and (min-width: 1251px) and (max-width: 1450px) {
+            .soundtrack-ost {
+                width: 50%;
+            }
+        }
+        @media only screen and (min-width: 1451px) and (max-width: 1900px) {
+            .soundtrack-ost {
+                width: 45%;
+            }
+        }
+        @media only screen and (min-width: 1901px) {
+            .soundtrack-ost {
+                width: 30%;
+            }
+        }
+
+        details {
+            border: 1px solid olive;
+            border-radius: 8px;
+            box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.12);
+            margin-bottom: 8px;
+        }
+        details[open] summary {
+            margin-bottom: 10px;
+        }
+        summary {
+            cursor: pointer;
+            transition: all 150ms ease-in-out;
+            padding: 12px;
+        }
+        .accordion pre, .accordion p, .accordion table {
+            margin-left: 2%;
+            margin-right: 2%;
+        }
+
+        article div p, article div details, article details {
+            margin-left: 1%;
+            margin-right: 1%;
+        }
+        details figure, div figure {
+            display: block;
+            text-align: center;
+        }
+
+        .dictionary {
+            table-layout: fixed; 
+            width: 90%;
+            text-align: left;
+        }
+        .dictionary--term {
+            width: 30%;
+            text-align: center;
+            vertical-align: middle;
+        }
+        table.dictionary td {
+            padding-top: 1px;
+            padding-bottom: 2px;
+            border-bottom: 1px solid rgba(128, 128, 0, 0.2);
+        }
+
+        .soundtrack-ost {
+            table-layout: fixed;
+            margin: auto;
+            width: 50%;
+        }
+        .soundtrack-ost td:nth-child(2) {
+            text-align: end;
+            padding-left: 5px;
+            width: 10%;
+        }
+        .soundtrack-ost tr:nth-child(even) {
+            background-color: ghostwhite;
+        }
+        .soundtrack-ost caption {
+            font-weight: bold;
+            text-align: left;
+            margin-left: -3%;
+        }
+    </style>
+</head>
+
+<body>
+    <main class="main-content">
+        <section id="lead-text">
+        <h2>assassin’s creed: mirage – valley of memory (2025)</h2>
+        <p>jak na darmową zawartość to jest to względnie dobre uzupełnienie świata przedstawionego, acz szału nie ma; wprowadzono wiele drobnych poprawek i nowości, lecz trudno je odczuć; niektóre z tychże mają być podyktowane słuchaniem próśb społeczności, lecz sposób ich implementacji prowadzi w stronę powtarzalności związanej z nową grą plus; ten dodatek na swój sposób przypomina jak specyficzną częścią asasynowej serii jest mirage;</p>
+        <br>
+        </section>
+
+
+        <region class="informacje">
+        <article>
+        <h3># informacje</h3>
+
+        <ul>
+            <li><a href="./assassins creed mirage.html">recenzja głównej gry</a></li>
+            <br>
+            <li><a href="https://steamcommunity.com/app/3035570/discussions/">steam discussions</a></li>
+            <li><a href="https://steamcommunity.com/app/3035570/eventcomments/">events & announcements</a></li>
+            <li><a href="https://www.gry-online.pl/gry/assassins-creed-mirage/ze63da">wiadomości</a></li>
+            <li><a href="https://www.youtube.com/@Ubisoft/videos">@ubisoft</a></li>
+            <li><a href="https://discord.com/invite/ac">discord</a></li>
+            <br>
+            <li><a href="https://steamcommunity.com/games/3035570/announcements/detail/511844430570850315">assassin’s creed mirage valley of memory launches for free on november 18</a></li>
+            <li><a href="https://steamcommunity.com/games/3035570/announcements/detail/541120365023199548">assassin’s creed mirage: valley of memory – what you need to know</a></li>
+            <li><a href="https://steamcommunity.com/games/3035570/announcements/detail/609802806473261129">assassin’s creed mirage: valley of memory is out now</a></li>
+            <br>
+        </ul>
+        <br>
+
+        </article>
+        <br>
+        </region>
+
+
+        <section id="table-of-content">
+        <div class="region-blue">
+        <h3># spis treści</h3>
+        <ul>
+            <li><a href="#zmiany-w-ramach-aktualizacji" target="_self">zmiany w ramach aktualizacji</a></li>
+            <li><a href="#dolina-pamięci" target="_self">dolina pamięci</a></li>
+            <li><a href="#sekwencje-animusa-i-pełna-synchronizacja" target="_self">sekwencje animusa i pełna synchronizacja</a></li>
+            <li><a href="#osiągnięcia" target="_self">osiągnięcia</a></li>
+            <li><a href="#ścieżka-dźwiękowa" target="_self">ścieżka dźwiękowa</a></li>
+            <li><a href="#linux" target="_self">sprawa dla linusa</a></li>
+        </ul>
+        <br>
+        </div>
+        </section>
+
+
+        <region id="zmiany-w-ramach-aktualizacji">
+        <article class="region-white">
+            <h3># zmiany w ramach aktualizacji</h3>
+
+            <div> <!-- artefakt -->
+            <p>gra zwiększyła swój rozmiar o 26g (z 40 gb do 66 gb);</p>
+            <p>wydaje się iż technicznie gra się nieco poprawiła a w związku z tym i jej wydajność;</p>
+            <p>z drugiej strony aktualizacja zresetowała poprzednie ustawienia graficzne; to może być powodem specyficznego artefaktu graficznego pojawiającego się podczas burzy piaskowej;</p>
+            <br>
+            </div>
+
+            <div> <!-- aktualizacja -->
+            <p>główne zmiany są raczej drobne:</p>
+            <ul>
+                <li>łatwiejsze skakanie w dół (free jump)</li>
+                <li>wyskoki w bok i tył (back and side ejects)</li>
+                <li>zestawy ustawień dla kontrolerów (controls presets)</li>
+                <li>przełącznik w ustawieniach dla rozmywania w ruchu (motion blur)</li>
+                <li>nowe poziomy trudności (hardened assassin, ultimate assassin)</li>
+                <li>zmiany dla narzędzi 3. poziomu (w szczególności: rzut nożem wywołuje wybuch wazy z olejem)</li>
+                <li>możliwość anulowania dodatkowego zabójstwa z serii (klawisz c)</li>
+                <li>możliwość ponownego rozgrywania misji (w takiej samej formie jak zlecenia)</li>
+            </ul>
+            <details class="accordion"> 
+                <summary>nowe tutoriale</summary>
+                <figure>
+                    <source srcset="../screenshots/ac-mirage-valley-of-memory/202512129639-tutorial-defensywa.jpg" type="image/jpg">
+                    <img loading="lazy" srcset="../screenshots/ac-mirage-valley-of-memory/202512129639-tutorial-defensywa.jpg" alt="202512129639-tutorial-defensywa.jpg">
+                </figure>
+                <figure>
+                    <source srcset="../screenshots/ac-mirage-valley-of-memory/202611821247-tutorial-szermiercze-żmije.jpg" type="image/jpg">
+                    <img loading="lazy" srcset="../screenshots/ac-mirage-valley-of-memory/202611821247-tutorial-szermiercze-żmije.jpg" alt="202611821247-tutorial-szermiercze-żmije.jpg">
+                </figure>
+                <br>
+            </details>
+            <ul>
+                <li><a href="https://www.youtube.com/watch?v=EFXFtuxFItA">[pegi] assassin's creed mirage - title update 1.1.0: free jump</a></li>
+                <li><a href="https://www.youtube.com/watch?v=co0boj11QQs">[pegi] assassin's creed mirage - title update 1.1.0 back & side ejects</a></li>
+                <li><a href="https://steamcommunity.com/games/3035570/announcements/detail/596291616874955234">ac mirage title update 1.1.0 - release notes</a></li>
+                <li><a href="https://steamcommunity.com/games/3035570/announcements/detail/530992342584263334">ac mirage title update 1.1.1 - release notes</a></li>
+                <li><a href="https://steamcommunity.com/games/3035570/announcements/detail/519732795817328752">ac mirage: an update on motion blur toggle and upcoming title update</a></li>
+            </ul>
+            <br>
+            </div>
+
+            <div> <!-- dodatek -->
+            <p>zmiany wyłączne dla dodatku fabularnego obejmują:</p>
+            <ul>
+                <li>nowe darmowe nagrody ubisoft connect (fan kit, dervis costume, sandstorm emblem);</li>
+                <li>nowe szaty i bronie (w szczególności: sztylet rozkładający ciała zabitych)</li>
+                <li>4. poziom ulepszeń narzędzi (można używać wszystkich cech 1. poziomu)</li>
+                <li>sekwencje animusa (wieża wyzwań z nagrodami)</li>
+                <li>nowe zlecenia w aluli</li>
+                <li>szanty do grania na oud (gitarze)</li>
+                <li>pustynne zasadzki</li>
+                <li>szermiercze żmije</li>
+                <li>filtry kolorystyczne</li>
+            </ul>
+            <details class="accordion"> 
+                <summary>filtry koloru</summary>
+                <figure>
+                    <source srcset="../screenshots/ac-mirage-valley-of-memory/2026124214443-filtr-1.jpg" type="image/jpg">
+                    <img loading="lazy" srcset="../screenshots/ac-mirage-valley-of-memory/2026124214443-filtr-1.jpg" alt="2026124214443-filtr-1.jpg">
+                </figure>
+                <figure>
+                    <source srcset="../screenshots/ac-mirage-valley-of-memory/2026124214453-filtr-2.jpg" type="image/jpg">
+                    <img loading="lazy" srcset="../screenshots/ac-mirage-valley-of-memory/2026124214453-filtr-2.jpg" alt="2026124214453-filtr-2.jpg">
+                </figure>
+                <figure>
+                    <source srcset="../screenshots/ac-mirage-valley-of-memory/2026124214512-filtr-4.jpg" type="image/jpg">
+                    <img loading="lazy" srcset="../screenshots/ac-mirage-valley-of-memory/2026124214512-filtr-4.jpg" alt="2026124214512-filtr-4.jpg">
+                </figure>
+                <figure>
+                    <source srcset="../screenshots/ac-mirage-valley-of-memory/202612421452-filtr-3.jpg" type="image/jpg">
+                    <img loading="lazy" srcset="../screenshots/ac-mirage-valley-of-memory/202612421452-filtr-3.jpg" alt="202612421452-filtr-3.jpg">
+                </figure>
+                <br>
+            </details>
+            <ul>
+                <li><a href="https://www.youtube.com/watch?v=X1cgcEkOgc8">[esrb] assassin's creed mirage: valley of memory reveal stream</a></li>
+                <li><a href="https://www.youtube.com/watch?v=ZAFqhDEKF1s">[pegi] assassin's creed mirage: travel to alula</a></li>
+                <li><a href="https://www.youtube.com/watch?v=lAuVc-z7bvg">[pegi] assassin's creed mirage: explore the northen region</a></li>
+                <li><a href="https://www.youtube.com/watch?v=lvjGjR4Ffz0">[pegi] assassin's creed mirage: explore the southern region</a></li>
+                <li><a href="https://www.youtube.com/watch?v=MQ82MHTbCYY">[pegi] assassin's creed mirage: town of alula</a></li>
+                <li><a href="https://www.youtube.com/watch?v=-2CocGc3pnk">[pegi] assassin's creed mirage - title update 1.1.0: stolen goods</a></li>
+                <li><a href="https://ubiservices.cdn.ubi.com/1d5e4680-e410-432c-af6d-c50d7024ddd0/downloadable/ACMirage_FanKit.zip">assassin's creed mirage – fan kit</a></li>
+            </ul>
+            <br>
+            </div>
+
+            <br>
+        </article>
+        </region>
+
+
+        <region id="dolina-pamięci">
+        <article class="region-grey">
+            <h3># dolina pamięci</h3>
+
+            <div> <!-- pejzaże -->
+            <p>fabuła jest przewidywalna – basim pozwala sobie być naiwnym i potem trzeba się tym zająć; opowiadanie typowe dla ubisoftu i dobrze się wpisujące w całość mirage;</p>
+            <p>alula i okolice potrafią być dość różnorodne, jednakowoż większość terenu jest pusta bo to po prostu pustynia skalista;</p>
+            <!-- <details class="accordion">  -->
+                <!-- <summary>pejzaże</summary> -->
+                <figure>
+                    <source srcset="../screenshots/ac-mirage-valley-of-memory/20251216164140-pejzaż-dmuchawiec.jpg" type="image/jpg">
+                    <img loading="lazy" srcset="../screenshots/ac-mirage-valley-of-memory/20251216164140-pejzaż-dmuchawiec.jpg" alt="20251216164140-pejzaż-dmuchawiec.jpg">
+                </figure>
+                <figure>
+                    <source srcset="../screenshots/ac-mirage-valley-of-memory/20251212221424-pejzaż-południowa-dzicz.jpg" type="image/jpg">
+                    <img loading="lazy" srcset="../screenshots/ac-mirage-valley-of-memory/20251212221424-pejzaż-południowa-dzicz.jpg" alt="20251212221424-pejzaż-południowa-dzicz.jpg">
+                </figure>
+                <figure>
+                    <source srcset="../screenshots/ac-mirage-valley-of-memory/20251216172144-pejzaż-dolina-ramm.jpg" type="image/jpg">
+                    <img loading="lazy" srcset="../screenshots/ac-mirage-valley-of-memory/20251216172144-pejzaż-dolina-ramm.jpg" alt="20251216172144-pejzaż-dolina-ramm.jpg">
+                </figure>
+                <figure>
+                    <source srcset="../screenshots/ac-mirage-valley-of-memory/202611922535-pejzaż-dromadery.jpg" type="image/jpg">
+                    <img loading="lazy" srcset="../screenshots/ac-mirage-valley-of-memory/202611922535-pejzaż-dromadery.jpg" alt="202611922535-pejzaż-dromadery.jpg">
+                </figure>
+                <!-- <br> -->
+            <!-- </details> -->
+            <br>
+            </div>
+
+            <div> <!-- ulepszenia -->
+            <p>czwarty poziom ulepszeń narzędzi zamknięty został za wyzwaniami w ramach sekwencji animusa; jako że zdobycie czterech punktów umiejętności by taką możliwość odblokować zajmuje nieco czasu, to znaczy iż niewielu dobrnie do tego momentu;</p>
+            <br>
+            </div>
+
+            <div> <!-- wspinaczka -->
+            <p>nie zabrakło standardowej wspinaczki czy wpisów w kodeksie;</p>
+            <details class="accordion"> 
+                <summary>kodeks i wspinaczka</summary>
+                <figure>
+                    <source srcset="../screenshots/ac-mirage-valley-of-memory/20251216172015-wspinaczka.jpg" type="image/jpg">
+                    <img loading="lazy" srcset="../screenshots/ac-mirage-valley-of-memory/20251216172015-wspinaczka.jpg" alt="20251216172015-wspinaczka.jpg">
+                </figure>
+                <figure>
+                    <source srcset="../screenshots/ac-mirage-valley-of-memory/202512122244-zakątki-muzyka.jpg" type="image/jpg">
+                    <img loading="lazy" srcset="../screenshots/ac-mirage-valley-of-memory/202512122244-zakątki-muzyka.jpg" alt="202512122244-zakątki-muzyka.jpg">
+                </figure>
+                <br>
+            </details>
+            <br>
+            </div>
+
+            <div> <!-- ślady -->
+            <p>kupowanie map nadal pozostaje tak bezużyteczne jak było, tj. niektóre miejsca i tak trzeba odkryć samodzielnie i żadna synchronizacja punktów widokowych w tym nie pomoże, zatem po co to żyje;</p>
+            <p>zwierzęta pozostawiają po sobie bardziej wyraźne ślady na piasku;</p>
+            <details class="accordion"> 
+                <summary>ślady na piasku</summary>
+                <figure>
+                    <source srcset="../screenshots/ac-mirage-valley-of-memory/2026119223857-ślady-na-piasku.jpg" type="image/jpg">
+                    <img loading="lazy" srcset="../screenshots/ac-mirage-valley-of-memory/2026119223857-ślady-na-piasku.jpg" alt="2026119223857-ślady-na-piasku.jpg">
+                </figure>
+                <br>
+            </details>
+            <br>
+            </div>
+
+            <br>
+        </article>
+        </region>
+
+
+        <region id="sekwencje-animusa-i-pełna-synchronizacja">
+        <article class="region-white">
+            <h3># sekwencje animusa i pełna synchronizacja</h3>
+
+            <div> <!-- sekwencje animusa -->
+            <p>sekwencje animusa skupiają się na wyzwaniach czasowych; prawie wszystkie wymagają limitu czasowego, co powoduje iż nie można wypełnić wszystkich wymagań za pierwszym przejściem; wiele z nich posiada ograniczenia: nie używaj wzroku orła, nie używaj asasyńskiego skupienia, zabij tylko cele (większość z nich jest wystarczająco prosta, lecz niektóre z nich są zadziwiająco trudne);</p>
+            <p>kłopot zasadniczy z tymi wyzwaniami jest taki, że nie można ich wcześniej zresetować inaczej niż dać się zabić, co bywa zadziwiająco długie; pomóc może w tym nieco nowa zbroja, która przepoławia zdrowie (daje pełną niesłyszalność ruchów, zabierając przy tym połowę zdrowia);</p>
+            <p>ostateczną nagrodą za ten tryb gry są mody animusa (automatyczne odnawianie zasobów basima), których można używać tylko w trybie sekwencji animusa albo w nowej grze plus; jednakowoż odbierają one możliwość zdobywania osiągnięć, co czyni je lekko bezużytecznymi;</p>
+            <p>na swój sposób można to potraktować jako przygotowanie do nowej gry plus;</p>
+            <details class="accordion"> 
+                <summary>sekwencje animusa</summary>
+                <figure>
+                    <source srcset="../screenshots/ac-mirage-valley-of-memory/20251212212722-sekwencje-animusa.jpg" type="image/jpg">
+                    <img loading="lazy" srcset="../screenshots/ac-mirage-valley-of-memory/20251212212722-sekwencje-animusa.jpg" alt="20251212212722-sekwencje-animusa.jpg">
+                </figure>
+                <figure>
+                    <source srcset="../screenshots/ac-mirage-valley-of-memory/2026120205528-automatyczne-uzupełnianie.jpg" type="image/jpg">
+                    <img loading="lazy" srcset="../screenshots/ac-mirage-valley-of-memory/2026120205528-automatyczne-uzupełnianie.jpg" alt="2026120205528-automatyczne-uzupełnianie.jpg">
+                </figure>
+                <br>
+            </details>
+            <br>
+            </div>
+
+            <div> <!-- pełna synchronizacja -->
+            <p>w trybie pełnej synchronizacji (permadeath) w nowej grze plus istnieją tylko dwie istotne zasady: unikać otwartej walki (bo potrafi być ona nieprecyzyjna a basim potrafi się czasem zakleszczać na najprostszej przeszkodzie) oraz nieustępliwie biegać i pomijać dialogi (bo ukończenie gry wymaga około siedmiu godzin i nadal istnieje pełno scen niepomijalnych);</p>
+            <p>dodatkowo należałoby zauważyć iż musimy dokładnie raz powrócić do anbar, w związku z czym dobrze by było wspiąć się na tamtejszy punkt widokowy; poza tym by się teleportować można wybierać kryjówki biur asasynów, gdzie można również odnawiać zasoby;</p>
+            <p>w taki sposób jedynym realnym zagrożeniem śmiercią staje się finałowa walka z roshan, gdzie najpierw trzeba rzucić w nią nożem, a potem unikać jej ataków, bo lubi je ze sobą łączyć; nawet na najwyższym poziomie trudności bomba dymna zbija ją z tropu na tyle, by można było zadać jej kilka ciosów bez obaw o odpowiedź;</p>
+            <p>ostatniego fragmentu z nehal i dżinnem prawie w ogóle nie można przewijać;</p>
+            <details class="accordion"> 
+                <summary>pełna synchronizacja</summary>
+                <figure>
+                    <source srcset="../screenshots/ac-mirage-valley-of-memory/2026130211153-permanentna-śmierć.jpg" type="image/jpg">
+                    <img loading="lazy" srcset="../screenshots/ac-mirage-valley-of-memory/2026130211153-permanentna-śmierć.jpg" alt="2026130211153-permanentna-śmierć.jpg">
+                </figure>
+                <figure>
+                    <source srcset="../screenshots/ac-mirage-valley-of-memory/2026130211045-poziom-trudności.jpg" type="image/jpg">
+                    <img loading="lazy" srcset="../screenshots/ac-mirage-valley-of-memory/2026130211045-poziom-trudności.jpg" alt="2026130211045-poziom-trudności.jpg">
+                </figure>
+                <figure>
+                    <source srcset="../screenshots/ac-mirage-valley-of-memory/202613022742-wspomnienie-utracone.jpg" type="image/jpg">
+                    <img loading="lazy" srcset="../screenshots/ac-mirage-valley-of-memory/202613022742-wspomnienie-utracone.jpg" alt="202613022742-wspomnienie-utracone.jpg">
+                </figure>
+                <figure>
+                    <source srcset="../screenshots/ac-mirage-valley-of-memory/2026240176-pełna-synchronizacja.jpg" type="image/jpg">
+                    <img loading="lazy" srcset="../screenshots/ac-mirage-valley-of-memory/2026240176-pełna-synchronizacja.jpg" alt="2026240176-pełna-synchronizacja.jpg">
+                </figure>
+                <br>
+            </details>
+            <br>
+            </div>
+
+            <br>
+        </article>
+        </region>
+
+
+        <region id="osiągnięcia">
+        <article class="region-grey">
+            <h3># osiągnięcia</h3>
+    
+            <details class="accordion"> 
+                <summary>achievements</summary>
+
+                <div> <!-- valley of memory -->
+                <table class="achievements">
+                    <caption>valley of memory</caption>
+                    <tr>
+                        <td class="achievements--name"></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>lost and found</td>
+                        <td>return all stolen goods to hind</td>
+                    </tr>
+                    <tr>
+                        <td>once upon a time</td>
+                        <td>listen to all folktales</td>
+                    </tr>
+                    <tr>
+                        <td>pro musician</td>
+                        <td>collect all oud melodies</td>
+                    </tr>
+                    <tr>
+                        <td>if i recall correctly</td>
+                        <td>replay an animus sequence</td>
+                    </tr>
+                    <tr>
+                        <td>perfect memory</td>
+                        <td>complete all sequence challenges</td>
+                    </tr>
+                    <tr>
+                        <td>make a break</td>
+                        <td>escape the alula prison</td>
+                    </tr>
+                    <tr>
+                        <td>give it the slip</td>
+                        <td>escape the alula prison undetected</td>
+                    </tr>
+                    <tr>
+                        <td>playback</td>
+                        <td>unlock all animus sequence rewards</td>
+                    </tr>
+                    <tr>
+                        <td>taste your own medicine</td>
+                        <td>poison a poisoner</td>
+                    </tr>
+                    <tr>
+                        <td>like a local</td>
+                        <td>complete all the alula territories</td>
+                    </tr>
+                    <tr>
+                        <td>turn the page</td>
+                        <td>say goodbye to is'haq</td>
+                    </tr>
+                </table>
+                <br>
+                </div>
+
+                <div> <!-- ubisoft connect -->
+                    <table class="achievements">
+                        <caption>ubisoft connect – dolina pamięci</caption>
+                        <tr>
+                            <td class="achievements--name"></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>pasture of the past</td>
+                            <td>reach the graveyard</td>
+                        </tr>
+                        <tr>
+                            <td>side hustle</td>
+                            <td>complete one contract in alula</td>
+                        </tr>
+                        <tr>
+                            <td>playlister</td>
+                            <td>play music for 10 minutes in total</td>
+                        </tr>
+                        <tr>
+                            <td>last house on the left</td>
+                            <td>find is'haq’s house</td>
+                        </tr>
+                    </table>
+                    <br>
+                </div>
+
+                <div> <!-- pełna synchronizacja -->
+                    <table class="achievements">
+                        <caption>ubisoft connect – pełna synchronizacja</caption>
+                        <tr>
+                            <td class="achievements--name"></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>animus déjà vu</td>
+                            <td>reach the first baghdad bureau in new game+</td>
+                        </tr>
+                        <tr>
+                            <td>i shall return</td>
+                            <td>assassinate al-rabisu in new game+</td>
+                        </tr>
+                        <tr>
+                            <td>auction recurring guest</td>
+                            <td>assassinate al-pairika in new game+</td>
+                        </tr>
+                        <tr>
+                            <td>a lion with two heads</td>
+                            <td>assassinate al-mardikhwar in new game+</td>
+                        </tr>
+                        <tr>
+                            <td>temporal mischief</td>
+                            <td>finish the main story in new game+</td>
+                        </tr>
+                        <tr>
+                            <td>the shakiriyya’s nightmare</td>
+                            <td>finish the main story with full synchronization on apprentice difficulty or higher</td>
+                        </tr>
+                        <tr>
+                            <td>maximum heat sandstorm</td>
+                            <td>finish the main story with full synchronization on assassin difficulty or higher</td>
+                        </tr>
+                        <tr>
+                            <td>the color of the supreme king</td>
+                            <td>finish the main story with full synchronization on master assassin difficulty</td>
+                        </tr>
+                    </table>
+                    <br>
+                </div>
+
+                <br>
+            </details>
+
+            <ul>
+                <li><a href="https://steamdb.info/app/3035570/stats/">achievements</a></li>
+                <li><a href="https://steamcommunity.com/app/3035570/discussions/0/681860701882522400/">lost and found achievement bug</a></li>
+                <li><a href="https://mapgenie.io/assassins-creed-mirage/maps/alula">mapgenie.io</a></li>
+            </ul>
+    
+            <br>
+        </article>
+        </region>
+
+
+        <region id="ścieżka-dźwiękowa">
+        <article>
+            <h3># ścieżka dźwiękowa</h3>
+    
+            <table class="soundtrack-ost">
+                <caption>valley of memory – brendan angelides</caption>
+                <colgroup>
+                    <col span="1" class="soundtrack-ost--name">
+                    <col span="1">
+                </colgroup>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=0_Q02G4yQ8g">ishaq’s lullaby</a></td>
+                    <td>1:44</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=9KNO3zGTRno">valley of memory (main theme)</a></td>
+                    <td>2:27</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=vXndG2APBu8">land of the dead</a></td>
+                    <td>2:14</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=s2tPa-C6Q7A">incense road</a></td>
+                    <td>2:14</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=vdKZntw5Izw">blade dance</a></td>
+                    <td>2:25</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=O9YbjPxyCuU">son’s lament</a></td>
+                    <td>2:17</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=FogZ1S8slYc">land of the living</a></td>
+                    <td>1:52</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=U_t6CEckFd8">running out of time</a></td>
+                    <td>2:16</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=O25dcpWvVzI">robbers mark</a></td>
+                    <td>2:12</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=-pKprf_Sxn4">southern skies</a></td>
+                    <td>2:13</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=olZNtay0vZw">vulture whistles</a></td>
+                    <td>2:19</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=q8WMl_x7qiI">poisoned</a></td>
+                    <td>1:35</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=mRk9JnLZ7Jk">sun’s shadow</a></td>
+                    <td>2:26</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=AAgZg7qBUCY">ishaq’s lullaby (string variation)</a></td>
+                    <td>1:39</td>
+                </tr>
+            </table>
+            <ul hidden>
+                <li><a href="https://www.youtube.com/playlist?list=OLAK5uy_nsNlejeIgXg0k52PN2FaPCAM-ouQeYL_s">assassin’s creed mirage: valley of memory (original game soundtrack)</a></li>
+            </ul>
+
+            <br>
+        </article>
+        </region>
+
+
+        <region id="linux">
+        <article class="region-grey">
+        <h3># linux</h3>
+
+        <div> <!-- wydajność -->
+        <p>przez ostatnie dziewięć miesięcy trochę się zmieniło technologicznie; przede wszystkim zarówno sam ubisoft connect jak i jego nakładka (overlay) włącza się szybciej za sprawą ntsync; dodatkowo pojawił się fsr4 (upscaling); zadziwiające może być to iż gra działa nieco lepiej na wyższych ustawieniach graficznych (60 fps), niżeli na niższych (45 fps);</p>
+        </div>
+
+        <div> <!-- argumenty -->
+<pre class="listing-block">
+<code>DXVK_FRAME_RATE=90 DXVK_ASYNC=1 WINE_FULLSCREEN_FSR=1 WINE_FULLSCREEN_FSR_MODE=performance PROTON_FSR4_UPGRADE=1 PROTON_USE_NTSYNC=1 PROTON_LOCAL_SHADER_CACHE=1 __GL_SHADER_DISK_CACHE_SKIP_CLEANUP=1 PROTON_HIDE_NVIDIA_GPU=0 PROTON_ENABLE_NVAPI=1 game-performance <span style="color:blue;">%command%</span> -dx12</code>
+</pre>
+        <ul>
+            <li><a href="https://github.com/CachyOS/proton-cachyos/releases/tag/cachyos-10.0-20251126-slr">proton-cachyos 10.0-20251126</a></li>
+            <li><a href="https://www.protondb.com/app/3035570">assassin’s creed mirage</a>
+            </li>
+        </ul>
+        <br>
+        </div>
+
+        <div> <!-- ścieżki -->
+<pre class="listing-block">
+<code># &lt;SteamLibrary&gt;/steamapps/compatdata/3035570/pfx/ → &lt;UbisoftConnect&gt;\savegames\*-*-*-*-*\610*\</code>
+<code># &lt;SteamLibrary&gt;/steamapps/compatdata/3035570/pfx/ → <span style="color:blue;">%UserProfile%</span>\Documents\Assassin's Creed Mirage\</code>
+<code><span style="color:teal;">7z</span> a -t7z ~/library/roboczy/"251212 assassin’s creed mirage".7z "/run/media/$USER/games/SteamLibrary/steamapps/compatdata/3035570/pfx/drive_c/Program Files (x86)/Ubisoft/Ubisoft Game Launcher/savegames"</code>
+</pre>
+        <ul>
+            <li><a href="https://www.pcgamingwiki.com/wiki/Assassin%27s_Creed_Mirage">assassin’s creed mirage</a></li>
+        </ul>
+        <br>
+        </div>
+
+        <div> <!-- zrzuty ekranowe -->
+        <p>nakładka ubisoft connect przechwytuje klawisz f12 do zrzutów ekranowych, który jest taki sam jak w przypadku nakładki klienta steam, co powoduje podwójne zapisywanie;</p>
+<pre class="listing-block">
+<code># C:\Users\<span style="color:blue;">%USERNAME%</span>\Pictures\UbisoftConnect → &lt;SteamLibrary&gt;/steamapps/compatdata/3035570/pfx/drive_c/users/steamuser/Pictures/UbisoftConnect/Assassin's Creed® Mirage</code>
+<code># /home/<span style="color:blue;">$USER</span>/.local/share/Steam/userdata/*/760/remote/3035570/screenshots</code>
+</pre>
+        <ul>
+            <li><a href="https://www.ubisoft.com/en-gb/help/connectivity-and-performance/article/taking-screenshots-in-ubisoft-connect-pc/000063204">taking screenshots in ubisoft connect pc</a></li>
+        </ul>
+        </div>
+
+        <br>
+        </article>
+        </region>
+
+        
+        <hr>
+        <footer>2026-02-10</footer>
+    </main>
+</body>
+
+</html>
