@@ -1,0 +1,1933 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <title>u4ia</title>
+    <meta charset="utf-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <style>
+        @font-face {
+            font-family: "ubuntu", sans-serif;
+            src: url("../fonts/Ubuntu-Regular.ttf");
+        }
+        body {
+            font-family: "ubuntu", sans-serif;
+        }
+        h1 {
+            font-size: 25px;
+        }
+        h2 {
+            font-size: 20px;
+        }
+
+        .main-content {
+            margin-left: 10%;
+            margin-right: 10%;
+            font-size: 14px;
+            padding: 0px 10px;
+            font-family: "ubuntu", sans-serif;
+        }
+
+        .region-grey {
+            background-color: whitesmoke;
+        }
+        .region-blue {
+            background-color: aliceblue;
+        }
+        .region-white {
+            background-color: white;
+        }
+        #table-of-content a {
+            text-decoration: none;
+            color: blue;
+        }
+        a {
+            text-decoration: none;
+            color: teal;
+        }
+        p {
+            line-height: 1.4;
+        }
+
+        .code-line {
+            font-family: "jetbrains mono", "ubuntu mono", monospace;
+            background-color: gainsboro;
+            border: 0px solid olive;
+        }
+        pre.listing-block {
+            background-color: ghostwhite;
+            overflow-x: auto;
+            overflow-y: hidden;
+            white-space: pre;
+            word-wrap: normal;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            padding-right: 10px;
+            border: 1px solid olive;
+        }
+        pre.listing-block::before {
+            counter-reset: listing;
+        }
+        pre.listing-block code {
+            counter-increment: listing-counter;
+            font-family: "calling code", "ubuntu mono", monospace;
+            font-size: 14px;
+        }
+        pre.listing-block code::before {
+            content: counter(listing-counter) "   ";
+            display: inline-block;
+            width: 4em;
+            padding-left: 0px;
+            margin-left: auto;
+            text-align: right;
+            font-size: 12px;
+            color: olive;
+        }
+        
+        .images-horizontal {
+            table-layout: fixed; 
+            display: block;
+            width: 100%;
+            overflow-x: scroll; 
+            overflow-y: hidden;
+            scroll-snap-align: center;
+        }
+        .images-horizontal a {
+            text-decoration: none;
+            color: black;
+        } 
+        .images-horizontal figcaption {
+            padding-top: 5px;
+        }
+
+        img {
+            width: 50vw;
+            height: auto;
+        }
+        figcaption {
+            font-size: 12px;
+            text-align: left;
+        }
+        .fighover figure {
+            display: inline-block;
+            border: 1px;
+            margin: 10px;
+        }
+        .fighover figure, .fighover img {
+            vertical-align: top;
+            width: 29vw;
+        }
+        .fighover figure, .fighover figcaption {
+            border: 1px;
+            text-align: center;
+        }
+
+        .achievements {
+            table-layout: fixed; 
+            width: 90%;
+            text-align: left;
+        }
+        .achievements--name {
+            text-align: center;
+            vertical-align: middle;
+        }
+        .achievements caption {
+            text-align: left;
+            padding-left: 1px;
+            font-weight: bold;
+        }
+        table.achievements td {
+            padding-top: 1px;
+            padding-bottom: 1px;
+            border-bottom: 1px solid rgba(128, 128, 0, 0.2);
+        }
+        .achievements td:nth-child(1) {
+            padding-left: 11px;
+            width: 70%;
+        }
+        .achievements td:nth-child(2) {
+            padding-left: 11px;
+            width: 100%;
+        }
+        .achiev-accord-desc {
+            color: gray;
+        }
+
+        .soundtrack-ost {
+            table-layout: fixed;
+            margin: auto;
+            width: 50%;
+        }
+        .soundtrack-ost td:nth-child(2) {
+            text-align: end;
+            padding-left: 5px;
+            width: 10%;
+        }
+        .soundtrack-ost tr:nth-child(even) {
+            background-color: ghostwhite;
+        }
+        .soundtrack-ost caption {
+            font-weight: bold;
+            text-align: left;
+            margin-left: -3%;
+        }
+        .soundtrack-accordion {
+            margin-left: 1%;
+            margin-right: 1%;
+        }
+
+        .dictionary {
+            table-layout: fixed; 
+            width: 90%;
+            text-align: left;
+        }
+        .dictionary--term {
+            width: 30%;
+            text-align: center;
+            vertical-align: middle;
+        }
+        table.dictionary td {
+            padding-top: 1px;
+            padding-bottom: 2px;
+            border-bottom: 1px solid rgba(128, 128, 0, 0.2);
+        }
+
+        @media only screen and (min-width: 1px) and (max-width: 920px) {
+            .soundtrack-ost {
+                width: 100%;
+            }
+        }
+        @media only screen and (min-width: 921px) and (max-width: 1250px) {
+            .soundtrack-ost {
+                width: 70%;
+            }
+        }
+        @media only screen and (min-width: 1251px) and (max-width: 1450px) {
+            .soundtrack-ost {
+                width: 50%;
+            }
+        }
+        @media only screen and (min-width: 1451px) and (max-width: 1900px) {
+            .soundtrack-ost {
+                width: 45%;
+            }
+        }
+        @media only screen and (min-width: 1901px) {
+            .soundtrack-ost {
+                width: 30%;
+            }
+        }
+
+        details {
+            border: 1px solid olive;
+            border-radius: 8px;
+            box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.12);
+            margin-bottom: 8px;
+        }
+        details[open] summary {
+            margin-bottom: 10px;
+        }
+        summary {
+            cursor: pointer;
+            transition: all 150ms ease-in-out;
+            padding: 12px;
+        }
+        .accordion pre, .accordion p, .accordion table {
+            margin-left: 2%;
+            margin-right: 2%;
+        }
+
+        article div p, article div details, article details {
+            margin-left: 1%;
+            margin-right: 1%;
+        }
+        details figure, div figure {
+            display: block;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <main class="main-content">
+        <section id="lead-text">
+        <h2>u4ia 4.1s (2025)</h2>
+        <p>tak jak „leap of faith” jest opowiadaniem emocjonalnym, tak u4ia jest opowiadaniem intelektualnym; fabuła jest równie wciągająca, a rozgrywka wystarczająco różnorodna, tak jak i postaci; trudno jednak określić jakiś jeden przyciągający element; po prostu ogólne wrażenie obcowania z tą grą jest przyjemne;</p>
+        <br>
+        </section>
+
+
+        <region class="informacje">
+        <article>
+        <h3># informacje</h3>
+
+        <ul>
+            <li><a href="https://steamcommunity.com/app/2890150/discussions/">steam discussions</a>
+            <li><a href="https://steamcommunity.com/app/2890150/eventcomments/">steam news and announcements</a></li>
+            <li><a href="https://discord.gg/2jqGPuD">discord</a></li>
+            <br>
+            <li><a href="https://video.steamstatic.com/store_trailers/257036296/movie_max_vp9.webm">u4ia - season 1 - teaser 1</a></li>
+            <li><a href="https://video.steamstatic.com/store_trailers/257141294/movie_max_vp9.webm">u4ia - season 1 - teaser 2</a></li>
+            <li><a href="https://video.steamstatic.com/store_trailers/257161384/movie_max_vp9.webm">u4ia - season 1 - teaser 3</a></li>
+            <li><a href="https://video.steamstatic.com/store_trailers/257036180/movie_max_vp9.webm">u4ia - season 1</a></li>
+            <br>
+        </ul>
+        <br>
+
+        </article>
+        <br>
+        </region>
+
+
+        <section id="table-of-content">
+        <div class="region-blue">
+        <h3># spis treści</h3>
+        <ul>
+            <li><a href="#uwagi-zebrane" target="_self">uwagi zebrane</a></li>
+            <li><a href="#kłopotliwe-osiągnięcia" target="_self">kłopotliwe osiągnięcia</a></li>
+            <li><a href="#galeria-zdjęć" target="_self">galeria zdjęć</a></li>
+            <li><a href="#słowniczek" target="_self">słowniczek</a></li>
+            <li><a href="#ścieżka-dźwiękowa" target="_self">ścieżka dźwiękowa</a></li>
+            <li><a href="#linux" target="_self">linux</a></li>
+            <li><a href="#wątki-dyskusji" target="_self">wątki dyskusji</a></li>
+        </ul>
+        <br>
+        </div>
+        </section>
+
+
+        <!-- 
+            <figure class="fighover">
+                <source srcset="../screenshots/" type="image/webp">
+                <img loading="lazy" srcset="../screenshots/" alt=""/>
+                <figcaption>__cap__</figcaption>
+            </figure>
+
+            <colgroup>
+                <col span="1" class="--name">
+            </colgroup>
+
+            <article class="region-grey">
+            <div class="region-white">
+
+            <details class="accordion"> 
+                <summary></summary>
+                <br>
+            </details>
+        -->
+
+
+        <region id="uwagi-zebrane">
+        <article>
+            <h3># uwagi zebrane</h3>
+
+            <div> <!-- wizualia -->
+            <p>ogółem postaci prezentują sobą przeciętny wygląd, na swój sposób realistyczny;</p>
+            <p>stylistycznie mamy tu kilka krótszych animacji i wiele rozmycia w tle dla statycznych scen; raz na jakiś czas można też dostrzec mruganie oczami;</p>
+            <details class="accordion"> 
+                <summary>rozmyty obraz w tle</summary>
+                <br>
+                <figure>
+                    <source srcset="../screenshots/u4ia-s1/0122-rozmyty-obraz.png" type="image/png">
+                    <img loading="lazy" srcset="../screenshots/u4ia-s1/0122-rozmyty-obraz.png" alt="0122-rozmyty-obraz.png">
+                </figure>
+            </details>
+
+            <p>zdarzają się niekiedy zgoła artystyczne ujęcia;</p>
+            <details class="accordion"> 
+                <summary>artystyczne sceny</summary>
+                <br>
+                <figure>
+                    <source srcset="../screenshots/u4ia-s1/0060-zachód-słońca.png" type="image/png">
+                    <img loading="lazy" srcset="../screenshots/u4ia-s1/0060-zachód-słońca.png" alt="0060-zachód-słońca.png">
+                </figure>
+                <figure>
+                    <source srcset="../screenshots/u4ia-s1/0057-ręce.png" type="image/png">
+                    <img loading="lazy" srcset="../screenshots/u4ia-s1/0057-ręce.png" alt="0057-ręce.png">
+                </figure>
+            </details>
+            <br>
+            </div>
+
+            <div> <!-- opowiadanie -->
+                <p>fabularnie co jakąś chwilę ktoś próbuje cię oszukać albo pobić; niemniej, podobnie jak motyw pomagiera w hotelu, bywa to całkiem dobre rozwiązanie, bo tworzy sytuacje, które inaczej nie miałyby sensu;</p>
+                <p>gra unika używania poprawnych nazw własnych, zamiast tego mamy ich wariacje, takie jak: lovelyfans, irakistan, nutify, buttcoin;</p>
+                <p>jest tu trochę humoru różnego rodzaju, głównie pijackiego, lecz i nie brakuje komizmu zgoła bardziej wyszukanego (w szczególności na uznanie zasługuje miś noomi dla christine);</p>
+                <p>można by się nieco przyczepić do spójności; po pierwsze: podczas pierwszego dnia pracy w hotelu możemy zacząć od przebrania się na dole u lin, a zakończyć na przebraniu się z powrotem na górze u synn; i to pomimo tego, że można zignorować ten wątek który to wyjaśnia; po drugie: niektóre opcje podczas „never have i ever” są dostępne jedynie dlatego, że weszło się na ścieżkę danej postaci, a nie dlatego że się wydarzyły;</p>
+                <details class="accordion">
+                    <summary>podsumowanie rozdziałów</summary>
+                    <br>
+                    <figure>
+                        <source srcset="../screenshots/u4ia-s1/0137-podsumowanie-tuesday.png" type="image/png">
+                        <img loading="lazy" srcset="../screenshots/u4ia-s1/0137-podsumowanie-tuesday.png" alt="0137-podsumowanie-tuesday.png">
+                    </figure>
+                </details>
+                <ul>
+                    <li><a href="https://steamcommunity.com/app/2890150/discussions/0/762932533852651996/">continuity problem at end of first work day?</a></li>
+                </ul>
+            <br>
+            </div>
+
+            <div> <!-- rozgrywka -->
+            <p>podejmowane wybory wpływają na statystyki postaci, a przez to na możliwość wyboru niektórych opcji dialogowych;</p>
+            <details class="accordion"> 
+                <summary>statystyki i wybory</summary>
+                <br>
+                <figure>
+                    <source srcset="../screenshots/u4ia-s1/0004-statystyki.png" type="image/png">
+                    <img loading="lazy" srcset="../screenshots/u4ia-s1/0004-statystyki.png" alt="0004-statystyki.png">
+                </figure>
+                <figure>
+                    <source srcset="../screenshots/u4ia-s1/0069-wybory.png" type="image/png">
+                    <img loading="lazy" srcset="../screenshots/u4ia-s1/0069-wybory.png" alt="0069-wybory.png">
+                </figure>
+                <figure>
+                    <source srcset="../screenshots/u4ia-s1/0084-wybory.png" type="image/png">
+                    <img loading="lazy" srcset="../screenshots/u4ia-s1/0084-wybory.png" alt="0084-wybory.png">
+                </figure>
+            </details>
+            <br>
+
+            <p>do dyspozycji mamy smartfon – a jakże; w czasie swobodnej eksploracji możemy na nim spojrzeć na zadania do wykonania, które jednakowoż nie odznaczają się z listy; w tym przypadku dodatkowym motywem jest niejaki hack-a-tron, czyli aplikacja pozwalająca na zbieranie pieniędzy od innych w tle;</p>
+            <br>
+
+            <p>gra oferuje „roam mode” (tryb swobodnej eksploracji) i „vn mode”; w tym drugim nie można zdobyć niektórych osiągnięć; „roam mode” wymusza używanie menu kontekstowego do interakcji z elementami otoczenia; biorąc pod uwagę iż w większości przypadków mamy do czynienia z jedną możliwością, to wydaje się to zbędne;</p>
+            <details class="accordion"> 
+                <summary>menu kontekstowe</summary>
+                <br>
+                <figure>
+                    <source srcset="../screenshots/u4ia-s1/0044-menu-kontekstowe.png" type="image/png">
+                    <img loading="lazy" srcset="../screenshots/u4ia-s1/0044-menu-kontekstowe.png" alt="0044-menu-kontekstowe.png">
+                </figure>
+            </details>
+            <br>
+
+            <br>
+            </div>
+
+            <div> <!-- dlc -->
+                <p>walkthrough dlc zawiera nie tylko pomoc co do zdobywania osiągnięć, ale i komentarze twórcy;</p>
+                <details class="accordion">
+                    <summary>komentarze twórcy i gościnne wystąpienia innych postaci</summary>
+                    <br>
+                    <figure>
+                        <source srcset="../screenshots/u4ia-s1/0157-dlc-komentarz-twórcy.png" type="image/png">
+                        <img loading="lazy" srcset="../screenshots/u4ia-s1/0157-dlc-komentarz-twórcy.png" alt="0157-dlc-komentarz-twórcy.png">
+                    </figure>
+                    <figure>
+                        <source srcset="../screenshots/u4ia-s1/0172-dlc-komentarz-plakat.png" type="image/png">
+                        <img loading="lazy" srcset="../screenshots/u4ia-s1/0172-dlc-komentarz-plakat.png" alt="0172-dlc-komentarz-plakat.png">
+                    </figure>
+                    <figure>
+                        <source srcset="../screenshots/u4ia-s1/0165-dlc-valeria.png" type="image/png">
+                        <img loading="lazy" srcset="../screenshots/u4ia-s1/0165-dlc-valeria.png" alt="0165-dlc-valeria.png">
+                    </figure>
+                    <figure>
+                        <source srcset="../screenshots/u4ia-s1/0166-dlc-chasing-sunsets.png" type="image/png">
+                        <img loading="lazy" srcset="../screenshots/u4ia-s1/0166-dlc-chasing-sunsets.png" alt="0166-dlc-chasing-sunsets.png">
+                    </figure>
+                    <figure>
+                        <source srcset="../screenshots/u4ia-s1/0169-dlc-shannon.png" type="image/png">
+                        <img loading="lazy" srcset="../screenshots/u4ia-s1/0169-dlc-shannon.png" alt="0169-dlc-shannon.png">
+                    </figure>
+                </details>
+                <ul>
+                    <li><a href="https://steamdb.info/app/4000030/">u4ia - in game walkthrough mod/guide and unlocker</a></li>
+                    <li><a href="https://store.steampowered.com/app/4000030/U4iA__In_game_walkthrough_modguide_and_unlocker/">u4ia - in game walkthrough mod/guide and unlocker</a></li>
+                </ul>
+            <br>
+            </div>
+
+            <br>
+        </article>
+        </region>
+
+
+        <region id="kłopotliwe-osiągnięcia">
+        <article>
+            <h3># kłopotliwe osiągnięcia</h3>
+
+            <details class="accordion"> <!-- on the road, again -->
+                <summary>on the road, again <span class="achiev-accord-desc">| buy everything you can for the trip to the mansion</span></summary>
+                <p>choose to help penelope</p>
+                <p>roxy: shoes, pay for batteries, handcuffs, nomi</p>
+                <p>store: extra food, pay tuesday, beer keg</p>
+                <br>
+            </details>
+
+            <details class="accordion"> <!-- that’s your pfp? -->
+                <summary>that’s your pfp? <span class="achiev-accord-desc">| choose an interesting selfie as your pfp</span></summary>
+                <p>to osiągnięcie można zdobyć wyłącznie podczas czyszczenia przyczepu po jej zakupieniu;</p>
+                <p>To get it, change your selfie to a di*k-pic before exiting.</p>
+                <ul>
+                    <li><a href="https://steamcommunity.com/app/2890150/discussions/0/659341490666056095/">that's your pfp?</a></li>
+                </ul>
+                <br>
+            </details>
+
+            <details class="accordion"> <!-- on the rocks -->
+                <summary>on the rocks <span class="achiev-accord-desc">| have at least five drinks at cloud nine</span></summary>
+                <p>You must be on Gina path, she gives you one drink.</p>
+                <p>MC gets the 1st drink free at the bar when he first arrives.</p>
+                <p>In order for MC to get his 2nd drink, MC has to have talked with Paige and Gina on the Yacht so that when MC sees them in cloud 9 and talks with them, Gina will go off and get two drinks, Paige refuses it and then she offers it to MC.</p>
+                <p>MC gets his 3rd drink with Synne in VIP lounge.</p>
+                <p>MC gets his 4th drink from Milton at the VIP bar just after talking with Synne Or if you want, MC can wait and Lin will buy him a drink from Milton.</p>
+                <p>MC gets his 5th drink with the Guy at the bar trying to pick up a girl.</p>
+                <ul>
+                    <li><a href="https://steamcommunity.com/app/2890150/discussions/0/603043591290482061/">on the rocks</a></li>
+                    <li><a href="https://steamcommunity.com/app/2890150/discussions/0/680733859074031123/">on the rocks achievement</a></li>
+                </ul>
+                <br>
+            </details>
+
+            <details class="accordion"> <!-- grandmaster -->
+                <summary>grandmaster <span class="achiev-accord-desc">| find both solutions to the chess game</span></summary>
+                <p>Yeah, the game allows two different solutions, and that's how you get the game's achievement "Grandmaster", but it's incorrect. The walkthrough dlc shows two different ways for White to force checkmate in two moves, but paste the FEN "q2b3k/3R2p1/4BpP1/4pP2/2p1P3/R1p5/2P5/5K2 w" into your favourite chess engine and see the problem. :)</p>
+                <p>The first solution 1. Rd2 actually works. The second solution 1. Rxc3 does win but it doesn't force checkmate in two moves - Black can delay things with either 1... Qa1+ or 1... Qa3. Oops.</p>
+                <figure>
+                    <source srcset="../screenshots/u4ia-s1/0171-dlc-szachy.png" type="image/png">
+                    <img loading="lazy" srcset="../screenshots/u4ia-s1/0171-dlc-szachy.png" alt="0171-dlc-szachy.png">
+                </figure>
+                <ul>
+                    <li><a href="https://steamcommunity.com/app/2890150/discussions/0/603043375716874199/">chess puzzle alternate solution</a></li>
+                </ul>
+                <br>
+            </details>
+
+            <details class="accordion"> <!-- major donor -->
+                <summary>major donor <span class="achiev-accord-desc">| win all available donation passes at enchanted, only to pass on them all</span></summary>
+                <p>You must be in Tuesday path and be a matchmaker for Celeste and Sam. Then while at the club refuse the pass during arm wrestle, chess and Evangeline, afterwards talk to Celeste and tell her that Miranda wants to talk with her and after doing all that interact with Miranda before meeting Tuesday.</p>
+                <ul>
+                    <li><a href="https://steamcommunity.com/app/2890150/discussions/0/687489892274532426/">major donor achievement</a></li>
+                    <li><a href="https://steamcommunity.com/app/2890150/discussions/0/673976005041428813/">major donor achievement</a></li>
+                    <li><a href="https://steamcommunity.com/app/2890150/discussions/0/603042706209440244/">how to get 'major donor' achievement?</a></li>
+                    <li><a href="https://steamcommunity.com/app/2890150/discussions/0/603042706209493727/">need help with achevments</a></li>
+                </ul>
+                <br>
+            </details>
+
+            <details class="accordion"> <!-- designated driver -->
+                <summary>designated driver <span class="achiev-accord-desc">| have no alcohol containing drinks at cloud nine</span></summary>
+                <p>wybierając opcję „you pick…” podczas rozmowy z anitą zaserwuje ona bezalkoholowy drink; wypij ten i tylko ten;</p>
+                <br>
+            </details>
+
+            <details class="accordion"> <!-- seacret code -->
+                <summary>seacret code <span class="achiev-accord-desc">| input sea’s correct code on the first try (despite her trying to distract you)</span></summary>
+                <p>For Seacret Code you have to call Sea during the scene right before you go to the waterpark with Nyah. Once you go to her house you have to put in the Konami code (Up, Up, Down, Down, Left, Right, Left, Right, B, A).</p>
+                <ul>
+                    <li><a href="https://steamcommunity.com/app/2890150/discussions/0/690868475627834964/">achievements</a></li>
+                    <li><a href="https://truesteamachievements.com/a3273164/seacret-code-achievement">seacret code achievement in u4ia - season 1</a></li>
+                </ul>
+                <br>
+            </details>
+
+            <ul>
+                <li><a href="https://truesteamachievements.com/game/U4iA-Season-1/achievements">u4ia - season 1 achievements</a></li>
+                <li><a href="https://steamdb.info/app/2890150/stats/">u4ia – achievements</a></li>
+            </ul>
+
+            <br>
+        </article>
+        </region>
+
+
+        <region id="galeria-zdjęć">
+        <article>
+            <h3># galeria zdjęć</h3>
+
+            <div> <!-- galeria zdjęć -->
+            <p>
+                <u>Gina and Paige</u>: (probably) At the very beginning of the game on the boat with crates.<br>
+                <u>Celeste</u>: (probably) In the bag where you meet her with Samantha at the garage.<br>
+                <u>Samantha</u>: Get 4 drinks at cloud nine, then go to and use the toilet.<br>
+                <u>Geneva</u>: Collect a SIMP calendar from the bored looking dude at the club after Sam performs in Episode 1.<br>
+                <u>Pearl</u>: (probably) In the locked drawer.<br>
+                <u>Synne and Evangeline</u>: (probably) In the small room where you meet Lars in the hotel.<br>
+                <u>Sea</u>: (probably) Behind Lars on the beach.<br>
+                <u>Roxanne</u>: At Roxanne’s shop counter during the start of Chapter 3.<br>
+            </p>
+            <details class="accordion"> 
+                <summary>przykładowe zdjęcia z galerii</summary>
+                <br>
+                <figure>
+                    <source srcset="../screenshots/u4ia-s1/0173-galeria-celeste.png" type="image/png">
+                    <img loading="lazy" srcset="../screenshots/u4ia-s1/0173-galeria-celeste.png" alt="0173-galeria-celeste.png">
+                </figure>
+                <figure>
+                    <source srcset="../screenshots/u4ia-s1/0177-galeria-sea.png" type="image/png">
+                    <img loading="lazy" srcset="../screenshots/u4ia-s1/0177-galeria-sea.png" alt="0177-galeria-sea.png">
+                </figure>
+                <figure>
+                    <source srcset="../screenshots/u4ia-s1/0180-gallery-lin.png" type="image/png">
+                    <img loading="lazy" srcset="../screenshots/u4ia-s1/0180-gallery-lin.png" alt="0180-gallery-lin.png">
+                </figure>
+            </details>
+            <ul>
+                <li><a href="https://steamcommunity.com/app/2890150/discussions/0/603043375716803373/">roxanne collectible</a></li>
+                <li><a href="https://steamcommunity.com/app/2890150/discussions/0/603042323028659029/">favorite girl?</a></li>
+                <li><a href="https://steamcommunity.com/app/2890150/discussions/0/603043591290650033/">walkthrough says before club 9, collecteble in toilet?</a></li>
+                <li><a href="https://steamcommunity.com/app/2890150/discussions/0/686368182958582468/">gallery (collectibles)</a></li>
+                <li><a href="https://steamcommunity.com/app/2890150/discussions/0/690868226470450825/">anyone made a guide for all the collectibles yet?</a></li>
+                <li><a href="https://steamcommunity.com/app/2890150/discussions/0/601919346587134192/">is there a listing showing all the collections or galleries?</a></li>
+                <li><a href="https://steamcommunity.com/app/2890150/discussions/0/686366880770842871/">celeste at the beach??</a></li>
+            </ul>
+            <br>
+            </div>
+
+            <br>
+        </article>
+        </region>
+
+
+        <region id="słowniczek">
+        <article>
+            <h3># słowniczek</h3>
+
+            <details class="accordion"> 
+                <summary>słowniczek słów i sformułowań</summary>
+                <br>
+            
+                <table class="dictionary">
+                    <colgroup>
+                        <col span="1" class="dictionary--term">
+                    </colgroup>
+                <tr>
+                    <td><a href="https://www.oxfordlearnersdictionaries.com/definition/english/the-chippendales">chippendales</a></td>
+                    <td>męska trupa taneczna słynna z rozbieranej rozrywki dla kobiet</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.dictionary.com/browse/fondue">fondue</a></td>
+                    <td>danie przypominające sos rodem ze szwajcarii</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.dictionary.com/browse/casserole">casserole</a></td>
+                    <td>zapiekanka</td>
+                </tr>
+                <tr>
+                    <td><a href="https://dictionary.cambridge.org/dictionary/english/figure-out">figure you out</a></td>
+                    <td>rozgryźć cię</td>
+                </tr>
+                <tr>
+                    <td><a href="https://dictionary.cambridge.org/dictionary/english/don-t-sweat-it">don’t sweat it</a></td>
+                    <td>nie przejmuj się tym</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.dictionary.com/browse/daft">so daft</a></td>
+                    <td>tak głupi, taki bezmyślny</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.dictionary.com/browse/elbow-grease">elbow grease</a></td>
+                    <td>forsowny wysiłek fizyczny</td>
+                </tr>
+                <tr>
+                    <td><a href="https://en.wikipedia.org/wiki/Pulled_hamstring">pulling a hamstring</a></td>
+                    <td>naciągnięcie ścięgna podkolanowego</td>
+                </tr>
+                <tr>
+                    <td><a href="https://idioms.thefreedictionary.com/have+a+beef+with+you">have a beef with you</a></td>
+                    <td>mam z tobą problem (nierozstrzygnięty spór)</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.merriam-webster.com/dictionary/get%20hold%20of">get a hold of</a></td>
+                    <td>złapać; znaleźć i porozmawiać;</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.dictionary.com/browse/nursery-rhyme">nursery rhyme</a></td>
+                    <td>wierszyk dziecinny</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.dictionary.com/browse/brass">turns brass</a></td>
+                    <td>zamieni się w mosiądz</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.fastslang.com/tapping-out">tapping out</a></td>
+                    <td>poddawać się w walce</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.merriam-webster.com/dictionary/brownie%20point">brownie points</a></td>
+                    <td>kredyt zaufania (zdobyty przez zabieganie o przychylność)</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.goodreads.com/book/show/36199084-the-kiss-quotient">the kiss quotient</a></td>
+                    <td>erotyczna powieść helen hoang</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.merriam-webster.com/dictionary/to%20top%20it%20(all)%20off">to top it off</a></td>
+                    <td>na dokładkę, na domiar złego</td>
+                </tr>
+                <tr>
+                    <td><a href="https://dictionary.cambridge.org/dictionary/english/get-laid">get laid</a></td>
+                    <td>zaliczyć (seks)</td>
+                </tr>
+                <tr>
+                    <td><a href="https://dictionary.cambridge.org/dictionary/english/not-have-a-penny-to-name">without a dime to her name</a></td>
+                    <td>bez grosza przy duszy</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.merriam-webster.com/dictionary/spur-of-the-moment">on the spur of the moment</a></td>
+                    <td>spontanicznie</td>
+                </tr>
+                <tr>
+                    <td><a href="https://libertyielts.com/en/post/learn-english-slang-by-topic/mingle-explained-how-to-socialize-like-native-speaker-EN.p8474">go mingle</a></td>
+                    <td>wchodź w kontakt z ludźmi</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.slangsphere.com/buzzing-meaning-slang-the-ultimate-guide-to-this-lively-fun-phrase/">buzzing jokes, buzz puns</a></td>
+                    <td>żarty słowne</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.dictionary.com/browse/yield">i yield</a></td>
+                    <td>ustępuję</td>
+                </tr>
+                <tr>
+                    <td><a href="https://dictionary.cambridge.org/us/dictionary/english/complexion">skin complexion</a></td>
+                    <td>cera</td>
+                </tr>
+                <tr>
+                    <td><a href="https://idioms.thefreedictionary.com/out+of+the+loop">i’m a bit out of the loop</a></td>
+                    <td>brak mi dostępu do najbardziej aktualnych informacji</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.fastslang.com/snapping">i’m snapping on you</a></td>
+                    <td>atakujące obrażanie</td>
+                </tr>
+                <tr>
+                    <td><a href="https://hinative.com/questions/6499846">i won’t pry</a></td>
+                    <td>nie będę wścibski</td>
+                </tr>
+                <tr>
+                    <td><a href="https://hinative.com/questions/4827705">she seems off</a></td>
+                    <td>coś jest z nią nie tak</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.merriam-webster.com/dictionary/bummed%20out">bummed out</a></td>
+                    <td>przygnębiony, zawiedziony</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.dictionary.com/browse/shook-up">shook up</a></td>
+                    <td>wstrząśnięty</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.merriam-webster.com/dictionary/skid%20marks">skid marks</a></td>
+                    <td>ślady poślizgu</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.dictionary.com/browse/pep-talk">pep talk</a></td>
+                    <td>pogadanka motywacyjna</td>
+                </tr>
+                <tr>
+                    <td><a href="https://dictionary.reverso.net/english-definition/a+tad+too+much">a tad too much</a></td>
+                    <td>trochę za bardzo</td>
+                </tr>
+                <tr>
+                    <td><a href="https://idioms.thefreedictionary.com/cramp+up">to cramp up</a></td>
+                    <td>odczuwać skurcze mięśni</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.dictionary.com/browse/cupcake">cupcake</a></td>
+                    <td>babeczka</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.dictionary.com/browse/missus">missus</a></td>
+                    <td>żona (nieformalna)</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.dictionary.com/browse/bellhop">bellhop</a></td>
+                    <td>goniec hotelowy</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.dictionary.com/browse/lousy">lousy</a></td>
+                    <td>parszywy, zawszony</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.dictionary.com/browse/klutz">klutz</a></td>
+                    <td>niezdara</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.dictionary.com/browse/blockhead">blockhead</a></td>
+                    <td>dureń, jełop, nieuk</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.dictionary.com/browse/clobber">clobbered</a></td>
+                    <td>zmiażdżony, znacząco oberwać</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.dictionary.com/browse/exhilarating">exhilarating</a></td>
+                    <td>ekscytujący</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.dictionary.com/browse/dashing">dashing</a></td>
+                    <td>dziarski, buńczuczny</td>
+                </tr>
+                <tr>
+                    <td><a href="https://en.wikipedia.org/wiki/Blacklight">blacklight</a></td>
+                    <td>światło ultrafioletowe</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.dictionary.com/browse/predicament">predicament</a></td>
+                    <td>tarapaty</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.dictionary.com/browse/dorky">dorky</a></td>
+                    <td>głupkowaty, nieudolny</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.dictionary.com/browse/oddball">oddball</a></td>
+                    <td>dziwak</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.dictionary.com/browse/hectic">hectic</a></td>
+                    <td>gorączkowy, szaleńczy</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.dictionary.com/browse/dimwit">dimwit</a></td>
+                    <td>tępak</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.dictionary.com/browse/laxative">laxative</a></td>
+                    <td>środek przeczyszczający</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.dictionary.com/browse/rascal">rascal</a></td>
+                    <td>szelma, łajdak, łobuz, hultaj</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.merriam-webster.com/dictionary/patronizing">patronizing</a></td>
+                    <td>protekcjonalny (wykazujący wyższość wobec innych)</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.merriam-webster.com/dictionary/earworm">earworm</a></td>
+                    <td>melodia niemogąca opuścić umysłu</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.merriam-webster.com/dictionary/manhandle">manhandle</a></td>
+                    <td>sponiewierać</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.merriam-webster.com/dictionary/dime">dime</a></td>
+                    <td>dziesięciocentówka</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.dictionary.com/browse/lukewarm">lukewarm</a></td>
+                    <td>letni</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.dictionary.com/browse/handicap">handicap</a></td>
+                    <td>upośledzenie, przeszkoda, utrudnienie</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.dictionary.com/browse/payback">payback</a></td>
+                    <td>odwet, zemsta, spłata</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.merriam-webster.com/dictionary/asshat">asshat</a></td>
+                    <td>dupek, odrażająca osoba</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.dictionary.com/browse/minx">minx</a></td>
+                    <td>pinda, flirciara</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.dictionary.com/browse/heinie">heinie</a></td>
+                    <td>naziol</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.dictionary.com/browse/toots">toots</a></td>
+                    <td>honey, baby, darling, sweetheart</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.dictionary.com/browse/mangle">mangled</a></td>
+                    <td>zmasakrowany</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.dictionary.com/browse/wart">wart</a></td>
+                    <td>brodawka, kurzajka</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.dictionary.com/browse/capsize">capsized</a></td>
+                    <td>wywrócona do góry nogami (łódź)</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.dictionary.com/browse/reel">reel</a></td>
+                    <td>zwój, szpula, cewka, kołowrotek</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.dictionary.com/browse/wibble">wibble</a></td>
+                    <td>chwiać się, wypowiadać się niejasno</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.dictionary.com/browse/stringent">stringent</a></td>
+                    <td>wymagający, przekonywający</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.dictionary.com/browse/nitpick">nitpicks</a></td>
+                    <td>drobiazgi, nieistotne szczegóły</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.dictionary.com/browse/virile">virile</a></td>
+                    <td>męski</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.dictionary.com/browse/smut">smut</a></td>
+                    <td>świństwa, sprośności</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.dictionary.com/browse/bumfuck">bumfuck</a></td>
+                    <td>oddalone nieznaczące miejsce</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.dictionary.com/browse/funky">funky</a></td>
+                    <td>tchórzliwy, zastrachany</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.dictionary.com/browse/outlook">outlook</a></td>
+                    <td>pogląd, perspektywy</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.dictionary.com/browse/bobber">bobber</a></td>
+                    <td>spławik</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.dictionary.com/browse/nibble">nibbles</a></td>
+                    <td>kęsek, ogryzać, skubać</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.dictionary.com/browse/fornicate">fornicate</a></td>
+                    <td>cudzołożyć</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.dictionary.com/browse/frisky">frisky</a></td>
+                    <td>rozbrykany, swawolny</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.dictionary.com/browse/leeway">leeway</a></td>
+                    <td>luz, dryf</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.dictionary.com/browse/meltdown">meltdown</a></td>
+                    <td>załamanie</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.dictionary.com/browse/busted">busted</a></td>
+                    <td>przyłapany</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.dictionary.com/browse/amenity">amenities</a></td>
+                    <td>udogodnienia</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.dictionary.com/browse/cubicle">cubicle</a></td>
+                    <td>kabina</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.dictionary.com/browse/sleazy">sleazy</a></td>
+                    <td>marny, lichy</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.dictionary.com/browse/lonesome">lonesome</a></td>
+                    <td>osamotniona, porzucona</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.dictionary.com/browse/phony">phony</a></td>
+                    <td>fałszywy</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.merriam-webster.com/dictionary/shanghaiing">shanghaiing</a></td>
+                    <td>podstępem doprowadzić do niepożądanej sytuacji</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.dictionary.com/browse/pester">pester</a></td>
+                    <td>prześladować, napastować, udręczać</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.dictionary.com/browse/aerate">aerate</a></td>
+                    <td>wietrzyć, gazować</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.dictionary.com/browse/admission">admision</a></td>
+                    <td>pozwolenie na wstęp</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.dictionary.com/browse/stilt">stilt</a></td>
+                    <td>szczudło</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.dictionary.com/browse/dumbbell">dumbbell</a></td>
+                    <td>hantle</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.dictionary.com/browse/hideous">hideous</a></td>
+                    <td>ohydny, szkaradny</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.dictionary.com/browse/ludicrous">ludicrous</a></td>
+                    <td>niedorzeczny</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.dictionary.com/browse/mushy">mushy</a></td>
+                    <td>bzdurny, sentymentalny</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.dictionary.com/browse/spoilsport">spoilsport</a></td>
+                    <td>człowiek psujący zabawę</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.dictionary.com/browse/tacky">tacky</a></td>
+                    <td>czepliwy</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.dictionary.com/browse/holler">holler</a></td>
+                    <td>wykrzykiwać</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.collinsdictionary.com/dictionary/english/unvetted">unvetted</a></td>
+                    <td>niesprawdzony</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.dictionary.com/browse/crooked">crooked</a></td>
+                    <td>krzywy, koślawy</td>
+                </tr>
+                <tr>
+                    <td><a href="https://dictionary.cambridge.org/dictionary/english/punchline">punchline</a></td>
+                    <td>puenta</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.dictionary.com/browse/nosy">nosy</a></td>
+                    <td>wścibski</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.merriam-webster.com/dictionary/barhop">barhopping</a></td>
+                    <td>włóczyć się po barach</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.dictionary.com/browse/surefire">surefire</a></td>
+                    <td>pewny, niezawodny</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.dictionary.com/browse/sourpuss">sourpuss</a></td>
+                    <td>zrzędza, ponurnik</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.dictionary.com/browse/platypus">platypus</a></td>
+                    <td>dziobak</td>
+                </tr>
+                </table>
+                <br>
+            </details>
+
+            <br>
+        </article>
+        </region>
+
+
+        <region id="ścieżka-dźwiękowa">
+        <article>
+            <h3># ścieżka dźwiękowa</h3>
+    
+            <p>lista utworów została wylistowana w grze; jednakowoż niektóre z nich trudno wyśledzić jako że to muzyka licencjonowana;</p>
+            <br>
+    
+            <details class="soundtrack-accordion"> 
+                <summary>soundtrack</summary>
+                <br>
+                <table class="soundtrack-ost">
+                    <colgroup>
+                        <col span="1" class="soundtrack-ost--name">
+                        <col span="1">
+                    </colgroup>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=sf1zvywjW8M">1234</a> – sadie currey</td>
+                    <td>3:10</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=w7VhJe0f3ok">a delicate exchange</a> – jamie ross breiwick</td>
+                    <td>3:07</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=Zo5MFrVUi_w">a place to call home</a> – magnum opus</td>
+                    <td>2:36</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=-ZvEYOTxFeY">a safe place</a> – humans win (michael shynes)</td>
+                    <td>1:38</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=X2JgZRIhc7o">aftermath of a crime</a> – dan watts, gareth richard davies</td>
+                    <td>5:10</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=aPcWgUpH7Iw">all along</a> –  adam pickering, paula pickering</td>
+                    <td>2:46</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=9dpUf8r0oZc">all or nada</a> – adriana blu, matthew david goodman</td>
+                    <td>2:20</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=b7sJu4Rc_60">all over again</a> – jack frank, david gerard lawrence</td>
+                    <td>3:20</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.universalproductionmusic.com/pl-pl/discover/albums/39311/radiant%23id-2100435">always looking up</a> – alexander richard kopp</td>
+                    <td>2:05</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.universalproductionmusic.com/en-nl/discover/albums/22242/swing">atmospheres</a> – alessandro simonetto, carmen rinaldi, emanuele boldarin, fiorenzo tiseo, giuseppe pagani, lorenzo baldo, luca picotto, roberto panfili, ruth sparer, silvio fasson</td>
+                    <td>2:45</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=ZKk9Wr41bQg">back to our beginning</a> – humans win</td>
+                    <td>2:16</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.universalproductionmusic.com/en-se/discover/albums/37787/you-and-i">back to you</a> – ben knorr, oliver philippe price, paul b. dinletir</td>
+                    <td>2:31</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=ZjWYBNuBv3I">bar brawling</a> – jonathan philip dix, vance westlake</td>
+                    <td>2:01</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=wruzfPKQlJk">bar rock strut</a> – aaron kelley, skinny williams</td>
+                    <td>2:14</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=hZsAChMZ-lA">beauty within</a> – stephen richard dymond, lief holt</td>
+                    <td>3:01</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=skzn-jnm5Ro">beer me</a> – jesse siebenberg, zachary stephen selwyn</td>
+                    <td>2:44</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=Mvf4sZnM8Ic">better than us</a> – humans win</td>
+                    <td>2:57</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=g7MEcpg7gJE">bewitched neighbors</a> – damien deshayes</td>
+                    <td>1:43</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.universalproductionmusic.com/en-row/discover/albums/37135/storyline-songs%23id-1959727">bigger than the world</a> – ken rose</td>
+                    <td>3:47</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=dqq5DheofV0">black canyon</a> – hervé brault</td>
+                    <td>1:48</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=7jdFvIVdwXQ">bleeding heart</a> – keegan meiring</td>
+                    <td>2:42</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.universalproductionmusic.com/en-row/discover/albums/37241/country-grit">blood on the land</a> – paul christopher rawson, wayne anthony murray</td>
+                    <td>2:43</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.universalproductionmusic.com/en-row/discover/albums/37297/swamp-rock%23id-1971765">born in the city</a> – anthony donje, paul simon elliot</td>
+                    <td>3:07</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=jCuEnn2rXdw">born to drive me crazy (instrumental)</a> – humans win</td>
+                    <td>3:23</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.universalproductionmusic.com/en-row/discover/albums/37515/the-cinematic-epics%23id-1990170">brave</a> – eirik jacobsen, kjell rune myrland, lorenzo castellarin, merethe soltvedt</td>
+                    <td>2:47</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.universalproductionmusic.com/en-row/discover/albums/35435/colossal-blues%23id-1839420">break me out</a> – dave sebant-montefury, joe slash, loki one, trent ferman</td>
+                    <td>2:31</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=1NmegzclJXI">bring me down</a> – jacob diab, joel machemer, martin bak</td>
+                    <td>3:01</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=HyjNxjrnwl0">brown eyes</a> – alexander hitchens, mayila jones</td>
+                    <td>2:28</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.universalproductionmusic.com/en-in/discover/albums/37534/community-living">building dreams (instrumental - full length (alt - solo piano))</a> – carl david harms</td>
+                    <td>2:00</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=KaSUP2XQW3c">building love</a> – emanuel kallins, steve skinner</td>
+                    <td>2:21</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.warnerchappellpm.com/track/cute-music-cute-240-03/NzAwNzQwNjktMDI4N2Nl">byte me (underscore)</a> – john chambers</td>
+                    <td>2:30</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=G0lftQaEI5c">caped crusader</a> – rusty logsdon</td>
+                    <td>2:00</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.universalproductionmusic.com/en-in/discover/albums/37927/quirky-casserole-2%23id-2021490">casino heist (instrumental)</a> – george david wilson</td>
+                    <td>2:06</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.audionetwork.com/browse/m/track/child-of-woe_1103182">child of woe</a> – oliver philippe price, paul b. dinletir</td>
+                    <td>2:10</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=1EVa6u9MXwI">cicada serenity</a> – yat fung wong</td>
+                    <td>4:04</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=8zQFqo4wcZ8">come closer</a> – jang hyun gi, derek long, jaron takach</td>
+                    <td>2:20</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=nchfU0uVQP0">confused</a> – teo marangon, mica sefia</td>
+                    <td>2:24</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.storyblocks.com/audio/stock/cruz-la-346780621.html">cruz l.a.</a> – humans win (lance conrad)</td>
+                    <td>2:42</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=YJX1JmJRgAE">cry for help</a> – katib, oliver holmes</td>
+                    <td>2:24</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=gLgD5I-IPes">curious quirk</a> – jean-philippe ichard</td>
+                    <td>1:55</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.universalproductionmusic.com/en-se/discover/albums/37781/worlds-of-wonder-2">dark arts</a> – harry lightfoot</td>
+                    <td>3:01</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=hCYIALOt3Bo">do it again</a> – harry matthew tarlton, mo brandis</td>
+                    <td>3:25</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=NZM-gkt9MDw">do what i want</a> – dustin earl brown, earl mac brown jr.</td>
+                    <td>2:07</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=AAG4SDL9xcg">don’t look down</a> – julien vonarb, saana</td>
+                    <td>3:16</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=qzRagR9An5A">down the barrel</a> – elram boxer, itamar carmel, tiran ezra, or kribos, itay steinberg, harel tsemah</td>
+                    <td>2:13</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=34lyPxGwhAc">dynamite</a> – jacob diab, martin bak</td>
+                    <td>3:11</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=yPWyhmdQmrY">eagle eye</a> – georgios lorantakis</td>
+                    <td>2:07</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=WFMtO2B-q5o">evermore</a> – avtr, bryar</td>
+                    <td>3:12</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.universalproductionmusic.com/en-de/discover/albums/36594/cheerleader-pop%23id-1918450">everybody get up</a> – freddie harriet, jamie norton, oscar boone</td>
+                    <td>2:51</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=L2iPrjpbLqU">everytime</a> – david gerard lawrence, jasmine north</td>
+                    <td>3:41</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=JXbWWOTFmFY">fall on you</a> – patrick james bolster, scott bradley steven</td>
+                    <td>2:19</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=9LLCE4q6jhM">falling so hard</a> – samuel ellis</td>
+                    <td>2:31</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=7iI8h3NeWPI">fever dream</a> – keegan meiring</td>
+                    <td>2:32</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=SOJVmAVYAgE">find yourself an angel</a> – steve buick</td>
+                    <td>3:17</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=JNxg91To9WM">finding a way</a> – joseph james danher, liam joseph hennessy</td>
+                    <td>2:27</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=S9A7sWg4JYg">fire and ice</a> – lorenzo castellarin, eirik jacobsen</td>
+                    <td>3:27</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=CBGNd9adGhc">firestorm</a> – espen haagensli</td>
+                    <td>1:40</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.universalproductionmusic.com/en-se/discover/albums/37787/you-and-i">first look</a> – ben knorr, oliver philippe price, paul b. dinletir</td>
+                    <td>2:25</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.storyblocks.com/audio/stock/floating-above-the-tide-347408953.html">floating above the tide</a> – edith mudge</td>
+                    <td>2:18</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=iw_YiK_DUDQ">found you</a> – aaron kellim</td>
+                    <td>2:42</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=f0iN6rQm4PE">frantic breakbeat</a> – jean-baptiste ayoub</td>
+                    <td>2:00</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.universalproductionmusic.com/en-in/discover/albums/30642/strut-pop%23id-1738269">freaky</a> – liam mcgregor black</td>
+                    <td>1:50</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=2CTAU7sQ9Ag">friendly walk</a> – carl utbult, mattias pérez</td>
+                    <td>2:12</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.universalproductionmusic.com/en-au/discover/albums/25014/turbocharged-highperformance-swagger-rock">gas powered hero</a> – alec justice</td>
+                    <td>1:51</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=C6RRL_nnM8M">get away with you</a> – keegan meiring</td>
+                    <td>2:26</td>
+                </tr>
+                <tr>
+                    <td>get up now – humans win</td>
+                    <td>1:44</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.universalproductionmusic.com/en-row/discover/albums/35717/anthemic-pop">get you back</a> – emma seeberg varming, paul jomo krushchinski</td>
+                    <td>3:12</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.universalproductionmusic.com/en-se/discover/albums/37787/you-and-i">girl next door</a> – ben knorr, oliver philippe price, paul b. dinletir</td>
+                    <td>2:14</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=yD_lhFssmzc">god save the prom queen</a> – jack monroe, will may</td>
+                    <td>2:40</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=oS85g6-IqS0">goin’ up</a> – keegan meiring</td>
+                    <td>3:25</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=xURFEwLNiTc">gonna be ok</a> – amanda leigh wilson, stephen william cornish</td>
+                    <td>3:02</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=bSpWlrZ1Ask">gotta do</a> – karina julia ramage, manu brant</td>
+                    <td>2:05</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=Kkx49WLx3p4">half of your heart</a> – kaii dreams, wild heart</td>
+                    <td>2:32</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=BTetSuStKfI">high noon howl</a> – thomas jack foley</td>
+                    <td>2:35</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=PA2DHJo2QA0">home again</a> – craig david joiner, jeff knowler</td>
+                    <td>3:33</td>
+                </tr>
+                <tr>
+                    <td><a href="https://open.spotify.com/album/6HnHByVGNyOddmV5i6bKbe">human race</a> – dan morehead</td>
+                    <td>3:41</td>
+                </tr>
+                <tr>
+                    <td>hush little baby (u4ia) – faith richards, prairies, drifty</td>
+                    <td>1:05</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=p5pf1Y8r7xc">i just wanna smooth (guitar version with vocals)</a> – nick battle</td>
+                    <td>3:23</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=fr1rCjDznOk">i own it</a> – dustin earl brown, glenna bree gasparian</td>
+                    <td>2:30</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.universalproductionmusic.com/en-row/discover/albums/35717/anthemic-pop">i want you</a> – emma seeberg varming, lucas hjoellund, paul jomo krushchinski</td>
+                    <td>2:43</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=5wzr5agGbLY">i was made for you</a> – justing desjardins west, megan levine</td>
+                    <td>2:09</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=_7hmaQ9nff8">i’m riding high</a> – james frank hillier, oscar boone</td>
+                    <td>2:42</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.universalproductionmusic.com/en-row/discover/albums/37646/rousing-pop-2%23id-2000134">if you could see me now</a> – georgina claire wells, jack hardwick chown</td>
+                    <td>3:16</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=-8sqIV4qi7Q">indestructible</a> – zachary nelson</td>
+                    <td>3:10</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=JjKzuPNmEQ8">in my heart forever</a> –  humans win</td>
+                    <td>2:04</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=0VO9CJsHQjQ">intrigue</a> – andy blythe, marten joustra</td>
+                    <td>2:24</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=xW632YeR_og">invisible love</a> – kaii dreams, wild heart</td>
+                    <td>2:58</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=-tRuMK0ywQc">iowa girl</a> – ben bostick</td>
+                    <td>2:27</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=A9Pbq9gjPCs">i wouldn’t change a thing</a> –  humans win</td>
+                    <td>3:53</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=yx79Dl8I6J0">joyous reunion</a> – wee keat ho</td>
+                    <td>1:52</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=THYcDOhxatg">jump right in</a> – timothy forrester clarke, adam richard snow</td>
+                    <td>2:49</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=9FX483EWpLQ">kick the dust</a> – anders paul niska, peter mansson</td>
+                    <td>3:00</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=nvHYwJSrUT8">kill the lights</a> – mike attonito, jamie westgarth shield</td>
+                    <td>2:24</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=W1-4roSDdFU">learn to fall</a> – aaron kellim</td>
+                    <td>3:36</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=Sds7V3-krGg">lights in the sky</a> – james joshua otto</td>
+                    <td>2:19</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=mwwUYUlIBmQ">lo fi lullaby</a> – eric heber suffrin</td>
+                    <td>2:42</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=5IyL1l34PIs">local forecast - elevator</a> – kevin macleod</td>
+                    <td>3:12</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=hpqnXSeZLXs">love again</a> – james bradshaw</td>
+                    <td>2:58</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=nD64t8p44Ns">love in the summer morning breeze</a> – daniel ee hsiung chai</td>
+                    <td>2:57</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=UutjTFNuUXk">love our way through</a> – florence ida dabokemp, per ljungqvist, george nakas</td>
+                    <td>2:05</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=2i-CnQcYoE8">love tonight</a> – matthew anderson, florian moenks</td>
+                    <td>2:47</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=ExsvWIuhEiY">loving you is so easy</a> – jasmine north</td>
+                    <td>2:11</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.universalproductionmusic.com/en-row/discover/albums/41308/tv-essentials-lofi-beats-2">lullaby</a> – eric heber suffrin</td>
+                    <td>2:42</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=nBvN911WhdU">lump fish</a> – benjamin william castle, danny fromajio, will grove-white</td>
+                    <td>2:26</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=b1JLJKHHMZ0">lux cocktail</a> – chieli minucci, emanuel kallins</td>
+                    <td>2:17</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=hVupB8aFuXI">makes me feel good</a> – charlie deakin-davies, vanessa rosette giangrande</td>
+                    <td>1:21</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=OSaUXvGiGT0">meaningful moments</a> – samuel david brown</td>
+                    <td>2:32</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=Suo9BJ_QO1U">mental game</a> – brice davoli</td>
+                    <td>1:40</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=gREVmbVaAWA">miles and miles</a> – bill markt, gabriel charles kirshoff</td>
+                    <td>3:13</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=iFifO5Y5R2c">motor oil</a> – bob bradley</td>
+                    <td>1:52</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=egcHoznS2R8">move on</a> – matthew bishop, tom bishop, celine ellis</td>
+                    <td>3:48</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=aMHBXY3qsCU">my light</a> – humans win (chris mason)</td>
+                    <td>3:58</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=7zjqcqTepSc">my lionheart</a> – florian moenks, matthew anderson</td>
+                    <td>3:28</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=HXHRluknN7o">need your love</a> – timothy charles laws, oscar mason, anne-marie sanghera</td>
+                    <td>2:19</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=K6g7niSC1KE">never giving up on you</a> – ashley warren, bjorn nilsson, jason tarver</td>
+                    <td>1:42</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=4dzlI9I-FjM">never meant to hurt you</a> – anders paul niska, elias arne ivar ringquist</td>
+                    <td>2:35</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=XzNkXplMpYI">new sentiment</a> – mederic bourgue</td>
+                    <td>2:02</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=_0yEcG6Nd0Q">no time for wasters</a> – charlie tenku, gabriella chering</td>
+                    <td>2:13</td>
+                </tr>
+                <tr>
+                    <td><a href="https://audiomack.com/angus-pendergast/song/nocturne-in-e-flat-chopin">nocturne in e flat (chopin)</a> – angus pendergast</td>
+                    <td>5:02</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=i6ElFZFpmMw">not my future</a> – anders paul niska</td>
+                    <td>2:53</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=-EN1cBfaxdI">not just a piece</a> – kaii dreams</td>
+                    <td>2:14</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=kbj31529iQg">nothing comes for free</a> – markus gleissner, sofia patsalides</td>
+                    <td>2:24</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=Mm5eIc4vpwk">on fire</a> – henry parsley</td>
+                    <td>2:47</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=qps4MikMfcM">on the top now</a> – aaron michael wittrock, forrest reed, julian daniel anderson</td>
+                    <td>1:46</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=lcpZoMq53NM">open sky</a> – joseph james danher, liam joseph hennessy</td>
+                    <td>1:58</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=6HmTOq-wAfg">our happy ending</a> – magnum opus</td>
+                    <td>2:45</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=Zl3du1C91Fg">over you somehow</a> – matthew bishop, tom bishop, emily lockett</td>
+                    <td>3:16</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=zzbYloQSxoI">paradise</a> – julia sarah leimenstoll, janik riegert</td>
+                    <td>2:03</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=PUo9IwlEkwI">party queens</a> – andrew joseph carpenter, marc ferrari, mark richmond phillips</td>
+                    <td>3:02</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=CqGCeQunWD0">play with fire</a> – adele roberts, blake cooper, jeremy stack</td>
+                    <td>2:32</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.storyblocks.com/audio/stock/poolside-in-paradise-347048784.html">poolside in paradise</a> – humans win (lance conrad)</td>
+                    <td>3:15</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=tnNCQ96Li70">positive feeling</a> – joshua ellis, thomas james white</td>
+                    <td>2:23</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=rdyZkznFXkc">ready to fight</a> – black prez, michael werner maas</td>
+                    <td>3:01</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=xg6KspZDBnI">reasons</a> – kaii dreams</td>
+                    <td>4:22</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=ipXek4dW_-A">redeemed</a> – bret levick</td>
+                    <td>3:18</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=Ni-NLq3wgnQ">rockstar</a> – edgar möller, stella franke</td>
+                    <td>2:20</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.universalproductionmusic.com/en-row/discover/albums/37135/storyline-songs%23id-1959727">run down the days</a> – ken rose, stuart mitchell</td>
+                    <td>3:42</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=l47oIa8Tkto">rush hour</a> – gabriel brosteanu</td>
+                    <td>2:10</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.universalproductionmusic.com/tc-tw/discover/albums/35358/kids-music-chinese-instrumental">school’s out</a> – soh chwan koh, jia jun ng</td>
+                    <td>1:33</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.universalproductionmusic.com/en-gb/discover/albums/27056/pop-punks%23id-1570794">schools out for summer</a> – louise bernadette dowd, morty vicar</td>
+                    <td>2:22</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.universalproductionmusic.com/tc-tw/discover/albums/30288/playful-and-perky">silly goose</a> – markus gleissner</td>
+                    <td>2:26</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=Nm9bRXZTMRc">slaughter house</a> – jeevan anandasivam</td>
+                    <td>2:45</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=cenyGEHmtFc">somethin’ bout summer</a> – marti amado, ts gauntlett</td>
+                    <td>2:23</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=hE9ZFd0U5Rk">something about you</a> – katya lauren mansell, aubrey whitfield</td>
+                    <td>3:22</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.universalproductionmusic.com/en-row/discover/albums/37501/vintage-funk">sour pickle tang</a> – anthony donje, paul simon elliott</td>
+                    <td>3:16</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=khpfaUB-2sg">sovereign power</a> – veigar margeirsson</td>
+                    <td>1:59</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=znRG8dr0gtw">spring promenade</a> – nicolas blampain</td>
+                    <td>1:56</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=Xfgk1wuvYDY">spy versus spy</a> – wim kock</td>
+                    <td>2:43</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=DSLRCdE7dq4">st. louis city</a> – nite owl</td>
+                    <td>2:04</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=iLKh2MKdxLs">stand up!</a> – yaacov kobi hokima, sebastian barnaby robertson</td>
+                    <td>1:47</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.universalproductionmusic.com/en-row/discover/albums/37515/the-cinematic-epics%23id-1990170">strong hearted</a> – lorenzo castellarin, eirik jacobsen, kjell rune myrland, mattis nikolai myrland</td>
+                    <td>2:23</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=6EnPhVsY6M8">style and grace</a> – aaron kelley, skinny williams</td>
+                    <td>1:57</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=-pWENKagPsI">summer strolling</a> – robert james aitken</td>
+                    <td>2:16</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=p2Vyf1D1e9U">summertime love</a> – humans win</td>
+                    <td>3:45</td>
+                </tr>
+                <tr>
+                    <td><a href="https://soundcloud.com/liquidcinema/sunset-boulevard?in=liquidcinema/sets/swank-cool-funk-meets-retro-hip-hop">sunset boulevard</a> – daniel voicians</td>
+                    <td>1:52</td>
+                </tr>
+                <tr>
+                    <td>sweet home wisconsin – humans win</td>
+                    <td>1:16</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=AU8ILH7U77E">sweet with me</a> – dave sebant-montefury, joe slash, loki one, trent ferman</td>
+                    <td>1:05</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.universalproductionmusic.com/en-in/discover/albums/35717/anthemic-pop">take a chance</a> – andrew david robinson, stefanie bull</td>
+                    <td>3:38</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=WZ9dWgPbq-k">take my hand</a> – justin desjardins west, megan levine</td>
+                    <td>2:14</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=HCC9Awg9FE0">taking off</a> – henry richard obree parsley, mo brandis</td>
+                    <td>2:57</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=BCELcPzhcOA">that old world tradition</a> – bill kendall whittington, jeffrey j. taylor, john joseph mock, kenneth brain lewis, scott dente</td>
+                    <td>2:24</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.universalproductionmusic.com/en-au/discover/albums/37868/game-changer%23id-2016762">the finalists</a> – amir gurvitz</td>
+                    <td>2:44</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.universalproductionmusic.com/en-de/discover/albums/35659/sad-stories">the light ahead</a> – vince watts</td>
+                    <td>2:54</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=1DAS_DQdP7I">the lost cowboy</a> – alessandro rizzo, elliot greenway ireland</td>
+                    <td>2:49</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.universalproductionmusic.com/en-se/discover/albums/37781/worlds-of-wonder-2%23id-2009168">the march hare</a> – jeffery emerson gaiser, paul b. dinletir</td>
+                    <td>1:51</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=J__7GojBjJM">the world is ours to take</a> – herry christopher, jack kenworthy</td>
+                    <td>3:14</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=oFwDdVIDQc4">think about love</a> – peter jeremy davis, greg hatwell, vance westlake</td>
+                    <td>3:02</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=sZiuATdt8xE">think of you</a> – cody william falkosky</td>
+                    <td>3:22</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=QkGHvkTa500">this could be good</a> – karina julia ramage, william baxter noon</td>
+                    <td>3:18</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=fgKSa2WAtyI">this is our time</a> – brian colin burrows, robert james aitken</td>
+                    <td>2:08</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.universalproductionmusic.com/en-se/discover/albums/36019/do-it-or-die-ep%23id-1873482">this world isn’t meant for you</a> – faith holgate, paul christopher rawson</td>
+                    <td>2:56</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=LMwErI2T5W4">thunder and lightning</a> – ian paul barnard, tristan ivemy</td>
+                    <td>2:41</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=drANFPxRkMc">time</a> – johanna ekholm (jean root), jonathan lavotha</td>
+                    <td>2:42</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=p5dtfOpFI04">time to party</a> – bob bradley, nick mcenally, steve dymond</td>
+                    <td>2:15</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.universalproductionmusic.com/en-se/discover/albums/37221/afrobeats-chill%23id-1966116">to the rhythm</a> – christopher b. harris, daniel kanneth solovitz, darius smith</td>
+                    <td>2:31</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=9UlgmWLn2EE">trivial tate</a> – anders paul niska</td>
+                    <td>1:57</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.universalproductionmusic.com/en-se/discover/albums/37781/worlds-of-wonder-2%23id-2009168">truth be told</a> – paul b. dinletir</td>
+                    <td>3:00</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.universalproductionmusic.com/en-se/discover/albums/37133/storytelling-country-calm%23id-1959556">tune for josie</a> – joss peach, josephine patricia peach</td>
+                    <td>3:31</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=-z-afAi78XY">turning back</a> – j.d. aprils, rob cass</td>
+                    <td>3:01</td>
+                </tr>
+                <tr>
+                    <td>van crankin – humans win</td>
+                    <td>2:57</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=N-zmE4hZUR4">verdant surroundings</a> – david ashok ramani, jonathan elias</td>
+                    <td>2:20</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.universalproductionmusic.com/en-se/discover/albums/37515/the-cinematic-epics%23id-1990218">vicious</a> – eirik jacobsen, lorenzo castellarin</td>
+                    <td>3:05</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=cUGD77SqeU0">wake up call</a> – andrew michael britton, jesse o’mahoney, ruby wood</td>
+                    <td>4:02</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=WrpPlv-ZptE">wanna do</a> – bill markt, gabriel charles kirshoff</td>
+                    <td>3:03</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=z-lmhXIZQ7k">we can do anything</a> – jeremy noel william abbott, louise bernadette dowd</td>
+                    <td>2:54</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=Wju1SpWBIQ4">we will be victorious</a> – jacob diab, martin bak</td>
+                    <td>2:46</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.universalproductionmusic.com/en-se/discover/albums/36982/anthemic-pop%23id-1948873">we’re alive</a> – harry christopher, jack kenworthy</td>
+                    <td>3:20</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=vQFF6v9qd4U">web of deceit</a> – paul werner</td>
+                    <td>2:20</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.universalproductionmusic.com/en-se/discover/albums/26688/hiphop-%28acpm022%29%23id-1545476">whack ass clown</a> – william kyle white</td>
+                    <td>1:58</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.universalproductionmusic.com/en-se/discover/albums/35717/anthemic-pop%23id-1861262">what love feels like</a> – james baritone, rick tenor</td>
+                    <td>3:17</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.universalproductionmusic.com/en-se/discover/albums/37781/worlds-of-wonder-2%23id-2009168">what tomorrow holds</a> – jeffery emerson gaiser, paul b. dinletir</td>
+                    <td>2:51</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=bLOMCBxMLZs">where did you go? (remix)</a> – humans win</td>
+                    <td>3:33</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.universalproductionmusic.com/en-se/discover/albums/37801/artist-series-alex-kopp%23id-2011140">where i can breathe</a> – alexander richard kopp, little wolf</td>
+                    <td>2:16</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=wKm62rSZcU0">wiegenlied (lullaby)</a> – louise carmen spencer</td>
+                    <td>1:41</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=Zpp5Cytm1Uk">you gotta be you</a> – karina julia ramage, william baxter noon</td>
+                    <td>2:41</td>
+                </tr>
+                </table>
+                <br>
+            </details>
+    
+            <br>
+        </article>
+        </region>
+
+
+        <region id="linux">
+        <article>
+        <h3># linux</h3>
+    
+        <details class="accordion"> 
+            <summary>sprawa dla linusa</summary>
+            <br>
+                
+            <div> <!-- saves location -->
+            <p><strong>ścieżki</strong></p>
+    <pre class="listing-block">
+    <code># &lt;SteamLibrary&gt;/steamapps/common/u4ia/game/saves/</code>
+    <code># ~/.renpy/Euphoria-1633900849</code>
+    <code><span style="color:teal;">7z</span> a -t7z ~/library/roboczy/"260120 u4ia".7z ~/.renpy/Euphoria-1633900849</code>
+    </pre>
+            <ul>
+                <li><a href="https://steamdb.info/app/2890150/ufs/">save file locations</a></li>
+                <li><a href="https://www.igdb.com/games/u4ia--1">u4ia</a></li>
+                <li><a href="https://www.protondb.com/app/2890150">appid = 2890150</a></li>
+            </ul>
+            <br>
+            </div>
+
+            <div> <!-- usunięcie ekranu powitalnego -->
+            <p><strong>usunięcie ekranu powitalnego</strong></p>
+    <pre class="listing-block">
+    <code><span style="color:teal;">rm</span> u4ia/game/presplash_background.png u4ia/game/presplash_foreground.png</code>
+    </pre>
+            <ul>
+                <li><a href="https://steamcommunity.com/app/2890150/discussions/0/659341126368805977/">please give an option to get rid of obnoxious fullscreen loading</a></li>
+            </ul>
+            <br>
+            </div>
+
+            <div> <!-- resetowanie postępu w grze -->
+            <p><strong>resetowanie postępu w grze</strong></p>
+    <pre class="listing-block">
+    <code><span style="color:teal;">rm</span> &lt;SteamLibrary&gt;/steamapps/common/u4ia/game/saves/persistent</code>
+    <code><span style="color:teal;">rm</span> -r ~/.renpy/Euphoria-1633900849</code>
+    <code><span style="color:teal;">rm</span> ~/.renpy/persistent/Euphoria-1633900849</code>
+    </pre>
+            <ul>
+                <li><a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3301816876">how to reset progress</a></li>
+                <li><a href="https://www.reddit.com/r/RenPy/comments/11egchi/how_to_fully_restart_a_game/">how to fully restart a game?</a></li>
+                <li><a href="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2906710/manuals/readme.pdf?t=1720938048">necrophobia readme</a></li>
+                <li><a href="https://www.reddit.com/r/RenPy/comments/18cafdz/i_want_to_completey_reset_a_game/">i want to completey reset a game</a></li>
+            </ul>
+            <br>
+            </div>
+
+            <div> <!-- wyodrębnianie muzyki -->
+            <p><strong>wyodrębnianie muzyki</strong></p>
+    <pre class="listing-block">
+    <code><span style="color:teal;">aria2c</span> https://builds.dotnet.microsoft.com/dotnet/aspnetcore/Runtime/8.0.21/aspnetcore-runtime-8.0.21-linux-x64.tar.gz</code>
+    <code><span style="color:teal;">mkdir</span> ~/.dotnet && <span style="color:teal;">tar</span> -xf dotnet-runtime-9.0.10-linux-x64.tar.gz -C ~/.dotnet</code>
+    <code><span style="color:teal;">cd</span> <span style="color:brown;">"/run/media/$USER/games/SteamLibrary/steamapps/common/u4ia/game"</span></code>
+    <code><span style="color:blue;">DOTNET_ROOT</span>=$HOME/.dotnet <span style="color:blue;">PATH</span>=$PATH:$DOTNET_ROOT:$DOTNET_ROOT/tools ~/rpaextract/<span style="color:teal;">rpaextract</span> -f <span style="color:brown;">"audio.rpa"</span> -x</code>
+    <code><span style="color:teal;">ls</span> -lhF ./rpaextract_audio/audio/ep1/music/get-up-now.mp3</code>
+    </pre>
+            <ul>
+                <li><a href="https://dotnet.microsoft.com/en-us/download/dotnet/8.0">https://dotnet.microsoft.com/en-us/download/dotnet/8.0</a></li>
+                <li><a href="https://github.com/Kaskadee/rpaextract">https://github.com/Kaskadee/rpaextract</a></li>
+            </ul>
+            <br>
+            </div>
+        </details>
+
+        <br>
+        </article>
+        </region>
+
+
+        <region id="wątki-dyskusji">
+        <article>
+            <h3># wątki dyskusji</h3>
+    
+            <ul>
+                <li><a href="https://steamcommunity.com/app/2890150/discussions/0/762932533852651996/">continuity problem at end of first work day?</a></li>
+                <li><a href="https://steamcommunity.com/app/2890150/discussions/0/659341490666056095/">that's your pfp?</a></li>
+            </ul>
+            <br>
+
+            <details class="accordion" style="color: gray;">
+                <summary>continuity problem at end of first work day?</summary>
+                <p>if you go alone to the shop for smartphone, synne will give you an offer; you might still reject it and go to lin; this way you will start in the locker room with lin, then in synne’s room because she still want to see you at the end of the day;<br>the alternatives are: go with gina and paige, or go with teagan after you helped tom with the crates; either way, you can still go the the vip room and interact with synne;</p>
+                <p>well, maybe, it might be slightly illogical because you cannot know about this possibility at that moment; yes, it seems off if you focus on it; and yet, don’t they all befriend too easily and don’t care about nudity at all? i would say most adult visual novels have such gaps in their story; the question is rather what the author have on mind; i think the intention was to give you an opportunity to interact with synne either way, while the transition to that became vague at some point in the development;</p>
+            </details>
+
+            <details class="accordion" style="color: gray;"> 
+                <summary>that's your pfp?</summary>
+                <p>[quote=Azsouth.TVR;785451333487464515]How do you get it w/o the walkthrough? [/quote]<br>it can be done only during trailer cleanup; it cannot be gained in vn mode; you will get it after going to the pier, where someone text you and comment the profile picture;</p>
+                <br>
+            </details>
+    
+            <br>
+        </article>
+        </region>
+
+        
+        <hr>
+        <footer>2026-02-26</footer>
+    </main>
+</body>
+
+</html>
