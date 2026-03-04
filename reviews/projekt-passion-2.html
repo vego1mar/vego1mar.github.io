@@ -1,0 +1,1328 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <title>recenzja – projekt passion 2</title>
+    <meta charset="utf-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <style>
+        @font-face {
+            font-family: "ubuntu", sans-serif;
+            src: url("../fonts/Ubuntu-Regular.ttf");
+        }
+        body {
+            font-family: "ubuntu", sans-serif;
+        }
+        h1 {
+            font-size: 26px;
+        }
+        h2 {
+            font-size: 20px;
+        }
+        h3 {
+            font-size: 17px;
+            color: rgb(255, 70, 70); /* salmon */
+        }
+        h3 a {
+            text-decoration: none;
+            color: rgb(255, 70, 70);
+        }
+
+        .main-content {
+            margin-left: 10%;
+            margin-right: 10%;
+            font-size: 14px;
+            padding: 0px 10px;
+            font-family: "ubuntu", sans-serif;
+        }
+
+        .region-grey {
+            background-color: whitesmoke;
+            border-style: hidden;
+            border-radius: 10px;
+            padding-top: 1%;
+        }
+        .region-white {
+            background-color: white;
+        }
+        a {
+            text-decoration: none;
+            color: teal;
+        }
+        p {
+            line-height: 1.4;
+        }
+
+        /* https://css-tricks.com/quoting-in-html-quotations-citations-and-blockquotes/ */
+        blockquote {
+            border-left: 2px solid blueviolet;
+            padding-left: 1%;
+        }
+
+        .code-line {
+            font-family: "jetbrains mono", "ubuntu mono", monospace;
+            background-color: gainsboro;
+            border: 0px solid olive;
+        }
+        pre.listing-block {
+            background-color: ghostwhite;
+            overflow-x: auto;
+            overflow-y: hidden;
+            white-space: pre;
+            word-wrap: normal;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            padding-right: 10px;
+            border: 1px solid olive;
+        }
+        pre.listing-block::before {
+            counter-reset: listing;
+        }
+        pre.listing-block code {
+            counter-increment: listing-counter;
+            font-family: "calling code", "ubuntu mono", monospace;
+            font-size: 14px;
+        }
+        pre.listing-block code::before {
+            content: counter(listing-counter) "   ";
+            display: inline-block;
+            width: 4em;
+            padding-left: 0px;
+            margin-left: auto;
+            text-align: right;
+            font-size: 12px;
+            color: olive;
+        }
+        pre {
+            margin-left: 1%;
+            margin-right: 1%;
+        }
+
+        .images-horizontal {
+            table-layout: fixed; 
+            display: block;
+            width: 100%;
+            overflow-x: scroll; 
+            overflow-y: hidden;
+            scroll-snap-align: center;
+        }
+        .images-horizontal a {
+            text-decoration: none;
+            color: black;
+        } 
+        .images-horizontal figcaption {
+            padding-top: 5px;
+        }
+
+        img {
+            width: 50vw;
+            height: auto;
+        }
+        figcaption {
+            font-size: 12px;
+            text-align: left;
+        }
+        .fighover figure {
+            display: inline-block;
+            border: 1px;
+            margin: 10px;
+        }
+        .fighover figure, .fighover img {
+            vertical-align: top;
+            width: 29vw;
+        }
+        .fighover figure, .fighover figcaption {
+            border: 1px;
+            text-align: center;
+        }
+
+        .achievements {
+            table-layout: fixed; 
+            width: 90%;
+            text-align: left;
+        }
+        .achievements--name {
+            text-align: center;
+            vertical-align: middle;
+        }
+        .achievements caption {
+            text-align: left;
+            padding-left: 1px;
+            font-weight: bold;
+        }
+        table.achievements td {
+            padding-top: 1px;
+            padding-bottom: 1px;
+            border-bottom: 1px solid rgba(128, 128, 0, 0.2);
+        }
+        .achievements td:nth-child(1) {
+            padding-left: 11px;
+            width: 70%;
+        }
+        .achievements td:nth-child(2) {
+            padding-left: 11px;
+            width: 100%;
+        }
+        .achiev-accord-desc {
+            color: gray;
+        }
+
+        .soundtrack-ost {
+            table-layout: fixed;
+            margin: auto;
+            width: 50%;
+        }
+        .soundtrack-ost td:nth-child(2) {
+            text-align: end;
+            padding-left: 5px;
+            width: 10%;
+        }
+        .soundtrack-ost tr:nth-child(even) {
+            background-color: ghostwhite;
+        }
+        .soundtrack-ost caption {
+            font-weight: bold;
+            text-align: left;
+            margin-left: -3%;
+        }
+        .soundtrack-accordion {
+            margin-left: 1%;
+            margin-right: 1%;
+        }
+
+        .dictionary {
+            table-layout: fixed; 
+            width: 90%;
+            text-align: left;
+        }
+        .dictionary--term {
+            width: 40%;
+            text-align: center;
+            vertical-align: middle;
+        }
+        table.dictionary td {
+            padding-top: 1px;
+            padding-bottom: 2px;
+            border-bottom: 1px solid rgba(128, 128, 0, 0.2);
+        }
+
+        @media only screen and (min-width: 1px) and (max-width: 920px) {
+            .soundtrack-ost {
+                width: 100%;
+            }
+        }
+        @media only screen and (min-width: 921px) and (max-width: 1250px) {
+            .soundtrack-ost {
+                width: 80%;
+            }
+        }
+        @media only screen and (min-width: 1251px) and (max-width: 1450px) {
+            .soundtrack-ost {
+                width: 65%;
+            }
+        }
+        @media only screen and (min-width: 1451px) and (max-width: 1900px) {
+            .soundtrack-ost {
+                width: 60%;
+            }
+        }
+        @media only screen and (min-width: 1901px) {
+            .soundtrack-ost {
+                width: 40%;
+            }
+        }
+
+        details {
+            border: 1px solid olive;
+            border-radius: 8px;
+            box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.12);
+            margin-bottom: 8px;
+        }
+        details[open] summary {
+            margin-bottom: 10px;
+        }
+        summary {
+            cursor: pointer;
+            transition: all 150ms ease-in-out;
+            padding: 12px;
+        }
+        .accordion pre, .accordion p, .accordion table {
+            margin-left: 2%;
+            margin-right: 2%;
+        }
+
+        article div p, article div details, article details {
+            margin-left: 1%;
+            margin-right: 1%;
+        }
+        details figure, div figure {
+            display: block;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <main class="main-content">
+        <section id="lead-text">
+        <h2>projekt: passion – season 2 (2025)</h2>
+        <p>kontynuacja opowiadania z tym samym humorystycznie niepoważnym zacięciem; o ile jedynka wprowadza do świata przedstawionego, o tyle dwójka roztacza bardziej dramatyczną fabułę, bardziej dojrzałą, nastawioną na przemianę wewnętrzną postaci; przy okazji próbuje się wprowadzić kilka nowości;</p>
+        <br>
+        </section>
+
+
+        <region id="informacje">
+        <article>
+        <h3><a href="#informacje" target="_self"># informacje</a></h3>
+
+        <ul>
+            <li><a href="https://steamcommunity.com/app/2863160/discussions/">steam discussions</a></li>
+            <li><a href="https://steamcommunity.com/app/2863160/eventcomments/">steam news and announcements</a></li>
+            <li><a href="https://discord.gg/fQrHHDyBWu">discord</a></li>
+            <br>
+            <li><a href="https://video.steamstatic.com/store_trailers/257007281/movie_max_vp9.webm">sexy trailer</a></li>
+            <li><a href="https://video.steamstatic.com/store_trailers/257109761/movie_max_vp9.webm">story trailer</a></li>
+            <br>
+        </ul>
+        <br>
+
+        </article>
+        <br>
+        </region>
+
+
+        <region id="uwagi-zebrane">
+        <article>
+            <h3><a href="#uwagi-zebrane" target="_self"># uwagi zebrane</a></h3>
+
+            <div> <!-- menu startowe -->
+            <p>menu startowe jest teraz zdecydowanie bardziej przyjemne w odbiorze;</p>
+            <details class="accordion" open> 
+                <summary>animacja menu głównego</summary>
+                <center>
+                    <video controls width="80%">
+                        <source src="../media/projekt-passion-s2/260301-1356-menu.mp4" type="video/mp4" preload="metadata" alt="260301-1356-menu.mp4">
+                        <figcaption>menu główne</figcaption>
+                    </video>
+                </center>
+                <br>
+            </details>
+            <br>
+            <details class="accordion"> 
+                <summary>zrzuty ekranowe</summary>
+                <figure>
+                    <source srcset="../screenshots/projekt-passion-s2/2602170119-meme.jpg" type="image/png">
+                    <img loading="lazy" srcset="../screenshots/projekt-passion-s2/2602170119-meme.jpg" alt="2602170119-meme.jpg">
+                </figure>
+                <figure>
+                    <source srcset="../screenshots/projekt-passion-s2/2602150000-aria.png" type="image/png">
+                    <img loading="lazy" srcset="../screenshots/projekt-passion-s2/2602150000-aria.png" alt="2602150000-aria.png">
+                </figure>
+                <figure>
+                    <source srcset="../screenshots/projekt-passion-s2/2602162244-ashe.jpg" type="image/png">
+                    <img loading="lazy" srcset="../screenshots/projekt-passion-s2/2602162244-ashe.jpg" alt="2602162244-ashe.jpg">
+                </figure>
+                <figure>
+                    <source srcset="../screenshots/projekt-passion-s2/2602170156-kaylee.jpg" type="image/png">
+                    <img loading="lazy" srcset="../screenshots/projekt-passion-s2/2602170156-kaylee.jpg" alt="2602170156-kaylee.jpg">
+                </figure>
+                <br>
+            </details>
+            <br>
+            </div>
+
+            <div class="region-grey"> <!-- technikalia -->
+            <p>jakkolwiek można załadować zapis stanu gry z poprzedniej części, o tyle nic nie trzeba robić, albowiem lokacja tychże jest taka sama, zatem są one dostępne automatycznie; to oznacza również przeniesienie postępu w odblokowywaniu wpisów kodeksu;</p>
+            <p>niemniej, nadal pozostały stare problemy: tekst dla wyborów ma zbyt niekontrastujący kolor, odbrębna funkcjonalność „sync gallery” która winna być domyślna; co więcej, nie jest jasnym iż w menu achievements można obejrzeć odblokowane dodatkowe krótkie sceny;</p>
+            <br>
+            </div>
+
+            <div> <!-- nowości -->
+            <p>próbą wprowadzenia czegoś nowego jest qte (quick time events); pojawiają się tylko na chwilę i są trochę za szybkie, przez co również niepotrzebne;</p>
+            <p>inną nowością jest segment detektywistyczny w stylu noir;</p>
+            <p>pojawia się też krótka zabawa w zgadywanie modelu broni na podstawie konturu;</p>
+            <br>
+            </div>
+
+            <div class="region-grey"> <!-- audiowizualny odbiór -->
+            <p>ambient wydaje się być lepiej dobrany do atmosfery sceny;</p>
+            <p>gra na koniec raczy nas pięknym filmikiem godnym klasycznego kina;</p>
+            <br>
+            </div>
+
+            <br>
+        </article>
+        </region>
+
+
+        <region id="słowniczek">
+        <article>
+            <h3><a href="#słowniczek" target="_self"># słowniczek</a></h3>
+
+            <details class="accordion"> 
+                <summary>wybrane słownictwo</summary>
+
+                <table class="dictionary">
+                    <colgroup>
+                        <col span="1" class="dictionary--term">
+                    </colgroup>
+                <tr>
+                    <td><a href="https://www.dictionary.com/browse/commend">i commend</a></td>
+                    <td>pochwalam</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.merriam-webster.com/dictionary/teetering%20on%20the%20brink%2Fedge%20of">teetering on the brink</a></td>
+                    <td>balansując na krawędzi</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.dictionary.com/browse/nonsensical">nonsensical</a></td>
+                    <td>bezsensowny, bzdurny</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.dictionary.com/browse/detour">detour</a></td>
+                    <td>objazd</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.dictionary.com/browse/hearsay">hearsay</a></td>
+                    <td>pogłoska</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.dictionary.com/browse/interloper">interloper</a></td>
+                    <td>natręt</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.dictionary.com/browse/splinter">splinter</a></td>
+                    <td>drzazga</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.dictionary.com/browse/evisceration">eviscerator</a></td>
+                    <td>patroszyciel</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.dictionary.com/browse/haze">haze</a></td>
+                    <td>dymek, mgiełka</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.dictionary.com/browse/debark">debarked</a></td>
+                    <td>okorowany</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.dictionary.com/browse/complacent">complacent</a></td>
+                    <td>zadowolony z siebie, beztroski</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.dictionary.com/browse/outcrop">outcrop</a></td>
+                    <td>odkrywka</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.dictionary.com/browse/entrenched">entrenched</a></td>
+                    <td>zakorzeniony</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.dictionary.com/browse/clandestine">clandestine</a></td>
+                    <td>potajemne, skryte</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.dictionary.com/browse/inviolable">inviolable</a></td>
+                    <td>nienaruszalny</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.dictionary.com/browse/perilous">perilous</a></td>
+                    <td>ryzykowny</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.dictionary.com/browse/commodity">commodity</a></td>
+                    <td>towar</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.dictionary.com/browse/backbone">backbone</a></td>
+                    <td>kręgosłup, podpora, charakter</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.dictionary.com/browse/rash">rash</a></td>
+                    <td>popędliwy</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.dictionary.com/browse/crevice">crevice</a></td>
+                    <td>szpara</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.dictionary.com/browse/notoriety">notoriety</a></td>
+                    <td>rozgłos</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.dictionary.com/browse/pervasive">pervasive</a></td>
+                    <td>rozpowszechniony, przenikający</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.dictionary.com/browse/intangible">intangible</a></td>
+                    <td>nieuchwytny, nienamacalny</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.dictionary.com/browse/intricate">intricate</a></td>
+                    <td>zawiły</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.dictionary.com/browse/insidious">insidious</a></td>
+                    <td>podstępny</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.dictionary.com/browse/nebulous">nebulous</a></td>
+                    <td>mglisty</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.dictionary.com/browse/hindered">hindered</a></td>
+                    <td>utrudniony, wstrzymany</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.dictionary.com/browse/freeboot">freebooter</a></td>
+                    <td>wolny strzelec</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.dictionary.com/browse/unscrupulous">unscrupulous</a></td>
+                    <td>niegodziwy, bez skrupułów</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.dictionary.com/browse/indelible">indelible</a></td>
+                    <td>niezatarty</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.dictionary.com/browse/foray">foray</a></td>
+                    <td>najazd</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.dictionary.com/browse/linger">linger</a></td>
+                    <td>ociągać się</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.dictionary.com/browse/heinous">heinous</a></td>
+                    <td>haniebny</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.dictionary.com/browse/tapestry">tapestry</a></td>
+                    <td>arras, kilim, gobelin</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.dictionary.com/browse/peril">peril</a></td>
+                    <td>niebezpieczeństwo</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.dictionary.com/browse/cornerstone">cornerstone</a></td>
+                    <td>kamień węgielny</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.dictionary.com/browse/bristle">bristling</a></td>
+                    <td>jeżący się</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.dictionary.com/browse/setback">setback</a></td>
+                    <td>wpadka</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.dictionary.com/browse/refrain">refrain</a></td>
+                    <td>wystrzegać się, pohamować</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.dictionary.com/browse/downplay">downplay</a></td>
+                    <td>bagatelizować</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.dictionary.com/browse/sleek">sleek</a></td>
+                    <td>lśniący, wymyskany</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.dictionary.com/browse/flimsy">flimsy</a></td>
+                    <td>wątły, marny</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.dictionary.com/browse/sleight">sleight</a></td>
+                    <td>podstęp, rzemiosło, zręczność</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.dictionary.com/browse/staple">staple</a></td>
+                    <td>klamra, skobel, stempel</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.dictionary.com/browse/abet">abetting</a></td>
+                    <td>podżeganie</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.dictionary.com/browse/shunned">shunned</a></td>
+                    <td>odrzucony (człowiek)</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.dictionary.com/browse/clemency">clemency</a></td>
+                    <td>łaskawość, łagodność</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.dictionary.com/browse/attainment">attainment</a></td>
+                    <td>dostąpienie, dotarcie, osiągnięcie</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.dictionary.com/browse/poignant">poignant</a></td>
+                    <td>wzruszający, chwytający za serce</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.dictionary.com/browse/contrail">contrails</a></td>
+                    <td>smugi kondensacyjne</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.dictionary.com/browse/incursion">incursion</a></td>
+                    <td>najazd, napad</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.dictionary.com/browse/exude">exude</a></td>
+                    <td>wydzielać</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.dictionary.com/browse/lacklustre">lacklustre</a></td>
+                    <td>bez wyrazu</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.dictionary.com/browse/wallow">wallowing</a></td>
+                    <td>tarzanie się</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.dictionary.com/browse/precipitation">precipitation</a></td>
+                    <td>osad, opad atmosferyczny</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.dictionary.com/browse/weary">weary</a></td>
+                    <td>znużony, utrudzony</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.dictionary.com/browse/wraith">wraiths</a></td>
+                    <td>widma</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.dictionary.com/browse/rabid">rabid</a></td>
+                    <td>rozjuszony</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.dictionary.com/browse/implore">implore</a></td>
+                    <td>błagać, napraszać się</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.dictionary.com/browse/flex">flex</a></td>
+                    <td>przewód, naginać</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.dictionary.com/browse/timid">timid</a></td>
+                    <td>bojaźliwy, płochy, trwożny</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.dictionary.com/browse/trip">to trip</a></td>
+                    <td>potknąć się</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.dictionary.com/browse/spitball">spitball</a></td>
+                    <td>pleść (co przyniesie ślina na język)</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.dictionary.com/browse/dissent">dissent</a></td>
+                    <td>rozłam</td>
+                </tr>
+                </table>
+                <br>
+            </details>
+            <br>
+            </div>
+
+            <br>
+        </article>
+        </region>
+
+
+        <region id="kłopotliwe-osiągnięcia">
+        <article class="region-grey">
+            <h3><a href="#kłopotliwe-osiągnięcia" target="_self"># kłopotliwe osiągnięcia</a></h3>
+            <p></p>
+    
+            <details class="accordion region-white"> <!-- mortis 5 -->
+                <summary>mortis 5 <span class="achiev-accord-desc">| die while trying to help</span></summary>
+                <p><blockquote>Then for Mortis 5 setting up the party once the Legion is set to depart, choose to first look for herbs for brewing alcohol, proceed to consume the sight blowing grape, then once that is done, choose to seek Sir Theodore Augustus FitzWilliam-Cavendish the 3rd for help for alcohol, choose to ♥♥♥♥ around and find out which of the two vases is the right one, then proceed to die to expected results. If Mortis 5 seems unsuccesful, i shall confide with you honestly because I might or might not have found these deaths due to always choosing the stupid option myself to see what happens.</blockquote></p>
+                <ul>
+                    <li><a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3467575916">mortis v (die while trying to help)</a></li>
+                    <li><a href="https://steamcommunity.com/app/2863160/discussions/0/521962925044277444/">how to unlock mortis 5 and 6?</a></li>
+                </ul>
+                <br>
+            </details>
+
+            <details class="accordion region-white"> <!-- mortis 6 -->
+                <summary>mortis 6 <span class="achiev-accord-desc">| die from sexual excitement</span></summary>
+                <p><blockquote>Gladly, so when coming across the options of choosing the hooker which will of course end up with you getting impaled and getting killed by headpats given to Sandra, all for Mortis 6.</blockquote></p>
+                <p><blockquote>When giving SAndrA headpats, keep going until you can choose the option ‘Harder. Faster’. When talking to the visitors, pick ‘Everyone except the stripper, get out of here’.</blockquote></p>
+                <ul>
+                    <li><a href="https://steamcommunity.com/app/2863160/discussions/0/521962925044277444/">how to unlock mortis 5 and 6?</a></li>
+                    <li><a href="https://steamcommunity.com/app/2863160/discussions/0/600787749709024596/">need help with achievement mortis vi</a></li>
+                </ul>
+                <br>
+            </details>
+
+            <details class="accordion region-white"> <!-- affection: ashe -->
+                <summary>affection: ashe <span class="achiev-accord-desc">| flirt three times with ashee</span></summary>
+                <p><blockquote>After having sex with Emily, say that you had sex with Ashe. Tell Ashe to save her med shot for later.</blockquote></p>
+                <p><blockquote>Take Ashe to the council meeting, she will offer you a handjob.</blockquote></p>
+                <ul>
+                    <li><a href="https://steamcommunity.com/app/2863160/discussions/0/600775095761275962/">scene 3 with ashe..?</a></li>
+                    <li><a href="https://steamcommunity.com/app/2863160/discussions/0/600776153213452545/">missing scene</a></li>
+                    <li><a href="https://steamcommunity.com/app/2863160/discussions/0/591782690121199607/">missing 2 s** scenes</a></li>
+                </ul>
+                <br>
+            </details>
+
+            <ul>
+                <li><a href="https://steamdb.info/app/2863160/stats/">achievements</a></li>
+            </ul>
+    
+            <br>
+        </article>
+        </region>
+
+
+        <region id="ścieżka-dźwiękowa">
+        <article>
+            <h3><a href="#ścieżka-dźwiękowa" target="_self"># ścieżka dźwiękowa</a></h3>
+    
+            <p>odnośnie muzyki gra wymienia: universal production music ab, muz station productions, john leonard french;</p>
+            <br>
+    
+            <details class="soundtrack-accordion"> 
+                <summary>soundtrack</summary>
+                
+                <table class="soundtrack-ost">
+                    <colgroup>
+                        <col span="1" class="soundtrack-ost--name">
+                        <col span="1">
+                    </colgroup>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=P5wSyAzQlNA">eternity calm (looped)</a></td>
+                    <td>32:06</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=OeYd8X9xJiE">abstract vision #10 (looped)</a></td>
+                    <td>1:24</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=DRvLuOXEDjE">abstract vision #4 (slow)</a></td>
+                    <td>1:49</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=CL-HhjCuD-A">abstract vision #3 (slow)</a></td>
+                    <td>1:49</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=WZZTbpg3ZUQ">quintet no.5 e major op.13 – menuet</a> – luigi boccherini</td>
+                    <td>3:05</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=TqJiGincr-8">symphony no.5</a> – george beck, ludwig van beethoven</td>
+                    <td>4:08</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=CwmqhXK7f64">eine kleine nachtmusic (phone)</a> – george beck, wolfgang amadeus mozart</td>
+                    <td>3:53</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=5WZWDOs4V-U">eine kleine nachtmusic</a> – george beck, wolfgang amadeus mozart</td>
+                    <td>3:53</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=-NfOw-Ejmw0">concerto no.3 in f major op.8</a> – george beck, antonio lucio vivaldi</td>
+                    <td>4:38</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=kodx2o0kfqk">heavy riffs 3-2 (short)</a></td>
+                    <td>0:29</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=qIMaoT_hwvc">the four seasons, spring (small)</a> – takako nishizaki, capella istropolitana, stephen gunzenhauser</td>
+                    <td>2:50</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=S4xrYWSIkT8">für elise</a> – angus pendergast</td>
+                    <td>2:38</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=klFij1Y9yS0">primavera, rv. 269</a> – andante baroque consort</td>
+                    <td>2:42</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=AcYdvZB2v6k">four seasons - spring (reggaeton mashup)</a> – george beck, oscar lo brutto, antonio vivaldi</td>
+                    <td>1:56</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=n_-dxZitv-s">inner calm (piano)</a> – a blythe, m joustra</td>
+                    <td>3:05</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=nEj0g_052Ps">inner calm</a> – a blythe, m joustra</td>
+                    <td>3:05</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=grnMWO5xgb0">low poly ambience loop</a></td>
+                    <td>1:57</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=D1GunFYZu5Y">low poly ambience loop (normalized audio)</a></td>
+                    <td>1:57</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=gNRQ-x0MjlI">the fight (piano)</a></td>
+                    <td>1:17</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=db_JZaMJTJA">the fight (small)</a> – emily mcdonald, patrick cunningham</td>
+                    <td>2:30</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=X0NBby4kwBY">the fight (big)</a> – emily mcdonald, patrick cunningham</td>
+                    <td>3:40</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=TPq4wGpjBYM">mod1f13d ambient</a></td>
+                    <td>1:00</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=YfEW9mm_aNM">childrens game loop</a></td>
+                    <td>1:07</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=O3DQFoLIgPs">eternity calm</a></td>
+                    <td>1:35</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=cy4WyiaQd3I">atoms in motion</a></td>
+                    <td>2:59</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=JPVoCBr_1NA">questions and answers</a></td>
+                    <td>1:17</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=Hx7SwruA7Gw">laid back loop</a></td>
+                    <td>0:58</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=blekfjo6_vY">kleptoid ambient</a></td>
+                    <td>1:17</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=HXQG0RjpC8g">confused loop</a></td>
+                    <td>1:04</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=ExReUzWcc90">awkward loop (short)</a></td>
+                    <td>1:17</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=COe2UEA4nqo">umbrella pants</a></td>
+                    <td>1:11</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=aH4-gW5NF98">distorted ambience</a></td>
+                    <td>1:24</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=D7ggnK_XykY">breaking the shell (slow)</a></td>
+                    <td>2:00</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=vBE0CPmsR7E">breaking the shell (slow 2)</a></td>
+                    <td>2:00</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=XtNOtC1jI7U">fatality racer</a></td>
+                    <td>1:54</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=UgxS6p2eD6U">kleptoid (main menu)</a> – hunter pierce</td>
+                    <td>2:27</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=U3b8bPkSTZk">voice of darkness (big)</a> – andrii yefymov</td>
+                    <td>0:40</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=TgRAxiGkXDI">voice of darkness (small)</a> – andrii yefymov</td>
+                    <td>1:13</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=Qo3GZEMVtqQ">survivors</a> – steve everitt, nathalie kraemer</td>
+                    <td>2:17</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=2iMYHjWbJt4">scotopia (big)</a> – hunter pierce</td>
+                    <td>2:29</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=wWl3auKe1qc">scotopia (slow)</a> – hunter pierce</td>
+                    <td>1:20</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=TV-wtmvh0sI">slippery sleuth</a> – alexander rudd</td>
+                    <td>1:36</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=SQK8VEgxcv0">duplicity</a> – alexander rudd</td>
+                    <td>1:33</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=tQRFAxuAaF8">tavern loop one</a> – alexander nakarada</td>
+                    <td>2:23</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=MCQRQS1NDFg">tavern loop one (phone)</a> – alexander nakarada</td>
+                    <td>2:23</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=Fpn3bjau510">silver scrapes (main track)</a> – danny mccarthy</td>
+                    <td>1:56</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=RbUaJCzGoSw">silver scrapes (phone)</a> – danny mccarthy</td>
+                    <td>1:56</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=vLodQWWP9qI">nowhere to run</a> – phillip john gregory</td>
+                    <td>2:52</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=1_P7Fyl5Gpo">leave the world behind (small)</a> – magnum opus</td>
+                    <td>1:10</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=DitdeLRso-k">leave the world behind (big)</a> – magnum opus</td>
+                    <td>2:29</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=XYMaKrC5JJs">concealed</a> – damon william baxter, mike westergaard</td>
+                    <td>2:33</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=3KW6wArEOPg">the blue danube part 1</a> – george david wilson</td>
+                    <td>3:04</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=eGr0u_aULic">won’t look back</a> – rainer rütsch, julia sykes</td>
+                    <td>2:28</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=xUAvj3cVTnk">wise and mystical</a> – chris doney, beth perry</td>
+                    <td>2:41</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=weD_S_vgSdM">rip it up (big)</a> – phillip john gregory</td>
+                    <td>0:33</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=Wj2RWfAdIqk">rip it up (underscore)</a> – phillip john gregory</td>
+                    <td>1:30</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=8pdh1pyrosA">stepping lightly</a> – aron wright</td>
+                    <td>2:18</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=thE1mlqJhqc">mind games (alternative version)</a> – anders paul niska, klas wahl</td>
+                    <td>2:15</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=kkU6PzonGLI">in my head (underscore)</a> – donn wilkerson</td>
+                    <td>1:48</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=Hz5aLHHfjkU">in the night</a> – birol dinletir</td>
+                    <td>0:58</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=tnz3WtrNLRo">hidden in plain sight (underscore)</a> – aron wright</td>
+                    <td>2:01</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=UUSIKQ_AIY8">dream dimension (underscore)</a> – sarah may playford</td>
+                    <td>2:58</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=wvSNrGQ5F_s">we’ll meet again (vocal lead)</a> – leo einaudi, giulia vallisari</td>
+                    <td>3:29</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=sqxfv5UJAWA">we’ll meet again</a> – leo einaudi, giulia vallisari</td>
+                    <td>3:29</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=t-Uyt1Emjxs">welfare (alternative version)</a> – bob bradley, matthew sanchez</td>
+                    <td>0:57</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=0IUC-Ic6nUY">welfare (main track)</a> – bob bradley, matthew sanchez</td>
+                    <td>0:46</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=fPkT8FnHxBI">we gon bounce back (vocal lead)</a> – alexander hitchens</td>
+                    <td>3:02</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=q3Y_d_lmFHg">we gon bounce back</a> – alexander hitchens</td>
+                    <td>3:02</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=V-0iKdxqylg">uneven footing (underscore)</a> – sam clunie, daniel marantz</td>
+                    <td>1:27</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=Hvek-XGgE1c">trying something new (underscore)</a> – carl harms</td>
+                    <td>1:56</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=9hUzHvlJQvs">tangible consequences</a> – brandon lau</td>
+                    <td>2:17</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=kpfz5vMo8cU">midnight prowlers</a> – carl harms</td>
+                    <td>1:23</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=AW9d2YLkUlA">emergence (vocal lead)</a> – arllo beckett, raymon lakeith reed</td>
+                    <td>2:51</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=1-nd9xR3fV8">emergence</a> – arllo beckett, raymon lakeith reed</td>
+                    <td>2:51</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=0QKo2xo50Q0">celestial</a> – a blythe, m joustra</td>
+                    <td>2:16</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=uGYp9P59ngc">above and beyond (backing vocals only)</a> – paul dinletir</td>
+                    <td>0:52</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=kGpF8Qu13Lo">carbonated tryst</a> – daniel holter, matthew bruce smith</td>
+                    <td>1:19</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=vaUTg8qW5MU">suspenseful light tension</a> – stephane hirondelle</td>
+                    <td>2:50</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=29MXZpm4xcU">been caught creeping (underscore)</a> – aron wright</td>
+                    <td>2:30</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=dE1l7kL-5uM">been caught creeping</a> – aron wright</td>
+                    <td>0:56</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=K1zqJhWaU1o">sizzle (small)</a> – kieran jones</td>
+                    <td>2:54</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=aVeF0SWDJ2E">sizzle</a> – kieran jones</td>
+                    <td>2:52</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=YRwDc-n4Rng">nostalgia (vocals)</a> – helena josefsson</td>
+                    <td>2:38</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=RSNZGKo88YI">nostalgia</a> – helena josefsson</td>
+                    <td>1:21</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=SkbZ19i3h4Q">recollection</a> – paul dinletir, jeffery emerson gaiser</td>
+                    <td>2:24</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=djgyUJY9s2w">glimpse</a> – max concors</td>
+                    <td>3:09</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=nD_-nqXtqD0">beyond the trees (small)</a> – thomas daniel bellingham</td>
+                    <td>0:50</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=pvMpDwTDN_E">beyond the trees</a> – thomas daniel bellingham</td>
+                    <td>1:30</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=XGPJtaUkC_k">beyond the trees (underscore)</a> – thomas daniel bellingham</td>
+                    <td>0:50</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=-260ldHHxYk">survivors (small)</a> – nathalie kraemer, steve everitt</td>
+                    <td>5:37</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=rdOaXbDNT7g">survivors (big)</a> – nathalie kraemer, steve everitt</td>
+                    <td>1:41</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=pdhEX_54FNs">random act of kindness</a> – torsti juhani spoof</td>
+                    <td>2:26</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=gfCQ0GzcjlM">hearts clinging on (small)</a> – joseph c v wander, scott b ingham</td>
+                    <td>2:22</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=dYcZ4RHEtCY">hearts clinging on (big)</a> – joseph c v wander, scott b ingham</td>
+                    <td>3:03</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=BNZB6j0gKi0">fear challenge</a> – michael james burns</td>
+                    <td>2:27</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=j0Ux0EguJys">the machines are learning</a> – patrick timothy shanahan</td>
+                    <td>0:33</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=IKOfaX1I4hA">the plot thickens</a> – jeremy holland smith</td>
+                    <td>0:46</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=Fsa1SgkjaWk">soul vibe</a> – anders johan greger lewen</td>
+                    <td>1:48</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=1tFnn1fvUQU">run with me (very slow)</a> – alex komlew, lukas dolphin, petra stambolija</td>
+                    <td>1:12</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=RdxJOcrc9ao">run with me (slow)</a> – alex komlew, lukas dolphin, petra stambolija</td>
+                    <td>0:48</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=H3LGjbYajgQ">run with me</a> – alex komlew, lukas dolphin, petra stambolija</td>
+                    <td>2:30</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=w15Cvn0_7d0">run with me (instrumental)</a> – alex komlew, lukas dolphin, petra stambolija</td>
+                    <td>2:30</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=UYa6gWiJPeY">business choreography</a> – james mcdonough</td>
+                    <td>1:45</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=v0RLvX7rtF8">daemon</a> – hunter pierce</td>
+                    <td>1:06</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=YbjtLw6r2jY">shadows (small)</a> – jonathan josue monroy, matthew todd naylor</td>
+                    <td>0:51</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=vON2OyZrrbE">shadows (vocal version)</a> – jonathan josue monroy, matthew todd naylor</td>
+                    <td>2:40</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=5M63e9_1yXg">falling free (small)</a> – michael edwards, christian tschuggnall</td>
+                    <td>3:01</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=pFTXrDIuckg">falling free (underscore)</a> – michael edwards, christian tschuggnall</td>
+                    <td>3:01</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=TCa0TuKLC4c">witness to silence (slow)</a> – barry whittaker-gilbey</td>
+                    <td>1:54</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=FR_SUaEY9fU">witness to silence</a> – barry whittaker-gilbey</td>
+                    <td>2:19</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=aJr2_pcDlRY">witness to silence (slow 2)</a> – barry whittaker-gilbey</td>
+                    <td>1:49</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=glLekhhWlM4">st petersburg</a> – brian colin burrows, robert duncan mcvey</td>
+                    <td>2:20</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=KYpGeMn7djk">st petersburg burrows</a></td>
+                    <td>2:20</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=a8CWDQYvnEY">invasion (ambient)</a> – hunter pierce</td>
+                    <td>0:53</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=WAcsDrvBdLs">invasion</a> – hunter pierce</td>
+                    <td>0:56</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=OIJ1PUN3Q34">third shift (tension)</a> – birol dinletir, nicholas steinbach</td>
+                    <td>1:23</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=M_1X0CdDwM0">insurrectionary anarchist (slow)</a> – birol dinletir, nicholas steinbach</td>
+                    <td>1:50</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=o4W00zf5tzw">fireside chats</a> – birol dinletir, ben knorr</td>
+                    <td>1:31</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=VzPmSMd2bdc">insurrectionary anarchist (light)</a> – birol dinletir, nicholas steinbach</td>
+                    <td>1:34</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=zKk1XAS6Cm0">welcome back home</a> – michael alan levine, bijan anthony olia</td>
+                    <td>2:21</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=XD5xXvylEDw">wanna lose control</a> – wendy ellen feldstein, marc ferrari, lance morrison</td>
+                    <td>3:03</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=LUfFpiMMSN0">wanna lose control (phone)</a> – wendy ellen feldstein, marc ferrari, lance morrison</td>
+                    <td>3:03</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=7Qh2HIaOlDY">walking nowhere</a> – elliot greenway ireland, alessandro rizzo</td>
+                    <td>2:18</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=Jy9EOmt8hi4">walking nowhere (phone)</a> – elliot greenway ireland, alessandro rizzo</td>
+                    <td>2:18</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=hhKtzfr4hR0">break of day (alternative version)</a> – thomas richard balmforth, bob bradley</td>
+                    <td>0:31</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=zVgS5_6UKAs">break of day (phone)</a> – thomas richard balmforth, bob bradley</td>
+                    <td>0:31</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=hy01atXMCOc">break of day (alternative version)</a> – thomas richard balmforth, bob bradley</td>
+                    <td>2:51</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=lDRiZIGEnBk">rush hour traffic</a> – bob bradley, stephen richard dymond</td>
+                    <td>2:12</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=WDKYaTSZxVA">rush hour traffic (ambient)</a> – bob bradley, stephen richard dymond</td>
+                    <td>2:12</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=Uv7QvKaIfmU">gaining momentum</a> – thomas richard balmforth, bob bradley</td>
+                    <td>2:46</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=T6xbQRrJ0i4">the hatbox ghost (light)</a> – birol dinletir, nicholas steinbach</td>
+                    <td>1:41</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=xsCs9W-aQ7I">paradise lost and found</a> – pete davis, richard james neale</td>
+                    <td>2:37</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=DA7iq1H3k4U">evolving world (big)</a> – thomas richard balmforth, robert edward bradley</td>
+                    <td>1:56</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=3xDQwF640gk">evolving world (small)</a> – thomas richard balmforth, robert edward bradley</td>
+                    <td>2:20</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=OaTVCJNjCIU">empty islands (small)</a> – michael edwards, christian tschuggnall</td>
+                    <td>1:37</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=KYemWvAANC0">empty islands (big)</a> – michael edwards, christian tschuggnall</td>
+                    <td>1:22</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=P7TsTnsmRVs">artful trickery (alternative version)</a> – david james elliott, carl harms</td>
+                    <td>2:41</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=-HGQGMqtO94">wanna lose control</a> – wendy ellen feldstein, marc ferrari, lance morrison</td>
+                    <td>0:43</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=CgczSYopHFQ">uncertainty (underscore)</a> – thomas richard balmforth, robert edward bradley</td>
+                    <td>1:22</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=gbJTw7qVu0I">this is our time</a> – thomas richard balmforth, robert edward bradley</td>
+                    <td>3:10</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=lHFDQRn74Ms">see something say something</a> – matthew bruce smith, sven yarberg</td>
+                    <td>1:14</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=Galv0aXBHGY">see something say something (muffled)</a> – matthew bruce smith, sven yarberg</td>
+                    <td>1:14</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=XXSDJXfNK2s">running away</a> – nigel brown</td>
+                    <td>3:21</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=od5dudT4VEk">guiding light</a> – thomas richard balmforth, robert edward bradley</td>
+                    <td>2:14</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=KKKqAz0BwgI">devil or the curse (instrumental)</a> – william charles baker, amy caddies mcknight</td>
+                    <td>1:12</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=bSd25Z7D6Xs">devil or the curse (vocalized)</a> – william charles baker, amy caddies mcknight</td>
+                    <td>2:49</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=O6c3meSZPQQ">devil or the curse</a> – william charles baker, amy caddies mcknight</td>
+                    <td>2:48</td>
+                </tr>
+                </table>
+                <br>
+            </details>
+    
+            <ul>
+                <li><a href="https://www.youtube.com/playlist?list=PLlcQU_MB3CcfZeFWfrs7Zb7PamXuNG4So">projekt passion - season 2 ost</a></li>
+                <li><a href="https://www.youtube.com/playlist?list=PLuBjk9Axo9219VBwRy1TLAcrWqmsSzqcn">projekt passion season 2 soundtrack</a></li>
+            </ul>
+
+            <br>
+        </article>
+        </region>
+
+
+        <region id="linux">
+        <article>
+        <h3><a href="#linux" target="_self"># linux</a></h3>
+    
+        <div> <!-- saves location -->
+<pre class="listing-block">
+<code># &lt;SteamLibrary&gt;/steamapps/common/Projekt Passion - Season 2/game/saves</code>
+<code># ~/.renpy/ProjektPassion-1654327178</code>
+</pre>
+        <ul>
+            <li><a href="https://www.protondb.com/app/2863160">appid = 2863160</a></li>
+            <li><a href="https://steamdb.info/app/2863160/ufs/">save file locations</a></li>
+            <li><a href="https://www.igdb.com/games/projekt-passion-season-2">projekt: passion - season 2</a></li>
+        </ul>
+        <br>
+        </div>
+
+        <br>
+        </article>
+        </region>
+
+        
+        <hr>
+        <footer>2026-03-04</footer>
+    </main>
+</body>
+
+</html>
