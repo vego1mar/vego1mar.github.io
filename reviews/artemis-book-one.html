@@ -1,0 +1,1476 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <title>recenzja – artemis book one</title>
+    <meta charset="utf-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <style>
+        @font-face {
+            font-family: "ubuntu", sans-serif;
+            src: url("../fonts/Ubuntu-Regular.ttf");
+        }
+        body {
+            font-family: "ubuntu", sans-serif;
+        }
+        h1 {
+            font-size: 25px;
+        }
+        h2 {
+            font-size: 20px;
+        }
+        h3 {
+            font-size: 17px;
+            color: rgb(255, 70, 70); /* salmon */
+        }
+        h3 a {
+            text-decoration: none;
+            color: rgb(255, 70, 70);
+        }
+
+        .main-content {
+            margin-left: 10%;
+            margin-right: 10%;
+            font-size: 14px;
+            padding: 0px 10px;
+            font-family: "ubuntu", sans-serif;
+        }
+
+        .region-grey {
+            background-color: whitesmoke;
+            border-style: hidden;
+            border-radius: 10px;
+            padding-top: 1%;
+        }
+        .region-white {
+            background-color: white;
+        }
+        a {
+            text-decoration: none;
+            color: teal;
+        }
+        p {
+            line-height: 1.4;
+        }
+        blockquote {
+            border-left: 2px solid blueviolet;
+            padding-left: 1%;
+        }
+
+        .code-line {
+            font-family: "jetbrains mono", "ubuntu mono", monospace;
+            background-color: gainsboro;
+            border: 0px solid olive;
+        }
+        pre.listing-block {
+            background-color: ghostwhite;
+            overflow-x: auto;
+            overflow-y: hidden;
+            white-space: pre;
+            word-wrap: normal;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            padding-right: 10px;
+            border: 1px solid olive;
+        }
+        pre.listing-block::before {
+            counter-reset: listing;
+        }
+        pre.listing-block code {
+            counter-increment: listing-counter;
+            font-family: "calling code", "ubuntu mono", monospace;
+            font-size: 14px;
+        }
+        pre.listing-block code::before {
+            content: counter(listing-counter) "   ";
+            display: inline-block;
+            width: 4em;
+            padding-left: 0px;
+            margin-left: auto;
+            text-align: right;
+            font-size: 12px;
+            color: olive;
+        }
+        pre {
+            margin-left: 1%;
+            margin-right: 1%;
+        }
+        
+        .images-horizontal {
+            table-layout: fixed; 
+            display: block;
+            width: 100%;
+            overflow-x: scroll; 
+            overflow-y: hidden;
+            scroll-snap-align: center;
+        }
+        .images-horizontal a {
+            text-decoration: none;
+            color: black;
+        } 
+        .images-horizontal figcaption {
+            padding-top: 5px;
+        }
+
+        img {
+            width: 50vw;
+            height: auto;
+        }
+        figcaption {
+            font-size: 12px;
+            text-align: left;
+        }
+        .fighover figure {
+            display: inline-block;
+            border: 1px;
+            margin: 10px;
+        }
+        .fighover figure, .fighover img {
+            vertical-align: top;
+            width: 29vw;
+        }
+        .fighover figure, .fighover figcaption {
+            border: 1px;
+            text-align: center;
+        }
+
+        .achievements {
+            table-layout: fixed; 
+            width: 90%;
+            text-align: left;
+        }
+        .achievements--name {
+            text-align: center;
+            vertical-align: middle;
+        }
+        .achievements caption {
+            text-align: left;
+            padding-left: 1px;
+            font-weight: bold;
+        }
+        table.achievements td {
+            padding-top: 1px;
+            padding-bottom: 1px;
+            border-bottom: 1px solid rgba(128, 128, 0, 0.2);
+        }
+        .achievements td:nth-child(1) {
+            padding-left: 11px;
+            width: 70%;
+        }
+        .achievements td:nth-child(2) {
+            padding-left: 11px;
+            width: 100%;
+        }
+        .achiev-accord-desc {
+            color: gray;
+        }
+
+        .soundtrack-ost {
+            table-layout: fixed;
+            margin: auto;
+            width: 50%;
+        }
+        .soundtrack-ost td:nth-child(2) {
+            text-align: end;
+            padding-left: 5px;
+            width: 10%;
+        }
+        .soundtrack-ost tr:nth-child(even) {
+            background-color: ghostwhite;
+        }
+        .soundtrack-ost caption {
+            font-weight: bold;
+            text-align: left;
+            margin-left: -3%;
+        }
+        .soundtrack-accordion {
+            margin-left: 1%;
+            margin-right: 1%;
+        }
+
+        .dictionary {
+            table-layout: fixed; 
+            width: 90%;
+            text-align: left;
+        }
+        .dictionary--term {
+            width: 40%;
+            text-align: center;
+            vertical-align: middle;
+        }
+        table.dictionary td {
+            padding-top: 1px;
+            padding-bottom: 2px;
+            border-bottom: 1px solid rgba(128, 128, 0, 0.2);
+        }
+
+        @media only screen and (min-width: 1px) and (max-width: 920px) {
+            .soundtrack-ost {
+                width: 100%;
+            }
+        }
+        @media only screen and (min-width: 921px) and (max-width: 1250px) {
+            .soundtrack-ost {
+                width: 70%;
+            }
+        }
+        @media only screen and (min-width: 1251px) and (max-width: 1450px) {
+            .soundtrack-ost {
+                width: 50%;
+            }
+        }
+        @media only screen and (min-width: 1451px) and (max-width: 1900px) {
+            .soundtrack-ost {
+                width: 45%;
+            }
+        }
+        @media only screen and (min-width: 1901px) {
+            .soundtrack-ost {
+                width: 30%;
+            }
+        }
+
+        details {
+            border: 1px solid olive;
+            border-radius: 8px;
+            box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.12);
+            margin-bottom: 8px;
+        }
+        details[open] summary {
+            margin-bottom: 10px;
+        }
+        summary {
+            cursor: pointer;
+            transition: all 150ms ease-in-out;
+            padding: 12px;
+        }
+        .accordion pre, .accordion p, .accordion table {
+            margin-left: 2%;
+            margin-right: 2%;
+        }
+
+        article div p, article div details, article details {
+            margin-left: 1%;
+            margin-right: 1%;
+        }
+        details figure, details figure figcaption, div figure {
+            display: block;
+            text-align: center;
+        }
+
+        .chapters {
+            table-layout: fixed; 
+            width: 90%;
+            text-align: left;
+            line-height: 1.3;
+        }
+        .chapters--number {
+            width: 30%;
+            text-align: center;
+            vertical-align: middle;
+        }
+        table.chapters td {
+            padding-top: 1px;
+            padding-bottom: 2px;
+            border-bottom: 1px solid rgba(128, 128, 0, 0.2);
+        }
+
+        .discussion-thread, .discussion-thread a {
+            color: gray;
+        }
+    </style>
+</head>
+
+<body>
+    <main class="main-content">
+        <section id="lead-text">
+        <h2>artemis v0.4.3b: book one (2023)</h2>
+        <p>romansowa powieść wizualna dla dorosłych (romance avn); opowiadanie długie, tempo dość powolne, początkowo nawet może się wydawać wszystko dość brzydkie; a jednak jest w tym jakiś specyficzny urok w tonie sztucznej inteligencji, która akurat tym razem nie chce wymordować całej ludzkości, tylko zajmować się seksualnością;</p>
+        <br>
+        </section>
+
+
+        <region id="informacje">
+        <article>
+        <h3><a href="#informacje" target="_self"># informacje</a></h3>
+
+        <ul>
+            <li><a href="https://steamcommunity.com/app/1775530/discussions/">steam discussions</a></li>
+            <li><a href="https://steamcommunity.com/app/1775530/eventcomments/">steam news and announcements</a></li>
+            <br>
+            <li><a href="https://discord.gg/digib">discord</a></li>
+            <li><a href="https://x.com/_DigiB">@_digib</a></li>
+            <li><a href="https://www.youtube.com/watch?v=aiPj11f0xOc">zwiastun</a></li>
+            <li><a href="https://video.steamstatic.com/store_trailers/256931924/movie_max_vp9.webm">zwiastun (steam)</a></li>
+        </ul>
+        <br>
+
+        </article>
+        <br>
+        </region>
+
+
+        <region id="rozdziały">
+        <article>
+            <h3><a href="#rozdziały" target="_self"># rozdziały</a></h3>
+
+            <table class="chapters">
+                <colgroup>
+                    <col span="1" class="chapters--number">
+                </colgroup>
+                <tr>
+                    <td>chapter 1</td>
+                    <td>reformat</td>
+                </tr>
+                <tr>
+                    <td>chapter 2</td>
+                    <td>dear mom…</td>
+                </tr>
+                <tr>
+                    <td>chapter 3</td>
+                    <td>debugging</td>
+                </tr>
+                <tr>
+                    <td>chapter 4</td>
+                    <td><abbr title="Artemis">01000001 01110010 01110100 01100101 01101101 01101001 01110011</abbr></td>
+                </tr>
+            </table>
+            <br>
+
+            <br>
+        </article>
+        </region>
+
+
+        <region id="uwagi-zebrane">
+        <article>
+            <h3><a href="#uwagi-zebrane" target="_self"># uwagi zebrane</a></h3>
+
+            <div> <!-- początek -->
+            <p>gra posiada własny ekran powitalny (splash screen);</p>
+            <p>użyto czcionki szeryfowej, acz przynajmniej można nieco manipulować jej rozmiarem; przy czym wtedy ramka z tekstem dialogów przesuwa się w prawo, nie pozostaje wyśrodkowana;</p>
+            <p>mamy kilka ekranów początkowych: o fikcyjności postaci, o przeróbce 1. rozdziału (rework), o przypadłości ocznej autora (keratoconus); do tego tutorial wstępny informuje o powiadomieniach: o automatycznym przewijaniu scen i o znajdźkach;</p>
+            <ul>
+                <li><a href="https://leksykon.com.pl/leksykon-chorob/keratoconus/objawy/">keratoconus</a></li>
+                <li><a href="https://pl.wikipedia.org/wiki/Sto%C5%BCek_rog%C3%B3wki">stożek rogówki</a></li>
+            </ul>
+            <br>
+            </div>
+
+            <div class="region-grey"> <!-- grafika -->
+            <p>postaci i animacje są przaśne, aczkolwiek dotyczy to głównie 1. rozdziału; poza tym tatuaże na większości ciała to jest coś co może się nie podobać;</p>
+            <p>sporo jest tu mimiki twarzy, subtelnych zmian jak mruganie oczami czy skupienie się na ruchach dłoni;</p>
+            <p>pojawia się gościnny występ lexi dimante z „leap of faith”;</p>
+            <details class="accordion"> 
+                <summary>wybrane zrzuty ekranowe</summary>
+                <figure>
+                    <source srcset="../screenshots/artemis-book-one/zelda-jacuzzi.png" type="image/png">
+                    <img loading="lazy" srcset="../screenshots/artemis-book-one/zelda-jacuzzi.png" alt="zelda-jacuzzi.png">
+                    <figcaption>zelda zimmerman w jacuzzi</figcaption>
+                </figure>
+                <figure>
+                    <source srcset="../screenshots/artemis-book-one/june-paige.png" type="image/png">
+                    <img loading="lazy" srcset="../screenshots/artemis-book-one/june-paige.png" alt="june-paige.png">
+                    <figcaption>june moon</figcaption>
+                </figure>
+                <figure>
+                    <source srcset="../screenshots/artemis-book-one/paige-katy.png" type="image/png">
+                    <img loading="lazy" srcset="../screenshots/artemis-book-one/paige-katy.png" alt="paige-katy.png">
+                    <figcaption>paige fawkes i katy sato</figcaption>
+                </figure>
+                <figure>
+                    <source srcset="../screenshots/artemis-book-one/meghan-halloween.png" type="image/png">
+                    <img loading="lazy" srcset="../screenshots/artemis-book-one/meghan-halloween.png" alt="meghan-halloween.png">
+                    <figcaption>meghan w przebraniu na halloween</figcaption>
+                </figure>
+                <figure>
+                    <source srcset="../screenshots/artemis-book-one/kindra.png" type="image/png">
+                    <img loading="lazy" srcset="../screenshots/artemis-book-one/kindra.png" alt="kindra.png">
+                    <figcaption>kindra kapuletti</figcaption>
+                </figure>
+                <br>
+            </details>
+            <br>
+            </div>
+
+            <div> <!-- mechaniki -->
+            <p>w dialogach pojawiają się czasem wstawki w innych językach (japońskim, jidisz), niektóre przetłumaczone a niektóre nie;</p>
+            <p>smartfon idzie tutaj z własną mapą do nawigacji po terenie (zamiast zwyczajowego kierunkowania strzałkami); do tego dochodzi bardziej wizualny styl sms-owania, a dostępne za jego pomocą zdjęcia odblokowywane są na zawsze (podczas kolejnego rozgrywania fabuły można je oglądać od samego początku);</p>
+            <p>pokazywany w scenach kod źródłowy ma sens;</p>
+            <figure>
+                <source srcset="../screenshots/artemis-book-one/initium-vitas-sms.png" type="image/png">
+                <img loading="lazy" srcset="../screenshots/artemis-book-one/initium-vitas-sms.png" alt="initium-vitas-sms.png">
+            </figure>
+            <br>
+            </div>
+
+            <div class="region-grey"> <!-- reszta -->
+            <p>po zakończeniu „book one” zmienia się animacja wstępna menu głównego, tj. zamiast artemidy/artemis wyciąganej z pudełka otrzymujemy jej pochód po pomieszczeniu;</p>
+            <p>zdobycie wszystkich znajdziek (dataleaks) jest trudne, bo wiele z nich łatwo pominąć ze względu na to, że są dostępne wyłącznie podczas rozmów z innymi (nieosiągalne w czasie swobodnej eksploracji); do tego niektóre z nich nachodzą na interfejs renpy a po jego ukryciu znikają;</p>
+            <p>wydaje się, że krytyka opowiadania leży głównie w tym iż ma to być fabuła o bogatych ludziach bez wad, którym się wszystko udaje za pierwszym razem;</p>
+            <ul>
+                <li><a href="https://steamcommunity.com/app/1775530/discussions/0/595158831570472227/">how long will the dlc be incomplete?</a></li>
+                <li><a href="https://steamcommunity.com/games/1775530/announcements/detail/547860543111694378">artemis book two news</a></li>
+                <li><a href="https://steamcommunity.com/app/1775530/discussions/0/760682265019749667/">took a while to finish *caution: spoilers *</a></li>
+                <li><a href="https://steamcommunity.com/app/1775530/discussions/0/596287304340139963/">i wish i could like this more, given the link to leap of faith...</a></li>
+                <li><a href="https://steamcommunity.com/app/1775530/discussions/0/780947379776093652/">find this a bit slow and no adult content</a></li>
+                <li><a href="https://steamcommunity.com/app/1775530/discussions/0/806845127026995337/">personal negative feedback</a></li>
+                <li><a href="https://steamcommunity.com/sharedfiles/filedetails/?id=2969739357">100% guide and optimised path</a></li>
+            </ul>
+            <br>
+            </div>
+
+            <br>
+        </article>
+        </region>
+
+
+        <region id="słowniczek">
+        <article>
+            <h3><a href="#słowniczek" target="_self"># słowniczek</a></h3>
+
+            <details class="accordion"> 
+                <summary>wybrane słownictwo</summary>
+                <table class="dictionary">
+                <colgroup>
+                    <col span="1" class="dictionary--term">
+                </colgroup>
+                <tr>
+                    <td><a href="https://www.dictionary.com/browse/hustle">hustle</a></td>
+                    <td>gwar, rwetes</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.dictionary.com/browse/miff">miffed</a></td>
+                    <td>wkurzony</td>
+                </tr>
+                <tr>
+                    <td><a href="https://dictionary.reverso.net/english-definition/emotional+crutch">emotional crutch</a></td>
+                    <td>emocjonalna kula u nogi</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.merriam-webster.com/dictionary/worn-out">worn out</a></td>
+                    <td>wyczerpany</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.merriam-webster.com/dictionary/jugular">jugular</a></td>
+                    <td>żyła szyjna</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.merriam-webster.com/dictionary/olfactory">olfactory sensors</a></td>
+                    <td>czujniki węchowe</td>
+                </tr>
+                <tr>
+                    <td><a href="https://idioms.thefreedictionary.com/mooch+off">mooch off</a></td>
+                    <td>pasożytować na kimś, nie móc się odczepić</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.merriam-webster.com/dictionary/rig">rig this thing</a></td>
+                    <td>zmontować tę rzecz, naginać sytuację</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.merriam-webster.com/dictionary/endorsement">endorsement</a></td>
+                    <td>poparcie, żyrowanie</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.dictionary.com/browse/wedge">wedge</a></td>
+                    <td>klin</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.merriam-webster.com/dictionary/frame-up">frame-up</a></td>
+                    <td>wrobienie, sfabrykowane oskarżenie</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.merriam-webster.com/dictionary/equestrian">equestrian</a></td>
+                    <td>konny</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.merriam-webster.com/dictionary/pester">pester</a></td>
+                    <td>napastować, udręczać</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.merriam-webster.com/dictionary/corporate">corporate</a></td>
+                    <td>zbiorowy, gromadny, komisyjny; stowarzyszenie; korposzczur;</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.merriam-webster.com/dictionary/plastered">plastered</a></td>
+                    <td>zalany, pijany</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.merriam-webster.com/dictionary/brunch">brunch</a></td>
+                    <td>przekąska, wczesne śniadanie</td>
+                </tr>
+                <tr>
+                    <td><a href="https://dictionary.cambridge.org/dictionary/english/creamsicle">creamsicle</a></td>
+                    <td>kremówka</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.merriam-webster.com/dictionary/adamant">adamant</a></td>
+                    <td>nieugięty</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.merriam-webster.com/dictionary/sophomore">sophomore</a></td>
+                    <td>student drugiego roku</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.merriam-webster.com/dictionary/venue">venue</a></td>
+                    <td>lokal, miejsce wydarzenia</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.merriam-webster.com/dictionary/memory%20lane">walk down memory lane</a></td>
+                    <td>spacer po wspomnieniach</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.merriam-webster.com/dictionary/fib">fib</a></td>
+                    <td>bujda, bajdurzenie</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.merriam-webster.com/dictionary/rescind">rescind</a></td>
+                    <td>odwołać</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.merriam-webster.com/dictionary/subjugate">subjugated</a></td>
+                    <td>podporządkowany, zniewolony, ujarzmiony</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.merriam-webster.com/dictionary/enchiridion">enchiridion</a></td>
+                    <td>podręcznik</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.merriam-webster.com/dictionary/tipping%20point">tipping point</a></td>
+                    <td>punkt krytyczny</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.merriam-webster.com/dictionary/fluke">fluke</a></td>
+                    <td>fuks</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.merriam-webster.com/dictionary/damage%20control">damage control</a></td>
+                    <td>minimalizacja szkód</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.merriam-webster.com/dictionary/valedictorian">valedictorian</a></td>
+                    <td>prymus</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.merriam-webster.com/dictionary/crummy">crummy</a></td>
+                    <td>kiepski; zażywny;</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.dictionary.com/browse/catty">catty</a></td>
+                    <td>zjadliwy; koci;</td>
+                </tr>
+                <tr>
+                    <td><a href="https://dictionary.cambridge.org/dictionary/english/verbatim">verbatim</a></td>
+                    <td>dosłownie</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.merriam-webster.com/dictionary/holler">holler</a></td>
+                    <td>wykrzykiwać</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.urbandictionary.com/define.php?term=Scoochie">scoochie</a></td>
+                    <td>oddal się; najlepsza dziwka;</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.dictionary.com/browse/couturier">couturier</a></td>
+                    <td>krawiec (damski)</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.merriam-webster.com/dictionary/misdemeanor">misdemeanor</a></td>
+                    <td>wykroczenie, złe prowadzenie się</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.dictionary.com/browse/tantrum">tantrum</a></td>
+                    <td>furia, wybuch złego temperamentu</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.merriam-webster.com/dictionary/taste%20bud">tastebud</a></td>
+                    <td>kubki smakowe</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.dictionary.com/browse/swig">swig</a></td>
+                    <td>haust, żłopić</td>
+                </tr>
+                <tr>
+                    <td><a href="https://ludwig.guru/s/deem+me+worthy">deems you worthy</a></td>
+                    <td>uważa cię za godnego</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.dictionary.com/browse/scoop">scoop</a></td>
+                    <td>czerpak; drążyć (temat), informacje;</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.merriam-webster.com/dictionary/scarf%20down">scarf it down</a></td>
+                    <td>pochłonąć to, jeść szybko</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.merriam-webster.com/dictionary/fantabulous">fantabulous</a></td>
+                    <td>fantastyczny, cudownie dobry</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.dictionary.com/browse/fortuitous">fortuitous</a></td>
+                    <td>przygodny, przypadkowy</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.dictionary.com/browse/homewrecker">homewrecker</a></td>
+                    <td>rozbijacz małżeństw</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.merriam-webster.com/dictionary/concede%20defeat">conceding defeat</a></td>
+                    <td>przyznanie się do porażki</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.merriam-webster.com/dictionary/AWOL">awol</a></td>
+                    <td>absent without leave</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.dictionary.com/browse/knucklehead">knucklehead</a></td>
+                    <td>tępak</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.wordnik.com/words/goober">goober</a></td>
+                    <td>cham, głupiec</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.dictionary.com/browse/speck">speck</a></td>
+                    <td>punkcik, pyłek, plamka, kropka</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.wordnik.com/words/placenta">placenta</a></td>
+                    <td>łożysko (matki)</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.merriam-webster.com/dictionary/circadian">circadian rhythm</a></td>
+                    <td>rytm dobowy</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.dictionary.com/browse/mulligan">mulligan</a></td>
+                    <td>gulasz z dostępnych warzyw</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.dictionary.com/browse/pomegranate">pomegranate</a></td>
+                    <td>granat, granatowiec</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.merriam-webster.com/dictionary/charbroiled">charbroiled</a></td>
+                    <td>zgrillowany</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.merriam-webster.com/dictionary/goofball">goofball</a></td>
+                    <td>głupek; tabletka nasenna;</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.merriam-webster.com/dictionary/concession%20stands">concession stand</a></td>
+                    <td>stoisko z przekąskami</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.merriam-webster.com/dictionary/matchmaker">matchmaker</a></td>
+                    <td>swat</td>
+                </tr>
+                </table>
+                <br>
+
+            </details>
+            <br>
+
+            <br>
+        </article>
+        </region>
+
+
+        <region id="kłopotliwe-osiągnięcia">
+        <article class="region-grey">
+            <h3><a href="#kłopotliwe-osiągnięcia" target="_self"># kłopotliwe osiągnięcia</a></h3>
+            <p></p>
+    
+            <details class="accordion region-white"> <!-- bullet with a name -->
+                <summary>bullet with a name<span class="achiev-accord-desc"> | beat naomi at the gun range</span></summary>
+                <p><blockquote>Yup... Move the gun to where the target was, then scroll up so the target appears again & shoot.</blockquote></p>
+                <p><blockquote>Completed it on third try by flipping back to previous frame and then re-shooting. Overall this is not a terrible mini game *IF* the timeout per shot were increase by about 3 times.</blockquote></p>
+                <ul>
+                    <li><a href="https://steamcommunity.com/app/1775530/discussions/0/3823036783899917554/">shooting range</a></li>
+                    <li><a href="https://steamcommunity.com/app/1775530/discussions/0/596287304340225155/">shooting game with naomi</a></li>
+                    <li><a href="https://steamcommunity.com/app/1775530/discussions/0/4035851881535117258/">shooting game with naomi</a></li>
+                </ul>
+                <br>
+            </details>
+
+            <details class="accordion region-white"> <!-- star-struck -->
+                <summary>star-struck<span class="achiev-accord-desc"> | help katy meet dj kink</span></summary>
+                <p><blockquote>Starstruck - You need to find Kindra's cowboy hat hidden at one of the booths and then just speak to Katy a second time.</blockquote></p>
+                <p>Naomi’s booth: <blockquote>Click on the second dot in the first row at the top to come here, go through the initial conversation with Naomi and you will be in front of the booth. Look to the top of the screen where the INK Zombies sign is, at the bottom right of the S is a cowboy hat (Kindra's hat you can click on to get it).</blockquote></p>
+                <br>
+                <figure>
+                    <source srcset="../screenshots/artemis-book-one/naomi-booth-hat.png" type="image/png">
+                    <img loading="lazy" srcset="../screenshots/artemis-book-one/naomi-booth-hat.png" alt="naomi-booth-hat.png">
+                </figure>
+                <ul>
+                    <li><a href="https://steamcommunity.com/app/1775530/discussions/0/3823036673958250557/">missing 2 achievements → guide</a></li>
+                    <li><a href="https://steamcommunity.com/sharedfiles/filedetails/?id=2969739357">100% guide and optimised path</a></li>
+                </ul>
+                <br>
+            </details>
+
+            <details class="accordion region-white"> <!-- ah, i see you’re a human of culture as well… -->
+                <summary>ah, i see you’re a human of culture as well…<span class="achiev-accord-desc"> | correctly guess the ink’s costumes</span></summary>
+                <p>
+                    zelda: movie<br>
+                    naomi: anime<br>
+                    zoe: movie<br>
+                    june: video game<br>
+                    paige: video game<br>
+                </p>
+                <ul>
+                    <li><a href="https://www.reddit.com/r/AVN_Lovers/comments/yeg2o9/artemis_ch_4_halloween_party/">artemis ch. 4 halloween party</a></li>
+                    <li><a href="https://steamcommunity.com/sharedfiles/filedetails/?id=2969695824">ink’s costumes</a></li>
+                </ul>
+                <br>
+            </details>
+
+            <details class="accordion region-white"> <!-- three oinkers wearing pants, plate of hot air, basket of grandma’s breakfast and change the bull to a gill, got it -->
+                <summary>three oinkers wearing pants, plate of hot air, basket of grandma’s breakfast and change the bull to a gill, got it<span class="achiev-accord-desc"> | recall paige’s favorite coffee</span></summary>
+                <p>
+                    <blockquote>
+                        Yes<br>
+                        Nonfat milk<br>
+                        No whip<br>
+                        Vanilla<br>
+                        Triple shot<br>
+                    </blockquote>
+                </p>
+                <ul>
+                    <li><a href="https://steamcommunity.com/sharedfiles/filedetails/?id=2969739357">100% guide and optimised path</a></li>
+                </ul>
+                <br>
+            </details>
+
+            <details class="accordion region-white"> <!-- ultra instinct -->
+                <summary>ultra instinct<span class="achiev-accord-desc"> | allow the timer to end and strike taylor automatically</span></summary>
+                <p><blockquote>When the random jerk attacks you at the cafe, don't click anything and let the timer run out.</blockquote></p>
+                <p><blockquote>You need the technowarrior perk from chapter 1 for this achievement.</blockquote></p>
+                <p>technowarrior: fight successfully with your mom</p>
+                <ul>
+                    <li><a href="https://steamcommunity.com/sharedfiles/filedetails/?id=2969739357">100% guide and optimised path</a></li>
+                </ul>
+                <br>
+            </details>
+
+            <ul>
+                <li><a href="https://steamcommunity.com/app/1775530/discussions/0/670600486987081813/">guides to all scenes?</a></li>
+                <li><a href="https://steamcommunity.com/sharedfiles/filedetails/?id=2969739357">100% guide and optimised path</a></li>
+                <li><a href="https://steamcommunity.com/sharedfiles/filedetails/?id=2971116783">artemis full walkthrough</a></li>
+                <li><a href="https://attachments.f95zone.to/2025/05/4868074_ARTEMIS-0.6.1b_walkthrough-rev-1.4.pdf">artemis walkthrough 1.4</a></li>
+                <li><a href="https://steamdb.info/app/1775530/stats/">steam achievements</a></li>
+            </ul>
+            <br>
+    
+            <br>
+        </article>
+        </region>
+
+
+        <region id="ścieżka-dźwiękowa">
+        <article>
+            <h3><a href="#ścieżka-dźwiękowa" target="_self"># ścieżka dźwiękowa</a></h3>
+    
+            <p>jako źródło ambientu gra wymienia: hooksounds, kevin macleod;</p>
+            <br>
+    
+            <details class="soundtrack-accordion"> <!-- chapter 1 -->
+                <summary>artemis – chapter 1</summary>
+                <table class="soundtrack-ost">
+                    <colgroup>
+                        <col span="1" class="soundtrack-ost--name">
+                        <col span="1">
+                    </colgroup>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=uWvGT-RcT24">new craves</a></td>
+                    <td>2:49</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=Z6ITw7W1bEk">soft hip hop instrumental</a></td>
+                    <td>2:02</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=M7bDXMxodPA">rising sport</a></td>
+                    <td>2:32</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=6s3AQmEeYkA">nazca</a></td>
+                    <td>2:06</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=nqsEAN-Aae4">the headliner</a></td>
+                    <td>2:11</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=foDK0opMiV8">hello dance</a></td>
+                    <td>2:13</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=yWkvnjznIEk">sunset tribu dance</a></td>
+                    <td>2:46</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=OPxQKVRSP6U">relaxing sad cinematic</a></td>
+                    <td>3:35</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=ysIZLHxwMHI">live upbeat sound</a></td>
+                    <td>2:55</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=EDP11KgOPos">fashion club</a></td>
+                    <td>2:26</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=lGZVfD4WhFI">the pure love</a></td>
+                    <td>2:06</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=WfiLXEr5UC0">dance pop vibes</a></td>
+                    <td>1:44</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=VCgsrwi6C3A">track 90</a></td>
+                    <td>1:58</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=Rt0FuFqloTs">track 53</a></td>
+                    <td>2:05</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=qRfDQ6EAXNs">giga chad</a></td>
+                    <td>2:10</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=jsP9kFZSG5Q">iron horse</a></td>
+                    <td>2:37</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=XaxUae4f1-s">slow traction</a></td>
+                    <td>2:50</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=Aofv0RSCwvg">sunset in venice</a></td>
+                    <td>2:14</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=medwCI8CY2s">track 61</a></td>
+                    <td>3:53</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=gh_hoeQaGks">touch me</a></td>
+                    <td>3:25</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=KObsCXS0N4g">empty streets</a></td>
+                    <td>2:16</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=J1wkGhZ6Uzg">flaming energy</a></td>
+                    <td>2:57</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=HItaOLd8B74">space traveler</a></td>
+                    <td>2:36</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=IQ37ZdioEtI">graceful corner</a></td>
+                    <td>2:15</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=A4ZxhGbyYZk">track 70</a></td>
+                    <td>3:06</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=-oxNPlqTwTE">thrive on team</a></td>
+                    <td>3:03</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=qC6raEVSpkk">living with regret</a></td>
+                    <td>2:11</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=6SzXYj6HEjY">hard digital</a></td>
+                    <td>2:14</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=iBP9usl67zo">error in the code</a></td>
+                    <td>2:45</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=QgHQ0tn_6gY">night house party</a></td>
+                    <td>2:38</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=_LZpXFsuZs4">track 37</a></td>
+                    <td>3:15</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=g9tW4Mo17p0">this is hip hop</a></td>
+                    <td>1:33</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=V8bCr5vKl-Q">spirit vision</a></td>
+                    <td>2:17</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=SUXqLjIDjjA">time to groove</a></td>
+                    <td>2:09</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=SUXqLjIDjjA">time to groove</a></td>
+                    <td>2:09</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=e166Jqhn99c">under the cherry tree</a></td>
+                    <td>2:49</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=He4pkt2IUzc">black space</a></td>
+                    <td>2:34</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=pTVXezjWRxk">new places</a></td>
+                    <td>3:15</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=CO_kAK6h_i4">smooth breath</a></td>
+                    <td>2:32</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=rkZmIvVzvAk">friday night</a></td>
+                    <td>2:47</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=4swJrBkmSl4">sunny dance</a></td>
+                    <td>2:01</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=i8cdw8qVL_s">fun upbeat pop</a></td>
+                    <td>1:46</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=2O9wuyijibg">notes to self</a></td>
+                    <td>2:03</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=_aihWznuPsU">the thrasher</a></td>
+                    <td>3:19</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=7j_GVMD0xQI">pink clouds</a></td>
+                    <td>2:04</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=gpLmmLBEks4">aggressive sport action</a></td>
+                    <td>3:08</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=YFuQvxoIyac">what they don’t want you to know</a></td>
+                    <td>5:11</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=dcrKKuAFonA">faded memories</a></td>
+                    <td>1:38</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=TCDk1tZDep4">raver friends</a></td>
+                    <td>2:57</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=ncLFGAS8rnA">somewhere to run to</a></td>
+                    <td>2:26</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=AybV6v7mQrc">stylish design</a></td>
+                    <td>2:05</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=r8NYk-kzIz8">groovy vibe</a></td>
+                    <td>1:41</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=tdavLhMlDu4">camping day</a></td>
+                    <td>2:24</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=zIAgXruyvPU">track 22</a></td>
+                    <td>2:02</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=91TezezyrcA">the journey ahead</a></td>
+                    <td>2:16</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=TGEYa0zWDrY">sad piano and strings</a></td>
+                    <td>2:21</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=Ic2OUeVKFZI">presentation life</a></td>
+                    <td>2:27</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=i9wfxhfJVAA">track 18</a></td>
+                    <td>1:30</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=69RTXQzm2UY">dance forever</a></td>
+                    <td>2:17</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=u8mZuPM9NKc">futuristic glitch technology</a></td>
+                    <td>2:34</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=B1rjx_IeGl4">la ballerina</a></td>
+                    <td>2:04</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=rvP3mngVqPI">dealbreaker</a></td>
+                    <td>1:45</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=ankTgwV2Zpk">night nocturne</a></td>
+                    <td>2:08</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=mchbewK75pY">love of my life</a></td>
+                    <td>2:16</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=YhpJjzVhjko">track 08</a></td>
+                    <td>2:25</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=Re9GSf7gb-Q">jazz cafe</a></td>
+                    <td>1:51</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=8uY2nurffpU">track 07</a></td>
+                    <td>1:51</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=LfQcpJluCSY">mosh pit</a></td>
+                    <td>2:42</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=33PQqpwhqus">miniatures</a></td>
+                    <td>2:03</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=SFzEaYeeODo">fashion inspiration</a></td>
+                    <td>1:58</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=ecqS9n3xbcw">main menu</a></td>
+                    <td>3:43</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=yEbv7ciY8qs">corporate feeling</a></td>
+                    <td>2:16</td>
+                </tr>
+                </table>
+                <br>
+            </details>
+
+            <details class="soundtrack-accordion"> <!-- chapter 2 -->
+                <summary>artemis – chapter 2</summary>
+                <table class="soundtrack-ost">
+                    <colgroup>
+                        <col span="1" class="soundtrack-ost--name">
+                        <col span="1">
+                    </colgroup>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=wPY30W_QmIo">pitch black night</a></td>
+                    <td>3:35</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=xUX3Q-Bt6C0">fonder memories</a></td>
+                    <td>2:58</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=v4MylsFbo80">future around us</a></td>
+                    <td>2:40</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=mZZBJOUukDM">watch the stars</a></td>
+                    <td>2:44</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=scHC6mGKt-I">soft chill lo-fi</a></td>
+                    <td>2:07</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=haNFagQzj7c">brand new friend</a></td>
+                    <td>3:50</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=zegm9C7tJSY">it’s coming from the hills</a></td>
+                    <td>1:43</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=w9EE-Zz3bz4">sunset</a></td>
+                    <td>2:16</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=hOlw31TJFcE">technology</a></td>
+                    <td>2:14</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=n19gtVCsBoc">last goodbye</a></td>
+                    <td>1:55</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=fvhWPJ-34jA">the way forward</a></td>
+                    <td>2:06</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=hE9OMMrj3n4">jazzy xmas</a></td>
+                    <td>2:40</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=b9pPkMYjXUg">festive dinner</a></td>
+                    <td>2:05</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=Zabw6aFUClY">night sky</a></td>
+                    <td>2:26</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=SnBv0OXTV0s">technology ambient background</a></td>
+                    <td>2:39</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=KLJ_GPLvmnI">good night</a></td>
+                    <td>2:09</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=EaMhXS8z0FQ">deep thoughts</a></td>
+                    <td>2:08</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=Bdh79r5h0UU">crossing paths</a></td>
+                    <td>3:36</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=A470ZZQ7lCo">chill pop lounge</a></td>
+                    <td>2:03</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=3EGh8jENvTo">the happiness</a></td>
+                    <td>2:23</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=vkOFMrBKGcs">funky essential</a></td>
+                    <td>2:13</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=w4HXWj_HoBM">dramatic storyline</a></td>
+                    <td>2:14</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=rMve8jb6uRs">06</a></td>
+                    <td>2:15</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=lX-5cAZ66pI">last goodbye</a></td>
+                    <td>1:55</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=lTdvTm_hFNY">nice hot chocolate</a></td>
+                    <td>1:43</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=_k-pPmZOSOw">a simple life</a></td>
+                    <td>2:13</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=WrhKnNxkeQk">weird atmosphere</a></td>
+                    <td>2:04</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=VBYSMxvooiU">distant memory</a></td>
+                    <td>2:13</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=PQunVc2Gbig">under the juniper tree</a></td>
+                    <td>1:10</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=Tt_HqTWWNSA">heavy epic</a></td>
+                    <td>0:16</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=Qnfbk6ESMWA">mysterious place</a></td>
+                    <td>2:05</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=OswbtYYs_lE">ease lounge guitar</a></td>
+                    <td>2:44</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=KlK5e0tcPhE">lo-fi design</a></td>
+                    <td>2:11</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=I-k-kQF02mg">rising sport</a></td>
+                    <td>2:32</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=AVw2jI36f-w">chill pop lounge</a></td>
+                    <td>2:03</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=9zCqdNFjMko">dance pop vibes</a></td>
+                    <td>1:44</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=5X8jZNgOWjs">low beauty</a></td>
+                    <td>3:47</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=1kcWhpxoQ1w">julia</a></td>
+                    <td>3:54</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=0M2t5HiuFLQ">upbeat & quirky pop</a></td>
+                    <td>2:35</td>
+                </tr>
+                </table>
+                <br>
+            </details>
+
+            <details class="soundtrack-accordion"> <!-- chapter 3 -->
+                <summary>artemis – chapter 3</summary>
+                <table class="soundtrack-ost">
+                    <colgroup>
+                        <col span="1" class="soundtrack-ost--name">
+                        <col span="1">
+                    </colgroup>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=cZru6KN6kvg">street racing</a></td>
+                    <td>2:09</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=pFmTpcE_yu4">living with regret</a></td>
+                    <td>2:11</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=kiGoR65XtSk">hip hop chill</a></td>
+                    <td>2:22</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=oMYiDQOF3z0">track 42</a></td>
+                    <td>2:21</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=jOAiKHPMtVI">racing</a></td>
+                    <td>4:21</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=dgH_vglJev4">track 38</a></td>
+                    <td>2:27</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=DKjVAxMqo-I">andalusian fields</a></td>
+                    <td>2:30</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=k9WV8AzUfsc">track 33</a></td>
+                    <td>0:29</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=iGGbLIFhBbI">chillout hip-hop downtempo</a></td>
+                    <td>2:16</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=WN91CWVlnJQ">light shimmers</a></td>
+                    <td>2:46</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=Gx-OOb6TxIg">'85 delorean</a></td>
+                    <td>2:16</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=EisoX2mARvY">futuristic glitch technology</a></td>
+                    <td>2:34</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=H13LG8C-w3M">in the early hours</a></td>
+                    <td>1:23</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=KXdtPenEHsI">track 24</a></td>
+                    <td>2:09</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=vz3DHemEtRI">detective story</a></td>
+                    <td>2:09</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=jjEYjyg4r34">notes to self</a></td>
+                    <td>2:03</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=hwmnljCvO6Y">brand new friend</a></td>
+                    <td>3:50</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=1jeIQwhGmUU">the open road</a></td>
+                    <td>2:19</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=pHNAuiI_ksc">track 16</a></td>
+                    <td>2:33</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=9itBlAzRl04">sport rock</a></td>
+                    <td>2:39</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=bQ8JKdBJLyM">beautiful ambient background</a></td>
+                    <td>2:28</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=2yN1EAkLqkw">love fixation</a></td>
+                    <td>2:02</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=jjdF9Myou-k">up dance</a></td>
+                    <td>2:25</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=S-ixFMJvmY8">the mist</a></td>
+                    <td>2:46</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=ihx3W_931pU">rose in the concrete</a></td>
+                    <td>2:41</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=5mydFgKeDJ4">watch the stars</a></td>
+                    <td>2:36</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=eRqMmvruTzA">technology</a></td>
+                    <td>2:14</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=dd2KMs1EByk">soft chill lo-fi</a></td>
+                    <td>2:07</td>
+                </tr>
+                </table>
+                <br>
+            </details>
+
+            <ul>
+                <li><a href="https://www.youtube.com/playlist?list=PLlcQU_MB3CccHmAbFFkGSeIOakAF9uB8E">artemis ost, chapter 1</a></li>
+                <li><a href="https://www.youtube.com/playlist?list=PLlcQU_MB3Ccfw4BiQxcBVowoVpoZC7-nF">artemis ost, chapter 2</a></li>
+                <li><a href="https://www.youtube.com/playlist?list=PLlcQU_MB3Ccfxe-JsuTnDHsyB4i-XZhQf">artemis ost, chapter 3</a></li>
+            </ul>
+            <br>
+            
+            <br>
+        </article>
+        </region>
+
+
+        <region id="linux">
+        <article>
+        <h3><a href="#linux" target="_self"># linux</a></h3>
+    
+        <div> <!-- saves location -->
+<pre class="listing-block">
+<code># &lt;SteamLibrary&gt;/steamapps/common/Artemis/game/saves</code>
+<code># ~/.renpy/_ARTEMIS.[memories]</code>
+</pre>
+        <ul>
+            <li><a href="https://steamdb.info/app/1775530/ufs/">save file locations</a></li>
+            <li><a href="https://www.protondb.com/app/1775530">appid = 1775530</a></li>
+            <li><a href="https://www.igdb.com/games/artemis-book-one">artemis: book one (2023-04-29)</a></li>
+        </ul>
+        <br>
+        </div>
+
+        <br>
+        </article>
+        </region>
+
+
+        <region id="wątki-dyskusji">
+        <article>
+            <h3><a href="#wątki-dyskusji" target="_self"># wątki dyskusji</a></h3>
+    
+            <details class="accordion discussion-thread"> <!-- took a while to finish -->
+                <summary><a href="https://steamcommunity.com/app/1775530/discussions/0/760682265019749667/">took a while to finish *caution: spoilers *</a></summary>
+                <p><blockquote>
+[quote=Jase]how could an android powering up black out of a city[/quote]<br>
+technically, it’s not about the total amount of electricity, rather how much the grid can take at the same time; if a node cannot handle, it should switch to another one, but if there is no any, it may cause chain reaction of shutdown, because of built-in mechanisms that supposed to mitigate damages to the transformer stations, differential switches, and so on; so, it’s not impossible; especially, that nowadays large server rooms for ai require power usage similar to a city;<br>
+<br>
+[quote=Jase]the characters are just too nice and perfect at everything[/quote]<br>
+i wouldn’t say that about cassandra; to know the character’s issues you have to be involved in their stories; yet, i see why it might be seen this way and would say it’s just a convention to focus on artificial intelligence topics;<br>
+<br>
+[quote=Jase]the US marines aren't even an elite force[/quote]<br>
+and? in every rich story there is an archetype; ava seems to be an anchor of hope for the main character; in a sense, when he thinks of what she would do, it’s like christians ask what jesus would do;<br>
+<br>
+[quote=Jase]why didn't he just make her CIA or special forces[/quote]<br>
+what matters are her character traits;<br>
+<br>
+[quote=Jase]I just didn't like any of the characters because they don't feel human, they are too flawless.[/quote]<br>
+they all at least seems to have some problems with something and you are not involve in their worlds that much; also, there are a lot of facial expressions in this game, including humor, that is inalienably human; apparently kindra is constantly joking around to compensate for her childhood, and so on;<br>
+<br>
+[quote=Jase]I found it a bit boring[/quote]<br>
+maybe it should be emphasized more that this is more classical approach to a visual novel; when avn-s done the shift towards more p0rn, it became such a de facto standard, that you might actually forget that there are other types of vn-s;<br>
+<br>
+[quote=Jase]The production quality is very good[/quote]<br>
+i see it as unleavened and realistically ugly;<br>
+<br>
+[quote=Jase]it felt a bit short[/quote]<br>
+for me it felt long with its slow pacing;<br>
+                </blockquote></p>
+                <br>
+            </details>
+
+            <details class="accordion discussion-thread"> <!-- what was that ending? -->
+                <summary><a href="https://steamcommunity.com/app/1775530/discussions/0/690866958234700273/">what was that ending? also, needs to be easier, just does</a></summary>
+                <p>
+                    <blockquote>
+why so malicious?<br>
+summer’s gone is also considered to be adult visual novel and have no sex scenes whatsoever;<br>
+does this game stands out from the others? maybe, if you ignore the past of that niche genre;<br>
+adult content doesn’t have to be about sexuality per se (e.g. katawa shoujo);<br>
+there are plenty of books with similar approach to the story unfolding and pacing as artemis;<br>
+the so-called standard is a highly discretionary convention; i’d say that bloodborne doesn’t fit to these expectations;<br>
+so what? aren’t the story and vision the most important things?<br>
+you could expect from people choosing a visual novel to focus on the novel part;<br>
+                    </blockquote>
+                </p>
+            </details>
+
+            <details class="accordion discussion-thread"> <!-- steam achievements. hidden option -->
+                <summary><a href="https://steamcommunity.com/app/1775530/discussions/0/806844795448293241/">steam achievements. hidden option</a></summary>
+                <p>
+                    <blockquote>
+[quote=OneManArmyKZ]you force to use guides[/quote]<br>
+you can see the list [url=https://steamdb.info/app/1775530/stats/]here[/url];<br>
+there is also [url=https://steamcommunity.com/sharedfiles/filedetails/?id=2969739357]this[/url] hidden guide;<br>
+or [url=https://steamcommunity.com/sharedfiles/filedetails/?id=2971116783]this[/url] walkthrough;<br>
+                    </blockquote>
+                </p>
+            </details>
+    
+            <br>
+            <br>
+        </article>
+        </region>
+
+        
+        <hr>
+        <footer>2026-03-10</footer>
+    </main>
+</body>
+
+</html>
