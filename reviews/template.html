@@ -254,9 +254,12 @@
             margin-left: 1%;
             margin-right: 1%;
         }
-        details figure, div figure {
+        details figure, details figure figcaption, div figure {
             display: block;
             text-align: center;
+        }
+        .discussion-thread, .discussion-thread a {
+            color: gray;
         }
     </style>
 </head>
@@ -311,6 +314,7 @@
             <article class="region-grey">
             <div class="region-white">
 
+            <details class="soundtrack-accordion">
             <details class="accordion"> 
                 <summary></summary>
                 <br>
@@ -372,9 +376,9 @@
         </region>
 
 
-        <region id="osiągnięcia">
+        <region id="kłopotliwe-osiągnięcia">
         <article>
-            <h3><a href="#osiągnięcia" target="_self"># osiągnięcia</a></h3>
+            <h3><a href="#kłopotliwe-osiągnięcia" target="_self"># kłopotliwe osiągnięcia</a></h3>
             <p></p>
     
             <table class="achievements">
@@ -388,6 +392,13 @@
                     <td>Bb</td>
                 </tr>
             </table>
+            <br>
+
+            <details class="accordion"> 
+                <summary>___1___<span class="achiev-accord-desc"> | ___2___</span></summary>
+                <p><blockquote>___quote___</blockquote></p>
+                <br>
+            </details>
             <br>
     
             <br>
@@ -413,6 +424,12 @@
                     <td>00:00</td>
                 </tr>
             </table>
+
+            <details class="soundtrack-accordion">
+                <summary></summary>
+                <!-- here -->
+                <br>
+            </details>
     
             <br>
         </article>
@@ -439,7 +456,6 @@
 <pre class="listing-block">
 <code># &lt;SteamLibrary&gt;/steamapps/compatdata/__appid__/pfx/ → %USERPROFILE%\AppData\LocalLow\</code>
 <code># &lt;SteamLibrary&gt;/steamapps/compatdata/__appid__/pfx/ → %LOCALAPPDATA%\SH3RE\Saved\SaveGames\</code>
-<code><span style="color:teal;">7z</span> a -t7z ~/library/roboczy/"25mmxx game".7z "/run/media/$USER/games/SteamLibrary/steamapps/compatdata/__appid__/pfx/drive_c/users/steamuser/AppData/"</code>
 </pre>
         <ul>
             <li><a href="https://steamdb.info/app/1975280/ufs/">save file locations</a></li>
@@ -456,11 +472,11 @@
         <region id="wątki-dyskusji">
         <article>
             <h3><a href="#wątki-dyskusji" target="_self"># wątki dyskusji</a></h3>
-    
-            <ul>
-                <li><a href="#"></a></li>
-            </ul>
-            <br>
+
+            <details class="accordion discussion-thread"> <!-- -->
+                <summary><a href="">____</a></summary>
+                <p><blockquote></blockquote></p>
+            </details>
     
             <br>
         </article>
