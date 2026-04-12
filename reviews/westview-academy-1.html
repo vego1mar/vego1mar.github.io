@@ -1,0 +1,2189 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <title>recenzja – westview academy</title>
+    <meta charset="utf-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <style>
+        @font-face {
+            font-family: "ubuntu", sans-serif;
+            src: url("../fonts/Ubuntu-Regular.ttf");
+        }
+        body {
+            font-family: "ubuntu", sans-serif;
+        }
+        h1 {
+            font-size: 25px;
+        }
+        h2 {
+            font-size: 20px;
+        }
+        h3 {
+            font-size: 17px;
+            color: rgb(255, 70, 70); /* salmon */
+        }
+        h3 a {
+            text-decoration: none;
+            color: rgb(255, 70, 70);
+        }
+
+        .main-content {
+            margin-left: 10%;
+            margin-right: 10%;
+            font-size: 14px;
+            padding: 0px 10px;
+            font-family: "ubuntu", sans-serif;
+        }
+
+        .region-grey {
+            background-color: whitesmoke;
+            border-style: hidden;
+            border-radius: 10px;
+            padding-top: 1%;
+        }
+        .region-white {
+            background-color: white;
+        }
+        a {
+            text-decoration: none;
+            color: teal;
+        }
+        p {
+            line-height: 1.4;
+        }
+        blockquote {
+            border-left: 2px solid blueviolet;
+            padding-left: 1%;
+        }
+
+        .code-line {
+            font-family: "jetbrains mono", "ubuntu mono", monospace;
+            background-color: gainsboro;
+            border: 0px solid olive;
+        }
+        pre.listing-block {
+            background-color: ghostwhite;
+            overflow-x: auto;
+            overflow-y: hidden;
+            white-space: pre;
+            word-wrap: normal;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            padding-right: 10px;
+            border: 1px solid olive;
+        }
+        pre.listing-block::before {
+            counter-reset: listing;
+        }
+        pre.listing-block code {
+            counter-increment: listing-counter;
+            font-family: "calling code", "ubuntu mono", monospace;
+            font-size: 14px;
+        }
+        pre.listing-block code::before {
+            content: counter(listing-counter) "   ";
+            display: inline-block;
+            width: 4em;
+            padding-left: 0px;
+            margin-left: auto;
+            text-align: right;
+            font-size: 12px;
+            color: olive;
+        }
+        pre {
+            margin-left: 1%;
+            margin-right: 1%;
+        }
+        
+        .images-horizontal {
+            table-layout: fixed; 
+            display: block;
+            width: 100%;
+            overflow-x: scroll; 
+            overflow-y: hidden;
+            scroll-snap-align: center;
+        }
+        .images-horizontal a {
+            text-decoration: none;
+            color: black;
+        } 
+        .images-horizontal figcaption {
+            padding-top: 5px;
+        }
+
+        img {
+            width: 50vw;
+            height: auto;
+        }
+        figcaption {
+            font-size: 12px;
+            text-align: left;
+        }
+        .fighover figure {
+            display: inline-block;
+            border: 1px;
+            margin: 10px;
+        }
+        .fighover figure, .fighover img {
+            vertical-align: top;
+            width: 29vw;
+        }
+        .fighover figure, .fighover figcaption {
+            border: 1px;
+            text-align: center;
+        }
+
+        .achievements {
+            table-layout: fixed; 
+            width: 90%;
+            text-align: left;
+        }
+        .achievements--name {
+            text-align: center;
+            vertical-align: middle;
+        }
+        .achievements caption {
+            text-align: left;
+            padding-left: 1px;
+            font-weight: bold;
+        }
+        table.achievements td {
+            padding-top: 1px;
+            padding-bottom: 1px;
+            border-bottom: 1px solid rgba(128, 128, 0, 0.2);
+        }
+        .achievements td:nth-child(1) {
+            padding-left: 11px;
+            width: 70%;
+        }
+        .achievements td:nth-child(2) {
+            padding-left: 11px;
+            width: 100%;
+        }
+        .achiev-accord-desc {
+            color: gray;
+        }
+
+        .soundtrack-ost {
+            table-layout: fixed;
+            margin: auto;
+            width: 50%;
+        }
+        .soundtrack-ost td:nth-child(2) {
+            text-align: end;
+            padding-left: 5px;
+            width: 10%;
+        }
+        .soundtrack-ost tr:nth-child(even) {
+            background-color: ghostwhite;
+        }
+        .soundtrack-ost caption {
+            font-weight: bold;
+            text-align: left;
+            margin-left: -3%;
+        }
+        .soundtrack-accordion {
+            margin-left: 1%;
+            margin-right: 1%;
+        }
+
+        .soundtrack3 {
+            table-layout: fixed;
+            margin: auto;
+            padding-left: 2%;
+            padding-right: 6%;
+            width: 100%;
+        }
+        .soundtrack3 td:nth-child(2) {
+            text-align: end;
+            padding-left: 5px;
+            width: 5%;
+        }
+        .soundtrack3 tr:nth-child(even) {
+            background-color: whitesmoke;
+        }
+        table.soundtrack3 tr td {
+            padding-left: 10px;
+            padding-right: 10px;
+            padding-top: 5px;
+            padding-bottom: 5px;
+            border-radius: 11px;
+        }
+        table.soundtrack3 td a {
+            color: blue;
+            font-size: medium;
+            font-weight: bold;
+        }
+        table.soundtrack3 td {
+            font-size: small;
+        }
+        .s3-left {
+            float: left;
+        }
+        .s3-right {
+            float: right;
+        }
+        
+
+        .dictionary {
+            table-layout: fixed; 
+            width: 90%;
+            text-align: left;
+        }
+        .dictionary--term {
+            width: 40%;
+            text-align: center;
+            vertical-align: middle;
+        }
+        table.dictionary td {
+            padding-top: 1px;
+            padding-bottom: 2px;
+            border-bottom: 1px solid rgba(128, 128, 0, 0.2);
+        }
+
+        @media only screen and (min-width: 1px) and (max-width: 920px) {
+            .soundtrack-ost {
+                width: 100%;
+            }
+        }
+        @media only screen and (min-width: 921px) and (max-width: 1250px) {
+            .soundtrack-ost {
+                width: 70%;
+            }
+        }
+        @media only screen and (min-width: 1251px) and (max-width: 1450px) {
+            .soundtrack-ost {
+                width: 50%;
+            }
+        }
+        @media only screen and (min-width: 1451px) and (max-width: 1900px) {
+            .soundtrack-ost {
+                width: 45%;
+            }
+        }
+        @media only screen and (min-width: 1901px) {
+            .soundtrack-ost {
+                width: 30%;
+            }
+        }
+
+        details {
+            border: 1px solid olive;
+            border-radius: 8px;
+            box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.12);
+            margin-bottom: 8px;
+        }
+        details[open] summary {
+            margin-bottom: 10px;
+        }
+        summary {
+            cursor: pointer;
+            transition: all 150ms ease-in-out;
+            padding: 12px;
+        }
+        .small-letters {
+            text-transform: lowercase;
+        }
+        .accordion pre, .accordion p, .accordion table {
+            margin-left: 2%;
+            margin-right: 2%;
+        }
+
+        article div p, article div details, article details {
+            margin-left: 1%;
+            margin-right: 1%;
+        }
+        details figure, details figure figcaption, div figure {
+            display: block;
+            text-align: center;
+        }
+        .discussion-thread, .discussion-thread a {
+            color: gray;
+        }
+    </style>
+</head>
+
+<body>
+    <main class="main-content">
+        <section id="lead-text">
+        <h2>westview academy - season 1 (2025)</h2>
+        <p>gra oferuje nierówne doświadczenie; jako opowiadanie nie jest to aż tak interesujące jak można by oczekiwać, sezon 1 wydaje się być wybrakowany w kontekście przyszłościowej całości, jednak nadal ma to swój pewien urok, głównie ze względu na zacięcie komediowe; w pewnym momencie należy wybrać ścieżkę fabularną i jedna z nich jest wyraźnie dłuższa i bardziej żwawa od drugiej; może się to podobać, zwłaszcza wizualnie, aczkolwiek uważam iż lepiej poczekać aż będzie to kompletne;</p>
+        <br>
+        </section>
+
+
+        <region id="informacje">
+        <article>
+        <h3><a href="#informacje" target="_self"># informacje</a></h3>
+
+        <ul>
+            <li><a href="https://steamcommunity.com/app/2275560/discussions/">steam discussions</a></li>
+            <li><a href="https://steamcommunity.com/app/2275560/eventcomments/">steam news and announcements</a></li>
+            <li><a href="https://video.steamstatic.com/store_trailers/256940358/movie_max_vp9.webm">zwiastun steam</a></li>
+            <br>
+            <li><a href="https://discord.gg/gW6fC2PKRq">discord</a></li>
+            <li><a href="https://x.com/tako_yuh">@tako_yuh</a></li>
+            <br>
+        </ul>
+        <br>
+
+        </article>
+        <br>
+        </region>
+
+
+        <region id="uwagi-zebrane">
+        <article>
+            <h3><a href="#uwagi-zebrane" target="_self"># uwagi zebrane</a></h3>
+
+            <div> <!-- ogólne wrażenia i wizualia -->
+            <p>ogółem wizualnie jest dość różnorodnie acz nierównie, przy czym momentami panuje nadzwyczaj dużo cieni, prawdopodobnie mających przykryć niedociągnięcia; do tego mamy wiele krótkich animacji typu poruszająca się dłoń, gdzie niektóre z nich wydają się być trochę za szybkie;</p>
+            <p>pod kątem muzyki potrafi być podobnie, tj. czasem ambient się zapętla dość szybko, a czasem zupełnie ustaje; na tyle iż sceny seksu potrafią być bezgłośne albo na odwrót;</p>
+            <p>fabularnie jest w tym raczej duży ładunek komediowy, aczkolwiek ścieżka sportowa jest zgoła bardziej angażująca niż ścieżka muzyczna; pojawiają się co jakiś czas subtelne nawiązania do kultury, które wychwycić mogą jedynie kojarzący dany temat (nie zabrakło odwołania do austriackiego malarza-akwarelisty); wydaje się, że humor jest tu niemalże motywem przewodnim, gdyż akcja opowiadania potrafi często przeskakiwać kilka dni do przodu, przez co nieco wytraca ciągłość; jak rozumiem, ma to być sposób na radzenie sobie z wyborami gracza, zwłaszcza gdy ten odrzuca wszelkie propozycje;</p>
+            <p>niektóre wybory nie mają znaczenia, a przynajmniej wydaje się że nie na tym etapie ukończenia gry, inne zaś rzeczywiście prowadzą do różnych wariantów;</p>
+            <details class="accordion"> <!-- ujęcia na stópki -->
+                <summary>ujęcia na stópki</summary>
+                <figure>
+                    <source srcset="../screenshots/westview-academy/62-feet.png" type="image/png">
+                    <img loading="lazy" srcset="../screenshots/westview-academy/62-feet.png" alt="paige-barefoot">
+                </figure>
+                <figure>
+                    <source srcset="../screenshots/westview-academy/60-feet.png" type="image/png">
+                    <img loading="lazy" srcset="../screenshots/westview-academy/60-feet.png" alt="paige-in-heels">
+                </figure>
+                <figure>
+                    <source srcset="../screenshots/westview-academy/10-feet.png" type="image/png">
+                    <img loading="lazy" srcset="../screenshots/westview-academy/10-feet.png" alt="little-girl-shoes">
+                </figure>
+                <figure>
+                    <source srcset="../screenshots/westview-academy/46-feet.png" type="image/png">
+                    <img loading="lazy" srcset="../screenshots/westview-academy/46-feet.png" alt="leslie-and-dylan-walking">
+                </figure>
+                <br>
+            </details>
+            <details class="accordion"> <!-- zliżenia artystyczne -->
+                <summary>zliżenia artystyczne</summary>
+                <figure>
+                    <source srcset="../screenshots/westview-academy/01-cat.png" type="image/png">
+                    <img loading="lazy" srcset="../screenshots/westview-academy/01-cat.png" alt="white-cat.png">
+                </figure>
+                <figure>
+                    <source srcset="../screenshots/westview-academy/38-leslie-legs.png" type="image/png">
+                    <img loading="lazy" srcset="../screenshots/westview-academy/38-leslie-legs.png" alt="leslie-legs.png">
+                </figure>
+                <figure>
+                    <source srcset="../screenshots/westview-academy/18-billboard.png" type="image/png">
+                    <img loading="lazy" srcset="../screenshots/westview-academy/18-billboard.png" alt="billboard.png">
+                </figure>
+                <br>
+            </details>
+            <details class="accordion"> <!-- wybrane dziewczęta -->
+                <summary>wybrane dziewczęta</summary>
+                <figure>
+                    <source srcset="../screenshots/westview-academy/50-alyssa.png" type="image/png">
+                    <img loading="lazy" srcset="../screenshots/westview-academy/50-alyssa.png" alt="alyssa stare">
+                </figure>
+                <figure>
+                    <source srcset="../screenshots/westview-academy/53-alyssa.png" type="image/png">
+                    <img loading="lazy" srcset="../screenshots/westview-academy/53-alyssa.png" alt="alyssa wood">
+                </figure>
+                <figure>
+                    <source srcset="../screenshots/westview-academy/22-brooke.png" type="image/png">
+                    <img loading="lazy" srcset="../screenshots/westview-academy/22-brooke.png" alt="brooke">
+                </figure>
+                <figure>
+                    <source srcset="../screenshots/westview-academy/26-brooke.png" type="image/png">
+                    <img loading="lazy" srcset="../screenshots/westview-academy/26-brooke.png" alt="brooklyn">
+                </figure>
+                <figure>
+                    <source srcset="../screenshots/westview-academy/25-leslie.png" type="image/png">
+                    <img loading="lazy" srcset="../screenshots/westview-academy/25-leslie.png" alt="leslie turner">
+                </figure>
+                <figure>
+                    <source srcset="../screenshots/westview-academy/35-leslie.png" type="image/png">
+                    <img loading="lazy" srcset="../screenshots/westview-academy/35-leslie.png" alt="leslie with dad">
+                </figure>
+                <figure>
+                    <source srcset="../screenshots/westview-academy/57-paige.png" type="image/png">
+                    <img loading="lazy" srcset="../screenshots/westview-academy/57-paige.png" alt="paige">
+                </figure>
+                <figure>
+                    <source srcset="../screenshots/westview-academy/47-thalia.png" type="image/png">
+                    <img loading="lazy" srcset="../screenshots/westview-academy/47-thalia.png" alt="thalia">
+                </figure>
+                <figure>
+                    <source srcset="../screenshots/westview-academy/21-mary.png" type="image/png">
+                    <img loading="lazy" srcset="../screenshots/westview-academy/21-mary.png" alt="mary">
+                </figure>
+                <br>
+            </details>
+            <ul>
+                <li><a href="https://steamcommunity.com/app/2275560/discussions/0/666096525819009019/">dark scenes</a></li>
+                <li><a href="https://steamcommunity.com/app/2275560/discussions/0/694247086511644154/">sound</a></li>
+            </ul>
+            <br>
+            </div>
+
+            <div> <!-- czcionka i tłumaczenia -->
+            <p>użytą czcionką dialogów jest „louis george café”, która nie obsługuje pięknych polskich ogonków; nie żeby to miało znaczenie – gra i tak nie oferuje polskiego tłumaczenia, a te już istniejące wydają się mieć ze sobą drobne kłopoty;</p>
+            <ul>
+                <li><a href="https://www.dafont.com/louis-george-cafe.font">louis george café</a></li>
+                <li><a href="https://steamcommunity.com/app/2275560/discussions/0/801217647356199785/">polish language</a></li>
+                <li><a href="https://steamcommunity.com/app/2275560/discussions/0/690872031640568773/">when spanish translation?</a></li>
+                <li><a href="https://steamcommunity.com/app/2275560/discussions/0/4211497623314157996/">when italian translation?</a></li>
+                <li><a href="https://steamcommunity.com/app/2275560/discussions/0/4211497623313728723/">german language?</a></li>
+                <li><a href="https://steamcommunity.com/app/2275560/discussions/0/604145223442916683/">russian translation problems</a></li>
+                <li><a href="https://steamcommunity.com/app/2275560/discussions/0/594026463740572628/">translation/traduction fr</a></li>
+            </ul>
+            <br>
+            </div>
+
+            <div> <!-- minigry i dodatki -->
+            <p>minigry są niepotrzebne; przede wszystkim ze względu na wymaganą szybkosć reakcji; poza tym, jakkolwiek można je wyłączyć, o tyle nie działa to dla ścieżki sportowej – wyraźne uhybienie;</p>
+            <p>istnieją dwa dodatki: opis przejścia, który również nie jest potrzebny, oraz zestaw tapet wydający się być godnym uwagi;</p>
+            <ul>
+                <li><a href="https://store.steampowered.com/app/2571870/Westview_Academy__Season_1_Walkthrough/">westview academy - season 1 walkthrough</a></li>
+                <li><a href="https://store.steampowered.com/app/3975080/Westview_Academy__Wallpaper_Pack/">westview academy - wallpaper pack</a></li>
+            </ul>
+            <br>
+            </div>
+
+            <br>
+        </article>
+        </region>
+
+
+        <region id="słowniczek">
+        <article>
+            <h3><a href="#słowniczek" target="_self"># słowniczek</a></h3>
+
+            <details class="accordion"> <!-- wybrane słownictwo -->
+                <summary>wybrane słownictwo</summary>
+
+                <table class="dictionary">
+                    <colgroup>
+                        <col span="1" class="dictionary--term">
+                    </colgroup>
+                <tr>
+                    <td><a href="https://www.wordnik.com/words/beaner">beaner</a></td>
+                    <td>piłka baseballowa celowo rzucona w głowę pałkarza</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.wordnik.com/words/dunking">dunking</a></td>
+                    <td>strzał wsadowy</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.merriam-webster.com/dictionary/layup">layup</a></td>
+                    <td>strzał wykonany z bliska kosza</td>
+                </tr>
+                <tr>
+                    <td><a href="https://dictionary.cambridge.org/dictionary/english/scrimmage">scrimmage game</a></td>
+                    <td>mecz towarzyski</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.dictionary.com/browse/scrub">scrub</a></td>
+                    <td>gracz w rezerwie</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.wordnik.com/words/underdog">underdog</a></td>
+                    <td>zawodnik z niewielkimi szansami na wygraną</td>
+                </tr>
+                <tr>
+                    <td><a href="https://en.wiktionary.org/wiki/buckaroo">buckaroos</a></td>
+                    <td>dolary (slang amerykański)</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.wordnik.com/words/redneck">redneck</a></td>
+                    <td>wieśniak (pogardliwie)</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.wordnik.com/words/fuckhead">fuckhead</a></td>
+                    <td>głupek (pogardliwie)</td>
+                </tr>
+                <tr>
+                    <td><a href="https://definithing.com/turdhead/">turdhead</a></td>
+                    <td>geek z umiejętnościami społecznymi</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.dictionary.com/browse/crackhead">crackhead</a></td>
+                    <td>ćpun zażywający crack</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.wordnik.com/words/hustler">hustler</a></td>
+                    <td>człowiek przedsiębiorczy</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.thefreedictionary.com/grooving">grooving</a></td>
+                    <td>oddawanie się bardzo przyjemnemu doświadczeniu</td>
+                </tr>
+                <tr>
+                    <td><a href="https://usdictionary.com/idioms/smoke-show/">smokeshow</a></td>
+                    <td>wyjątkowo atrakcyjna osoba</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.merriam-webster.com/slang/boujee">boujee</a></td>
+                    <td>fantazyjny, szykowny</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.wordnik.com/words/mullet">mullet</a></td>
+                    <td>fryzura (długa z tyłu, krótka z przodu i po bokach)</td>
+                </tr>
+                <tr>
+                    <td><a href="https://ludwig.guru/s/a+side+of+fries">side of fries</a></td>
+                    <td>porcja frytek</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.definitions.net/definition/MITRED">mitred</a></td>
+                    <td>skośny</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.wordnik.com/words/bedding">bedding</a></td>
+                    <td>pościel</td>
+                </tr>
+                <tr>
+                    <td><a href="https://dictionary.cambridge.org/dictionary/english/hectic">hectic</a></td>
+                    <td>szaleńczy, gorączkowy</td>
+                </tr>
+                <tr>
+                    <td><a href="https://hinative.com/questions/15576562">clearance racks</a></td>
+                    <td>regały wyprzedażowe</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.wordnik.com/words/thrift%20store">thrift store</a></td>
+                    <td>sklep z używanymi rzeczami</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.wordnik.com/words/hiatus">hiatus</a></td>
+                    <td>przerwa, nieciągłość</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.wordnik.com/words/acne">acne</a></td>
+                    <td>trądzik</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.wordnik.com/words/unclog">unclog</a></td>
+                    <td>odetkać</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.wordnik.com/words/airsoft">airsoft</a></td>
+                    <td>sport walki z brońmi na sprężone powietrze</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.wordnik.com/words/corny">corny</a></td>
+                    <td>staromodny, banalny</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.wordnik.com/words/menacingly">menacingly</a></td>
+                    <td>groźnie</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.wordnik.com/words/buttercup">buttercup</a></td>
+                    <td>jaskier</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.wordnik.com/words/crochet">crochet</a></td>
+                    <td>szydełkowanie</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.wordnik.com/words/brunch">brunch</a></td>
+                    <td>przekąska, późne śniadanie</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.wordnik.com/words/binge">binge</a></td>
+                    <td>pijatyka, hulanka</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.wordnik.com/words/aisle">aisle</a></td>
+                    <td>nawa boczna</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.wordnik.com/words/loafer">loafer</a></td>
+                    <td>obibok, wałkoń, nierób</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.wordnik.com/words/itinerary">itinerary</a></td>
+                    <td>plan podróży, marszruta</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.wordnik.com/words/cootie">cooties</a></td>
+                    <td>wszy</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.merriam-webster.com/dictionary/shabby">shabby</a></td>
+                    <td>nędzny, wyświechtany</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.merriam-webster.com/dictionary/scrumptious">scrumptious food</a></td>
+                    <td>pyszne jedzenie</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.dictionary.com/browse/dapper">dapper</a></td>
+                    <td>wytworny</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.dictionary.com/browse/flabbergasted">flabbergasted</a></td>
+                    <td>osłupiały</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.contractscounsel.com/t/us/endorsement-agreement">endorsement agreement</a></td>
+                    <td>kontrakt na wykorzystywanie wizerunku</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.wordnik.com/words/flagrant">flagrant</a></td>
+                    <td>rażący, notoryczny</td>
+                </tr>
+                </table>
+                <br>
+            </details>
+            <br>
+
+            <br>
+        </article>
+        </region>
+
+
+        <region id="kłopotliwe-osiągnięcia">
+        <article>
+            <h3><a href="#kłopotliwe-osiągnięcia" target="_self"># kłopotliwe osiągnięcia</a></h3>
+
+            <details class="accordion"> <!-- x marks the spot! -->
+                <summary class="small-letters">X Marks the Spot!<span class="achiev-accord-desc"> | Find the first hidden X.</span></summary>
+                <p><blockquote>find the hidden x during basketball practice</blockquote></p>
+                <p>on a basketball board</p>
+                <figure>
+                    <source srcset="https://images.steamusercontent.com/ugc/2446096712135430779/B8494479FD04AE827273267007039FE375FEFF80/" type="image/png">
+                    <img loading="lazy" srcset="https://images.steamusercontent.com/ugc/2446096712135430779/B8494479FD04AE827273267007039FE375FEFF80/" alt="x-marks-the-spot-screenshot">
+                </figure>
+                <ul>
+                    <li><a href="https://www.scribd.com/document/856136129/WVA-WT-CH4">westview academy chapter 4 walkthrough</a></li>
+                    <li><a href="https://images.steamusercontent.com/ugc/2446096712135430779/B8494479FD04AE827273267007039FE375FEFF80/">screenshot with x</a></li>
+                </ul>
+                <br>
+            </details>
+            <br>
+
+            <details class="accordion"> <!-- killshot! -->
+                <summary class="small-letters">Killshot!<span class="achiev-accord-desc"> | Find the second hidden X.</span></summary>
+                <p><blockquote>during airsoft game in chapter 4 click on the hidden x</blockquote></p>
+                <p><blockquote>click the x on top of the opposing player’s helmet</blockquote></p>
+                <figure>
+                    <source srcset="https://images.steamusercontent.com/ugc/2446096712135431220/3120BF4D03B85AC007DBF935946CCBA9B514F46C/" type="image/png">
+                    <img loading="lazy" srcset="https://images.steamusercontent.com/ugc/2446096712135431220/3120BF4D03B85AC007DBF935946CCBA9B514F46C/" alt="killshot-screenshot">
+                </figure>
+                <ul>
+                    <li><a href="https://www.scribd.com/document/856136129/WVA-WT-CH4">westview academy chapter 4 walkthrough</a></li>
+                    <li><a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3261110780">optimized walkthrough for achievements</a></li>
+                    <li><a href="https://images.steamusercontent.com/ugc/2446096712135431220/3120BF4D03B85AC007DBF935946CCBA9B514F46C/">screenshot with x</a></li>
+                </ul>
+                <br>
+            </details>
+            <br>
+
+            <details class="accordion"> <!-- the show must go on! -->
+                <summary class="small-letters">The show must go on!<span class="achiev-accord-desc"> | Watch TV during Sia’s scene.</span></summary>
+                <p><blockquote>
+                    • No, she’s just weird<br>
+                    • Hear her out<br>
+                    • I’ll help you unconditionally…<br>
+                    • Of course<br>
+                    • Push further<br>
+                    • Change angle<br>
+                    • Watch TV
+                </blockquote></p>
+                <ul>
+                    <li><a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3261110780">optimized walkthrough for achievements</a></li>
+                </ul>
+                <br>
+            </details>
+            <br>
+
+            <details class="accordion"> <!-- yana banana -->
+                <summary>side girls: replay #1<span class="achiev-accord-desc"> | yana banana</span></summary>
+                <p><blockquote>unlocked by staying at the cafe, while on the music path, with the “keep looking…” option, then picking “console her” → “fuck yeah, i’m in!” → “let’s go”</blockquote></p>
+                <ul>
+                    <li><a href="https://www.scribd.com/document/856136129/WVA-WT-CH4">westview academy chapter 4 walkthrough</a></li>
+                </ul>
+                <br>
+            </details>
+            <br>
+
+            <details class="accordion"> <!-- rewards: others #2 -->
+                <summary>rewards: others #2</summary>
+                <p><blockquote>unlocked right after accepting the invitation (side girls #2: thalia & sia)</blockquote></p>
+                <p>zbugowane, więc można odblokować ręcznie:</p>
+<pre class="listing-block">
+<code># Westview Academy\game\chapters\chapter3\script\scene3m.rpy</code>
+<code>$ attract_thaliasia_ch3 = True</code>
+<code>$ persistent.sia1 = True</code>
+</pre>
+                <blockquote>NM, it did work, just had to go through the scene one more time. Thanks!</blockquote>
+                <ul>
+                    <li><a href="https://steamcommunity.com/app/2275560/discussions/0/594021502842623839/">other #2 in the reward gallery bugged</a></li>
+                </ul>
+                <br>
+            </details>
+            <br>
+
+            <ul>
+                <li><a href="https://steamdb.info/app/2275560/stats/">achievements</a></li>
+                <li><a href="https://www.yekbot.com/westview-academy-walkthrough-guide/">westview academy: walkthrough guide</a></li>
+            </ul>
+    
+            <br>
+        </article>
+        </region>
+
+
+        <region id="ścieżka-dźwiękowa">
+        <article>
+            <h3><a href="#ścieżka-dźwiękowa" target="_self"># ścieżka dźwiękowa</a></h3>
+    
+            <p>lista zebrana na podstawie zawartości folderu <span class="code-line">Westview Academy/game/audio</span>;</p>
+            <br>
+    
+            <details class="accordion">
+                <summary>soundtrack</summary>
+                <table class="soundtrack3">
+                    <colgroup>
+                        <col span="1"> <!-- info: (title, authors, album) -->
+                        <col span="1"> <!-- duration -->
+                    </colgroup>
+                    <tr>
+                        <td>
+                            <a href="https://open.spotify.com/track/3Q1eLeW4sRWt63rYDaSqOe">crank it up</a><br>
+                            <span class="s3-left">billy lincoln, thomas dean pugh-fields</span><span class="s3-right">zts024 hot rod rock</span>
+                        </td>
+                        <td>2:59</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://justsoundeffects.com/products/gore-mini-pack/">bonebreak</a><br>
+                            <span class="s3-left">robert millotat</span><span class="s3-right">gore mini pack</span>
+                        </td>
+                        <td>0:02</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.shazam.com/song/1734468198/burnt-heart">burnt heart</a><br>
+                            <span class="s3-left">count zero</span><span class="s3-right">ntpm443 cinematic tension</span>
+                        </td>
+                        <td>2:53</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://stockmusic.net/sound-effects/sound-effect/pan-sizzle/SOU-DCS66486">pan sizzle</a><br>
+                            ric viers<br>
+                        </td>
+                        <td>2:45</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.universalmusicforcreators.com/discover/albums/6672/silly-day-out">taste the tequila</a><br>
+                            <span class="s3-left">andrew blythe, marten joustra</span><span class="s3-right">atmos264 silly day out</span>
+                        </td>
+                        <td>1:21</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.universalproductionmusic.com/en-row/discover/albums/35442/hopeful-meditations">the forest at night</a><br>
+                            <span class="s3-left">sooski</span><span class="s3-right">ntp327 hopeful meditations</span>
+                        </td>
+                        <td>4:37</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.universalproductionmusic.com/pl-pl/discover/albums/132/choral-and-sacred%23id-6972">ave maria - bach/gounod</a><br>
+                            <span class="s3-left">johann sebastian bach, charles gounod</span><span class="s3-right">bpm1003 choral & sacred</span>
+                        </td>
+                        <td>2:42</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.universalproductionmusic.com/en-za/discover/albums/37594/piano-lullabies">a chance to dream</a><br>
+                            <span class="s3-left">aaron frederick lazlo wheeler, george zuppinger</span><span class="s3-right">arx048 piano lullabies</span>
+                        </td>
+                        <td>2:14</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.universalproductionmusic.com/en-row/discover/albums/30704/spanish-90s-garage-rock%23id-1759049">cuarto y mitad</a><br>
+                            <span class="s3-left">raul bonilla vendrell</span><span class="s3-right">sa118 spanish 90s garage rock</span>
+                        </td>
+                        <td>2:53</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.universalproductionmusic.com/en-us/discover/albums/983/hip-hop">gangzta</a><br>
+                            <span class="s3-left">lee groves, peter marett</span><span class="s3-right">mxs18 hip hop</span>
+                        </td>
+                        <td>2:00</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.universalproductionmusic.com/en-gb/discover/albums/26988/contemporary-cinematic-builds">illuminated skies (no vocals)</a><br>
+                            <span class="s3-left">stuart thomas</span><span class="s3-right">arx020 contemporary cinematic builds</span>
+                        </td>
+                        <td>3:12</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.universalproductionmusic.com/en-za/discover/albums/37594/piano-lullabies">lighter skies</a><br>
+                            <span class="s3-left">aaron frederick lazlo wheeler, george zuppinger</span><span class="s3-right">arx048 piano lullabies</span>
+                        </td>
+                        <td>2:18</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.universalproductionmusic.com/en-row/discover/albums/6177/contemporary-romantic">beautiful smile</a><br>
+                            <span class="s3-left">p. amati</span><span class="s3-right">rcal1035 contemporary romantic</span>
+                        </td>
+                        <td>4:07</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.universalproductionmusic.com/sc-cn/discover/albums/37998/mando-ballad-2">last night’s breeze (underscore)</a><br>
+                            <span class="s3-left">wei chien chang, zhi hua zhou</span><span class="s3-right">pcpm100 mando ballad 2</span>
+                        </td>
+                        <td>4:20</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.universalproductionmusic.com/en-in/discover/albums/35823/k-pop-vol4-ballad">one more time</a><br>
+                            <span class="s3-left">jiyoung chung</span><span class="s3-right">eas054 k-pop vol.4 ballad</span>
+                        </td>
+                        <td>3:23</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.universalproductionmusic.com/en-au/discover/albums/37997/mando-ballad-1">rediscover myself</a><br>
+                            <span class="s3-left">betsy hsu, daniel lim</span><span class="s3-right">pcpm099 mando ballad 1</span>
+                        </td>
+                        <td>4:43</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.universalproductionmusic.com/en-us/discover/albums/9868/logos-and-mnemonics%23id-769524">intriguing world theme</a><br>
+                            <span class="s3-left">evan beigel, pat regan</span><span class="s3-right">kt269 logos & mnemonics</span>
+                        </td>
+                        <td>0:34</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.universalproductionmusic.com/en-row/discover/albums/37610/expansive-electronic%23id-1997147">tangerine dream</a><br>
+                            <span class="s3-left">sooski</span><span class="s3-right">ntp427 expansive electronic</span>
+                        </td>
+                        <td>2:47</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.universalproductionmusic.com/en-us/discover/albums/35986/brahms-orchestral-collection">tragic overture, op.81</a><br>
+                            <span class="s3-left">johannes brahms</span><span class="s3-right">dgpm198 brahms: orchestral collection</span>
+                        </td>
+                        <td>11:31</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.universalproductionmusic.com/sc-cn/discover/albums/37998/mando-ballad-2">as the wine flows tonight</a><br>
+                            <span class="s3-left">zhi hua zhou</span><span class="s3-right">pcpm100 mando ballad 2</span>
+                        </td>
+                        <td>4:20</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.universalproductionmusic.com/en-au/discover/albums/37997/mando-ballad-1">love has withered</a><br>
+                            <span class="s3-left">betsy hsu, daniel lim</span><span class="s3-right">pcpm099 mando ballad 1</span>
+                        </td>
+                        <td>4:16</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.universalproductionmusic.com/en-hk/discover/albums/35823/k-pop-vol4-ballad">i won’t hide</a><br>
+                            <span class="s3-left">jiyoung chung</span><span class="s3-right">eas054 k-pop vol.4 ballad</span>
+                        </td>
+                        <td>2:26</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.tunepocket.com/royalty-free-music/beautiful-day-piano-solo/">a beautiful day</a><br>
+                            eg productions<br>
+                        </td>
+                        <td>2:55</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.tunepocket.com/royalty-free-music/aggressive-hybrid-trap/">aggressive hybrid trap</a><br>
+                            frequently asked music<br>
+                        </td>
+                        <td>1:04</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.tunepocket.com/royalty-free-music/beyond-the-stars/">beyond the stars</a><br>
+                            eg productions<br>
+                        </td>
+                        <td>3:40</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.tunepocket.com/royalty-free-music/there-can-be-only-fear/">there can be only fear</a><br>
+                            frequently asked music<br>
+                        </td>
+                        <td>1:29</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.tunepocket.com/royalty-free-music/breath-nature/">breath of nature</a><br>
+                            frequently asked music<br>
+                        </td>
+                        <td>1:55</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.tunepocket.com/royalty-free-music/burning-desire/">burning desire</a><br>
+                            frozenjazz<br>
+                        </td>
+                        <td>2:12</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.tunepocket.com/royalty-free-music/crooked-butterfly/">crooked butterfly</a><br>
+                            frequently asked music<br>
+                        </td>
+                        <td>1:28</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.tunepocket.com/royalty-free-music/jazz-cafe-in-the-pocket/">jazz cafe in the pocket</a><br>
+                            tunepocket exclusive<br>
+                        </td>
+                        <td>5:01</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.tunepocket.com/royalty-free-music/cassette-chillout/">cassette chillout</a><br>
+                            joel loopez<br>
+                        </td>
+                        <td>2:38</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.tunepocket.com/royalty-free-music/heavy-rock-attack/">heavy rock attack</a><br>
+                            jérôme chauvel<br>
+                        </td>
+                        <td>2:46</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.tunepocket.com/royalty-free-music/petal-waterfall/">petal waterfall</a><br>
+                            joel loopez<br>
+                        </td>
+                        <td>2:24</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.tunepocket.com/royalty-free-music/background-sentimental-piano-cello/">background sentimental piano and cello</a><br>
+                            musiclfiles<br>
+                        </td>
+                        <td>2:01</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.tunepocket.com/royalty-free-music/chillout-lounge-nirvana/">chillout lounge nirvana</a><br>
+                            colourtunes<br>
+                        </td>
+                        <td>2:26</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.tunepocket.com/royalty-free-music/cocktail-lounge/">cocktail lounge</a><br>
+                            jérôme chauvel<br>
+                        </td>
+                        <td>3:00</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.tunepocket.com/royalty-free-music/cozy-warm-indie-folk-acoustic/">cozy warm indie folk acoustic</a><br>
+                            ihsan dincer<br>
+                        </td>
+                        <td>2:20</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.tunepocket.com/royalty-free-music/crossfade-chill/">crossfade chill</a><br>
+                            gushito<br>
+                        </td>
+                        <td>3:26</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.tunepocket.com/royalty-free-music/dancing-hologram/">dancing hologram</a><br>
+                            toy invention<br>
+                        </td>
+                        <td>3:34</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.tunepocket.com/royalty-free-music/first-days-at-the-beach-lo-fi/">first days at the beach lo-fi</a><br>
+                            frequently asked music<br>
+                        </td>
+                        <td>2:10</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.tunepocket.com/royalty-free-music/decide-or-divide-instrumental/">decide or divide</a><br>
+                            moarn<br>
+                        </td>
+                        <td>3:44</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.tunepocket.com/royalty-free-music/in-despair-piano/">in despair</a><br>
+                            paul werner<br>
+                        </td>
+                        <td>1:07</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.tunepocket.com/royalty-free-music/diotic/">diotic</a><br>
+                            alumo<br>
+                        </td>
+                        <td>5:18</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.tunepocket.com/royalty-free-music/motivational-documentary-piano/">motivational documentary piano</a><br>
+                            aquarius production<br>
+                        </td>
+                        <td>2:32</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.tunepocket.com/royalty-free-music/electro-aggressive/">electro aggressive</a><br>
+                            alexzavesa<br>
+                        </td>
+                        <td>2:08</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.tunepocket.com/royalty-free-music/unbroken-epic-orchestra/">unbroken</a><br>
+                            aquarius production<br>
+                        </td>
+                        <td>1:16</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.tunepocket.com/royalty-free-music/forever-together/">forever together</a><br>
+                            eg productions<br>
+                        </td>
+                        <td>3:03</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.tunepocket.com/royalty-free-music/funny-curiosity/">funny curiosity</a><br>
+                            colourtunes<br>
+                        </td>
+                        <td>2:10</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.tunepocket.com/royalty-free-music/go-round-instrumental/">go round</a><br>
+                            moarn<br>
+                        </td>
+                        <td>3:35</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.tunepocket.com/royalty-free-music/hard-rock-logo-opener/">hard rock logo opener</a><br>
+                            ldj audio<br>
+                        </td>
+                        <td>0:20</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.tunepocket.com/royalty-free-music/heavy-energy-rock/">heavy energy rock</a><br>
+                            colourtunes<br>
+                        </td>
+                        <td>1:58</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.tunepocket.com/royalty-free-music/hold-on-instrumental/">hold on</a><br>
+                            moarn<br>
+                        </td>
+                        <td>3:48</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.tunepocket.com/royalty-free-music/inner-reflection-piano-strings/">inner reflection</a><br>
+                            musiclfiles<br>
+                        </td>
+                        <td>1:41</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.tunepocket.com/royalty-free-music/night-jazz-club/">night at the jazz club</a><br>
+                            musiclfiles<br>
+                        </td>
+                        <td>3:46</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.tunepocket.com/royalty-free-music/exultant-jazz-club-night/">exultant jazz club night</a><br>
+                            musiclfiles<br>
+                        </td>
+                        <td>2:03</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.tunepocket.com/royalty-free-music/action-upbeat-punk-rock/">action upbeat punk rock</a><br>
+                            ldj audio<br>
+                        </td>
+                        <td>2:04</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.tunepocket.com/royalty-free-music/latin-summer-chica/">latin summer chica</a><br>
+                            davide dondi<br>
+                        </td>
+                        <td>2:13</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.tunepocket.com/royalty-free-music/lo-fi-hip-hop-lazy-evening/">lo-fi hip-hop lazy evening</a><br>
+                            taigasoundprod<br>
+                        </td>
+                        <td>1:41</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.tunepocket.com/royalty-free-music/romantic-orchestra-theme/">romantic orchestra theme</a><br>
+                            musiclfiles<br>
+                        </td>
+                        <td>1:56</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.tunepocket.com/royalty-free-music/powerful-trap/">powerful trap</a><br>
+                            taigasoundprod<br>
+                        </td>
+                        <td>1:59</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.tunepocket.com/royalty-free-music/lo-fi-mood-hip-hop/">lo-fi mood hip-hop</a><br>
+                            fassounds<br>
+                        </td>
+                        <td>2:27</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.tunepocket.com/royalty-free-music/long-journey/">long journey</a><br>
+                            taigasoundprod<br>
+                        </td>
+                        <td>1:00</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.tunepocket.com/royalty-free-music/lounge-ambient-lofi-hip-hop/">lounge ambient lofi hip-hop</a><br>
+                            fassounds<br>
+                        </td>
+                        <td>3:00</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.tunepocket.com/royalty-free-music/enjoying-morning-piano/">enjoying the morning piano</a><br>
+                            musiclfiles<br>
+                        </td>
+                        <td>1:14</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.tunepocket.com/royalty-free-music/stay-informed-15-sec-intro/">stay informed (15 sec intro)</a><br>
+                            joel loopez<br>
+                        </td>
+                        <td>0:06</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.tunepocket.com/royalty-free-music/yet-another-monday/">yet another monday</a><br>
+                            frequently asked music<br>
+                        </td>
+                        <td>1:25</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.tunepocket.com/royalty-free-music/our-best-days/">our best days</a><br>
+                            eg productions<br>
+                        </td>
+                        <td>3:16</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.tunepocket.com/royalty-free-music/observing-your-emotions/">observing your emotions</a><br>
+                            frequently asked music<br>
+                        </td>
+                        <td>1:20</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.tunepocket.com/royalty-free-music/youre-always-on-my-mind/">you’re always on my mind</a><br>
+                            frequently asked music<br>
+                        </td>
+                        <td>1:55</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.tunepocket.com/royalty-free-music/out-of-control/">out of control</a><br>
+                            piccadillycircus<br>
+                        </td>
+                        <td>3:33</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.tunepocket.com/royalty-free-music/electro-workout-dubstep/">electro workout dubstep</a><br>
+                            tunepocket exclusive<br>
+                        </td>
+                        <td>3:16</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.tunepocket.com/royalty-free-music/past-tense/">past tense</a><br>
+                            frequently asked music<br>
+                        </td>
+                        <td>1:54</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.tunepocket.com/royalty-free-music/peaceful-sunset/">peaceful sunset</a><br>
+                            musiclfiles<br>
+                        </td>
+                        <td>3:05</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.tunepocket.com/royalty-free-music/power-on-metal-rock-short/">power on metal rock (short edit)</a><br>
+                            wide cloud<br>
+                        </td>
+                        <td>0:47</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.tunepocket.com/royalty-free-music/productive-lo-fi-vibes/">productive lo-fi vibes</a><br>
+                            frequently asked music<br>
+                        </td>
+                        <td>2:32</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.tunepocket.com/royalty-free-music/purifying-love/">purifying love</a><br>
+                            wolfgang woehrle<br>
+                        </td>
+                        <td>2:07</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.tunepocket.com/royalty-free-music/reach-the-summit/">reach the summit</a><br>
+                            joel loopez<br>
+                        </td>
+                        <td>3:02</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.tunepocket.com/royalty-free-music/saturday-disco-fever/">saturday disco fever</a><br>
+                            jérôme chauvel<br>
+                        </td>
+                        <td>3:00</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.tunepocket.com/royalty-free-music/sand-castles/">sand castles</a><br>
+                            joel loopez<br>
+                        </td>
+                        <td>2:52</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.tunepocket.com/royalty-free-music/sea-of-dreams-relaxing-sleep-piano/">sea of dreams</a><br>
+                            tunepocket exclusive<br>
+                        </td>
+                        <td>8:33</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.tunepocket.com/royalty-free-music/sick-air/">sick air</a><br>
+                            frequently asked music<br>
+                        </td>
+                        <td>1:56</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.tunepocket.com/royalty-free-music/smoke-lo-fi/">smoke lo-fi</a><br>
+                            joel loopez<br>
+                        </td>
+                        <td>3:27</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.tunepocket.com/royalty-free-music/soft-acoustic-guitar-background/">soft acoustic guitar background</a><br>
+                            tunepocket exclusive<br>
+                        </td>
+                        <td>1:48</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.tunepocket.com/royalty-free-music/soul-in-peace/">soul in peace</a><br>
+                            musiclfiles<br>
+                        </td>
+                        <td>3:03</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.tunepocket.com/royalty-free-music/soulful-serenade/">soulful serenade</a><br>
+                            frequently asked music<br>
+                        </td>
+                        <td>1:31</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.tunepocket.com/royalty-free-music/deep-spa-relax-inhale-exercise-3/">deep spa relax - inhale exercise 3</a><br>
+                            solxis<br>
+                        </td>
+                        <td>4:36</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.tunepocket.com/royalty-free-music/speed-burns/">speed burns</a><br>
+                            frequently asked music<br>
+                        </td>
+                        <td>1:38</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.tunepocket.com/royalty-free-music/still-beautiful/">still beautiful</a><br>
+                            frequently asked music<br>
+                        </td>
+                        <td>1:31</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.tunepocket.com/royalty-free-music/still-got-time/">still got time</a><br>
+                            joel loopez<br>
+                        </td>
+                        <td>2:26</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.tunepocket.com/royalty-free-music/stop-motion-town/">stop motion town</a><br>
+                            basspartout<br>
+                        </td>
+                        <td>1:53</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.tunepocket.com/royalty-free-music/study-for-answers/">study for answers</a><br>
+                            toy invention<br>
+                        </td>
+                        <td>3:41</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.tunepocket.com/royalty-free-music/styled-up/">styled up</a><br>
+                            frequently asked music<br>
+                        </td>
+                        <td>1:27</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.tunepocket.com/royalty-free-music/breaking-through-gloom/">breaking through the gloom</a><br>
+                            melodic pictures<br>
+                        </td>
+                        <td>1:00</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.tunepocket.com/royalty-free-music/way/">the way</a><br>
+                            joel loopez<br>
+                        </td>
+                        <td>1:31</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.tunepocket.com/royalty-free-music/sunny-days-relaxing-piano/">sunny days (relaxing piano)</a><br>
+                            tunepocket sounds<br>
+                        </td>
+                        <td>3:41</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.tunepocket.com/royalty-free-music/sweetie/">sweetie</a><br>
+                            piccadillycircus<br>
+                        </td>
+                        <td>2:10</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.tunepocket.com/royalty-free-music/urban-hip-hop-chill-vlog-background/">urban hip-hop chill vlog background</a><br>
+                            ihsan dincer<br>
+                        </td>
+                        <td>1:46</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.tunepocket.com/royalty-free-music/everyday-wandering/">everyday wandering</a><br>
+                            musiclfiles<br>
+                        </td>
+                        <td>1:41</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.tunepocket.com/royalty-free-music/blood-champions/">blood of the champions</a><br>
+                            musiclfiles<br>
+                        </td>
+                        <td>2:18</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.tunepocket.com/royalty-free-music/yet-another-monday/">yet another monday</a><br>
+                            frequently asked music<br>
+                        </td>
+                        <td>1:25</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.youtube.com/watch?v=hG_2eyJPxtM">anywhen you say</a><br>
+                            cheel<br>
+                        </td>
+                        <td>2:28</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.youtube.com/watch?v=7sx5FkOodvw">all a dream</a><br>
+                            <span class="s3-left">aidan hogg</span><span class="s3-right">vtma48 days like these</span>
+                        </td>
+                        <td>2:52</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.youtube.com/watch?v=HTnJoJrsOws">almost home</a><br>
+                            <span class="s3-left">josh duplessis, chris lee</span><span class="s3-right">cm181 hip-hop soul vol. 2</span>
+                        </td>
+                        <td>2:30</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.youtube.com/watch?v=2oUJWseET2E">along the seine river</a><br>
+                            <span class="s3-left">jean-philippe ichard</span><span class="s3-right">kok2622 welcome to paris</span>
+                        </td>
+                        <td>2:11</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.youtube.com/watch?v=Nja_ar2ieBk">j’adore l’amour</a><br>
+                            <span class="s3-left">rob cass, katherine joyce fussey, joseph robert taylor</span><span class="s3-right">mh210 pop noir</span>
+                        </td>
+                        <td>2:56</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.youtube.com/watch?v=Go8DoBLfCCY">need my baby tonight</a><br>
+                            <span class="s3-left">marti amado, ts gauntlett</span><span class="s3-right">cap122 shoogie boogie: vintage pop & soul</span>
+                        </td>
+                        <td>2:10</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.youtube.com/watch?v=Gz_UAw6cxmA">kissed in the back of your car</a><br>
+                            <span class="s3-left">julian daniel anderson, forrest reed, aaron michael wittrock</span><span class="s3-right">e&e-039 bedroom pop</span>
+                        </td>
+                        <td>2:12</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.youtube.com/watch?v=KboxMsbhQbI">back to life</a><br>
+                            <span class="s3-left">irlanya, ora</span><span class="s3-right">atmos554 limitless</span>
+                        </td>
+                        <td>2:45</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.youtube.com/watch?v=w3u9AsM-61o">get back up</a><br>
+                            <span class="s3-left">marc ferrari, trevor roy lewallen, john k. sands, todd tran</span><span class="s3-right">sb142 urban vol. 10</span>
+                        </td>
+                        <td>2:43</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.youtube.com/watch?v=OJc44F0NCx0">bad faith</a><br>
+                            <span class="s3-left">cesar gimeno lavin, steven hinds</span><span class="s3-right">pedf149 indie vocal</span>
+                        </td>
+                        <td>3:21</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.youtube.com/watch?v=dxSmv8J385U">banjo hill</a><br>
+                            <span class="s3-left">tom greenwood</span><span class="s3-right">pkt259 borderlands</span>
+                        </td>
+                        <td>2:12</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.youtube.com/watch?v=vEwPLW0_doE">breathless</a><br>
+                            <span class="s3-left">jonathan elias, david ashok ramani</span><span class="s3-right">cap123 pathways: contemporary modal jazz</span>
+                        </td>
+                        <td>2:34</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.youtube.com/watch?v=jGtRa41BcYk">free me (from this broken heart)</a><br>
+                            <span class="s3-left">andrea perry</span><span class="s3-right">rcr032 bedroom pop</span>
+                        </td>
+                        <td>3:04</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.youtube.com/watch?v=vN_pSWNJe_c">bronze age</a><br>
+                            <span class="s3-left">michael garcia, sebastian barnaby robertson</span><span class="s3-right">sbr296 progressive hip hop</span>
+                        </td>
+                        <td>1:47</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.youtube.com/watch?v=glYXXQlLcy8">brooklyn and the bridge</a><br>
+                            nico staf<br>
+                        </td>
+                        <td>2:18</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.youtube.com/watch?v=xUNo75Qv-rI">by the fireplace</a><br>
+                            tracktribe<br>
+                        </td>
+                        <td>4:12</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.youtube.com/watch?v=2QbDH3998Lc">enchanted weekend</a><br>
+                            <span class="s3-left">romain berrodier, frédéric verrières</span><span class="s3-right">kok2564 french sentimental film scores</span>
+                        </td>
+                        <td>1:54</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.youtube.com/watch?v=1kZpkPKeeH8">campfire</a><br>
+                            telecasted<br>
+                        </td>
+                        <td>1:58</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.youtube.com/watch?v=V8SsgOhzdf0">car door open – saturn se 1996</a><br>
+                            pro sound effects<br>
+                        </td>
+                        <td>0:01</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.youtube.com/watch?v=_lZAts-PCYk">code red</a><br>
+                            <span class="s3-left">michael raphael</span><span class="s3-right">slam106 hardened steel</span>
+                        </td>
+                        <td>2:00</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.youtube.com/watch?v=HQKUIutSZYs">cottonmouth strut</a><br>
+                            the whole other<br>
+                        </td>
+                        <td>1:51</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.youtube.com/watch?v=O8-vA_ia7fY">crawly creepies</a><br>
+                            <span class="s3-left">bard</span><span class="s3-right">ske063 sneaky cheeky</span>
+                        </td>
+                        <td>2:01</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.youtube.com/watch?v=1Gpry6UA5-Y">a father’s story</a><br>
+                            <span class="s3-left">brice davoli</span><span class="s3-right">kok2639 filmic piano 3</span>
+                        </td>
+                        <td>2:58</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.youtube.com/watch?v=Ydo2wUXqd7I">running from darkness</a><br>
+                            <span class="s3-left">kat green (greenblatt), matlock</span><span class="s3-right">zts046 be brave</span>
+                        </td>
+                        <td>2:28</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.youtube.com/watch?v=5rvQwRtlqqg">daydreamer</a><br>
+                            <span class="s3-left">james john lawton, rookat</span><span class="s3-right">atmos562 dreamgaze</span>
+                        </td>
+                        <td>2:40</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.youtube.com/watch?v=_dFXLGDbNhI">dead in your tracks</a><br>
+                            <span class="s3-left">brian tichy</span><span class="s3-right">mstr044 grunge/metal</span>
+                        </td>
+                        <td>4:24</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.youtube.com/watch?v=C645-cJ17vI">please say you’ll be mine</a><br>
+                            <span class="s3-left">andrew delong, harry furnell greene</span><span class="s3-right">kok2660 fifties jukebox</span>
+                        </td>
+                        <td>2:14</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.youtube.com/watch?v=Ib6bJWrirxY">canto de sirena</a><br>
+                            <span class="s3-left">daniel baraldes miquel</span><span class="s3-right">sa137 mediterranean waves 2</span>
+                        </td>
+                        <td>3:17</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.youtube.com/watch?v=FLJFACa1Mv0">devil’s advocate</a><br>
+                            <span class="s3-left">thomas gallicani</span><span class="s3-right">gal312 drift phonk</span>
+                        </td>
+                        <td>2:04</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.youtube.com/watch?v=2fEIE5t0B3o">domestic bliss</a><br>
+                            <span class="s3-left">steve martin</span><span class="s3-right">mat135 relaxed living</span>
+                        </td>
+                        <td>2:33</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.youtube.com/watch?v=6DPKawy_EZ8">do you believe</a><br>
+                            <span class="s3-left">marc ferrari, james harwood martin, latisha hyman, josh kessler, malcolm kirby</span><span class="s3-right">mstr142 r&b 2</span>
+                        </td>
+                        <td>2:58</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.youtube.com/watch?v=NPV16iouAes">drama for mama</a><br>
+                            <span class="s3-left">jamal steven pilgrim</span><span class="s3-right">irl106 emo beats 2</span>
+                        </td>
+                        <td>1:53</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.youtube.com/watch?v=sofU_MTDHyY">dreamin’ of somebody</a><br>
+                            <span class="s3-left">marti amado, ts gauntlett</span><span class="s3-right">cap122 shoogie boogie: vintage pop & soul</span>
+                        </td>
+                        <td>3:06</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.youtube.com/watch?v=MYfNRmzPue4">drill legacy</a><br>
+                            <span class="s3-left">thomas gallicani</span><span class="s3-right">gal308 hip-hop drill</span>
+                        </td>
+                        <td>2:09</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.youtube.com/watch?v=L2iPrjpbLqU">everytime</a><br>
+                            <span class="s3-left">david gerard lawrence, jasmine north</span><span class="s3-right">raydia129 heartbreak fm - vocal pop</span>
+                        </td>
+                        <td>3:40</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.youtube.com/watch?v=iI1mxLdX9w0">exquis cute</a><br>
+                            <span class="s3-left">delphine dupont, gérôme gallo</span><span class="s3-right">gal179 french pop attitude</span>
+                        </td>
+                        <td>2:41</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.youtube.com/watch?v=Uo8bM9f84wA">fire brawl</a><br>
+                            <span class="s3-left">adrian nicholas valdez</span><span class="s3-right">emw1030 overpower: rapid fire rock</span>
+                        </td>
+                        <td>2:53</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.youtube.com/watch?v=XH7nnBh2UwI">fly away</a><br>
+                            <span class="s3-left">tom greenwood, samuel west</span><span class="s3-right">pedf146 hipster aor</span>
+                        </td>
+                        <td>2:22</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.youtube.com/watch?v=qjrRoyx6siE">the fright</a><br>
+                            <span class="s3-left">robert ripley</span><span class="s3-right">aupm162 hybrid worlds</span>
+                        </td>
+                        <td>2:01</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.youtube.com/watch?v=cV7LB2OttQ4">golden empire</a><br>
+                            the 126ers<br>
+                        </td>
+                        <td>3:40</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.youtube.com/watch?v=DyEMT25EPRM">all gone</a><br>
+                            <span class="s3-left">ben andrew, harry gregson williams</span><span class="s3-right">hgw008 delicate</span>
+                        </td>
+                        <td>1:08</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.youtube.com/watch?v=z-eSh5Jjdhw">looney bin</a><br>
+                            <span class="s3-left">josh kessler, michael solaris</span><span class="s3-right">mstr234 reality show 8</span>
+                        </td>
+                        <td>1:29</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.youtube.com/watch?v=GKX3oQA__6U">grande</a><br>
+                            <span class="s3-left">brett engel, edgar vargas</span><span class="s3-right">kl048 altas vibras</span>
+                        </td>
+                        <td>2:37</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.youtube.com/watch?v=l3_XlclclWo">headlights</a><br>
+                            <span class="s3-left">bruce michael aisher, richard mark salmon</span><span class="s3-right">atmos214a twenty something songs</span>
+                        </td>
+                        <td>3:51</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.youtube.com/watch?v=Zu82ybzNxFw">hide and seek</a><br>
+                            <span class="s3-left">benji paul merrison, will slater</span><span class="s3-right">bbcpm171 wildlife - light and playful</span>
+                        </td>
+                        <td>2:00</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.youtube.com/watch?v=7fvYCrRtrDk">hope it matters</a><br>
+                            <span class="s3-left">francesca gina bergami, paul graham stanborough</span><span class="s3-right">atmos554 limitless</span>
+                        </td>
+                        <td>3:32</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.youtube.com/watch?v=p0c0exDxANg">hot hop rok</a><br>
+                            steve adams<br>
+                        </td>
+                        <td>2:25</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.youtube.com/watch?v=RvhGcQgWM4Y">all in the wrist</a><br>
+                            <span class="s3-left">foggieraw, derek minor, parris chariz</span><span class="s3-right">cm158 highlight tapes vol. 1</span>
+                        </td>
+                        <td>2:51</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.youtube.com/watch?v=V9itImjmxjQ">khundulini</a><br>
+                            <span class="s3-left">josh powell</span><span class="s3-right">mh009 party planet</span>
+                        </td>
+                        <td>3:06</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.youtube.com/watch?v=N90fVYH1zcU">king kong - clean version</a><br>
+                            <span class="s3-left">chris constantinou, jenna dickens, james young</span><span class="s3-right">kt388 femme power - rudegrl + cc</span>
+                        </td>
+                        <td>4:13</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.youtube.com/watch?v=88iNFVy4Vgc">like i need a prayer</a><br>
+                            <span class="s3-left">andrew delong, harry furnell greene</span><span class="s3-right">kok2660 fifties jukebox</span>
+                        </td>
+                        <td>2:48</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.youtube.com/watch?v=BstjxWI6Umo">come on little bird</a><br>
+                            <span class="s3-left">brice davoli, valerie deniz</span><span class="s3-right">kok2543 classic jazz - divas & crooners</span>
+                        </td>
+                        <td>3:16</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.youtube.com/watch?v=Rvc9vr7_O5A">a long road</a><br>
+                            <span class="s3-left">leo fumagalli, lucille mille</span><span class="s3-right">idea015 folk songs</span>
+                        </td>
+                        <td>3:02</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.youtube.com/watch?v=vNSt6I-NQ6s">love me always</a><br>
+                            <span class="s3-left">emanuel kallins, steve skinner</span><span class="s3-right">gm268 looking for love</span>
+                        </td>
+                        <td>2:09</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.youtube.com/watch?v=4B7_JylbxGc">love me true</a><br>
+                            <span class="s3-left">brice davoli, valerie deniz</span><span class="s3-right">kok2543 classic jazz - divas & crooners</span>
+                        </td>
+                        <td>4:03</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.youtube.com/watch?v=Nh7uMuWS0BM">luxury living</a><br>
+                            <span class="s3-left">anders johan greger lewen, henrik lars wikstrom</span><span class="s3-right">mat290 the perfect housewife 2</span>
+                        </td>
+                        <td>2:13</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.youtube.com/watch?v=yM4YYCzYoEA">maelstrom dream</a><br>
+                            <span class="s3-left">lucie rose</span><span class="s3-right">chalk70 the weighted dream - unnerving beautiful score</span>
+                        </td>
+                        <td>2:26</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.youtube.com/watch?v=MMHiZNxk_nQ">mind power</a><br>
+                            <span class="s3-left">marc ferrari, trevor roy lewallen, john k. sands</span><span class="s3-right">sb142 urban vol. 10</span>
+                        </td>
+                        <td>2:11</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.youtube.com/watch?v=Dnc0X8nuAo4">mon amour (instrumental)</a><br>
+                            <span class="s3-left">alain corson, brice davoli</span><span class="s3-right">kok2606 timeless luxury</span>
+                        </td>
+                        <td>3:09</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.youtube.com/watch?v=ggWfgzNQ6tc">mon amour</a><br>
+                            <span class="s3-left">alain corson, brice davoli</span><span class="s3-right">kok2606 timeless luxury</span>
+                        </td>
+                        <td>3:09</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.youtube.com/watch?v=M9PFqZIckQo">mon amour</a><br>
+                            alain corson, brice davoli<br>
+                        </td>
+                        <td>3:09</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.youtube.com/watch?v=gOLQsWp11g4">moonlight in your eyes</a><br>
+                            <span class="s3-left">andrew delong, harry furnell greene</span><span class="s3-right">kok2660 fifties jukebox</span>
+                        </td>
+                        <td>2:37</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.youtube.com/watch?v=rzSYiu8NeWU">forward movement</a><br>
+                            <span class="s3-left">gavin brown, marc ferrari, matt hirt</span><span class="s3-right">mstr356 reggae rock & roots 3</span>
+                        </td>
+                        <td>3:16</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.youtube.com/watch?v=N0k8AWqYqkw">you are my world</a><br>
+                            <span class="s3-left">skipper wise</span><span class="s3-right">chap217 l.a. story 1</span>
+                        </td>
+                        <td>3:04</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.youtube.com/watch?v=zfk8eOpXuLk">natural light</a><br>
+                            chris haugen<br>
+                        </td>
+                        <td>4:00</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.youtube.com/watch?v=kH4AQ-NpsoU">never forget</a><br>
+                            <span class="s3-left">wendy ellen feldstein, david isaac feldstein, marc ferrari, lance morrison</span><span class="s3-right">mstr297 90s rockapalooza</span>
+                        </td>
+                        <td>3:50</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.youtube.com/watch?v=BxnOKvYoRd0">late night new york</a><br>
+                            <span class="s3-left">nick beere, nicky james, richard parrett, nigel sawyer</span><span class="s3-right">chap138 travelogue 1</span>
+                        </td>
+                        <td>2:02</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.youtube.com/watch?v=rZ3RA4Fa5D0">nothing is impossible</a><br>
+                            <span class="s3-left">alexander charles elliott, david gerard lawrence, jasmine north</span><span class="s3-right">raydia116 free fall - emotive vocal pop</span>
+                        </td>
+                        <td>2:40</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.youtube.com/watch?v=R8PqqSUrVSc">outlaw’s farewell (part 1)</a><br>
+                            reed mathis<br>
+                        </td>
+                        <td>2:20</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.youtube.com/watch?v=uyv1BIDdInU">perhaps</a><br>
+                            <span class="s3-left">stefan redtenbacher</span><span class="s3-right">pedf119 little book of jazz</span>
+                        </td>
+                        <td>6:26</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.youtube.com/watch?v=YTIL5gsauBw">pls don’t</a><br>
+                            <span class="s3-left">joshua benjamin foreman, matthew david goodman</span><span class="s3-right">raydia110 generation now - bedroom pop</span>
+                        </td>
+                        <td>2:40</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.youtube.com/watch?v=4I9WWvorTI8">quarter moon at twilight</a><br>
+                            <span class="s3-left">al capps</span><span class="s3-right">kt27 mellow - volume 2</span>
+                        </td>
+                        <td>2:34</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.youtube.com/watch?v=l0P__3hFhPE">raindrops</a><br>
+                            <span class="s3-left">kasper lindgren, eike lüchow</span><span class="s3-right">ber1248a piano, strings & remixes</span>
+                        </td>
+                        <td>2:15</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.youtube.com/watch?v=-wBB9WQtzgk">come ride wit me</a><br>
+                            <span class="s3-left">owen chaim, marc ferrari, christopher b harris, matt hirt, brent ian wesley</span><span class="s3-right">mstr354 hip hop throwback 3</span>
+                        </td>
+                        <td>3:08</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.youtube.com/watch?v=B1wholDvOJ0">freedom rise up</a><br>
+                            <span class="s3-left">owen chaim, marc ferrari, matt hirt</span><span class="s3-right">mstr356 reggae rock & roots 3</span>
+                        </td>
+                        <td>3:14</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.youtube.com/watch?v=eGvUuCjDbYM">riverbank dapple</a><br>
+                            <span class="s3-left">ben barlow, steven thomason</span><span class="s3-right">frx092 reflections, renewals</span>
+                        </td>
+                        <td>2:25</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.youtube.com/watch?v=bDtNaaHZp5I">seasons</a><br>
+                            delicate steve<br>
+                        </td>
+                        <td>3:21</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.youtube.com/watch?v=SSL5vw7RtdQ">secret job</a><br>
+                            godmode<br>
+                        </td>
+                        <td>1:33</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.youtube.com/watch?v=8jY01RzRTp8">set me free</a><br>
+                            <span class="s3-left">kathleen irvine</span><span class="s3-right">omvoc004 onesongs 60’s volume 1</span>
+                        </td>
+                        <td>3:55</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.youtube.com/watch?v=2aSw18TM6sM">slinky</a><br>
+                            <span class="s3-left">bruce maginnis</span><span class="s3-right">fcd378 jazz vault</span>
+                        </td>
+                        <td>3:00</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.youtube.com/watch?v=VgUAH4mDCvQ">soothing breeze</a><br>
+                            <span class="s3-left">théo boulenger</span><span class="s3-right">kok2495 introspective slow motion</span>
+                        </td>
+                        <td>2:17</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.youtube.com/watch?v=hbUy-YRfdJs">sophisticated mood</a><br>
+                            <span class="s3-left">steve martin</span><span class="s3-right">mat104 fashion</span>
+                        </td>
+                        <td>3:15</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.youtube.com/watch?v=uinYP-lThB4">sorry i kept you</a><br>
+                            <span class="s3-left">danette m dufilho, aaron kelley, skinny williams</span><span class="s3-right">vl193 the shimmering psychedelic groove trip</span>
+                        </td>
+                        <td>3:08</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.youtube.com/watch?v=pyBRvC3nVBc">southern stroll</a><br>
+                            <span class="s3-left">joel goodman</span><span class="s3-right">story029 road trippin’</span>
+                        </td>
+                        <td>2:21</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.youtube.com/watch?v=CWc0sQ9zraQ">splice</a><br>
+                            <span class="s3-left">dorian aites, richard buhr, robert gallien, jacob martin, isaac thelin</span><span class="s3-right">kas005 b3sci presents: rare monk</span>
+                        </td>
+                        <td>3:46</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.youtube.com/watch?v=mC52ycxC_Y0">spring morning’s first light</a><br>
+                            <span class="s3-left">john hobbs</span><span class="s3-right">kt27 mellow - volume 2</span>
+                        </td>
+                        <td>2:33</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.youtube.com/watch?v=x72DeOmRf7c">standing tall</a><br>
+                            <span class="s3-left">thomas jack foley</span><span class="s3-right">raydia116 free fall - emotive vocal pop</span>
+                        </td>
+                        <td>3:05</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.youtube.com/watch?v=5oXMP2eUQ2M">strut</a><br>
+                            <span class="s3-left">ruby ennyd aitken duff, eva lind</span><span class="s3-right">atmos552 100% her - pop songbook</span>
+                        </td>
+                        <td>0:45</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.youtube.com/watch?v=Fs_yieByN4Q">don’t tell me</a><br>
+                            <span class="s3-left">leigh mcallister gracie</span><span class="s3-right">arx042 the soul sessions</span>
+                        </td>
+                        <td>2:55</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.youtube.com/watch?v=vyZqyxhbXIE">tender</a><br>
+                            <span class="s3-left">kathleen irvine</span><span class="s3-right">omvoc012 onesongs 60’s volume 2</span>
+                        </td>
+                        <td>2:03</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.youtube.com/watch?v=Kr3lZfHWbAo">after the game</a><br>
+                            <span class="s3-left">larry owens</span><span class="s3-right">nm015 sportswrap (specialty)</span>
+                        </td>
+                        <td>2:59</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.youtube.com/watch?v=EUjnSK8iXhc">the gentlemen</a><br>
+                            divkid<br>
+                        </td>
+                        <td>3:06</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.youtube.com/watch?v=d_Oi2QxO1oA">the morning after</a><br>
+                            bad snacks<br>
+                        </td>
+                        <td>2:32</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.youtube.com/watch?v=koRIQRuu6WE">tonight</a><br>
+                            <span class="s3-left">kathleen irvine</span><span class="s3-right">omvoc004 onesongs 60’s volume 1</span>
+                        </td>
+                        <td>2:58</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.youtube.com/watch?v=Yo1oZz-iOV8">entrar al trapo</a><br>
+                            <span class="s3-left">raul bonilla vendrell</span><span class="s3-right">sa118 spanish 90s garage rock</span>
+                        </td>
+                        <td>2:29</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.youtube.com/watch?v=JUkuYlGlP84">velvet night</a><br>
+                            <span class="s3-left">max mancies</span><span class="s3-right">idea001 essence of rock</span>
+                        </td>
+                        <td>2:11</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.youtube.com/watch?v=RzU66PWpzwY">visions of home</a><br>
+                            <span class="s3-left">daniel holter, michael robert wisth</span><span class="s3-right">und-28 under one umbrella</span>
+                        </td>
+                        <td>1:19</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.youtube.com/watch?v=wtuY9gFn6bc">weightless</a><br>
+                            <span class="s3-left">marmar</span><span class="s3-right">raydia126 home coming - rousing vocal indie</span>
+                        </td>
+                        <td>3:35</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.youtube.com/watch?v=UOx2pmroeU0">without you</a><br>
+                            <span class="s3-left">jamie dunlap, stephen lang, scott nickoley</span><span class="s3-right">mstr073 the 70’s</span>
+                        </td>
+                        <td>3:00</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.youtube.com/watch?v=S54AYvDAOZk">yours</a><br>
+                            <span class="s3-left">sam joseph delves, jennifer june</span><span class="s3-right">atmos554 limitless</span>
+                        </td>
+                        <td>3:03</td>
+                    </tr>
+                </table>
+                <br>
+            </details>
+    
+            <br>
+        </article>
+        </region>
+
+
+        <region id="linux">
+        <article>
+        <h3><a href="#linux" target="_self"># linux</a></h3>
+    
+        <div> <!-- saves location -->
+<pre class="listing-block">
+<code># ~/.renpy/WestviewAcademy-1636594720</code>
+<code># &lt;SteamLibrary&gt;/steamapps/common/Westview Academy/game/saves</code>
+</pre>
+        <ul>
+            <li><a href="https://www.igdb.com/games/westview-academy">wpis igdb</a></li>
+            <li><a href="https://steamdb.info/app/2275560/">wpis steamdb</a></li>
+            <li><a href="https://www.protondb.com/app/2275560">wpis protondb</a></li>
+        </ul>
+        <br>
+        </div>
+
+        <br>
+        </article>
+        </region>
+
+        
+        <hr>
+        <footer>2026-04-12</footer>
+    </main>
+</body>
+
+</html>
