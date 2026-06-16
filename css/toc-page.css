@@ -54,7 +54,7 @@ body {
     color: black;
 }
 .main a:hover {
-    color: #008080;
+    color: blue;
 }
 
 /* Adjust sidebar on small screens */
