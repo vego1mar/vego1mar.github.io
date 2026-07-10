@@ -40,7 +40,7 @@ body {
 /* Page text section */
 .main {
     margin-left: 230px;
-    margin-right: 50%;
+    margin-right: 10%;
     font-size: 15px;
     padding: 0px 10px;   /* Increased text to enable scrolling */
 }
@@ -81,5 +81,5 @@ body {
 
 /* Highlight list item on mouse hover */
 .main ul li:hover {
-    background-color: lavender;
+    background-color: whitesmoke;
 }

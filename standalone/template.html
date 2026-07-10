@@ -2,7 +2,7 @@
 <html lang="pl">
 
 <head>
-    <title>recenzja</title>
+    <title>✘✘✘ — recenzja</title>
     <meta charset="utf-8"> 
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -304,29 +304,69 @@
         .discussion-thread, .discussion-thread a {
             color: gray;
         }
+
+        figure, figure figcaption {
+            display: block;
+            text-align: center;
+        }
+        img {
+            width: 100%;
+            height: auto;
+        }
+        .maintitle {
+            font-size: x-large;
+        }
+        .subtitle {
+            font-size: small;
+            color: olive;
+        }
+
+        .soundtrack4-ost {
+            margin: auto;
+            width: 95%;
+        }
+        .soundtrack4-ost-title {
+            width: 47%;
+        }
+        .soundtrack4-ost-author {
+            width: 47%;
+        }
+        table.soundtrack4-ost td:nth-child(1) a {
+            color: blue;
+        }
+        .soundtrack4-ost td:nth-child(3) {
+            text-align: end;
+        }
+        .soundtrack4-ost tr:nth-child(even) {
+            background-color: rgb(251, 251, 251);
+        }
+
+        header {
+            font-weight: bold;
+            font-size: 14px;
+        }
     </style>
 </head>
 
 <body>
     <main class="main-content">
         <section id="lead-text">
-        <h2>__tytuł_gry__</h2>
+        <h1 class="maintitle">__tytuł_gry__</h1>
+        <p class="subtitle">__wersja_gry__</p>
         <p>__lead__</p>
         <br>
         </section>
 
 
-        <region id="informacje">
+
+        <region id="zwiastuny-gry">
         <article>
-        <h3><a href="#informacje" target="_self"># informacje</a></h3>
+        <h3><a href="#zwiastuny-gry" target="_self"># zwiastuny gry</a></h3>
 
         <ul>
-            <li><a href="https://steamcommunity.com/app/__appid__/discussions/">steam dyskusje</a></li>
-            <li><a href="https://www.gry-online.pl/news-gra.asp?ID=">wiadomości</a></li>
-            <li><a href="https://www.youtube.com/">__name__</a></li>
-            <br>
             <li><a href="https://www.youtube.com/watch?v=">__zwiastun__</a></li>
-            <li><a href="https://video.steamstatic.com/store_trailers/__appid__/movie_max_vp9.webm">zwiastun??</a></li>
+            <li><a href="https://video.steamstatic.com/store_trailers/__appid__/movie_max_vp9.webm">__zwiastun__</a></li>
+            <li><a href="https://video.fastly.steamstatic.com/store_trailers/.../dash_av1.mpd">steam trailer mpd – ??? (_M)</a></li>
             <br>
         </ul>
         <br>
@@ -334,42 +374,13 @@
         </article>
         <br>
         </region>
-
-
-        <!-- 
-            <center>
-                <video controls width="90%">
-                    <source src="../media/" type="video/mp4" preload="metadata" alt=".mp4">
-                    <figcaption></figcaption>
-                </video>
-            <center>
-
-            <figure class="fighover">
-                <source srcset="../screenshots/" type="image/webp">
-                <img loading="lazy" srcset="../screenshots/" alt=""/>
-                <figcaption>__cap__</figcaption>
-            </figure>
-
-            <colgroup>
-                <col span="1" class="--name">
-            </colgroup>
-
-            <article class="region-grey">
-            <div class="region-white">
-
-            <details class="soundtrack-accordion">
-            <details class="accordion"> 
-                <summary></summary>
-                <br>
-            </details>
-        -->
-
+        
 
         <region id="uwagi-zebrane">
         <article>
             <h3><a href="#uwagi-zebrane" target="_self"># uwagi zebrane</a></h3>
 
-            <div> <!-- -->
+            <div> <!--  -->
             <header>✱ </header>
             <p></p>
             <br>
@@ -377,6 +388,7 @@
 
             <br>
         </article>
+        <br>
         </region>
 
 
@@ -385,14 +397,6 @@
             <h3><a href="#just-for-show" target="_self"># just for show</a></h3>
 
             <div> <!-- comment -->
-            <details class="accordion"> 
-                <summary>alignment within &lt;details&gt;</summary>
-                <figure class="fighover">
-                    <source srcset="../screenshots/" type="image/webp">
-                    <img loading="lazy" srcset="../screenshots/" alt="alt-figure-text"/>
-                    <figcaption>__cap__</figcaption>
-                </figure>
-            </details>
             <figure class="fighover">
                 <source srcset="../screenshots/" type="image/webp">
                 <img loading="lazy" srcset="../screenshots/" alt="alignment-outside-details"/>
@@ -417,6 +421,7 @@
 
             <br>
         </article>
+        <br>
         </region>
 
 
@@ -424,18 +429,36 @@
         <article>
             <h3><a href="#kłopotliwe-osiągnięcia" target="_self"># kłopotliwe osiągnięcia</a></h3>
             <p></p>
-    
-            <table class="achievements">
-                <caption>__cap__</caption>
-                <colgroup>
-                    <col span="1" class="achievements--name">
-                    <col span="1">
-                </colgroup>
-                <tr>
-                    <td>Aa</td>
-                    <td>Bb</td>
-                </tr>
-            </table>
+
+
+            <details class="accordion"> 
+                <summary>___lista_osiągnięć___</summary>
+
+                <table class="achievements">
+                    <caption>__cap__</caption>
+                    <colgroup>
+                        <col span="1" class="achievements--name">
+                        <col span="1">
+                    </colgroup>
+                    <tr>
+                        <td>snake in the grass</td>
+                        <td>while in tall grass, kill 50 soldiers</td>
+                    </tr>
+                    <tr>
+                        <td>resourceful</td>
+                        <td>kill 50 enemy soldiers with found weapons</td>
+                    </tr>
+                    <tr>
+                        <td>enemy at the gates</td>
+                        <td>defeat an invading sniper jager</td>
+                    </tr>
+                    <tr>
+                        <td>meeting resistance</td>
+                        <td>weaken the atlantic wall and rendezvous with blue viper</td>
+                    </tr>
+                </table>
+                <br>
+            </details>
             <br>
 
             <details class="accordion"> 
@@ -443,10 +466,10 @@
                 <p><blockquote>___quote___</blockquote></p>
                 <br>
             </details>
-            <br>
     
             <br>
         </article>
+        <br>
         </region>
 
 
@@ -454,29 +477,125 @@
         <article>
             <h3><a href="#ścieżka-dźwiękowa" target="_self"># ścieżka dźwiękowa</a></h3>
     
-            <p></p>
+            <p>___ <span class="code-line">some/path/to/audio</span>;</p>
             <br>
-    
-            <table class="soundtrack-ost">
-                <caption>__cap__</caption>
+
+            <details class="soundtrack-accordion"> <!-- soundtrack-ost -->
+                <summary>soundtrack-ost</summary>
+                <table class="soundtrack-ost">
+                    <colgroup>
+                        <col span="1" class="soundtrack-ost--name">
+                        <col span="1">
+                    </colgroup>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=uWvGT-RcT24">new craves</a></td>
+                    <td>2:49</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=Z6ITw7W1bEk">soft hip hop instrumental</a></td>
+                    <td>2:02</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=M7bDXMxodPA">rising sport</a></td>
+                    <td>2:32</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=6s3AQmEeYkA">nazca</a></td>
+                    <td>2:06</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=CwmqhXK7f64">eine kleine nachtmusic (phone)</a> – george beck, wolfgang amadeus mozart</td>
+                    <td>3:53</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=5WZWDOs4V-U">eine kleine nachtmusic</a> – george beck, wolfgang amadeus mozart</td>
+                    <td>3:53</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=-NfOw-Ejmw0">concerto no.3 in f major op.8</a> – george beck, antonio lucio vivaldi</td>
+                    <td>4:38</td>
+                </tr>
+            </table>
+            <br>
+            </details>
+            <br>
+
+            <details class="accordion"> <!-- soundtrack3 -->
+                <summary>soundtrack3</summary>
+                <table class="soundtrack3">
+                    <colgroup>
+                        <col span="1"> <!-- info: (title, authors, album) -->
+                        <col span="1"> <!-- duration -->
+                    </colgroup>
+                    <tr>
+                        <td>
+                            <a href="https://open.spotify.com/track/3Q1eLeW4sRWt63rYDaSqOe">crank it up</a><br>
+                            <span class="s3-left">billy lincoln, thomas dean pugh-fields</span><span class="s3-right">zts024 hot rod rock</span>
+                        </td>
+                        <td>2:59</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.youtube.com/watch?v=-wBB9WQtzgk">come ride wit me</a><br>
+                            <span class="s3-left">owen chaim, marc ferrari, christopher b harris, matt hirt, brent ian wesley</span><span class="s3-right">mstr354 hip hop throwback 3</span>
+                        </td>
+                        <td>3:08</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.tunepocket.com/royalty-free-music/decide-or-divide-instrumental/">decide or divide (instrumental)</a><br>
+                            moarn<br>
+                        </td>
+                        <td>3:44</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.tunepocket.com/royalty-free-music/in-despair-piano/">in despair</a><br>
+                            paul werner<br>
+                        </td>
+                        <td>1:05</td>
+                    </tr>
+                </table>
+                <br>
+            </details>
+            <br>
+
+            <details class="soundtrack-accordion"> <!-- soundtrack4 -->
+                <summary>soundtrack4-ost</summary>
+                <table class="soundtrack4-ost">
                 <colgroup>
-                    <col span="1" class="soundtrack-ost--name">
+                    <col span="1" class="soundtrack4-ost-title">
+                    <col span="1" class="soundtrack4-ost-author">
                     <col span="1">
                 </colgroup>
                 <tr>
-                    <td><a href="https://www.youtube.com/watch?v=">__name__</a></td>
-                    <td>00:00</td>
+                    <td>cinematiquetense</td>
+                    <td></td>
+                    <td>4:00</td>
                 </tr>
-            </table>
-
-            <details class="soundtrack-accordion">
-                <summary></summary>
-                <!-- here -->
+                <tr>
+                    <td><a href="https://pixabay.com/music/suspense-sinister-overture-166489/">sinister overture</a></td>
+                    <td>rovador</td>
+                    <td>1:10</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=raPxPEinxHI">shades</a></td>
+                    <td>enrico milardo</td>
+                    <td><a href="https://stockmusic.net/royalty-free-music/track/shades-instrumental/TRA-ENM0078">2:32</a></td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=0RWnB0yWrCQ">daybreak</a></td>
+                    <td><abbr title="daybreak">jens east, henk</abbr></td>
+                    <td><a href="https://freemusicarchive.org/music/Jens_East_ft_Henk/Daybreak_1040/Jens_East_ft_Henk_-_Daybreak">4:44</a></td>
+                </tr>
+                </table>
                 <br>
             </details>
+            <br>
     
             <br>
         </article>
+        <br>
         </region>
 
 
@@ -484,22 +603,12 @@
         <article>
         <h3><a href="#linux" target="_self"># linux</a></h3>
     
-        <div> <!-- proton args -->
-<pre class="listing-block">
-<code>DXVK_FRAME_RATE=90 WINE_FULLSCREEN_FSR=1 WINE_FULLSCREEN_FSR_MODE=performance PROTON_FSR4_UPGRADE=1 PROTON_USE_NTSYNC=1 PROTON_LOCAL_SHADER_CACHE=1 game-performance <span style="color:blue;">%command%</span></code>
-</pre>
-        <ul>
-            <li><a href="https://www.protondb.com/app/__appid__">appid = __appid__</a></li>
-            <li><a href="https://github.com/CachyOS/proton-cachyos/releases/tag/cachyos-">proton-cachyos ____</a>
-            </li>
-        </ul>
-        <br>
-        </div>
-    
         <div> <!-- saves location -->
+        <header>✱ ścieżki</header>
 <pre class="listing-block">
-<code># &lt;SteamLibrary&gt;/steamapps/compatdata/__appid__/pfx/ → %USERPROFILE%\AppData\LocalLow\</code>
-<code># &lt;SteamLibrary&gt;/steamapps/compatdata/__appid__/pfx/ → %LOCALAPPDATA%\SH3RE\Saved\SaveGames\</code>
+<code># %USERPROFILE%\AppData\LocalLow\</code>
+<code># ~/.renpy/beststeam</code>
+<code># $SteamLibrary/steamapps/common/B.E.S.T/game/saves/</code>
 </pre>
         <ul>
             <li><a href="https://steamdb.info/app/1975280/ufs/">save file locations</a></li>
@@ -508,8 +617,22 @@
         <br>
         </div>
 
+        <div> <!-- proton args -->
+        <header>✱ proton</header>
+<pre class="listing-block">
+<code>DXVK_FRAME_RATE=90 WINE_FULLSCREEN_FSR=1 WINE_FULLSCREEN_FSR_CUSTOM_MODE=1348x569 PROTON_FSR4_UPGRADE=1 VKD3D_CONFIG=descriptor_heap PROTON_VKD3D_HEAP=1 PROTON_NVIDIA_LIBS_NO_32BIT=1 PROTON_USE_NTSYNC=1 PROTON_LOCAL_SHADER_CACHE=1 __GL_SHADER_DISK_CACHE_SKIP_CLEANUP=1 DXVK_ASYNC=1 NVPRESENT_QUEUE_FAMILY=1 DRI_PRIME=1 LOW_LATENCY_LAYER=1 LOW_LATENCY_LAYER_REFLEX=1 DXVK_CONFIG='dxgi.hideAmdGpu=True' DXVK_NVAPI_ALLOW_OTHER_DRIVERS=1 PROTON_FORCE_NVAPI=1 <span style="color:blue;">%command%</span> -dx12</code>
+</pre>
+        <ul>
+            <li><a href="https://www.protondb.com/app/__appid__">appid = __appid__</a></li>
+            <li><a href="https://github.com/CachyOS/proton-cachyos/releases/tag/cachyos-">proton-cachyos ____</a>
+            </li>
+        </ul>
+        <br>
+        </div>
+
         <br>
         </article>
+        <br>
         </region>
 
 
@@ -524,11 +647,12 @@
     
             <br>
         </article>
+        <br>
         </region>
 
         
         <hr>
-        <footer>___2026-03-xx___</footer>
+        <footer>2026-06-____</footer>
     </main>
 </body>
 
