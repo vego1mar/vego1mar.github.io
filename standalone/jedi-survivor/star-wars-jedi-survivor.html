@@ -1,0 +1,2177 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <title>jedi ocalały — recenzja</title>
+    <meta charset="utf-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <style>
+        @font-face {
+            font-family: "ubuntu", sans-serif;
+            src: url("../fonts/Ubuntu-Regular.ttf");
+        }
+        body {
+            font-family: "ubuntu", sans-serif;
+        }
+        h1 {
+            font-size: 25px;
+        }
+        h2 {
+            font-size: 20px;
+        }
+        h3 {
+            font-size: 17px;
+            color: rgb(255, 70, 70); /* salmon */
+        }
+        h3 a {
+            text-decoration: none;
+            color: rgb(255, 70, 70);
+        }
+
+        .main-content {
+            margin-left: 10%;
+            margin-right: 10%;
+            font-size: 14px;
+            padding: 0px 10px;
+            font-family: "ubuntu", sans-serif;
+        }
+
+        .region-grey {
+            background-color: whitesmoke;
+            border-style: hidden;
+            border-radius: 10px;
+            padding-top: 1%;
+        }
+        .region-white {
+            background-color: white;
+        }
+        a {
+            text-decoration: none;
+            color: teal;
+        }
+        p {
+            line-height: 1.4;
+        }
+        blockquote {
+            border-left: 2px solid blueviolet;
+            padding-left: 1%;
+        }
+
+        .code-line {
+            font-family: "jetbrains mono", "ubuntu mono", monospace;
+            background-color: gainsboro;
+            border: 0px solid olive;
+        }
+        pre.listing-block {
+            background-color: ghostwhite;
+            overflow-x: auto;
+            overflow-y: hidden;
+            white-space: pre;
+            word-wrap: normal;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            padding-right: 10px;
+            border: 1px solid olive;
+        }
+        pre.listing-block::before {
+            counter-reset: listing;
+        }
+        pre.listing-block code {
+            counter-increment: listing-counter;
+            font-family: "calling code", "ubuntu mono", monospace;
+            font-size: 14px;
+        }
+        pre.listing-block code::before {
+            content: counter(listing-counter) "   ";
+            display: inline-block;
+            width: 4em;
+            padding-left: 0px;
+            margin-left: auto;
+            text-align: right;
+            font-size: 12px;
+            color: olive;
+        }
+        pre {
+            margin-left: 1%;
+            margin-right: 1%;
+        }
+        
+        .images-horizontal {
+            table-layout: fixed; 
+            display: block;
+            width: 100%;
+            overflow-x: scroll; 
+            overflow-y: hidden;
+            scroll-snap-align: center;
+        }
+        .images-horizontal a {
+            text-decoration: none;
+            color: black;
+        } 
+        .images-horizontal figcaption {
+            padding-top: 5px;
+        }
+
+        img {
+            width: 50vw;
+            height: auto;
+        }
+        figcaption {
+            font-size: 12px;
+            text-align: left;
+        }
+        figure figcaption {
+            text-align: center;
+        }
+        .fighover figure {
+            display: inline-block;
+            border: 1px;
+            margin: 10px;
+        }
+        .fighover figure, .fighover img {
+            vertical-align: top;
+            width: 29vw;
+        }
+        .fighover figure, .fighover figcaption {
+            border: 1px;
+            text-align: center;
+        }
+
+        .achievements {
+            table-layout: fixed; 
+            width: 90%;
+            text-align: left;
+        }
+        .achievements--name {
+            text-align: center;
+            vertical-align: middle;
+        }
+        .achievements caption {
+            text-align: left;
+            padding-left: 1px;
+            font-weight: bold;
+        }
+        table.achievements td {
+            padding-top: 1px;
+            padding-bottom: 1px;
+            border-bottom: 1px solid rgba(128, 128, 0, 0.2);
+        }
+        .achievements td:nth-child(1) {
+            padding-left: 11px;
+            width: 70%;
+        }
+        .achievements td:nth-child(2) {
+            padding-left: 11px;
+            width: 100%;
+        }
+        .achiev-accord-desc {
+            color: gray;
+        }
+        .achievements--not-gained {
+            color: gray;
+        }
+
+        .soundtrack-ost {
+            table-layout: fixed;
+            margin: auto;
+            width: 50%;
+        }
+        .soundtrack-ost td:nth-child(2) {
+            text-align: end;
+            padding-left: 5px;
+            width: 10%;
+        }
+        .soundtrack-ost tr:nth-child(even) {
+            background-color: ghostwhite;
+        }
+        .soundtrack-ost caption {
+            font-weight: bold;
+            text-align: left;
+            margin-left: -3%;
+        }
+        .soundtrack-accordion {
+            margin-left: 1%;
+            margin-right: 1%;
+        }
+
+        .soundtrack3 {
+            table-layout: fixed;
+            margin: auto;
+            padding-left: 2%;
+            padding-right: 6%;
+            width: 100%;
+        }
+        .soundtrack3 td:nth-child(2) {
+            text-align: end;
+            padding-left: 5px;
+            width: 5%;
+        }
+        .soundtrack3 tr:nth-child(even) {
+            background-color: whitesmoke;
+        }
+        table.soundtrack3 tr td {
+            padding-left: 10px;
+            padding-right: 10px;
+            padding-top: 5px;
+            padding-bottom: 5px;
+            border-radius: 11px;
+        }
+        table.soundtrack3 td a {
+            color: blue;
+            font-size: medium;
+            font-weight: bold;
+        }
+        table.soundtrack3 td {
+            font-size: small;
+        }
+        .s3-left {
+            float: left;
+        }
+        .s3-right {
+            float: right;
+        }
+
+        .dictionary {
+            table-layout: fixed; 
+            width: 90%;
+            text-align: left;
+        }
+        .dictionary--term {
+            width: 40%;
+            text-align: center;
+            vertical-align: middle;
+        }
+        table.dictionary td {
+            padding-top: 1px;
+            padding-bottom: 2px;
+            border-bottom: 1px solid rgba(128, 128, 0, 0.2);
+        }
+
+        @media only screen and (min-width: 1px) and (max-width: 920px) {
+            .soundtrack-ost {
+                width: 100%;
+            }
+        }
+        @media only screen and (min-width: 921px) and (max-width: 1250px) {
+            .soundtrack-ost {
+                width: 70%;
+            }
+        }
+        @media only screen and (min-width: 1251px) and (max-width: 1450px) {
+            .soundtrack-ost {
+                width: 50%;
+            }
+        }
+        @media only screen and (min-width: 1451px) and (max-width: 1900px) {
+            .soundtrack-ost {
+                width: 45%;
+            }
+        }
+        @media only screen and (min-width: 1901px) {
+            .soundtrack-ost {
+                width: 30%;
+            }
+        }
+
+        details {
+            border: 1px solid olive;
+            border-radius: 8px;
+            box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.12);
+            margin-bottom: 8px;
+        }
+        details[open] summary {
+            margin-bottom: 10px;
+        }
+        summary {
+            cursor: pointer;
+            transition: all 150ms ease-in-out;
+            padding: 12px;
+        }
+        .accordion pre, .accordion p, .accordion table {
+            margin-left: 2%;
+            margin-right: 2%;
+        }
+
+        article div p, article div details, article details {
+            margin-left: 1%;
+            margin-right: 1%;
+        }
+        details figure, details figure figcaption, div figure {
+            display: block;
+            text-align: center;
+        }
+        .discussion-thread, .discussion-thread a {
+            color: gray;
+        }
+
+        figure, figure figcaption {
+            display: block;
+            text-align: center;
+        }
+        img {
+            width: 100%;
+            height: auto;
+        }
+        .maintitle {
+            font-size: x-large;
+        }
+        .subtitle {
+            font-size: small;
+            color: olive;
+        }
+
+        .soundtrack4-ost {
+            margin: auto;
+            width: 95%;
+        }
+        .soundtrack4-ost-title {
+            width: 47%;
+        }
+        .soundtrack4-ost-author {
+            width: 47%;
+        }
+        table.soundtrack4-ost td:nth-child(1) a {
+            color: blue;
+        }
+        .soundtrack4-ost td:nth-child(3) {
+            text-align: end;
+        }
+        .soundtrack4-ost tr:nth-child(even) {
+            background-color: rgb(251, 251, 251);
+        }
+
+        header {
+            font-weight: bold;
+            font-size: 14px;
+            color: darkviolet;
+        }
+
+        .achiev-jedi-list {
+            table-layout: fixed; 
+            width: 90%;
+            text-align: left;
+        }
+        .achiev-jedi-list caption {
+            font-weight: bold;
+        }
+        .achiev-jedi-list--name {
+            text-align: left;
+            vertical-align: middle;
+            width: 33%;
+        }
+        .achiev-jedi-list--location {
+            text-align: left;
+            vertical-align: middle;
+            width: 33%;
+        }
+        .achiev-jedi-list--nanmadol {
+            text-align: left;
+            vertical-align: middle;
+            width: 50%;
+        }
+        table.achiev-jedi-list td {
+            padding-top: 1px;
+            padding-bottom: 1px;
+            border-bottom: 1px solid rgba(128, 128, 0, 0.2);
+        }
+        .achiev-jedi-list tr:hover {
+            background-color: whitesmoke;
+        }
+    </style>
+</head>
+
+<body>
+    <main class="main-content">
+        <section id="lead-text">
+        <h1 class="maintitle">star wars jedi survivor</h1>
+        <p class="subtitle">4.26.2</p>
+        <p>przyjemne rozgrywkowo pju-pju-pju dżedaje, gdzie fabularnie zmuszeni jesteśmy by co chwilę przegrywać, chociaż przynajmniej w całkiem różnorodnych miejscach, a towarzyszy temu wszystkiemu poważny problem optymalizacyjny dojmujący niczym oddech lorda vadera; można by to nawet zignorować, lecz to już drugi raz się tak dzieje, bo „upadły zakon” ma podobny kłopot, a tym razem stan techniczny jest jeszcze gorszy;</p>
+        <br>
+        </section>
+
+
+
+        <region id="zwiastuny-gry">
+        <article>
+        <h3><a href="#zwiastuny-gry" target="_self"># zwiastuny gry</a></h3>
+        <ul>
+            <li><a href="https://video.fastly.steamstatic.com/store_trailers/1774580/586184/f723655828cd2d57318ebe145cc974c851241494/1750734365/dash_av1.mpd">steam trailer mpd – accolades trailer (20M)</a></li>
+            <li><a href="https://www.youtube.com/watch?v=VRaobDJjiec">official reveal trailer</a></li>
+            <li><a href="https://www.youtube.com/watch?v=_F6YBwIPzmk">official story trailer</a></li>
+            <li><a href="https://www.youtube.com/watch?v=bmj3ty-Wt48">final gameplay trailer</a></li>
+            <li><a href="https://www.youtube.com/watch?v=4HLDaBGdnLc">official teaser</a></li>
+            <li><a href="https://www.youtube.com/watch?v=Sz1swnk0dgA">jedi coaching sessions trailer</a></li>
+        </ul>
+        <br>
+
+        </article>
+        <br>
+        </region>
+        
+
+        <region id="uwagi-zebrane">
+        <article>
+            <h3><a href="#uwagi-zebrane" target="_self"># uwagi zebrane</a></h3>
+
+            <div> <!-- urocze pierwsze uruchomienie -->
+            <header>✱ urocze pierwsze uruchomienie</header>
+            <p>pierwsze uruchomienie jest kłopotliwe ze względu na „ea app”, który ma problem z aktualizacją z czerwonej do niebieskiej wersji; stąd też za pierwszym razem prawie na pewno gra utknie właśnie na tym programie, gdzie należałoby ceremonialnie spróbować uruchomić grę, co pewnie i tak się nie uda, a później powtórzyć raz jeszcze z pomocą steama;</p>
+            <p>przy okazji „ea app” ma swego rodzaju tendencję do odmawiania uruchomienia gry ze względu na niewłaściwą konfigurację własną; pomaga na to wyczyszczenie pamięci podręcznej programu albo też downgrade sterownika graficznego; jak by nie było zdecydowanie rozwiązaniem nie jest uruchamianie gry z uprawnieniami administratora, jak niektórzy sugerują;</p>
+            <blockquote>It's a driver issue. This game can only run correctly with older NVIDIA drivers. If you find a driver from 2024, all the problems will disappear. Nvidia has broken everything they could in the last two years.<br><a href="https://steamcommunity.com/app/1774580/discussions/0/832747723340065182/">🌐 exception_access_violation 0x00007ff6d779fb20</a></blockquote>
+            <blockquote>Right click the game in steam, go to properties and in general force the game to launch as -dx12 i have heard this has helped many with this issue.<br><a href="https://steamcommunity.com/app/1774580/discussions/0/798965318966936711/">🌐 how do i fix failed to launch game in ea app</a></blockquote>
+            <blockquote>what helped me was going to where the game is installed. For me it was: G:\SteamLibrary\steamapps\common\Jedi Survivor then Installer > Run Cleanup.exe & launch the game from EA app. Haven't had crash since, hope this helps<br><a href="https://steamcommunity.com/app/1774580/discussions/0/572666383658137020/">🌐 my game crash</a></blockquote>
+            <ul>
+                <li><a href="https://steamcommunity.com/app/1774580/discussions/0/571541859030211696/">ea launcher/app? no thanks. remove it, i buy it.</a></li>
+                <li><a href="https://steamcommunity.com/app/1774580/discussions/0/755052765483679471/">“an error on our end caused the launch to fail. try again a little later”</a></li>
+            </ul>
+            <br>
+            <p>gdy już gra się uruchomi poprawnie to czeka na nas kompilacja szaderów; jednak cóż z tego skoro gra kompiluje je nadal na bieżąco w trakcie rozgrywki, co wprowadza drobne przycięcia, których wstępna kompilacja ma niby uniknąć;</p>
+            <ul>
+                <li><a href="https://www.pcgamingwiki.com/wiki/Star_Wars_Jedi%3A_Survivor#Shader_compilation_stutter">shader compilation stutter</a></li>
+            </ul>
+            <br>
+            <p>dalej gra raczy nas umową użytkownika, przewijalnym ostrzeżeniem o padaczce fotogennej, informacją o tym iż zalecanym jest kontroler do grania, wstępną niepomijalną konfiguracją, i ostatecznie filmikiem wprowadzającym;</p>
+            <p>ten ostatni może nam uświadomić, że brakuje dźwięku; wystarczy wtedy uruchomić grę ponownie, aczkolwiek może być to nieco szersza kwestia do rozwiązania, związana tylko z konkretnymi postaciami; wtedy wystarczy jedynie chwilę poczekać w menu pauzy aż gra załaduje, co jest jej potrzebne;</p>
+            <blockquote>I am playing on PC and found the only way to trigger missing or lagging sounds is to hit the Escape-Key to pause the game, what seems to give the game time to load and play the sounds directly after ending pause.<br><a href="https://steamcommunity.com/app/1774580/discussions/0/682990478470323946/">🌐 no dialogue sound</a></blockquote>
+            <p>przynajmniej protona można zmusić do odpowiednich działań: <span class="code-line">WINEALSA_CHANNELS=2 PULSE_LATENCY_MSEC=60</span>;</p>
+            <ul>
+                <li><a href="#linux-brak-dźwięku">🔗 brak dźwięku</a></li>
+                <li><a href="https://steamcommunity.com/app/1774580/discussions/0/5294588689499477390/">no sound after alt+f4</a></li>
+                <li><a href="https://forums.ea.com/discussions/star-wars-jedi-survivor-en/voices-sound-not-working-properly/10705769">voices sound not working properly</a></li>
+                <li><a href="https://www.youtube.com/watch?v=pjgHtp4MzoQ">fix audio/sound not working, crackling/distorted/popping audio issue pc</a></li>
+                <li><a href="https://frondtech.com/fix-star-wars-jedi-survivor-no-sound-or-audio-bug/">fix jedi survivor no sound or audio bug</a></li>
+                <li><a href="https://www.reddit.com/r/StarWarsJediSurvivor/comments/14tc06r/no_sound_coming_from_calbd/">no sound coming from cal+bd</a></li>
+                <li><a href="https://forums.ea.com/discussions/star-wars-jedi-survivor-en/re-severe-audio-stuttering---jedi-survivor/10664579">severe audio stuttering</a></li>
+                <li><a href="https://bbs.archlinux.org/viewtopic.php?id=307867">no audio in games with no documentation of issues</a></li>
+            </ul>
+            <br>
+            <p>z biegiem czasu okazuje się iż istnieje pewien kłopot z synchronizacją osiągnięć między „ea app” a klientem steam, lecz nie jest to nic nowego; niemniej, osiągnięcia uznawane kilka dni po czasie ich uzyskania nie sprawiają dobrego wrażenia;</p>
+            <br>
+            <br>
+            </div>
+
+            <div> <!-- wybitnie wspaniała wydajność -->
+            <header>✱ wybitnie wspaniała wydajność</header>
+            <p>gra wykazuje liczne uchybienia techniczne, które można by rozwiązać odpowiednim podejściem do konfiguracji silnika gry (skądinąd jest to również problem poprzedniej części), takie jak:</p>
+            <ul>
+                <li>przycinanie się animacji i ruchu kamery (stutter), na co nie pomaga ograniczenie liczby klatek</li>
+                <li>niemożliwe do wyłączenia na wysokich ustawieniach graficznych rozmycie w ruchu, winieta, efekty głębi (depth of field)</li>
+                <li>przycinanie się podczas gry ze względu na kompilację szaderów dla nowych efektów graficznych pomimo wstępnego przetwarzania</li>
+                <li>dlss potrafi nie działać w trybie okna bez ramki (exclusive fullscreen) albo po zmianie trybu okna</li>
+                <li>śledzenie promieni (ray tracing) prowadzi do awarii gry (crash)</li>
+                <li>w ramach okluzji (occlusion culling) pojawiają się migające białe klatki obrazu</li>
+                <li>obraz może być wiecznie rozmyty dzięki używaniu taa (temporal anti-aliasing)</li>
+                <li>tekstury mogą ładować się niepoprawnie – być rozmyte albo bez szczegółów głębi (level of details)</li>
+                <li>gra jest podatna na wyciek pamięci vram-u, bo nie określono limitu na strumieniowane dane (streaming pool)</li>
+                <li><a href="https://www.pcgamingwiki.com/wiki/Star_Wars_Jedi:_Survivor">🌐 pcgamingwiki</a></li>
+            </ul>
+            <br>
+            <p>optymalizacja gry jest tak dobra, że samodzielnie należało by ją poprawić by móc grać komfortowo (klatkaż wesoło sobie skacze w granicach 30-90 fps-ów, a ogółem potrafi się zaciąć w losowych momentach jakby zupełnie bez powodu); jakkolwiek jedna z aktualizacji (2024-09-12) usuwająca drm denuvo ma w zamiarze poprawić wydajność, tudzież użycie fsr/dlss/xess wydaje się działać, o tyle nie jest jasnym na ile w rzeczywistości to cokolwiek zmienia, a na ile przesuwa akcent obciążeniowy na inne aspekty;</p>
+            <ul>
+                <li><a href="https://steamcommunity.com/games/1774580/announcements/detail/4585316047305549347">patch 9 details – update 2024-09-12</a></li>
+                <li><a href="https://steamcommunity.com/app/1774580/discussions/0/572666383658156565/">used the frame gen and upscaling/dlss whatever. seems to help</a></li>
+            </ul>
+            <br>
+            <p>nie bez znaczenia jest też to iż pierwsza planeta-hub, czyli koboh, jest najbardziej wymagająca wydajnościowo; jeżeli koboh wariuje z klatkażem, to inne planety będą pod tym kątem stabilne;</p>
+            <blockquote>Koboh is very heavy in loading and the only place I get FPS drops in the entire game on my 5070<br><a href="https://steamcommunity.com/app/1774580/discussions/0/596282483724744965/">🌐 optimization</a></blockquote>
+            <br>
+            <p>odnośnie tego tematu gracze wymieniają się wyraźnie złymi poradami, takimi jak: uruchomienie gry z uprawnieniami administratora, zaktualizowanie biosu; ogółem: wszystko, co wydaje się mieć jakiś związek z problemem, lecz nie wiadomo kto jest ojcem kogo;</p>
+            <ul>
+                <li><a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3037550701">performance fix that worked for me</a></li>
+                <li><a href="https://steamcommunity.com/sharedfiles/filedetails/?id=2975471422">detailed low fps fix</a></li>
+                <li><a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3646688790">perfomance and optimization guide for low end pc devices</a></li>
+                <li><a href="https://steamcommunity.com/app/1774580/discussions/0/4520009057927021443/">solution to memory leaks if anyone is experincing it</a></li>
+                <li><a href="https://steamcommunity.com/app/1774580/discussions/0/761806632715820802/">vram memory leak</a></li>
+            </ul>
+            <br>
+            <p>dlatego też lepiej było by skorzystać z doświadczenia ludzi, którzy spędzili godziny nad tą grą by nieco złagodzić jej wymagania; w szczególności użycie następujących trzech modyfikacji znacząco poprawia optymalizację: „ultimate engine tweaks”, „eclipse steam deck graphics optimization”, „lean performance optimization”; ich zainstalowanie polega na przekopiowaniu plików;</p>
+            <ul>
+                <li><a href="https://www.nexusmods.com/starwarsjedisurvivor/mods/422">ultimate engine tweaks</a></li>
+                <li><a href="https://www.nexusmods.com/starwarsjedisurvivor/mods/465">eclipse steam deck graphics optimization</a></li>
+                <li><a href="https://www.nexusmods.com/starwarsjedisurvivor/mods/527">lean performance optimization</a></li>
+                <li><a href="#linux-optymalizacja">🔗 optymalizacja modami</a></li>
+            </ul>
+            <br>
+            <p>istnieją też mody naprawiające hdr, poprawiające ragdoll, czy zamieniające cala kestisa na model żeński (w tym porno-mody);</p>
+            <ul>
+                <li><a href="https://www.nexusmods.com/starwarsjedisurvivor/mods/506">hdr ghosting fix for frame generation</a></li>
+                <li><a href="https://www.nexusmods.com/starwarsjedisurvivor/mods/539">improved ragdoll</a></li>
+                <li><a href="https://www.nexusmods.com/starwarsjedisurvivor/mods/491">camera and animation stutter fix</a></li>
+                <li><a href="https://www.nexusmods.com/starwarsjedisurvivor/mods/442">enemy randomizer</a></li>
+                <li><a href="https://www.nexusmods.com/starwarsjedisurvivor/mods/299">optimization guide</a></li>
+                <li><a href="https://www.nexusmods.com/starwarsjedisurvivor/mods/476">ultimate swjs pak engine tweaks</a></li>
+                <li><a href="https://www.nexusmods.com/starwarsjedisurvivor/mods/540">jedi survivor tweaks</a></li>
+                <li><a href="https://www.nexusmods.com/starwarsjedisurvivor/mods/468">gal kestis - fugitive from the empire</a></li>
+                <li><a href="https://www.nexusmods.com/starwarsjedisurvivor/mods/339">female voice overhaul</a></li>
+            </ul>
+            <br>
+            <br>
+            </div>
+
+            <div> <!-- niekoniecznie potrzebne nowości -->
+            <header>✱ niekoniecznie potrzebne nowości</header>
+            <p>nowością środowiskową są jamy ze smołą, które to pochłaniają postać z biegiem czasu i uniemożliwiają bieganie;</p>
+            <p>inną nowością w ramach rozgrywki jest pył z koboh, w którym nie można zbyt długo przebywać;</p>
+            <p>można szybować w przestworzach z pomocą relterów dopóki się nie zmęczą czyli nie za długo, chyba że się znajdzie dodatkowy podmuch wiatru;</p>
+            <p>wierzchowce nekko mają różny kolor sierści, a unikalnym jest albinos;</p>
+            <p>postawa z blasterem to novum przydająca się zwłaszcza na oddalonych strzelców;</p>
+            <p>ze szturmowcami można porozmawiać dokładnie raz przed polem ochronnym; w praktyce nieco bezcelowe skoro wyłącza to tylko jedną barierę z dwóch, żeby i tak można było się za nie dostać dopiero w odpowiednim momencie fabularnym;</p>
+            <p>w przypadku jednej postaci pojawiają się dukaizmy (wymieniające samogłoski na „u”); cal wydaje się ich używać niemalże naturalnie; postać tę można absolutnie pominąć, bo jej jedyną funkcją jest wprowadzenie muzyki do kantyny; tak czy inaczej, zwraca to na się uwagę;</p>
+            <details class="accordion">
+                <summary>ashe javi grału w kantynie na koboh</summary>
+                <figure>
+                    <source srcset="./20260604214348_1.jpg" type="image/jpg">
+                    <img loading="lazy" srcset="./20260604214348_1.jpg" alt="20260604214348_1.jpg">
+                    <figcaption>baza danych – ashe javi</figcaption>
+                </figure>
+            </details>
+            <p>sposób blokowania przejść w świecie gry jest dość sztuczny; w przypadku jednej ścieżki pojawia się wielki pan ptaszor usadowiony na gałęzi, który uniemożliwa podciągnięcie się do niej; gdy przybędzie się w to miejsce przedwcześnie niż gra przewiduje to nic się nie stanie, ale gdy przybędziemy wtedy gdy misja nas kieruje w to miejsce, to pan fruwacz odleci gdy nas zobaczy; co więcej, cal skomentuje ten widok za pierwszym razem, lecz nie za drugim;</p>
+            <br>
+            <br>
+            </div>
+
+            <div> <!-- fabularna widowiskowość -->
+            <header>✱ fabularna widowiskowość</header>
+            <p>mamy tutaj tylko sześć planet, lecz są one dość różnorodne;</p>
+            <p>pod kątem widowiskowości misje fabularne są całkiem zmyślne; osiągają to poprzez swego rodzaju monumentalizm: wielki statek lucrehulk, wielkie wiertło, zniszczony księżyc czy obserwatorium w przestworzach — każda lokacja skupia się na jakiejś nowej możliwości w rozgrywce;</p>
+            <p>zniszczony księżyc to na swój sposób urokliwa lokacja, jakkolwiek monotematyczna;</p>
+            <figure>
+                <source srcset="./20260607210838_1.jpg" type="image/jpg">
+                <img loading="lazy" srcset="./20260607210838_1.jpg" alt="20260607210838_1.jpg">
+                <figcaption>wielki laser orbitalny z daleka na zniszczonym księżycu koboh</figcaption>
+            </figure>
+            <p>obserwatorium w przestworzach oczywiście opiera się o skakanie wte i we wte;</p>
+            <p>fabularnie mamy pewien kłopot; gra decyduje iż będziemy przegrywać walkę w scence przerywnikowej i nawet można jej to wybaczyć, jednak zdarza się to dwukrotnie w przypadku tej samej postaci, a potem jeszcze raz dla kolejnej; jako że mamy tu do czynienia tylko z kilkoma bossami stanowiącymi poważne wyzwanie to sprawia to wrażenie jakoby bycie fajtłapą było dla cala domyślnym stylem życia;</p>
+            <p>po kolejnych wydarzeniach fabularnych możemy powrócić w to samo miejsce by odkryć echa wydarzeń, które dodają kontekst co do mentalności drugiej strony; nie liczą się one do kolekcji i nie są zaznaczone na mapie;</p>
+            <p>gdy rayvis wypowiada dobitnie „słyszałem cię” oraz „nie jestem ci nic winny, jedi” to wiadomo od razu iż ma on rozum i godność człowieka; znacznie lepsza postać niżeli rozgoryczony dagan gera (który podświadomie boi się być ocenionym) czy oportunistyczny bode akuna (który od samego początku sprawia wrażenie kogoś kto zdradzi); rayvis po prostu chce zostać zwolniony ze swej przysięgi i zginąć śmiercią wojownika; tymczasem uczyniono z niego na swój sposób bossa pobocznego acz obowiązkowego;</p>
+            <br>
+            <br>
+            </div>
+
+            <div> <!-- kantyna w centrum rozwoju -->
+            <header>✱ kantyna w centrum rozwoju</header>
+            <p>kantyna i jej postaci to jedna z najlepszych cech gry; barman ma więcej sensu niż można by oczekiwać od droida, a miejsce to pustoszejące pod koniec fabuły wprawia we wrażenie straty;</p>
+            <p>kantyna i wioska w której się znajduje to centrum zadań pobocznych, elementów do kolekcjonowania, ulepszeń z tym związanych;</p>
+            <details class="accordion">
+                <summary>duszna atmosfera zaściankowej speluny</summary>
+                <figure>
+                    <source srcset="./20260608233207_1.jpg" type="image/jpg">
+                    <img loading="lazy" srcset="./20260608233207_1.jpg" alt="20260608233207_1.jpg">
+                    <figcaption>zwyczajowa atmosfera kantyny</figcaption>
+                </figure>
+            </details>
+            <p>z postacią łowczyni wiąże się zadanie poboczne polowania na legendarne zwierzęta; kłopot z nią jest taki iż można je szybciej upolować niż będzie chętna nam o nich opowiedzieć, zwłaszcza że wydaje się iż pełna kantyna wydaje się ją w tym spowalniać;</p>
+            <p>caij vanda zleca nam pozbycie się łowców nagród i oferuje w zamian unikalne modyfikatory do blastera (rodzaj strzału); wątek ten również się niecodłuży, bo dość późno się zaczyna;</p>
+            <details class="accordion">
+                <summary>ogłuszenie blasterem</summary>
+                <figure>
+                    <source srcset="./20260617020750_1.jpg" type="image/jpg">
+                    <img loading="lazy" srcset="./20260617020750_1.jpg" alt="20260617020750_1.jpg">
+                    <figcaption>rodzaj strzału blastera – ogłuszenie</figcaption>
+                </figure>
+            </details>
+            <p>w jaskiniach phon'qi znajdziemy ulepszenie mapy pokazujące elementy do zbierania; strzałkę elektryczną – w glistym przestworze na górskim wzniesieniu; ulepszoną linkę do wspinaczki otrzymamy goniąc za rayvisem na zniszczony księżyc koboh; grobowiec wędrowca zaś to miejsce ulepszenia mapy pokazującej nam odłamki priorytu;</p>
+            <p>jednym z innych ulepszeń jest przejmowanie zniszczonych droidów przez co się rozumie iż trzeba je najpierw podniszczyć przez walkę; a że trzeba tak bić pana droida do 3/4 zdrowia, to czyni to taką możliwość nieco nieprzydatną;</p>
+            <br>
+            <br>
+            </div>
+
+            <div> <!-- buńczuczna mapa -->
+            <header>✱ buńczuczna mapa</header>
+            <p>mapa to nadal trochę rak odnośnie sterowania; łatwiej byłoby przesuwać kursor po mapie niżeli przesuwać mapę by ustawić kursor w odpowiedniej pozycji;</p>
+            <p>menu szybkiej podróży nie pozwala na obracanie tejże, co powoduje iż łatwiej jest najpierw dodać na niej znacznik w zwyczajowym widoku, a potem wybrać najbliższe miejsce mocy z widoku szybkiej podróży;</p>
+            <p>mapa teoretycznie oferuje możliwość podglądu lokacji na innym jej poziomie, głównie po to, by zobaczyć, co znajduje się niżej lub wyżej; w praktyce jednak nie jest to możliwe z dowolnego miejsca w lokacji; co więcej, gdy się znajdziemy na najniższym poziomie, to obracanie tejże zachowuje się dziwacznie – pod jednym kątem jest hiperprzybliżone a pod innym domyślny widok jest oddalony względem zwyczajowego przybliżenia;</p>
+            <p>ciekawostka: gigantyczny promień lasera orbitalnego na zniszczonym księżycu zaznaczany jest na mapie w czasie rzeczywistym gry; jedna dobra rzecz, którą można powiedzieć o tej mapie;</p>
+            <p>nie zawsze bd-1 jest z nami, nie zawsze mapa jest dostępna do oglądania, niemniej nie trwa to długo;</p>
+            <br>
+            <br>
+            </div>
+
+            <div> <!-- osobliwości menu ustawień -->
+            <header>✱ osobliwości menu ustawień</header>
+            <p>w ustawieniach można wyłączyć obrażenia od upadków czy też włączyć „tryb bezpieczny dla arachnofobów”;</p>
+            <p>lista schematu sterowania zawiera zarówno klawiszologię pecetową jak i tę na pada; co więcej, czułość sterowania myszą na tej planszy ustawień jest bezsensownie mała; do tego nie pokazuje ona interaktywnego paska przewijania, dostępnego w reszcie menu; a przy okazji znajduje się to w sekcji „ułatwienia dostępu”;</p>
+            <p>nie można przypisać tego samego klawisza do różnych akcji (takich jak parowanie i unik); tyle że można bo dotyczy to grup akcji, tj. można ten sam klawisz użyć dla jednej interakcji walki i jednej interakcji innego typu; raczej nietypowe rozwiązanie, aczkolwiek ma jakiś sens;</p>
+            <br>
+            <br>
+            </div>
+
+            <div> <!-- rozgrywka najeżona usterkami -->
+            <header>✱ rozgrywka najeżona usterkami</header>
+            <p>o ile występują tu jakieś podstawowe tutoriale, o tyle więcej można się dowiedzieć z listy zdolności danej postawy miecza świetlnego; pod opcją treningu rozumie się proste trzyczęściowe minisamouczki pokazujące podstawową walkę; zaawansowanej walki wynikającej ze zdobywanych umiejętności do postaw miecza świetlnego należy nauczyć się samodzielnie;</p>
+            <p>rozwój postaci opiera się zasadniczo o umiejętności wybranej postawy miecza świetlnego, lecz tylko kilka z nich jest rzeczywiście użytecznych w chaosie walki; o wielu można zapomnieć, a na klawiaturze jest nieco niewygodne skoro moc została przypisania do klawiszy 1, 2, 3, których należy używać w połączeniu z alt, ctrl, space;</p>
+            <p>po zbiciu postury dochodzi do zachwiania, co działa również na cala;</p>
+            <p>gdy cal kopnie przeciwnika znajdującego się przy krawędzi skarpy to aż z wrażenia i on sam potrafi z niej spaść; nie można jednak tego dokonać po prostu wymachując podstawowym atakiem miecza;</p>
+            <p>postawa jeźdźca nekko to zawsze postawa z blasterem, nawet jeżeli nie została ona wybrana jako jedna z dwóch aktywnych;</p>
+            <p>w kilku misjach i na jeddzie mamy okazję wydawać polecenia towarzyszowi; jedną z nich jest merris; merris potrafi uzupełniać cala w walce, zwłaszcza jeśli chodzi o ciosy kończące; o ile w domyśle towarzyszy nam na pustyni, o tyle nie w każdym jej obszarze; w szczególności zostawia nas samych przed złotym skritonem, żeby trzeba było się z nim pojedynkować samemu;</p>
+            <p>atuty dodają bonusy do statystyk czy rozgrywki, np. dodatkowy stym do leczenia dzięki mocy przyjaźni z bd-1; zdobyć należy nie tylko same atuty lecz i miejsca na nie, bo każdy z nich zajmuje różną ilość slotów;</p>
+            <p>z upadłej maszyny bojowej at-st wychodzi szturmowiec; z drugiej strony, gdy maszyna nie tyle upadnie, co zostanie zniszczona, to często towarzyszy temu pośmiertny dźwięk stąpania przez jakiś czas; maszyny szturmowe stają się w pewnym momencie częścią patroli na pustyni – wydaje się jakby patrole zwiększały swą trudność z biegiem postępów fabularnych, i w istocie przeciwnicy są wymieniani na bardziej odpornych;</p>
+            <br>
+            <p>cal nie podciąga się automatycznie podczas wspinaczki by wejść na skarpę;</p>
+            <p>opuszczanie się w dół stojąc nad krawędzią jest utrudnione jako że należy zbliżyć się niebezpiecznie blisko momentu, gdy się po prostu spadnie w przepaść; bardziej intuicyjnym wydaje się wyskoczenie by upaść w dół i potem się zaczepić;</p>
+            <p>zdarza się co jakąś chwilę trochę wertykalności, chociażby ze względu na wspinaczkę, lecz przede wszystkim jest ona uskuteczniana by nałogowi zbieracze mieli co robić;</p>
+            <p>większość wspinaczki działa bez zarzutu, jednak cal potrafi się zaklinować podczas chodzenia po konarze drzewa; trzeba sobie pomóc skakaniem jak pawian; przeciwnicy również potrafią zaklinować się na nierównościach terenu; nie ma jednak zbyt wiele miejsc dających możliwość ku temu;</p>
+            <p>skoro mamy półotwarty świat przemierzany przez npc-ów, to zdarzają się scenki rodzajowe gdzie wystarczy poczekać by przeciwnicy się pozabijali nawzajem; zwierzęta również walczą same ze sobą; do tego zdarzają się dość często rozmówki pomiędzi npc-ami; większość z nich to głupawe odzywki pomiędzy droidami; rozmawiających npc-ów słychać w tle, lecz nie zawsze są do tego napisy, bo pojawiają się one dopiero w pewnej odległości od źródła dźwięku;</p>
+            <p>w świecie gry widać wyraźnie niebieskie pionowe słupy mocy wskazujące na miejsca mocy do odpoczynku;</p>
+            <p>miejsce mocy działa jak ognisko w solsiech, to samo dotyczy „upadania” doświadczenia po zgonie;</p>
+            <br>
+            <p>podczas rozmów pojawia się czasem koło dialogowe zawsze w dwoma wyborami, ale po krótkim interwale gra wybiera losowo za nas; jest to realizowane graficznie w dość leniwy sposób jako animacja; do tego istnieje bodajże z osiem takich przypadków by można było z tego koła skorzystać, gdzie tylko dwa wybory mają jakieś znaczenie, lecz i tak można do nich powrócić jak gdyby rozmowa się nie odbyła;</p>
+            <p>wariantem koła dialogowego jest używanie mocy w trakcie rozmów, z czego można równie rzadko skorzystać; w szczególności spotykając anachoretkę w dość specyficznym miejscu można zmusić ją do porzucenia swych planów sprzedania artefaktów; rzecz w tym, że na nic to nie wpływa;</p>
+            <figure>
+                <source srcset="./20260611025027_1.jpg" type="image/jpg">
+                <img loading="lazy" srcset="./20260611025027_1.jpg" alt="20260611025027_1.jpg">
+                <figcaption>możliwość wpłynięcia mocą na decyzję szturmowca</figcaption>
+            </figure>
+            <p>rozmawiając z napotkanymi npc-ami możemy otrzymać od nich zadanie poboczne, co w istocie nie ma znaczenia dla samego zadania; pod tym kątem jest jak w gothicu: można znaleźć neka szybciej niż otrzymać zadanie na jego znalezienie;</p>
+            <p>podczas przeglądania oferty kupca inni npc-e prowadzą ze sobą rozmowy;</p>
+            <br>
+            <p>z pomocą droida bd-1 można korzystać z wizjera, który działa jak luneta; można w tym trybie dodawać znaczniki na mapę, co nie jest szczególnie potrzebne bo nie do każdego miejsca można dobrnąć na danym etapie gry; to, czego gra nie dopowiada, to to iż styl wizjera zależy od dopasowania części głowowej pana robocika;</p>
+            <p>swe pięć minut otrzymała minigra nazwana holotaktyką; holotaktyka to losowa minigra opierająca się o znajomość mocnych i słabych stron napotykanych przeciwników; dobieramy ludzików a one ze sobą walczą samodzielnie; dodatkowo ma to cechę karcianek albowiem przenoszą się tu niewykorzystane punkty bitewne do następnej tury; nowe jednostki dodajemy skanując je w świecie gry za pomocą droida bd-1; w praktyce ma się wrażenie iż to trochę hazard;</p>
+            <p>obecność łowców nagród zwiastowana jest brakiem zwyczajowych przeciwników w pobliżu; w przypadku głównych łowców oznacza to tudzież blokowanie drogi do pewnych obszarów lokacji; trzeba się z nimi najpierw uporać i załadować lokację od nowa by móc swobodnie oddawać się wesołemu plądrowaniu;</p>
+            <p>przeciwnicy po prostu dają się zabijać na granicach obszaru dla nich dostępnego – jak w solsiech po prostu głupieją i dają się dość swobodnie bić po kasku;</p>
+            <p>istnieją przedmioty przyczepione do liny, które służą do zahaczenia ich na innym obiekcie; kłopot w tym iż można je przyciągnąć do się mocą z zewnątrz budynku, czyli tak by przenikały przez ściany;</p>
+            <br>
+            <br>
+            <p>szczeliny mocy (force tears) to zabawa w cierpliwość; mamy ich dwa typy: walki na arenie i skakanie jak w mario;</p>
+            <p>w tych pierwszych przydaje się przekobacenie przeciwników na swą stronę, bo inaczej walka się dłuży jako że trzeba uważać na innych przeciwników, którzy atakują wraz z innymi jednocześnie; przykładowo „pęknięta złośliwość” zmusza nas do walki z dwoma rancorami naraz;</p>
+            <p>te drugie to zaawansowany platformer, chociaż wyzwalacze potrafią się zablokować; w „pękniętej determinacji” kładka się czasem nie obraca, a bez tego nie ma jak kontynuować dalej, przez co trzeba powtarzać sekwencję na nowo; w „rozdartym pędzie” ścieżka do celu nie jest oczywista, trzeba skojarzyć iż zielone bariery pozwalają na wybicie się do góry, czego rozgrywka wcale nie uczy; z kolei „pęknięta zwinność” w środku wyzwania stawia kładkę, na której trzeba spędzić chwilę czasu, pomimo tego że się ona szybko zawali pod ciężarem postaci, mamy zatem tylko jedną szansę na cały przebieg, by wykonać czynność która jest nieco niewygodna w sterowaniu;</p>
+            <ul>
+                <li><a href="#force-tears">🔗 wyzwania mocy</a></li>
+                <li><a href="https://www.reddit.com/r/StarWarsJediSurvivor/comments/144amlh/fractured_momentum_complete/">fractured momentum complete</a></li>
+                <li><a href="https://www.youtube.com/watch?v=AMFRRMWm9qA">fractured agility force tear</a></li>
+            </ul>
+            <blockquote>I feel like this is a perfect example of putting content into a game that wasn't tested by an average player.  I've tried about 20 times now and I can never get the timing right. Half of my fails are due to the camera angle or Cal suddenly wall running in the wrong direction.<br><a href="https://www.youtube.com/watch?v=uj7QK-nbgGg">🌐 fractured determination force tear</a></blockquote>
+            <br>
+            <p>udając się na szczyt zniszonej osady można się zaciąć – trzeba aktywować komin termiczny używając sprzęgu kul z pobliskiej komnaty medytacyjnej kierując laser na tenże;</p>
+            <ul>
+                <li><a href="https://www.reddit.com/r/StarWarsJediSurvivor/comments/1352wbz/help_stuck_in_koboh_devastated_settlement_puzzle_1/?tl=pl">pomocy! utknąłem w koboh - zniszczona osada, zagadka 1</a></li>
+                <li><a href="https://forums.ea.com/discussions/star-wars-games-discussion-pl/jedi-ocala%C5%82y-zniszczona-osada/10708939">jedi ocalały zniszczona osada</a></li>
+                <li><a href="https://www.ppe.pl/poradniki/316110/star-wars-jedi-survivor-ocalaly-zniszczona-osada-skrzynie-esencje-skarby-baza-danych-szczelina-mocy.html">zniszczona osada: skrzynie, esencje, skarby, baza danych, szczelina mocy</a></li>
+                <li><a href="https://www.youtube.com/watch?v=bVczx3BkhFs">#38 kamienne iglice</a></li>
+            </ul>
+            <br>
+            <p>ogółem, mimo wszystkich niedociągnięć, najlepszym elementem gry jest system walki; bo można złapać bossa mocą i po prostu zrzucić go w przepaść; poza tym, istnieją tu drobne ciekawostki o których można nie wiedzieć;</p>
+            <ul>
+                <li><a href="https://www.youtube.com/watch?v=ZdkKWCKsJFI">almost 100 hours to find you can do this in star wars jedi survivor! amazing secrets & rewards</a></li>
+                <li><a href="https://steamcommunity.com/app/1774580/discussions/0/572665855469562107/">no combat arena like fallen order already makes this game sooooo boring</a></li>
+                <li><a href="https://steamcommunity.com/app/1774580/discussions/0/572666202100436486/">best game combat in years but no way to use it</a></li>
+                <li><a href="https://steamcommunity.com/app/1774580/discussions/0/572666202100438245/">hot take</a></li>
+                <li><a href="https://steamcommunity.com/app/1774580/discussions/0/3828665650638856448/">are there multiple endings?</a></li>
+                <li><a href="https://steamcommunity.com/app/1774580/discussions/0/5294588689490663251/">so… is the ‘1’ key permabound to wrenching grasp?</a></li>
+                <li><a href="https://www.youtube.com/watch?v=u_VUdbT4jHI">developers knew you would try this in jedi survivor</a></li>
+                <li><a href="https://www.youtube.com/watch?v=x17253qJezw">secret jedi survivor dark side cal abilities!</a></li>
+                <li><a href="https://www.youtube.com/watch?v=8kz5D6p2D0c">characters and voice actors (full cast)</a></li>
+            </ul>
+            <br>
+            <br>
+            </div>
+
+            <div> <!-- uchybienia nie tylko graficzne -->
+            <header>✱ uchybienia nie tylko graficzne</header>
+            <p>występują liczbe bugi związane z ciałami przeciwników; te specyficzniejsze dotyczą pomiotów haxionu; być może dlatego iż potrafią oni całkiem zręcznie unikać ataków, nieustępliwie ostrzeliwać z blastera, a także używać granatów błyskowych, co czyni ich najbardziej irytującymi w całej grze;</p>
+            <p>ciała bossów znikają po walce albo niefortunnie lewitują; w szczególności kwasowce wydają się być podatne na pośmiertne zawieszenie w powietrzu, tudzież przesuniętą animację kończącą;</p>
+            <details class="accordion">
+                <summary>pan kwasowiec, źwierz z dziczy</summary>
+                <figure>
+                    <source srcset="./20260602222027_1.jpg" type="image/jpg">
+                    <img loading="lazy" srcset="./20260602222027_1.jpg" alt="20260602222027_1.jpg">
+                    <figcaption>kwasowiec w pośmiertnym uniesieniu</figcaption>
+                </figure>
+            </details>
+            <p>przeciwnicy potrafią się zaciąć na chwilę na arenie walki gdy jeden z nich straci posturę, co prowadzi do ciosu kończącego jako następnego ataku w nich wymierzonego; zawieszają się w powietrzu albo stoją jak słup soli;</p>
+            <p>ponieważ pan skriton (skorpion) jest nieśmiertelny w trakcie przetaczania się pod ziemią, to zdarzać się może iż biedni szturmowcy będą strzelać do niego w nieskończoność, bo towarzyszące im at-st wybiło go z rytmu animacji przedwcześnie;</p>
+            <p>można się natknąć na pośmiertne kręcenie się w kółko;</p>
+            <br>
+            <p>niestety dla immersji, można natrafić na tajemnicze niewidzialne ściany w zgoła niespodziewanych miejscach; aczkolwiek trzeba się nieco postarać by na takowe natrafić;</p>
+            <p>sterowanie kadrem czasem wygląda fatalnie jako że potrafi skupiać się na pokazywaniu rozmytych elementów w tle; dodatkowo, kamera potrafi podskakiwać wesoło podczas rozmów;</p>
+            <p>w trakcie wspinaczki można natrafić na efekt przezroczystości obiektu przesłaniającego postać, jednak jest to na tyle rzadkie że wręcz unikalne;</p>
+            <p>skok ze względnie małych wysokości może kończyć się śmiercią, a podskakiwanie w szybko pędzącej windzie kończy się upadkiem;</p>
+            <p>gra zachęca by używać miecza świetlnego do rozjaśniania ciemnych miejsc, a jednak w bardzo nielicznych sytuacjach cal używa latarki; istny casus lary croft – w jej przypadku też jest to niekonsekwentne i nie ma ogólnego sensu;</p>
+            <p>w filmikach przerywnikowych cal ma zawsze niebieski miecz, a nie ten spersonalizowany;</p>
+            <br>
+            <p>w lokacji opartej o wykorzystywanie wichrów można się zablokować bo dalsza ścieżka nie jest oczywista; to jest, staje się ona bardziej jasna, gdy wykonamy akcję, która wydaje się być nie na miejscu w takiej sytuacji, jak danie się porwać strumieniowi by móc skoczyć wyżej; lekko frustrujące, bo wizualnie po prostu nie widać dalszej drogi;</p>
+            <p>niektóre drogi w lokacji stają się później zablokowane; może być to związane z obecnością w pobliżu łowcy głów, lecz niekoniecznie; co najmniej do jednego miejsca, jakie kojarzę a gdzie znajduje się element zbieractwa, nie można powrócić w zwyczajowy sposób;</p>
+            <p>kantyna ma taki zwyczaj pokazywać nam migające żółte światło przed drzwiami oznaczające wczytywanie, co jednak nie zapobiega prześwitowi w teksturach, doczytującym się na naszych oczach terenie, gdy wchodzimy do niej od strony ogrodu na dachu;</p>
+            <p>gdy stać się bardziej uważnym na grafikę, można dostrzeć takie cuda jak krzak znikający z bliskiej odległości a widoczny z daleka;</p>
+            <details class="accordion">
+                <summary>osobliwości roślinne z dali i bliży</summary>
+                <figure>
+                    <source srcset="./20260602220105_1.jpg" type="image/jpg">
+                    <img loading="lazy" srcset="./20260602220105_1.jpg" alt="20260602220105_1.jpg">
+                    <figcaption>roślina z bliska</figcaption>
+                </figure>
+                <figure>
+                    <source srcset="./20260602220110_1.jpg" type="image/jpg">
+                    <img loading="lazy" srcset="./20260602220110_1.jpg" alt="20260602220110_1.jpg">
+                    <figcaption>roślina z daleka</figcaption>
+                </figure>
+            </details>
+            <p>z innej strony wodospady na które można się natknąć wyglądają całkiem ładnie i są dość różnorodne;</p>
+            <figure>
+                <source srcset="./20260602220549_1.jpg" type="image/jpg">
+                <img loading="lazy" srcset="./20260602220549_1.jpg" alt="20260602220549_1.jpg">
+                <figcaption>wodospad w lesie</figcaption>
+            </figure>
+            <p>na dwóch filmikach pojawiają się uciekające zakapturzone dzieci, czyli jawowie, których można nawet zwerbować do osady, lecz ubrania dwóch z nich nieprawnie się renderują, są przesunięte względem modelu ciała;</p>
+            <details class="accordion">
+                <summary>biedni jawowie z chorobą lokomocyjną</summary>
+                <figure>
+                    <source srcset="./20260614030102_1.jpg" type="image/jpg">
+                    <img loading="lazy" srcset="./20260614030102_1.jpg" alt="20260614030102_1.jpg">
+                    <figcaption>jawowie we wiosce</figcaption>
+                </figure>
+            </details>
+            <p>niektóre domyślnie ocieniowane tekstury są wyraźnie przaśne bo wyróżniają się na tle swego otoczenia zmniejszoną jakością, a w opcjach nie można wybrać rozdzielczości przeskalowanej do ekranu;</p>
+            <br>
+            <br>
+            </div>
+
+            <div> <!-- kleptomania albo kolekcjonowanie -->
+            <header>✱ kleptomania albo kolekcjonowanie</header>
+            <p>można się bawić w typowe zbieractwo dla fanów lęku przed przemijaniem (fomo); poza licznymi dyskami danych, zwojami z jedhy, torebkami nasionnymi do ogrodu, krążkami łowców głów, rybami akwariowymi, skanami holotaktycznymi, czy utworami muzycznymi, przede wszystkim mamy 100 odłamków priorytu rozsianych po wszystkich lokacjach, z czego niektóre z nich bywają złośliwe z różnych powodów; zajmowanie się tym na 100 % jest ogółem stratą czasu, bo jakkolwiek pierwsze 30 elementów daje nam dostęp do ulepszeń, o tyle reszta to wyłącznie kosmetyka;</p>
+            <p>w ramach kolekcjonowania ryb pojawia się postać typowego fanatyka wędkarstwa;</p>
+            <ul>
+                <li><a href="#ryby-akwariowe">🔗 ryby akwariowe</a></li>
+            </ul>
+            <br>
+            <p>po drugiej walce z wielkim antagonistą daganem derą, czyli w połowie gry, uzyskujemy możliwość zaliczania lokacji na 100 %;</p>
+            <ul>
+                <li><a href="https://www.reddit.com/r/StarWarsJediSurvivor/comments/1459z06/at_what_point_in_the_game_can_i_100_all_planets/">at what point in the game can i 100% all planets?</a></li>
+                <li><a href="https://www.reddit.com/r/StarWarsJediSurvivor/comments/1cpbks6/how_long_did_it_take_you_to_100_the_game/">how long did it take you to 100% the game?</a></li>
+                <li><a href="https://www.gameslearningsociety.org/what-happens-when-you-get-100-on-jedi-survivor/">what happens when you get 100% on jedi survivor?</a></li>
+                <li><a href="https://steamcommunity.com/app/1774580/discussions/0/3828666283443830570/">finally got 100% completion/achievements</a></li>
+                <li><a href="https://steamcommunity.com/app/1774580/discussions/0/3828665650640255117/">are you gonna try to 100% jedi survivor ?</a></li>
+                <li><a href="https://mapgenie.io/star-wars-jedi-survivor/checklist">jedi survivor 100% checklist</a></li>
+            </ul>
+            <br>
+            <p>najbardziej rozsierdzającym albo zniechęcającym elementem zbieractwa są droidy-złomiarze; uciekają całkiem szybko tylko gdy nas zobaczą; nie można ich zajść od tyłu; moce na nie nie działają, nie można ich do się przyciągnąć, a strzał z blastera nic im nie robi; sensowną opcją jest użyć spowolnienia czasu, co jednak nie zawsze jest dostępne, bo droidy te nie są uznawane za przeciwników, przez co nie można wyzwolić tej umiejętności gdy ich nie ma w pobliżu; to, co w istocie działa to rzut mieczem świetlnym, jednak trzeba podejść do nich dość blisko; droid-złomiarz w obserwatorium nie ma gdzie się zakopać, więc po prostu będzie stał w miejscu, lecz to wyjątek; ewentualnie mogą się zbugować; co więcej, gdy uciekną to już się więcej nie pojawią aż do resetu przeciwników w lokacji;</p>
+            <ul>
+                <li><a href="https://forums.ea.com/discussions/star-wars-jedi-survivor-en/re-jedha-scavenger-droids/10712486">jedha scavenger droids</a></li>
+            </ul>
+            <blockquote>Just run and follow them, if you're close enough they won't burrow but will stand still shaking. No need to lock on, just swing a saber at it and donezo<br><a href="https://www.reddit.com/r/FallenOrder/comments/1dalft6/are_scavenger_droids_supposed_to_be_hard_to_kill/">🌐 are scavenger droids supposed to be hard to kill?</a></blockquote>
+            <br>
+            <p>by zebrać elementy do kolekcji w miejscach pełnych pyłu z koboh (w leśnym węźle, forrest array) wystarczy trzymać ze sobą kulę mocy; w trakcie jej trzymania cal staje się na niego odporny;</p>
+            <blockquote>If you're trying to grab all the datadisc collectibles in the Forrest Array area, you might have trouble reaching the ones surrounded by the Koboh dust. You can actually force pull and hold the orbs you use for the old tech from the High Republic, doing so will grant you an aura that will protect you from Koboh dust. Good luck getting that 100%!<br><a href="https://www.reddit.com/r/StarWarsJediSurvivor/comments/13quyh0/this_is_how_to_access_forrest_array_hazard_areas/">🌐 this is how to access forrest array “hazard” areas</a></blockquote>
+            <ul>
+                <li><a href="https://www.youtube.com/watch?v=ZTAausBzDj8">forest array - all collectibles</a></li>
+            </ul>
+            <br>
+            <p>w zniszczonej osadzie znajduje się komnata jedi, którą dość łatwo przeoczyć, bo wejście do niej umiejscowiono poniżej reszty platform i z boku góry, przez co trudno je dostrzec; do tego trzeba jeszcze skierować w to miejsce promień lasera by go wykorzystać do zniszczenia materii koboh, co oznacza krótką wycieczkę na drugą stroną górskiej zapadliny z graniami; zadziwiająco trudne jak na tę grę;</p>
+            <blockquote>Go to the other side of the canyon, use one of the lasers, point it to the platform outside the cave, go back to the cave and use BD-1.<br>
+            This isn’t a bug. I finally figured it out. There is an additional path to the (NORTH EAST) of the meditation point “Devastated Settlement”. You have to take the second bird to get to that location. BUTTTT!!!!! You have to use the 3rd laser to point at the side of the mountain to be able to clear the path in that cave. There you’ll also be able to get the collectibles. <br>
+            <a href="https://www.reddit.com/r/FallenOrder/comments/13ol72c/what_am_i_missing_about_these_devastated/">🌐 what am i missing about these devastated settlement “open paths”?</a>
+            </blockquote>
+            <blockquote>This is the first chamber, with the the two acrobatic battle droids when you first enter, where you have to force push the swivel thing in the middle to get the beam through the giant central window. You have to go across the lava pit and point another beam towards a smaller ledge below it. Then you fly across to that lower ledge and use BD to make a crystal trail into a chamber (where an acrobat droid and two B1 battle droids are waiting) to get a perk. I think that green thorny thing is a bug, because it keeps coming back no matter how many times I melt it.<br><a href="https://www.reddit.com/r/StarWarsJediSurvivor/comments/13u9gha/first_devastated_settlement_chamber/">🌐 first devastated settlement chamber</a></blockquote>
+            <ul>
+                <li><a href="https://www.youtube.com/watch?v=rP_9UKNN0kY">zagadka zniszczonej osady</a></li>
+                <li><a href="https://www.youtube.com/watch?v=mSE14To1hJI&t=1127s">koboh collectible guide</a></li>
+            </ul>
+            <br>
+            <br>
+            </div>
+
+            <div> <!-- spostrzeżenia różnorakie -->
+            <header>✱ spostrzeżenia różnorakie</header>
+            <p>poradnik taktyczny dostępny jest od samego początku gry; w tekście bazy danych znajdują się drobne literówki acz nieliczne;</p>
+            <p>odblokowywanie skrótów w ramach lokacji polega na pojawieniu się dodatkowej liny używanej jako tyrolki;</p>
+            <p>personalizacja kosmetyczna postaci nie dotyczy jedynie ubioru, lecz również brody i łepetyny;</p>
+            <p>ogniska z ogniem na jakie można się natknąć rzeczywiście parzą po kostkach;</p>
+            <p>fabuła oferuje drobne wspomnienia z przeszłości;</p>
+            <p>ruchy warg nie odpowiadają polskiemu dubbingowi;</p>
+            <p>można tu nurkować a wstrzymanie oddechu jest nieskończone;</p>
+            <p>na pustynnej planecie nie zabrakło czerwia pustynnego;</p>
+            <p>punkty autozapisu czasem bywają od siebie dość odległe;</p>
+            <p>pora dnia zmienia się wyłącznie fabularnie na noc i tylko jednokrotnie;</p>
+            <p>monolog odgrywany podczas interakcji z echem mocy można przerwać wspinaczką;</p>
+            <p>w wybranych miejscach kamera przejmuje kontrolę – jej oddalanie się jest związane z pozycją gracza na mapie a nie z wyzwalaczami skryptów;</p>
+            <p>nowa gra plus wiąże się automatycznie z trzema nowymi unikalnymi atutami;</p>
+            <details class="accordion">
+                <summary>odblokowano: nowa przygoda+</summary>
+                <figure>
+                    <source srcset="./20260618231301_1.jpg" type="image/jpg">
+                    <img loading="lazy" srcset="./20260618231301_1.jpg" alt="20260618231301_1.jpg">
+                    <figcaption>zmiany w ramach nowej przygody plus</figcaption>
+                </figure>
+            </details>
+            <p>po raz kolejny można walczyć z rancorami i oggdo, czyli dwoma przyjemniaczkami używającymi chwytów które prowadzą zawsze do śmierci;</p>
+            <p>można w tej grze spotkać bobę fetta i lorda vadera, lecz trzeba się postarać;</p>
+            <br>
+            <br>
+            </div>
+
+            <br>
+        </article>
+        <br>
+        </region>
+
+
+        <region id="kłopotliwe-osiągnięcia">
+        <article>
+            <h3><a href="#kłopotliwe-osiągnięcia" target="_self"># kłopotliwe osiągnięcia</a></h3>
+            <p></p>
+
+            <div> <!-- lista -->
+            <details class="accordion">
+            <summary>lista osiągnięć</summary>
+            <table class="achievements">
+                <colgroup>
+                    <col span="1" class="achievements--name">
+                    <col span="1">
+                </colgroup>
+                <tr>
+                    <td>rooftop duel</td>
+                    <td>hidden achievement: defeat an inquisitor</td>
+                </tr>
+                <tr>
+                    <td>for saw gerrera</td>
+                    <td>hidden achievement: break free from the grasp of the empire</td>
+                </tr>
+                <tr>
+                    <td>grab some seat</td>
+                    <td>hidden achievement: chat with the owner of the koboh cantina</td>
+                </tr>
+                <tr>
+                    <td>the past made present</td>
+                    <td>hidden achievement: release the jedi from the bacta tank</td>
+                </tr>
+                <tr>
+                    <td>survivors, we adapt</td>
+                    <td>hidden achievement: travel together with a nightsister</td>
+                </tr>
+                <tr>
+                    <td>among the masters</td>
+                    <td>hidden achievement: meet the jedi masters</td>
+                </tr>
+                <tr>
+                    <td>for the path</td>
+                    <td>hidden achievement: protect pilgrim’s sanctuary</td>
+                </tr>
+                <tr>
+                    <td>out of bedlam</td>
+                    <td>hidden achievement: rescue a friend from the bedlam raiders</td>
+                </tr>
+                <tr>
+                    <td>tanalorr bound</td>
+                    <td>hidden achievement: collect the abyss compass</td>
+                </tr>
+                <tr>
+                    <td>tragedy</td>
+                    <td>hidden achievement: defend the archive</td>
+                </tr>
+                <tr>
+                    <td>at the precipice</td>
+                    <td>hidden achievement: survive nova garon</td>
+                </tr>
+                <tr>
+                    <td>into the abyss</td>
+                    <td>hidden achievement: discover the route to tanalorr</td>
+                </tr>
+                <tr>
+                    <td>a place you could call home</td>
+                    <td>hidden achievement: complete the story</td>
+                </tr>
+                <tr>
+                    <td>han slowlo</td>
+                    <td>defeat 50 enemies under the effect of slow</td>
+                </tr>
+                <tr class="achievements--not-gained">
+                    <td>so uncivilized</td>
+                    <td>defeat 10 enemies with shots using the point blank skill</td>
+                </tr>
+                <tr class="achievements--not-gained">
+                    <td>you’ve got a friend</td>
+                    <td>direct your companions to assist in combat 10 times each</td>
+                </tr>
+                <tr class="achievements--not-gained">
+                    <td>catch!</td>
+                    <td>hit 3 enemies with a single roller mine</td>
+                </tr>
+                <tr>
+                    <td>they never saw it coming</td>
+                    <td>kill an unaware enemy 20 times</td>
+                </tr>
+                <tr class="achievements--not-gained">
+                    <td>this is canon</td>
+                    <td>push an enemy into the shattered moon mining cannon</td>
+                </tr>
+                <tr class="achievements--not-gained">
+                    <td>i’m a living legend</td>
+                    <td>defeat all legendary adversaries</td>
+                </tr>
+                <tr>
+                    <td>get down from there</td>
+                    <td>attack 20 lifted enemies</td>
+                </tr>
+                <tr class="achievements--not-gained">
+                    <td>one with the force</td>
+                    <td>avoid 50 attacks using focus sight</td>
+                </tr>
+                <tr>
+                    <td>mirror match</td>
+                    <td>a confused enemy defeats an enemy of the same type</td>
+                </tr>
+                <tr class="achievements--not-gained">
+                    <td>pinpoint</td>
+                    <td>execute 10 perfectly timed precision releases</td>
+                </tr>
+                <tr>
+                    <td>slam dunk</td>
+                    <td>slam 5 enemies with a single use of slam</td>
+                </tr>
+                <tr>
+                    <td>riposte</td>
+                    <td>parry a force pull resisting enemy</td>
+                </tr>
+                <tr>
+                    <td>star tours</td>
+                    <td>discover and complete all jedi chambers</td>
+                </tr>
+                <tr class="achievements--not-gained">
+                    <td>king of the world</td>
+                    <td>reach the highest point of harvest ridge</td>
+                </tr>
+                <tr>
+                    <td>there is no try</td>
+                    <td>help lift a ship out of the tar pits</td>
+                </tr>
+                <tr>
+                    <td>now, this isn’t podracing</td>
+                    <td>travel 500m of distance while riding creatures</td>
+                </tr>
+                <tr>
+                    <td>cleaning up</td>
+                    <td>hidden achievement: refresh the refresher</td>
+                </tr>
+                <tr>
+                    <td>they’re probably fine</td>
+                    <td>hidden achievement: drop your mount into the great unknown</td>
+                </tr>
+                <tr>
+                    <td>skywalker</td>
+                    <td>keep your feet off the ground and walls for 60 seconds</td>
+                </tr>
+                <tr>
+                    <td>it’s a trap</td>
+                    <td>hidden achievement: explore the phon'qi caverns</td>
+                </tr>
+                <tr>
+                    <td>max capacity</td>
+                    <td>hidden achievement: have a packed cantina</td>
+                </tr>
+                <tr>
+                    <td>can you pet the bogling?</td>
+                    <td>hidden achievement: you can pet the bogling</td>
+                </tr>
+                <tr>
+                    <td>caij match</td>
+                    <td>hidden achievement: gain the attention of a mysterious stranger</td>
+                </tr>
+                <tr>
+                    <td>who gives a puck</td>
+                    <td>hidden achievement: obtain your first bounty</td>
+                </tr>
+                <tr class="achievements--not-gained">
+                    <td>perk of the job</td>
+                    <td>equip perks in all slots</td>
+                </tr>
+                <tr>
+                    <td>greezy money</td>
+                    <td>trade 25 collected items</td>
+                </tr>
+                <tr>
+                    <td>cobra cal</td>
+                    <td>train with your weapons while wearing a headband</td>
+                </tr>
+                <tr class="achievements--not-gained">
+                    <td>a presence i’ve not felt since…</td>
+                    <td>hidden achievement: wear an old wardrobe staple</td>
+                </tr>
+                <tr>
+                    <td>hey, luke at us</td>
+                    <td>equip a new cosmetic in every cal slot</td>
+                </tr>
+                <tr class="achievements--not-gained">
+                    <td>road house</td>
+                    <td>dropkick an enemy while wearing a mullet</td>
+                </tr>
+                <tr>
+                    <td>kitted out</td>
+                    <td>customize bd-1, the blaster, and cal’s lightsaber with new parts</td>
+                </tr>
+                <tr>
+                    <td>skoova diving</td>
+                    <td>hidden achievement: fill the aquarium in the cantina</td>
+                </tr>
+                <tr class="achievements--not-gained">
+                    <td>growth spurt</td>
+                    <td>find space for a full garden</td>
+                </tr>
+                <tr>
+                    <td>gambler</td>
+                    <td>win all holotactics matches</td>
+                </tr>
+                <tr class="achievements--not-gained">
+                    <td>intergalactic geographic</td>
+                    <td>scan every type of enemy to fill out the tactical guide</td>
+                </tr>
+                <tr>
+                    <td>reconnaissance</td>
+                    <td>use bd-1 to investigate a target in the distance</td>
+                </tr>
+                <tr class="achievements--not-gained">
+                    <td>splurgle</td>
+                    <td>hidden achievement: purchase all of doma’s merchandise</td>
+                </tr>
+                <tr>
+                    <td>the jedi path</td>
+                    <td>fully upgrade 3 skill trees</td>
+                </tr>
+                <tr class="achievements--not-gained">
+                    <td>blood, sweat, and tears</td>
+                    <td>complete all force tears</td>
+                </tr>
+            </table>
+            <br>
+            </details>
+            <ul>
+                <li><a href="https://steamdb.info/app/1774580/stats/">achievements list</a></li>
+            </ul>
+            <br>
+            </div>
+
+            <div> <!-- odłamki priorytu -->
+            <details class="accordion">
+                <summary>splurgle<span class="achiev-accord-desc"> | purchase all of doma’s merchandise</span></summary>
+                <p>trzeba zebrać wszystkie odłamki priorytu; mozolne i dość złośliwe; niektóre trudno zauważyć, inne są na ścianach i wymagają biegania po nich; te z droidami są irytujące bo nie ma na nie jednego sposobu który by zawsze działał; o możliwości przyprowadzenia do stajni rzadkiego nekko można w ogóle nie wiedzieć; strata czasu;</p>
+                <ul>
+                    <li><a href="https://www.youtube.com/watch?v=rpJ-FGYefW8">splurgle is that other bs jedi survivor trophy</a></li>
+                    <li><a href="https://www.youtube.com/watch?v=cILCfR2F8FE">splurgle trophy</a></li>
+                    <li><a href="https://www.youtube.com/watch?v=AwtN1a3jskE">stables priorite shard location glitch fix</a></li>
+                    <li><a href="https://www.youtube.com/watch?v=NL_WVfjgLk4">how to get the koboh stables priorite shard</a></li>
+                    <li><a href="https://www.youtube.com/watch?v=BhZEapPrM7E">100 priorite shard guide - all locations fast</a></li>
+                </ul>
+                <br>
+            </details>
+            <br>
+            </div>
+
+            <div> <!-- force tears -->
+            <details class="accordion">
+                <summary>blood, sweat, and tears<span class="achiev-accord-desc"> | complete all force tears</span></summary>
+                <table class="achiev-jedi-list" id="force-tears">
+                    <colgroup>
+                        <col span="1" class="achiev-jedi-list--name">
+                        <col span="1" class="achiev-jedi-list--location">
+                        <col span="1">
+                    </colgroup>
+                    <tr>
+                        <td><a href="https://www.youtube.com/watch?v=BHq9gIH16jM">fractured burden</a></td>
+                        <td>koboh, gorge crash site</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.youtube.com/watch?v=6QYj2TcopOg">fractured resolve</a></td>
+                        <td>koboh, swindler’s wash</td>
+                        <td>platformer</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.youtube.com/watch?v=Be1S1EIVRY8">fractured duality</a></td>
+                        <td>koboh, rambler’s reach outpost</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.youtube.com/watch?v=bqEzhyY11uQ">fractured delusion</a></td>
+                        <td>koboh, hunter’s quarry</td>
+                        <td>defeat soont madas</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.youtube.com/watch?v=_jHzgK_yhx0">fractured history</a></td>
+                        <td>koboh, rambler’s reach outpost</td>
+                        <td>defeat spawn of oggdo and interact with 2 frogs</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.youtube.com/watch?v=NMbq78wwiIA">fractured momentum</a></td>
+                        <td>koboh, smuggler’s tunnels</td>
+                        <td>platformer</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.youtube.com/watch?v=2ucmj86hdwU">fractured power</a></td>
+                        <td>koboh, marl cavern</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.youtube.com/watch?v=xcnoAre5GaE">fractured punishment</a></td>
+                        <td>koboh, devastated settlement</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.youtube.com/watch?v=zNDlIixmmBY">fractured agility</a></td>
+                        <td>koboh, derelict dam</td>
+                        <td>platformer, tame the bird in boiling bluff</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.youtube.com/watch?v=uj7QK-nbgGg">fractured determination</a></td>
+                        <td>jedha, desert ridge</td>
+                        <td>platformer</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.youtube.com/watch?v=FJfqrehCFGw">fractured tradition</a></td>
+                        <td>jedha, monastery walls</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.youtube.com/watch?v=BGhp7oxoQLE">fractured dexterity</a></td>
+                        <td>jedha, blustery mesa</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.youtube.com/watch?v=kJipb4MtOnE">fractured cunning</a></td>
+                        <td>jedha, timeworn bridge</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.youtube.com/watch?v=68z7mZSHH3I">fractured malice</a></td>
+                        <td>coruscant, rooftops</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.youtube.com/watch?v=DOybVp2HH2c">fractured endurance</a></td>
+                        <td>shattered moon, automated forge</td>
+                        <td></td>
+                    </tr>
+                </table>
+                <br>
+            </details>
+            <ul>
+                <li><a href="https://www.youtube.com/watch?v=EEyFp3fdsk8">all force tear locations</a></li>
+                <li><a href="https://www.youtube.com/watch?v=dw5m_DCBFmg">all 15 force tears</a></li>
+                <li><a href="https://www.youtube.com/watch?v=ZKp-IsQox98">all combat force tears</a></li>
+            </ul>
+            <br>
+            </div>
+
+            <div> <!-- ryby akwariowe -->
+            <details class="accordion">
+                <summary>skoova diving<span class="achiev-accord-desc"> | fill the aquarium in the cantina</span></summary>
+                <table class="achiev-jedi-list" id="ryby-akwariowe">
+                    <colgroup>
+                        <col span="1" class="achiev-jedi-list--nanmadol">
+                        <col span="1">
+                    </colgroup>
+                    <tr>
+                        <td><a href="https://www.youtube.com/watch?v=0EqfknPfaGk">see fish (ryba see)</a></td>
+                        <td>koboh, foothill falls</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.youtube.com/watch?v=IYdRgtMJNYE">viscid lurker (lepki czychacz)</a></td>
+                        <td>koboh, phon'qi caverns</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.youtube.com/watch?v=3s2HtVUDy2k">fingerlip garpon (garpon palcowargi)</a></td>
+                        <td>koboh, rambler’s reach outpost</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.youtube.com/watch?v=gCFdnJMF5n8">barbed hookfish (haczykownica kolczasta)</a></td>
+                        <td>koboh, rambler’s reach outpost</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.youtube.com/watch?v=AAh112vUtmw">mee fish (ryba mee)</a></td>
+                        <td>koboh, mountain ascent</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.youtube.com/watch?v=mYyShqaDuZA">frilled newt (traszka falbaniasta)</a></td>
+                        <td>koboh, gorge crash site</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.youtube.com/watch?v=SEpBvm3Mh-k">blue-finned crayfish (rak błękitnopłetwy)</a></td>
+                        <td>koboh, nekko pools</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.youtube.com/watch?v=72YiY9grF_k">big-mouth faa (wielkopyska faa)</a></td>
+                        <td>koboh, rift passage</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.youtube.com/watch?v=5-rjEb9awGA">glottsamcrab (błotny krab)</a></td>
+                        <td>koboh, viscid bog</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.youtube.com/watch?v=TdBprwSH-h8">blinding rayfish (ryba ray)</a></td>
+                        <td>koboh, devastated settlement</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.youtube.com/watch?v=dnph_L7C024">snakefish (rybowąż)</a></td>
+                        <td>jedha, arid flats</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.youtube.com/watch?v=JGsO1m3IZJY">fantailed laa (wachlarzownica laa)</a></td>
+                        <td>jedha, crypt of uhrma</td>
+                    </tr>
+                </table>
+                <br>
+            </details>
+            <ul>
+                <li><a href="https://www.youtube.com/watch?v=cPLSZkr2orU">all fish locations guide</a></li>
+                <li><a href="https://www.youtube.com/watch?v=zAOS0iHY-vM">fill the aquarium in the cantina</a></li>
+                <li><a href="https://www.youtube.com/watch?v=u8DeQ7Pknk0">all 12 fish locations for skoova</a></li>
+                <li><a href="https://www.youtube.com/watch?v=9G1H0tvC9IY">skoova stev’s complete story</a></li>
+            </ul>
+            <br>
+            </div>
+
+            <div> <!-- torebki nasienne -->
+            <details class="accordion">
+                <summary>growth spurt<span class="achiev-accord-desc"> | find space for a full garden</span></summary>
+                <table class="achiev-jedi-list">
+                    <colgroup>
+                        <col span="1" class="achiev-jedi-list--nanmadol">
+                        <col span="1">
+                    </colgroup>
+                    <tr>
+                        <td><a href="https://www.youtube.com/watch?v=uQ7Mjxfebo0">recruit pili walde</a></td>
+                        <td>jedha, crypt of uhrma</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.youtube.com/watch?v=hzuxEfd0dCI">pine fern</a></td>
+                        <td>koboh, rambler’s reach outpost</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.youtube.com/watch?v=lXdMS75c-WE">goldenlight moss</a></td>
+                        <td>koboh, swindler’s wash</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.youtube.com/watch?v=ussY8XXpggc">spine fluff</a></td>
+                        <td>koboh, swindler’s wash</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.youtube.com/watch?v=Y6icJk3aQrg">bluebell squish</a></td>
+                        <td>koboh, southern reach</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.youtube.com/watch?v=0PnLCwjXigQ">tuber maw</a></td>
+                        <td>koboh, riverbed watch</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.youtube.com/watch?v=oBZr-nSZZkk">palm fruit shell</a></td>
+                        <td>koboh, harvest ridge</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.youtube.com/watch?v=G9TqScqmbCo">fire pineapple</a></td>
+                        <td>koboh, gorge crash site</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.youtube.com/watch?v=fQQkLgha6pE">cactus ball</a></td>
+                        <td>koboh, gorge crash site</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.youtube.com/watch?v=ugoi-mG60eA">crimson jelly spire</a></td>
+                        <td>koboh, devastated settlement</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.youtube.com/watch?v=XpbqYGmX5SE">koboh spiker</a></td>
+                        <td>koboh, mountain ascent</td>
+                    </tr>
+                </table>
+                <br>
+            </details>
+            <ul>
+                <li><a href="https://www.youtube.com/watch?v=26sTbvG9mhA">growth spurt achievement & trophy guide</a></li>
+                <li><a href="https://www.youtube.com/watch?v=rrxqQL9naNE">find space for a full garden - all seeds locations</a></li>
+                <li><a href="https://www.youtube.com/watch?v=AbDBD22IZ3k">all 10 plants locations</a></li>
+                <li><a href="https://www.youtube.com/watch?v=IWqV1S0NM6s">all 10 plant seed locations</a></li>
+            </ul>
+            <br>
+            </div>
+
+            <div> <!-- perk slots -->
+            <details class="accordion">
+                <summary>perk of the job<span class="achiev-accord-desc"> | equip perks in all slots</span></summary>
+                <table class="achiev-jedi-list">
+                    <colgroup>
+                        <col span="1" class="achiev-jedi-list--nanmadol">
+                        <col span="1">
+                    </colgroup>
+                    <caption>perk slots</caption>
+                    <tr>
+                        <td><a href="https://www.youtube.com/watch?v=KlOkVrnJ4L0">1 koboh</a></td>
+                        <td>rambler’s reach outpost, smuggler’s tunnels</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.youtube.com/watch?v=XFdpJaNkMsY">2 koboh</a></td>
+                        <td>harvest ridge</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.youtube.com/watch?v=McNdAJCVEW0">3 koboh</a></td>
+                        <td>derelict dam</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.youtube.com/watch?v=UGElFCydFWY">4 koboh</a></td>
+                        <td>pyloon’s saloon, zee shop</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.youtube.com/watch?v=01Bs7_kS0jk">5 jedha</a></td>
+                        <td>path of restoration</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.youtube.com/watch?v=jVtyqtb8LqY">6 jedha</a></td>
+                        <td>path of conviction</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.youtube.com/watch?v=VqSxFF9dokk">7 jedha</a></td>
+                        <td>path of persistence</td>
+                    </tr>
+                </table>
+                <br>
+                <table class="achiev-jedi-list">
+                    <colgroup>
+                        <col span="1" class="achiev-jedi-list--nanmadol">
+                        <col span="1">
+                    </colgroup>
+                    <caption>perks</caption>
+                    <tr>
+                        <td>abandoned settlement, chamber of ambidexterity</td>
+                        <td>shooting targets temporarily increases lightsaber damage</td>
+                    </tr>
+                    <tr>
+                        <td>basalt forest, chamber of reason</td>
+                        <td>lightsaber throws deal additional damage</td>
+                    </tr>
+                    <tr>
+                        <td>untamed downs, chamber of clarity</td>
+                        <td>bd-1 carries extra stims</td>
+                    </tr>
+                    <tr>
+                        <td>mountain ascent, chamber of detachment</td>
+                        <td>using slow also refills some life</td>
+                    </tr>
+                    <tr>
+                        <td>corroden silo, chamber of fortitude</td>
+                        <td>each foe defeated during slow gives a small amount of life</td>
+                    </tr>
+                    <tr>
+                        <td>chamber of duality, main mission</td>
+                        <td>block meter is increased</td>
+                    </tr>
+                    <tr>
+                        <td>viscid bog, chamber of connection</td>
+                        <td>increases the minimum level that the force meter regenerates to</td>
+                    </tr>
+                    <tr>
+                        <td>fogged expanse, vile bilemaw</td>
+                        <td>increases your lightsaber damage, but also increases incoming damage</td>
+                    </tr>
+                    <tr>
+                        <td>sodden grotto, legendary rancor</td>
+                        <td>attacks are more effective at breaking enemies’ guard</td>
+                    </tr>
+                    <tr>
+                        <td>crypt of uhrma, sutaban alpha</td>
+                        <td>increases experience gain but you lose the ability to restore lost xp after death</td>
+                    </tr>
+                    <tr>
+                        <td>desert ridge, golden skriton</td>
+                        <td>allows cal to take one hit while charging a blaster shot without interruption</td>
+                    </tr>
+                    <tr>
+                        <td>devastated settlement, force essence</td>
+                        <td>deal additional damage with your blaster</td>
+                    </tr>
+                    <tr>
+                        <td>grand oculus, force essence</td>
+                        <td>increases the damage dealt by characters affected by confusion</td>
+                    </tr>
+                    <tr>
+                        <td>devastated settlement, force essence</td>
+                        <td>your parry timing is shorter but parries deal increased block damage</td>
+                    </tr>
+                    <tr>
+                        <td>shattered moon, republic research laboratory, force essence</td>
+                        <td>enemies in a small area around cal are staggered when using a stim</td>
+                    </tr>
+                    <tr>
+                        <td>forest array, basalt rift</td>
+                        <td>life regenerates up to a minimum amount</td>
+                    </tr>
+                    <tr>
+                        <td>zee’s shop</td>
+                        <td>using a force ability increases the damage of your next lightsaber attack</td>
+                    </tr>
+                    <tr>
+                        <td>zee’s shop</td>
+                        <td>increases lightsaber damage temporarily after switching stances</td>
+                    </tr>
+                    <tr>
+                        <td>zee’s shop</td>
+                        <td>regenerate a small amount of force meter over time</td>
+                    </tr>
+                    <tr>
+                        <td>zee’s shop</td>
+                        <td>healing stims also fill a small amount of the super meter</td>
+                    </tr>
+                    <tr>
+                        <td>zee’s shop</td>
+                        <td>allows cal to take one hit while spriting without interruption</td>
+                    </tr>
+                    <tr>
+                        <td>zee’s shop</td>
+                        <td>gain more experience from defeating enemies</td>
+                    </tr>
+                    <tr>
+                        <td>new journey+</td>
+                        <td>dramatically increases the damage of both cal and his foes</td>
+                    </tr>
+                    <tr>
+                        <td>new journey+</td>
+                        <td>all customizations for cal, his lightsaber, and bd-1 are randomized on death</td>
+                    </tr>
+                    <tr>
+                        <td>new journey+</td>
+                        <td>replace standard encounters with more challenging encounters</td>
+                    </tr>
+                </table>
+                <br>
+            </details>
+            <ul>
+                <li><a href="https://www.youtube.com/watch?v=klaqZpdmaOo">upgrade to 10 perk slots easy - all locations</a></li>
+                <li><a href="https://www.youtube.com/watch?v=jgGGcpae0mw">all perk slot upgrades locations</a></li>
+                <li><a href="https://www.youtube.com/watch?v=9p_f9xh3Vpc">all perk slot upgrades</a></li>
+                <li><a href="https://vulkk.com/2023/05/04/jedi-survivor-perks-guide-and-locations-catalog/">survivor perks guide and full list</a></li>
+            </ul>
+            <br>
+            </div>
+
+            <div> <!-- łowcy głów -->
+            <details class="accordion">
+                <summary>caij match<span class="achiev-accord-desc"> | gain the attention of a mysterious stranger</span></summary>
+                <table class="achiev-jedi-list">
+                    <colgroup>
+                        <col span="1" class="achiev-jedi-list--nanmadol">
+                        <col span="1">
+                    </colgroup>
+                    <tr>
+                        <td><a href="https://www.youtube.com/watch?v=c8z-EuSjR8g">gatt medo</a></td>
+                        <td>coruscant, freight handling depot</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.youtube.com/watch?v=EnkuUXYWLPw">kle-0, masi finau, fenn finau</a></td>
+                        <td>nova garon, hangar bay</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.youtube.com/watch?v=pD6YiAgySQU">mash</a></td>
+                        <td>shattered moon, automated forge</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.youtube.com/watch?v=mX9tlHJQqV0">corde the half, pr-85t the other half</a></td>
+                        <td>jedha, halls of ranvell</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.youtube.com/watch?v=nyiN0AABzGo">yuhong</a></td>
+                        <td>jedha, path of restoration</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.youtube.com/watch?v=EInCUSN66Ak">korej lim</a></td>
+                        <td>koboh, devastated settlement</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.youtube.com/watch?v=llYeDJkRN_s">kip ostar</a></td>
+                        <td>koboh, derelict dam</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.youtube.com/watch?v=31cq2ghkTj0">raz</a></td>
+                        <td>koboh, forest array</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.youtube.com/watch?v=QuHp0bEkNi4">meyen corr</a></td>
+                        <td>koboh, boiling bluff</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.youtube.com/watch?v=T5nORp3nv4o">vaslyn martz</a></td>
+                        <td>koboh, fogged expanse</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.youtube.com/watch?v=heugNAZYuKQ">selfin jook</a></td>
+                        <td>koboh, observatory understructure</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.youtube.com/watch?v=ySd07TccdCM">kili oso</a></td>
+                        <td>jedha, sanctuary temple</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.youtube.com/watch?v=jGibTySLLBg">jo the cannibal</a></td>
+                        <td>koboh, yurt barracks</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.youtube.com/watch?v=rT7r3q_8wLA">caij vanda</a></td>
+                        <td>koboh, devastated settlement</td>
+                    </tr>
+                </table>
+                <br>
+            </details>
+            <ul>
+                <li><a href="https://www.youtube.com/watch?v=sRYaY6xxrRI">caij match trophy</a></li>
+                <li><a href="https://www.youtube.com/watch?v=IuJEQpC36Zg">all 17 bounty locations</a></li>
+                <li><a href="https://www.youtube.com/watch?v=xaf2An3q0_0">lore accurate cal vs caij vanda</a></li>
+            </ul>
+            <br>
+            </div>
+
+            <div> <!-- komnaty jedi -->
+            <details class="accordion">
+                <summary>star tours<span class="achiev-accord-desc"> | discover and complete all jedi chambers</span></summary>
+                <table class="achiev-jedi-list">
+                    <colgroup>
+                        <col span="1" class="achiev-jedi-list--name">
+                        <col span="1" class="achiev-jedi-list--location">
+                        <col span="1">
+                    </colgroup>
+                    <tr>
+                        <td><a href="https://www.youtube.com/watch?v=Qly7gMU5AaQ">chamber of duality</a></td>
+                        <td>rambler’s reach</td>
+                        <td>zee</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.youtube.com/watch?v=k_uZhGeY1HU">chamber of reason</a></td>
+                        <td>basalt rift</td>
+                        <td>dexterity</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.youtube.com/watch?v=xr9b5iagei0">chamber of clarity</a></td>
+                        <td>untamed downs</td>
+                        <td>fellowship</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.youtube.com/watch?v=NniioddTcpY">chamber of ambidexterity</a></td>
+                        <td>devastated settlement</td>
+                        <td>ambidexterity</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.youtube.com/watch?v=7OfiUoXlkY0">chamber of detachment</a></td>
+                        <td>mountain ascent</td>
+                        <td>patience</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.youtube.com/watch?v=kjEWRiO8Ybk">chamber of connection</a></td>
+                        <td>viscid bog</td>
+                        <td>recuperation</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.youtube.com/watch?v=3k8NI_-fWDc">chamber of fortitude</a></td>
+                        <td>rambler’s reach</td>
+                        <td>persistence</td>
+                    </tr>
+                </table>
+                <br>
+            </details>
+            <ul>
+                <li><a href="https://www.youtube.com/watch?v=44g7DgjVSa4">how to discover and complete all jedi chambers</a></li>
+                <li><a href="https://www.youtube.com/watch?v=Dwz8Xw2Gju8">all 7 jedi chambers locations & how to reach them</a></li>
+                <li><a href="https://www.youtube.com/watch?v=Vs_SIcq2K2k">all jedi chambers locations & walkthroughs</a></li>
+            </ul>
+            <br>
+            </div>
+
+            <div> <!-- legendarne zwierzęta -->
+            <details class="accordion">
+                <summary>i’m a living legend<span class="achiev-accord-desc"> | defeat all legendary adversaries</span></summary>
+                <table class="achiev-jedi-list">
+                    <colgroup>
+                        <col span="1" class="achiev-jedi-list--nanmadol">
+                        <col span="1">
+                    </colgroup>
+                    <tr>
+                        <td><a href="https://www.youtube.com/watch?v=PFE8E6aQim4">d-l1t</a></td>
+                        <td>coruscant, hangar 2046-c</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.youtube.com/watch?v=ANVkfiVHG2M">frenzied jotaz</a></td>
+                        <td>coruscant, undercity meats</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.youtube.com/watch?v=jvTHDLMMzpI">gorocco matriarch</a></td>
+                        <td>koboh, derelict dam</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.youtube.com/watch?v=mwS_l-txlc0">beetu deetu</a></td>
+                        <td>koboh, southern reach</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.youtube.com/watch?v=xwG3wWJCDn8">e3-ve3</a></td>
+                        <td>koboh, untamed downs</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.youtube.com/watch?v=mRBSz2-ixZs">spawn of oggdo</a></td>
+                        <td>koboh, fort kah'lin</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.youtube.com/watch?v=knGQ60bUos0">the mire terror</a></td>
+                        <td>koboh, viscid bog</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.youtube.com/watch?v=fi4427j3yAY">the massiff</a></td>
+                        <td>koboh, yurt barracks</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.youtube.com/watch?v=TQ3PW3CqMGM">vile bilemaw</a></td>
+                        <td>koboh, fogged expanse</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.youtube.com/watch?v=IGqyggmcqY0">urgost, first of rayvis</a></td>
+                        <td>koboh, observatory understructure</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.youtube.com/watch?v=soInlLUZq5Q">rancor</a></td>
+                        <td>koboh, sodden grotto</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.youtube.com/watch?v=J6QXbbEaw8I">golden skriton</a></td>
+                        <td>jedha, desert ridge</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.youtube.com/watch?v=X56taTIIW_0">sutaban alpha</a></td>
+                        <td>jedha, crypt of uhrma</td>
+                    </tr>
+                </table>
+                <br>
+            </details>
+            <ul>
+                <li><a href="https://www.youtube.com/watch?v=sVtGrgkAi3Y">i’m a living legend trophy – defeat all legendary adversaries</a></li>
+                <li><a href="https://www.youtube.com/watch?v=D2AsezNn1xc">all legendary adversary locations</a></li>
+                <li><a href="https://www.youtube.com/watch?v=jTZjsv0WGtI">all legendary adversaries / enemies locations</a></li>
+            </ul>
+            <br>
+            </div>
+
+            <div> <!-- poradnik taktyczny -->
+            <details class="accordion">
+                <summary>intergalactic geographic<span class="achiev-accord-desc"> | scan every type of enemy to fill out the tactical guide</span></summary>
+                <p>77 wpisów łącznie; do listy przeciwników włącza się legendarna zwierzyna i łowcy głów; kłopotliwym może być zeskanowanie droida viper („viper probe droid”) jako że lubi on wybuchać; trzeba też się wrócić do lasu po ukończeniu fabuły by zmierzyć się z lordem vaderem;</p>
+                <ul>
+                    <li><a href="https://www.youtube.com/watch?v=mjpZWG7aAaM">intergalactic geographic trophy/achievement guide</a></li>
+                    <li><a href="https://www.youtube.com/watch?v=JbMB-VhO2fQ">complete tactical guide – all enemy types</a></li>
+                    <li><a href="https://www.youtube.com/watch?v=A5Nm71wRR3U">platinum trophy (intergalactic geographic)</a></li>
+                </ul>
+                <br>
+            </details>
+            </div>
+
+            <div> <!-- dropkick -->
+            <details class="accordion">
+                <summary>road house<span class="achiev-accord-desc"> | dropkick an enemy while wearing a mullet</span></summary>
+                <p>w obszarze „zniszczona tama” (derelict dam) na koboh odnajdziemy skrzynię z plerezą (mullet); należy wybrać tę fryzurę i w postacie miecza dwuręcznego (crossguard stance) zaatakować w trakcie biegu; cal wykona wtedy kopnięcie;</p>
+                <ul>
+                    <li><a href="https://www.youtube.com/watch?v=UsYQa10HT-o">road house achievement / trophy guide</a></li>
+                    <li><a href="https://www.youtube.com/watch?v=xr-2o1tkX-g">road house achievement & trophy guide</a></li>
+                    <li><a href="https://www.youtube.com/watch?v=R2KtRRk0yyU">road house trophy</a></li>
+                    <li><a href="https://www.youtube.com/watch?v=IZOuoShP180">how to drop kick</a></li>
+                </ul>
+                <br>
+            </details>
+            </div>
+
+            <div> <!-- płaszcz oggdo -->
+            <details class="accordion">
+                <summary>a presence i’ve not felt since…<span class="achiev-accord-desc"> | wear an old wardrobe staple</span></summary>
+                <p>pokonaj oggdo i zdobądź stary płaszcz z „upadłego zakonu”;</p>
+                <ul>
+                    <li><a href="https://www.youtube.com/watch?v=6cB16Xt6SFA">poncho location</a></li>
+                    <li><a href="https://www.youtube.com/watch?v=7V9FyKeFEyU">giant frog returns</a></li>
+                    <li><a href="https://www.youtube.com/watch?v=-0vnX5WMRiU">how to unlock the poncho</a></li>
+                </ul>
+                <br>
+            </details>
+            </div>
+
+            <div> <!-- cobra cal -->
+            <details class="accordion">
+                <summary>cobra cal<span class="achiev-accord-desc"> | train with your weapons while wearing a headband</span></summary>
+                <p>zakup opaskę na czoło u domy, po czym zaatakuj manekina treningowego w bazie na jeddzie;</p>
+                <ul>
+                    <li><a href="https://www.youtube.com/watch?v=HZ1bRXlbk80">cobra cal trophy guide</a></li>
+                    <li><a href="https://www.youtube.com/watch?v=DSomEMi3tH8">cobra cal trophée</a></li>
+                </ul>
+                <br>
+            </details>
+            </div>
+
+            <div> <!-- king of the world -->
+            <details class="accordion">
+                <summary>king of the world<span class="achiev-accord-desc"> | reach the highest point of harvest ridge</span></summary>
+                <p>w rzeczonym obszarze znajduje się hangar z dwoma nekko w pobliżu i elementami do przyczepienia; by wejść na górę można rozwiązać tę zagadkę albo wybić się po platformach używając dwuskoku; dalsza droga prowadzi do zdobycia slotu atutu (perk slot), po czym można się wspiąć na wieżę; dostanie się na nią oznacza zdobycie osiągnięcia;</p>
+                <ul>
+                    <li><a href="https://www.youtube.com/watch?v=njDmY6k0ekw">highest point in harvest ridge</a></li>
+                    <li><a href="https://www.youtube.com/watch?v=we9UIosBzGg">king of the world trophy</a></li>
+                    <li><a href="https://www.youtube.com/watch?v=BdG-o0dvUM4">król na szczycie świata trofeum</a></li>
+                </ul>
+                <br>
+            </details>
+            </div>
+
+            <div> <!-- mining canon -->
+            <details class="accordion">
+                <summary>this is canon<span class="achiev-accord-desc"> | push an enemy into the shattered moon mining cannon</span></summary>
+                <p>najłatwiejsze do wykonania w miejscu, gdzie trzeba walczyć z większą ilością przeciwników i unikać rzeczonego działa;</p>
+                <ul>
+                    <li><a href="https://www.youtube.com/watch?v=fIVLn1X1f_A">this is canon trophy guide</a></li>
+                    <li><a href="https://www.youtube.com/watch?v=Twr9wrR0ZCE">this is canon trophy</a></li>
+                </ul>
+                <br>
+            </details>
+            </div>
+
+            <div> <!-- pinpoint -->
+            <details class="accordion">
+                <summary>pinpoint<span class="achiev-accord-desc"> | execute 10 perfectly timed precision releases</span></summary>
+                <p>w postawie podwójnego ostrza (dual wield stance) możemy niejako wstrzymać cala by zaczął precyzyjnie unikać ataków (precision release); trzyma on wtedy miecze świetlne poziomo w dłoniach; nie można w ten sposób uniknąć każdego ataku i nie należy mylić tego z unikiem dostępnym do zdobycia w drzewku rozwoju odporność (focus sight); przydatne na przeciwników z tarczą; do zdobycia w trybie treningu;</p>
+                <ul>
+                    <li><a href="https://www.youtube.com/watch?v=qufgZS7QQ_k">pinpoint trophy</a></li>
+                    <li><a href="https://www.youtube.com/watch?v=SuXEhU0ILAo">pinpoint achievement & trophy guide</a></li>
+                    <li><a href="https://www.youtube.com/watch?v=QkUgcmNL9bU">pinpoint achievement/trophy</a></li>
+                </ul>
+                <br>
+            </details>
+            </div>
+
+            <div> <!-- 50 focus fight -->
+            <details class="accordion">
+                <summary>one with the force<span class="achiev-accord-desc"> | avoid 50 attacks using focus sight</span></summary>
+                <p>drzewko rozwoju odporność (resilience) oferuje skupienie (focus sight) dostępne dla każdej postawy miecza świetlnego; osiągnięcie do zdobycia w trybie treningu;</p>
+                <ul>
+                    <li><a href="https://www.youtube.com/watch?v=BsymGyk0bjo">one with the force trophy</a></li>
+                    <li><a href="https://www.youtube.com/watch?v=WTnm8AiyVto">one with the force achievement & trophy guide</a></li>
+                </ul>
+                <br>
+            </details>
+            </div>
+
+            <div> <!-- 3 roller mines -->
+            <details class="accordion">
+                <summary>catch!<span class="achiev-accord-desc"> | hit 3 enemies with a single roller mine</span></summary>
+                <p>prawdopodobnie najprostsze do zdobycia w „untamed downs”, gdzie znajduje się miejsce z wieloma aktywnymi minami; wystarczy złapać jedną i rzucić w resztę;</p>
+                <ul>
+                    <li><a href="https://www.youtube.com/watch?v=Ug8HLrk6Ll8">catch! achievement & trophy guide</a></li>
+                    <li><a href="https://www.youtube.com/watch?v=kHUKgtUtwWI">hit 3 enemies with a single roller mine</a></li>
+                    <li><a href="https://www.youtube.com/watch?v=lgYmS7Ue5wE">catch! trophy guide</a></li>
+                </ul>
+                <br>
+            </details>
+            </div>
+
+            <div> <!-- 10 point blank -->
+            <details class="accordion">
+                <summary>so uncivilized<span class="achiev-accord-desc"> | defeat 10 enemies with shots using the point blank skill</span></summary>
+                <p>w postawie z blasterem (blaster stance) należy użyć jej ostatecznej umiejętności (point blank), co oznacza rozwinięcie tego drzewka rozwoju maksymalnie;</p>
+                <ul>
+                    <li><a href="https://www.youtube.com/watch?v=r7vcNCCx3p4">so uncivilized trophy</a></li>
+                    <li><a href="https://www.youtube.com/watch?v=44vWC5KUbKU">so uncivilized achievement & trophy guide</a></li>
+                    <li><a href="https://www.youtube.com/watch?v=yli_RbO76t4">so uncivilized trophy guide</a></li>
+                </ul>
+                <br>
+            </details>
+            </div>
+
+            <div> <!-- 10 combat assists -->
+            <details class="accordion">
+                <summary>you’ve got a friend<span class="achiev-accord-desc"> | direct your companions to assist in combat 10 times each</span></summary>
+                <p>należy wyraźnie użyć asysty, ta związana z ciosem kończącym się nie liczy; może dotyczyć wyłącznie merris albo tylko bode’a;</p>
+                <ul>
+                    <li><a href="https://www.youtube.com/watch?v=1wV3-68rrFg">you’ve got a friend trophy guide</a></li>
+                    <li><a href="https://www.youtube.com/watch?v=cU5hYsTZvaM">you’ve got a friend achievement/trophy</a></li>
+                </ul>
+                <br>
+            </details>
+            </div>
+    
+            <br>
+        </article>
+        <br>
+        </region>
+
+
+        <region id="ścieżka-dźwiękowa">
+        <article>
+            <h3><a href="#ścieżka-dźwiękowa" target="_self"># ścieżka dźwiękowa</a></h3>
+
+            <details class="soundtrack-accordion"> <!-- soundtrack4 -->
+                <summary>soundtrack</summary>
+                <table class="soundtrack4-ost">
+                <colgroup>
+                    <col span="1" class="soundtrack4-ost-title">
+                    <col span="1" class="soundtrack4-ost-author">
+                    <col span="1">
+                </colgroup>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=-CRKRgEOpcw">dark times</a></td>
+                    <td></td>
+                    <td>5:55</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=-bpJ0M1FX2Q">the undercity</a></td>
+                    <td></td>
+                    <td>8:45</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=nc2oTJ1AQgs">crash landing</a></td>
+                    <td></td>
+                    <td>5:22</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=Bwqvmb1wXVI">a frontier welcome</a></td>
+                    <td></td>
+                    <td>3:16</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=V2_26vYCvw0">the bedlam raiders</a></td>
+                    <td></td>
+                    <td>5:11</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=EiV6HCQFw8M">where the nekkos roam</a></td>
+                    <td></td>
+                    <td>5:02</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=BhL55p43U7o">beast’s maw</a></td>
+                    <td></td>
+                    <td>2:26</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=5Nc6Xz_IQN4">phon'qi caverns</a></td>
+                    <td></td>
+                    <td>2:06</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=jPSCiMcTjHQ">rambler’s reach</a></td>
+                    <td></td>
+                    <td>3:57</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=4scYxLxNSQg">gen'dai</a></td>
+                    <td></td>
+                    <td>1:14</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=GapgNqBuUT4">beneath the cantina</a></td>
+                    <td></td>
+                    <td>7:50</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=KCp1KejXg6s">the forest’s secret</a></td>
+                    <td></td>
+                    <td>7:07</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=N3SKvMiphBI">basalt scars</a></td>
+                    <td></td>
+                    <td>2:27</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=L9UVl-6wd70">garrison</a></td>
+                    <td></td>
+                    <td>3:31</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=pfgVD05-Y1E">haven</a></td>
+                    <td></td>
+                    <td>5:55</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=Ol9M-8aMDRk">release me</a></td>
+                    <td></td>
+                    <td>4:24</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=AWt6tZNmqW4">desert ruins</a></td>
+                    <td></td>
+                    <td>4:59</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=TeLAv99Oybw">the ancients</a></td>
+                    <td></td>
+                    <td>3:53</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=PMNgi0UFilg">into the storm</a></td>
+                    <td></td>
+                    <td>5:23</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=AkasAvMqlzM">fields of dusk</a></td>
+                    <td></td>
+                    <td>4:41</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=d6BnTU5Sc9o">campfire</a></td>
+                    <td></td>
+                    <td>3:13</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=eN5BdWNqi8s">the narkis anchorites</a></td>
+                    <td></td>
+                    <td>4:05</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=NB4MdDlnJCE">unforgiving sands</a></td>
+                    <td></td>
+                    <td>8:03</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=k27WZjhJSDE">pilgrim’s path</a></td>
+                    <td></td>
+                    <td>4:41</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=-m-Lf9utsHc">the sacred mesa</a></td>
+                    <td></td>
+                    <td>8:58</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=dF-8aAkmRF8">trident</a></td>
+                    <td></td>
+                    <td>6:05</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=w7hcrEO3eTo">flight</a></td>
+                    <td></td>
+                    <td>3:25</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=8eaW7DN7m7o">relics of war</a></td>
+                    <td></td>
+                    <td>8:38</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=kjOWvJRq0-Q">to the rescue</a></td>
+                    <td></td>
+                    <td>2:32</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=5xSS31XjiPI">shattered moon</a></td>
+                    <td></td>
+                    <td>9:51</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=ts4bejTPMTY">course collider</a></td>
+                    <td></td>
+                    <td>5:55</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=ykPVkqaoEmM">warrior’s code</a></td>
+                    <td></td>
+                    <td>7:08</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=XNx3jcVm2LY">mogu in the mist</a></td>
+                    <td></td>
+                    <td>6:14</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=rxuqHuPsnZU">above the clouds</a></td>
+                    <td></td>
+                    <td>6:36</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=eppw7sHFJzc">grand oculus</a></td>
+                    <td></td>
+                    <td>7:12</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=0uvXKbXq7E0">a step too far</a></td>
+                    <td></td>
+                    <td>10:06</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=xeeXyynHR_U">siege</a></td>
+                    <td></td>
+                    <td>3:08</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=tJzXWd-tZgY">the visitor</a></td>
+                    <td></td>
+                    <td>10:09</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=OXVyQ0rLMgA">nova garon</a></td>
+                    <td></td>
+                    <td>4:02</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=AuXofqKlGqc">rage</a></td>
+                    <td></td>
+                    <td>5:28</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=52T0FEqe4js">the abyss</a></td>
+                    <td></td>
+                    <td>4:36</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=OUn44WoedzM">brothers</a></td>
+                    <td></td>
+                    <td>5:18</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=Qx9rx8Axc-E">through darkness</a></td>
+                    <td></td>
+                    <td>5:35</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=CQiTBmNbm5o">cold dawn</a></td>
+                    <td></td>
+                    <td>3:33</td>
+                </tr>
+                </table>
+                <br>
+            </details>
+            <ul>
+                <li>kompozytorzy: stephen barton, gordy haab</li>
+                <li><a href="https://www.youtube.com/playlist?list=PLKyHTnm_ecNcz2E9fS22fvowp7RLHGz2I">star wars: jedi survivor ost (2023)</a></li>
+                <li><a href="https://www.youtube.com/playlist?list=PLTmJuovQUxPtYb0bWHsXs58fGhwAXH1Ov">original video game soundtrack</a></li>
+                <li><a href="https://www.youtube.com/watch?v=2YfBlEHiUoE">complete official soundtrack</a></li>
+                <li><a href="https://en.wikipedia.org/wiki/Star_Wars_Jedi:_Survivor">wiki</a></li>
+            </ul>
+            <br>
+    
+            <br>
+        </article>
+        <br>
+        </region>
+
+
+        <region id="linux">
+        <article>
+        <h3><a href="#linux" target="_self"># linux</a></h3>
+    
+        <div> <!-- saves location -->
+        <header>✱ ścieżki</header>
+<pre class="listing-block">
+<code># <abbr title="C:\Users\%USERNAME%\AppData\Local\">%LOCALAPPDATA%</abbr>\SwGame\Saved\Config\WindowsNoEditor\GameUserSettings.ini</code>
+<code># <abbr title="C:\Users\%USERNAME%\">%USERPROFILE%</abbr>\Saved Games\Respawn\JediSurvivor\GameUserSettings.sav</code>
+</pre>
+        <ul>
+            <li><a href="https://www.pcgamingwiki.com/wiki/Star_Wars_Jedi%3A_Survivor#Configuration_file.28s.29_location">configuration file location</a></li>
+        </ul>
+        <br>
+        </div>
+
+        <div> <!-- proton args -->
+        <header>✱ proton</header>
+<pre class="listing-block">
+<code>DXVK_FRAME_RATE=90 WINE_FULLSCREEN_FSR=1 WINE_FULLSCREEN_FSR_CUSTOM_MODE=1348x569 PROTON_FSR4_UPGRADE=1 VKD3D_CONFIG=descriptor_heap PROTON_VKD3D_HEAP=1 PROTON_NVIDIA_LIBS_NO_32BIT=1 PROTON_USE_NTSYNC=1 PROTON_LOCAL_SHADER_CACHE=1 __GL_SHADER_DISK_CACHE_SKIP_CLEANUP=1 DXVK_ASYNC=1 NVPRESENT_QUEUE_FAMILY=1 DRI_PRIME=1 LOW_LATENCY_LAYER=1 LOW_LATENCY_LAYER_REFLEX=1 DXVK_CONFIG='dxgi.hideAmdGpu=True' DXVK_NVAPI_ALLOW_OTHER_DRIVERS=1 PROTON_FORCE_NVAPI=1 %command% -dx12</code>
+</pre>
+        <ul>
+            <li>bezwzględnie należy wyłączyć śledzenie promieni</li>
+            <li>niektórym pomaga opcja -ngxdisable w połączeniu z wyczyszczeniem pamięci podręcznej „ea app”</li>
+            <li><a href="https://github.com/CachyOS/proton-cachyos/releases/tag/cachyos-11.0-20260702-slr">proton-cachyos-11.0-20260702-slr</a></li>
+            <li><a href="https://www.reddit.com/r/FallenOrder/comments/1htna23/survivor_potential_fix_for_broken_textures_bug/">potential fix for broken textures bug</a></li>
+            <li><a href="https://steamcommunity.com/app/1774580/discussions/0/798967628136794423/?tscn=1779931250">game not lauching - ea app “preparing game”</a></li>
+            </li>
+        </ul>
+        <br>
+        </div>
+
+        <div> <!-- hdr -->
+        <header hidden>✱ hdr</header>
+        <details class="soundtrack-accordion">
+        <summary>hdr</summary>
+<pre class="listing-block">
+<code>PROTON_ENABLE_WAYLAND=1 PROTON_ENABLE_HDR=1 ENABLE_HDR_WSI=1 mangohud %command%</code>
+<code># KEY_LOCAL_MACHINE / System / CurrentControlSet / Services / winebus : DWORD "DisableHidraw"=1</code>
+</pre>
+        <blockquote>Enabling HDR and controller support requires disabling Winebus</blockquote>
+        <blockquote>Enable HDR in GNOME's display settings. The HDR toggle is per-monitor and is located next to the resolution and refresh rate setting.</blockquote>
+<ul>
+    <li><a href="https://www.protondb.com/app/1774580">appid 1774580</a></li>
+    <li><a href="https://wiki.archlinux.org/title/HDR#GNOME">hdr in gnome</a></li>
+</ul>
+        </details>
+        <br>
+        </div>
+
+        <div> <!-- brak dźwięku -->
+        <header hidden>✱ brak dźwięku</header>
+        <details class="soundtrack-accordion">
+        <summary>brak dźwięku</summary>
+        <p id="linux-brak-dźwięku">w przypadku niedziałającego dźwięku lub trzasków można spróbować następujących opcji (od proton-cachyos-11.0-20260519-slr):</p>
+<pre class="listing-block">
+<code>WINEDLLOVERRIDES="winepulse.drv=d" WINEALSA_CHANNELS=2 PULSE_LATENCY_MSEC=60</code>
+</pre>
+<ul>
+    <li><a href="https://github.com/ValveSoftware/Proton/issues/7911">jedi survivor has no sound on ubuntu 24.04 nor ubuntu 22.04</a></li>
+    <li><a href="https://www.reddit.com/r/linux_gaming/comments/1pt63sb/psa_geproton_1027_added_winealsa_channels_env/">ge-proton 10-27 added winealsa_channels env variable, making winealsa a more viable option to fix audio crackling!</a></li>
+</ul>
+        </details>
+        <br>
+        </div>
+
+        <div> <!-- zrzuty ekranowe „ea app” -->
+        <header hidden>✱ zrzuty ekranowe „ea app”</header>
+        <details class="soundtrack-accordion">
+        <summary>zrzuty ekranowe „ea app”</summary>
+<pre class="listing-block">
+<code># %APPDATA%\EA Games\GameName\</code>
+<code># AppData \ Local \ SwGame \ Saved \ Screenshots \ WindowsNoEditor</code>
+</pre>
+<ul>
+	<li><a href="https://forums.ea.com/discussions/dragon-age-the-veilguard-discussion-en/where-are-in-game-photo-captures-saved/5005971">where are in game photo captures saved?</a></li>
+	<li><a href="https://www.reddit.com/r/EAApp/comments/129hyu5/screen_shots/">screen shots</a></li>
+	<li><a href="https://www.gioinauan.com/news/5125/where-does-origin-save-screenshots">where does origin save screenshots? a comprehensive guide</a></li>
+	<li><a href="https://savegamelocation.com/guides/ea-app/">where are ea app game saves stored?</a></li>
+	<li><a href="https://forums.ea.com/discussions/apex-legends-technical-issues-en/how-to-access-screenshots-for-pc/5236440">how to access screenshots for pc?</a></li>
+	<li><a href="https://www.reddit.com/r/FallenOrder/comments/m98qjx/ea_desktop_app_photo_location/">ea desktop app photo location?</a></li>
+</ul>
+        </details>
+        <br>
+        </div>
+
+        <div> <!-- optymalizacja poprzez mody -->
+        <header hidden>✱ optymalizacja poprzez mody</header>
+        <details class="soundtrack-accordion">
+        <summary>optymalizacja poprzez mody</summary>
+        <p id="linux-optymalizacja">instalowanie modów do gry polega na skopiowaniu plików .pak do <span class="code-line">JediSurvivor\SwGame\Content\Paks</span>;</p>
+<pre class="listing-block">
+<code># 2026-05-31</code>
+<code>62866103269feb71743d9f95f044c15687490b8b31b6d03a059a23e4e4a69257  SurvivorAnimationStutterFix-v1.1.zip</code>
+<code>efdf690dc155346344e0c5451b4d4ff7eb94252de0dc28ca224dab9f97d22519  SurvivorAnimationStutterFix-v1.2.zip</code>
+</pre>
+<ul>
+	<li><a href="https://www.pcgamingwiki.com/wiki/Star_Wars_Jedi%3A_Survivor#Enable_interpolated_rendering">enable interpolated rendering</a></li>
+	<li><a href="https://community.pcgamingwiki.com/files/file/3924-star-wars-jedi-survivor-camera-and-animation-stutter-fix">camera and animation stutter fix</a></li>
+</ul>
+<pre class="listing-block">
+<code># 2026-06-04</code>
+<code>e455e0b168b02c968122943bacc43385f3407694  SWJS - Ultimate Unreal Engine Tweaks (No VRR)-422-15-1779810686.zip</code>
+<code>9fdb5c870e37987fb33dd6c42550d7a94c12aa52  SWJS - Ultimate Unreal Engine Tweaks (VRR)-422-15-1779810671.zip</code>
+</pre>
+<ul>
+	<li><a href="https://www.nexusmods.com/starwarsjedisurvivor/mods/422">ultimate engine tweaks</a></li>
+</ul>
+<blockquote>• <b>Turn OFF "Usage Sharing"</b>: Found in the Extras menu. This stops background telemetry from constantly pinging EA servers, which causes micro-stutters.<br>
+• <b>Keep Ray Tracing OFF</b>: The RT implementation in this game heavily bottlenecks the CPU, causing massive traversal stutters.<br>
+• <b>Intel 12th/13th/14th Gen Users</b>: Use Process Lasso to disable E-Cores for the STAR WARS Jedi Survivor.exe process. Unreal Engine often delegates heavy streaming tasks to these slower cores by mistake, resulting in hitching.</blockquote>
+<pre class="listing-block">
+<code># 2026-06-05</code>
+<code>b19a06074598f27ab8ea7f92f8f1061a83dd87eb  ECLIPSE_Mod_Steam_Deck_STAR_WARS_Jedi_Survivor-465-9-1765150989.rar</code>
+</pre>
+<ul>
+	<li><a href="https://www.nexusmods.com/starwarsjedisurvivor/mods/465">eclipse steam deck graphics optimization</a></li>
+</ul>
+<pre class="listing-block">
+<code># 2026-06-05</code>
+<code>37da3c77efee18a0e592bf870c58872a02b5376c  perfset-527-2-1-1779901516.zip</code>
+</pre>
+<ul>
+	<li><a href="https://www.nexusmods.com/starwarsjedisurvivor/mods/527">lean performance optimization (lpo)</a></li>
+</ul>
+        </details>
+        <br>
+        </div>
+        </article>
+        </region>
+
+
+        <hr>
+        <footer>2026-07-28</footer>
+    </main>
+</body>
+
+</html>
