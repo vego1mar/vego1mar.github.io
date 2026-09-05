@@ -1,0 +1,1628 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <title>welcome to free will — recenzja</title>
+    <meta charset="utf-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <style>
+        @font-face {
+            font-family: "ubuntu", sans-serif;
+            src: url("../fonts/Ubuntu-Regular.ttf");
+        }
+        body {
+            font-family: "ubuntu", sans-serif;
+        }
+        h1 {
+            font-size: 25px;
+        }
+        h2 {
+            font-size: 20px;
+        }
+        h3 {
+            font-size: 17px;
+            color: rgb(255, 70, 70); /* salmon */
+        }
+        h3 a {
+            text-decoration: none;
+            color: rgb(255, 70, 70);
+        }
+
+        .main-content {
+            margin-left: 10%;
+            margin-right: 10%;
+            font-size: 14px;
+            padding: 0px 10px;
+            font-family: "ubuntu", sans-serif;
+        }
+
+        .region-grey {
+            background-color: whitesmoke;
+            border-style: hidden;
+            border-radius: 10px;
+            padding-top: 1%;
+        }
+        .region-white {
+            background-color: white;
+        }
+        a {
+            text-decoration: none;
+            color: teal;
+        }
+        p {
+            line-height: 1.4;
+        }
+        blockquote {
+            border-left: 2px solid blueviolet;
+            padding-left: 1%;
+        }
+
+        .code-line {
+            font-family: "jetbrains mono", "ubuntu mono", monospace;
+            background-color: gainsboro;
+            border: 0px solid olive;
+        }
+        pre.listing-block {
+            background-color: ghostwhite;
+            overflow-x: auto;
+            overflow-y: hidden;
+            white-space: pre;
+            word-wrap: normal;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            padding-right: 10px;
+            border: 1px solid olive;
+        }
+        pre.listing-block::before {
+            counter-reset: listing;
+        }
+        pre.listing-block code {
+            counter-increment: listing-counter;
+            font-family: "calling code", "ubuntu mono", monospace;
+            font-size: 14px;
+        }
+        pre.listing-block code::before {
+            content: counter(listing-counter) "   ";
+            display: inline-block;
+            width: 4em;
+            padding-left: 0px;
+            margin-left: auto;
+            text-align: right;
+            font-size: 12px;
+            color: olive;
+        }
+        pre {
+            margin-left: 1%;
+            margin-right: 1%;
+        }
+        
+        .images-horizontal {
+            table-layout: fixed; 
+            display: block;
+            width: 100%;
+            overflow-x: scroll; 
+            overflow-y: hidden;
+            scroll-snap-align: center;
+        }
+        .images-horizontal a {
+            text-decoration: none;
+            color: black;
+        } 
+        .images-horizontal figcaption {
+            padding-top: 5px;
+        }
+
+        img {
+            width: 50vw;
+            height: auto;
+        }
+        figcaption {
+            font-size: 12px;
+            text-align: left;
+        }
+        figure figcaption {
+            text-align: center;
+        }
+        .fighover figure {
+            display: inline-block;
+            border: 1px;
+            margin: 10px;
+        }
+        .fighover figure, .fighover img {
+            vertical-align: top;
+            width: 29vw;
+        }
+        .fighover figure, .fighover figcaption {
+            border: 1px;
+            text-align: center;
+        }
+
+        .achievements {
+            table-layout: fixed; 
+            width: 90%;
+            text-align: left;
+        }
+        .achievements--name {
+            text-align: center;
+            vertical-align: middle;
+        }
+        .achievements caption {
+            text-align: left;
+            padding-left: 1px;
+            font-weight: bold;
+        }
+        table.achievements td {
+            padding-top: 1px;
+            padding-bottom: 1px;
+            border-bottom: 1px solid rgba(128, 128, 0, 0.2);
+        }
+        .achievements td:nth-child(1) {
+            padding-left: 11px;
+            width: 70%;
+        }
+        .achievements td:nth-child(2) {
+            padding-left: 11px;
+            width: 100%;
+        }
+        .achiev-accord-desc {
+            color: gray;
+        }
+        .achievements--not-gained {
+            color: gray;
+        }
+
+        .soundtrack-ost {
+            table-layout: fixed;
+            margin: auto;
+            width: 50%;
+        }
+        .soundtrack-ost td:nth-child(2) {
+            text-align: end;
+            padding-left: 5px;
+            width: 10%;
+        }
+        .soundtrack-ost tr:nth-child(even) {
+            background-color: ghostwhite;
+        }
+        .soundtrack-ost caption {
+            font-weight: bold;
+            text-align: left;
+            margin-left: -3%;
+        }
+        .soundtrack-accordion {
+            margin-left: 1%;
+            margin-right: 1%;
+        }
+
+        .soundtrack3 {
+            table-layout: fixed;
+            margin: auto;
+            padding-left: 2%;
+            padding-right: 6%;
+            width: 100%;
+        }
+        .soundtrack3 td:nth-child(2) {
+            text-align: end;
+            padding-left: 5px;
+            width: 5%;
+        }
+        .soundtrack3 tr:nth-child(even) {
+            background-color: whitesmoke;
+        }
+        table.soundtrack3 tr td {
+            padding-left: 10px;
+            padding-right: 10px;
+            padding-top: 5px;
+            padding-bottom: 5px;
+            border-radius: 11px;
+        }
+        table.soundtrack3 td a {
+            color: blue;
+            font-size: medium;
+            font-weight: bold;
+        }
+        table.soundtrack3 td {
+            font-size: small;
+        }
+        .s3-left {
+            float: left;
+        }
+        .s3-right {
+            float: right;
+        }
+
+        .dictionary {
+            table-layout: fixed; 
+            width: 90%;
+            text-align: left;
+        }
+        .dictionary--term {
+            width: 40%;
+            text-align: center;
+            vertical-align: middle;
+        }
+        table.dictionary td {
+            padding-top: 1px;
+            padding-bottom: 2px;
+            border-bottom: 1px solid rgba(128, 128, 0, 0.2);
+        }
+
+        @media only screen and (min-width: 1px) and (max-width: 920px) {
+            .soundtrack-ost {
+                width: 100%;
+            }
+        }
+        @media only screen and (min-width: 921px) and (max-width: 1250px) {
+            .soundtrack-ost {
+                width: 70%;
+            }
+        }
+        @media only screen and (min-width: 1251px) and (max-width: 1450px) {
+            .soundtrack-ost {
+                width: 50%;
+            }
+        }
+        @media only screen and (min-width: 1451px) and (max-width: 1900px) {
+            .soundtrack-ost {
+                width: 45%;
+            }
+        }
+        @media only screen and (min-width: 1901px) {
+            .soundtrack-ost {
+                width: 30%;
+            }
+        }
+
+        details {
+            border: 1px solid olive;
+            border-radius: 8px;
+            box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.12);
+            margin-bottom: 8px;
+        }
+        details[open] summary {
+            margin-bottom: 10px;
+        }
+        summary {
+            cursor: pointer;
+            transition: all 150ms ease-in-out;
+            padding: 12px;
+        }
+        .accordion pre, .accordion p, .accordion table {
+            margin-left: 2%;
+            margin-right: 2%;
+        }
+
+        article div p, article div details, article details {
+            margin-left: 1%;
+            margin-right: 1%;
+        }
+        details figure, details figure figcaption, div figure {
+            display: block;
+            text-align: center;
+        }
+        .discussion-thread, .discussion-thread a {
+            color: gray;
+        }
+
+        figure, figure figcaption {
+            display: block;
+            text-align: center;
+        }
+        img {
+            width: 100%;
+            height: auto;
+        }
+        .maintitle {
+            font-size: x-large;
+        }
+        .subtitle {
+            font-size: small;
+            color: olive;
+        }
+
+        .soundtrack4-ost {
+            margin: auto;
+            width: 95%;
+        }
+        .soundtrack4-ost-title {
+            width: 47%;
+        }
+        .soundtrack4-ost-author {
+            width: 47%;
+        }
+        table.soundtrack4-ost td:nth-child(1) a {
+            color: blue;
+        }
+        .soundtrack4-ost td:nth-child(3) {
+            text-align: end;
+        }
+        .soundtrack4-ost tr:nth-child(even) {
+            background-color: rgb(251, 251, 251);
+        }
+        .soundtrack4-ost caption {
+            font-weight: bold;
+        }
+
+        header {
+            font-weight: bold;
+            font-size: 14px;
+            color: darkviolet;
+        }
+
+        .passwords {
+            table-layout: fixed; 
+            width: 90%;
+            text-align: left;
+        }
+        .passwords--place {
+            text-align: center;
+            vertical-align: middle;
+            width: 30%;
+        }
+        .passwords--desc {
+            text-align: center;
+            vertical-align: middle;
+            width: 40%;
+        }
+        table.passwords td {
+            padding-top: 1px;
+            padding-bottom: 1px;
+            border-bottom: 1px solid rgba(128, 128, 0, 0.2);
+        }
+    </style>
+</head>
+
+<body>
+    <main class="main-content">
+        <section id="lead-text">
+        <h1 class="maintitle">welcome to free will - complete edition</h1>
+        <p class="subtitle">0.3</p>
+        <p>jakkolwiek zasadnicza intryga w tytułowym miasteczku jest grubymi nićmi szyta i lekko nieprzekonująca, o tyle widać iż elementy opowiadania są do siebie dobrze dopasowane, gra ma pomysł na siebie, korzysta ze sprawdzonych zabiegów narracyjnych, tempo jest odpowiednie by nie znużyć, z drobnymi aktywnościami pobocznymi; postaci są ładne, aczkolwiek zdarza się iż wyglądają tak sobie; w istocie jedno z lepszych opowiadań w tej niszy;</p>
+        <br>
+        </section>
+        
+
+        <region id="uwagi-zebrane">
+        <article>
+            <h3><a href="#uwagi-zebrane" target="_self"># uwagi zebrane</a></h3>
+
+            <div> <!-- opowiadanie -->
+            <p>opowiadanie używa krótkich wspomnień z przeszłości głównej postaci i snów z jego wewnętrznym cieniem;</p>
+            <p>istnieją proste zadania poboczne pomiędzy kolejnymi wydarzeniami fabularnymi;</p>
+            <p>pojawiają się interaktywne podsumowania pomiędzy epizodami, gdzie można wybrać konkretną postać, by zobaczyć szczegóły; nic szczególnego;</p>
+            <p>nawet jeżeli wszystkich się odrzucało to zawsze jeden wybór będzie dostępny, bo trzeba ostatecznie wybrać któreś dziewczę;</p>
+            <p>zakończenia gry są spersonalizowane, jednakowoż są to warianty tego samego z tymi samymi dialogami; jako że technicznie są to inne sceny, to znaczy to że trzeba je „przeklikać”, co nuży podczas zdobywania wszystkich osiągnięć, a do tego niektórych scenek nie można przewinąć; należy tu również zaznaczyć iż postaci w ostatnim rozdziale roztaczają sobą nieco odmienną atmosferę niż w poprzednich rozdziałach, głównie dlatego że zmienia się ich ubiór i fryzura;</p>
+            <details class="accordion">
+                <summary>rosaline</summary>
+                <figure>
+                    <source srcset="./rosa-20260719232715_1.jpg" type="image/jpg">
+                    <img loading="lazy" srcset="./rosa-20260719232715_1.jpg" alt="rosa-20260719232715_1.jpg">
+                    <figcaption>pierwsze zapoznanie z rosaline</figcaption>
+                </figure>
+                <br>
+            </details>
+            <br>
+            </div>
+
+            <div> <!-- grafika -->
+            <p>raz na jakiś czas pojawiają się animacje;</p>
+            <p>woda na ciele wygląda dobrze, bycie mokrym wygląda przekonująco;</p>
+            <p>możemy się natykać na wycinki prasowe o beznadziejnej składni tekstu;</p>
+            <details class="accordion">
+                <summary>lokalna gazeta</summary>
+                <figure>
+                    <source srcset="./newspaper-20260825202921_1.jpg" type="image/jpg">
+                    <img loading="lazy" srcset="./newspaper-20260825202921_1.jpg" alt="newspaper-20260825202921_1.jpg">
+                    <figcaption>przykład „gazety” z akceptowalnym składem tekstu</figcaption>
+                </figure>
+                <br>
+            </details>
+            <p>postaci wyglądają ładnie, aczkolwiek zdarza się co chwilę jakaś zmiana, która powoduje iż wyglądają nieco inaczej; w mej opinii raczej gorzej niż lepiej; szczególnie niki wygląda przeciętnie, a candice dostaje dodatkowe cieniowanie; do tego ostatni rozdział zmienia fryzurę głównej postaci żeńskiej;</p>
+            <details class="accordion">
+                <summary>lily i rosa</summary>
+                <figure>
+                    <source srcset="./lily-face-20260721023410_1.jpg" type="image/jpg">
+                    <img loading="lazy" srcset="./lily-face-20260721023410_1.jpg" alt="lily-face-20260721023410_1.jpg">
+                    <figcaption>przybliżenie na twarz lily, zielonookiego rudzielca</figcaption>
+                </figure>
+                <br>
+                <figure>
+                    <source srcset="./rosa-feet-20260823193556_1.jpg" type="image/jpg">
+                    <img loading="lazy" srcset="./rosa-feet-20260823193556_1.jpg" alt="rosa-feet-20260823193556_1.jpg">
+                    <figcaption>scena ze stópkami rosy</figcaption>
+                </figure>
+                <br>
+            </details>
+            <br>
+            </div>
+
+            <div> <!-- rozgrywka -->
+            <p>mamy do dyspozycji dziennik (całkowicie bezużyteczny) oraz smartfon (wymagany do dzwonienia, opcjonalny do sms-owania);</p>
+            <details class="accordion">
+                <summary>journal</summary>
+                <figure>
+                    <source srcset="./journal-20260719233821_1.jpg" type="image/jpg">
+                    <img loading="lazy" srcset="./journal-20260719233821_1.jpg" alt="journal-20260719233821_1.jpg">
+                    <figcaption>dziennik z kryptycznie wspomnianym hasłem do magazynu</figcaption>
+                </figure>
+                <br>
+            </details>
+            <p>pojawia się pięć minigier (siłownia, naprawianie samochodu, otwieranie zamku, prawda albo psikus, budowanie domostwa) i wszystkie są upośledzone; w istocie pełnią one rolę qte; ostatnia z nich jest wymagana do kontynuowania fabuły; jedynie bawienie się w mechanika jest ciekawe o tyle iż można niepotrzebnie wydać pieniądze na wymagane części, a znalezienie na nie mamony też niekoniecznie jest takie proste;</p>
+            <p>przechodzenie pomiędzy kolejnymi pokojami jest całkiem przyjemne, głównie za sprawą dość wielkich wskaźników; jednakowoż gdy dwa takowe są zbyt blisko siebie to daje o sobie znać wykrywanie kursora myszy i można kliknąć nie ten który się chciało;</p>
+            <p>bonusy-grafiki (special renders) oferuje się za rozwiązywanie łamigłówek w ramach swobodnej eksploracji (free roam); albo należy odpowiedzieć na pytania, rozwiązać rebus, albo wpisać hasło; poszukiwanie tego trzeciego jest karkołomnym zadaniem, a ono samo jest na tyle zawoalowane że wprost zniechęcające do poszukiwań;</p>
+            <details class="accordion">
+                <summary>flavia</summary>
+                <figure>
+                    <source srcset="./flavia-special-render-20260829205958_1.jpg" type="image/jpg">
+                    <img loading="lazy" srcset="./flavia-special-render-20260829205958_1.jpg" alt="flavia-special-render-20260829205958_1.jpg">
+                    <figcaption>flavia’s special render</figcaption>
+                </figure>
+            </details>
+            <p>niektóre sceny seksu dają możliwość zadawania klapsów jako opcja dialogowa do wyboru;</p>
+            <p>nie można cofnąć dialogów po podjęciu wyboru;</p>
+            <p>nie można wpisać pustego imienia które jest wymuszane;</p>
+            <br>
+            </div>
+
+            <div> <!-- inne spostrzeżenia -->
+            <p>odblokowanie wszystkich scen i renderów jest wyzwaniem o tyle że to strata czasu;</p>
+            <p>czcionka użyta dla listy z muzyką jest słabo czytelna („<a href="https://www.1001fonts.com/old-town-font.html">old town</a>”);</p>
+            <br>
+            </div>
+
+            <br>
+        </article>
+        <br>
+        </region>
+
+
+        <region id="kłopotliwe-osiągnięcia">
+        <article>
+            <h3><a href="#kłopotliwe-osiągnięcia" target="_self"># kłopotliwe osiągnięcia</a></h3>
+
+            <details class="accordion"> 
+                <summary>hasła do magazynów (w kolejności)</summary>
+                <table class="passwords" id="passwds">
+                    <colgroup>
+                        <col span="1" class="passwords--place">
+                        <col span="1" class="passwords--desc">
+                        <col span="1">
+                    </colgroup>
+                    <tr>
+                        <td>dining room</td>
+                        <td>at the beginning</td>
+                        <td>69position</td>
+                    </tr>
+                    <tr>
+                        <td>moone’s room</td>
+                        <td>after timo’s jerking off</td>
+                        <td>rosarightboob</td>
+                    </tr>
+                    <tr>
+                        <td>party</td>
+                        <td>first encounter</td>
+                        <td>mrlongdick</td>
+                    </tr>
+                    <tr>
+                        <td>after party</td>
+                        <td>niki and flavia</td>
+                        <td>sweet19</td>
+                    </tr>
+                    <tr>
+                        <td>lily’s house</td>
+                        <td>in hallway on table</td>
+                        <td>bigroundass</td>
+                    </tr>
+                    <tr>
+                        <td>niki’s room</td>
+                        <td>near plant, left to computer</td>
+                        <td>sexythongs123</td>
+                    </tr>
+                    <tr>
+                        <td>disco</td>
+                        <td>near claudia</td>
+                        <td>spicysenorita</td>
+                    </tr>
+                    <tr>
+                        <td>niki’s room</td>
+                        <td>on bed</td>
+                        <td>banggang</td>
+                    </tr>
+                    <tr>
+                        <td>party cabin</td>
+                        <td>at night with flavia and talita</td>
+                        <td>hotchick200</td>
+                    </tr>
+                    <tr>
+                        <td>kitchen</td>
+                        <td>when niki is in the bathroom</td>
+                        <td>publicpenetration</td>
+                    </tr>
+                    <tr>
+                        <td>bathroom</td>
+                        <td>with niki and lily</td>
+                        <td>motorboating</td>
+                    </tr>
+                    <tr>
+                        <td>elyce’s retreat</td>
+                        <td>back shelf</td>
+                        <td>rideme96</td>
+                    </tr>
+                    <tr>
+                        <td>elyce’s retreat</td>
+                        <td>rescue party gathering</td>
+                        <td>sexybooty</td>
+                    </tr>
+                    <tr>
+                        <td>camp</td>
+                        <td>near niki</td>
+                        <td>firewalkwithme</td>
+                    </tr>
+                    <tr>
+                        <td>elyce’s retreat 2</td>
+                        <td>after expedition near lily</td>
+                        <td>squirting32</td>
+                    </tr>
+                    <tr>
+                        <td>hospital</td>
+                        <td>north to lily</td>
+                        <td>biglust00</td>
+                    </tr>
+                    <tr>
+                        <td>hospital</td>
+                        <td>near room 57</td>
+                        <td>voyeursex</td>
+                    </tr>
+                    <tr>
+                        <td>lily’s house 2</td>
+                        <td>in room with moone</td>
+                        <td>doppelbanger</td>
+                    </tr>
+                    <tr>
+                        <td>mayor’s house party</td>
+                        <td>near lily</td>
+                        <td>spicyeggplant</td>
+                    </tr>
+                    <tr>
+                        <td>mayor’s house party</td>
+                        <td>in bathroom with rocky and zack</td>
+                        <td>bedroomrodeo</td>
+                    </tr>
+                    <tr>
+                        <td>mayor’s house party</td>
+                        <td>near fireplace</td>
+                        <td>hankypanky69</td>
+                    </tr>
+                    <tr>
+                        <td>dream town</td>
+                        <td>information – tickets</td>
+                        <td>cumshot</td>
+                    </tr>
+                    <tr>
+                        <td>dream town</td>
+                        <td>on grass</td>
+                        <td>dirtytalk</td>
+                    </tr>
+                    <tr>
+                        <td>dream town</td>
+                        <td>driveway near rosa</td>
+                        <td>oral</td>
+                    </tr>
+                    <tr>
+                        <td>dream town</td>
+                        <td>bottom of slide</td>
+                        <td>sensuality</td>
+                    </tr>
+                    <tr>
+                        <td>dream town</td>
+                        <td>on table near restaurant</td>
+                        <td>spank</td>
+                    </tr>
+                    <tr>
+                        <td>dream town</td>
+                        <td>hotel on table</td>
+                        <td>footjob</td>
+                    </tr>
+                    <tr>
+                        <td>dream town</td>
+                        <td>hotel room, second door on left</td>
+                        <td>dickpic</td>
+                    </tr>
+                    <tr>
+                        <td>dream town 2</td>
+                        <td>under green box</td>
+                        <td>penetration</td>
+                    </tr>
+                    <tr>
+                        <td>dream town 2</td>
+                        <td>left to the plants</td>
+                        <td>bondage</td>
+                    </tr>
+                    <tr>
+                        <td>dream town 2</td>
+                        <td>on bench</td>
+                        <td>cherrybomb</td>
+                    </tr>
+                    <tr>
+                        <td>dream town 2</td>
+                        <td>on bench near window</td>
+                        <td>handjob</td>
+                    </tr>
+                    <tr>
+                        <td>dream town 2 at night</td>
+                        <td>near bin</td>
+                        <td>temptation</td>
+                    </tr>
+                    <tr>
+                        <td>dream town 2 at night</td>
+                        <td>on stairs</td>
+                        <td>cunnilingus</td>
+                    </tr>
+                    <tr>
+                        <td>dream town 2 at night</td>
+                        <td>near back dumpster</td>
+                        <td>assplay</td>
+                    </tr>
+                </table>
+                <br>
+            </details>
+            <ul>
+                <li><a href="https://steamcommunity.com/app/3930840/discussions/0/688617061539215452/">passwords</a></li>
+                <li><a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3622462061">complete walkthrough</a></li>
+                <li><a href="https://steamcommunity.com/app/3930840/discussions/0/688617322850690543/">puzzles</a></li>
+                <li><a href="https://steamcommunity.com/app/3930840/discussions/0/687493125920281815/">render help</a></li>
+                <li><a href="https://steamcommunity.com/app/3930840/discussions/0/686365984769037417/">kate render</a></li>
+                <li><a href="https://steamcommunity.com/app/3930840/discussions/0/805723552519134707/">can’t find kate’s 9th render and flavia’s 16th</a></li>
+                <li><a href="https://steamcommunity.com/app/3930840/discussions/0/686365984768917629/">achievement issue</a></li>
+            </ul>
+
+            <br>
+        </article>
+        <br>
+        </region>
+
+
+        <region id="ścieżka-dźwiękowa">
+        <article>
+            <h3><a href="#ścieżka-dźwiękowa" target="_self"># ścieżka dźwiękowa</a></h3>
+    
+            <p>lista utworów uzyskana z pliku <span class="code-line">music.rpa</span>; lista muzyki w samej grze zawiera literówki;</p>
+            <br>
+
+            <details class="soundtrack-accordion"> <!-- soundtrack -->
+                <summary>soundtrack</summary>
+
+                <table class="soundtrack4-ost" id="ost"> <!-- episode 1 -->
+                    <caption>episode 1</caption>
+                    <colgroup>
+                        <col span="1" class="soundtrack4-ost-title">
+                        <col span="1" class="soundtrack4-ost-author">
+                        <col span="1">
+                    </colgroup>
+                    <tr>
+                        <td><a href="https://www.jamendo.com/track/2288148/be-happy-antarcticbreeze-lo-fi-version">be happy</a></td>
+                        <td>antarcticbreeze</td>
+                        <td>2:18</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.youtube.com/watch?v=eEiy5mWTZSg">children’s time</a></td>
+                        <td>antarcticbreeze</td>
+                        <td>1:16</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.youtube.com/watch?v=IJVs6z-V2cQ">headless horseman</a></td>
+                        <td><abbr title="darkness">alexander nakarada</abbr></td>
+                        <td>2:46</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.youtube.com/watch?v=eEKlCJQLdjM">the hour between dog and wolf</a></td>
+                        <td>barcreeps</td>
+                        <td>2:34</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.youtube.com/watch?v=GN96QTn2ux8">acoustic breeze</a></td>
+                        <td>bensound</td>
+                        <td>2:38</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.youtube.com/watch?v=XcKhYvRDyNI">happiness</a></td>
+                        <td>bensound</td>
+                        <td>4:22</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.youtube.com/watch?v=P9a8CIzxsVU">bad sign</a></td>
+                        <td>brad sucks</td>
+                        <td>3:54</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.youtube.com/watch?v=wDHq-W3s6Cw">total breakdown</a></td>
+                        <td>brad sucks</td>
+                        <td>2:21</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.youtube.com/watch?v=CBHYhtBeEDM">the only one</a></td>
+                        <td>caffine creek band</td>
+                        <td>2:53</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.youtube.com/watch?v=p9MAH9tAD68">i wonder</a></td>
+                        <td>dreamheaven</td>
+                        <td>3:19</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.youtube.com/watch?v=AsYF8rvAo7w">sidewalk chalk</a></td>
+                        <td><abbr title="gold">harris heller</abbr></td>
+                        <td><a href="https://streambeats.com/album/gold/">2:48</a></td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.youtube.com/watch?v=2LXYna0m-0s">arctic monkeys styled instrumental</a></td>
+                        <td><abbr title="meter/levels">david hyde</abbr></td>
+                        <td>1:39</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.youtube.com/watch?v=39tJ0jegC-A">long goodbyes</a></td>
+                        <td><abbr title="yes means no">i am not lefthanded</abbr></td>
+                        <td><a href="https://www.tribeofnoise.com/music/listen?h=91b5345ab5c07ffb49131dc91336333a">3:57</a></td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.tribeofnoise.com/music/listen?h=b4344ae0976dfede476d6e3b4393a3db">1000 miles</a></td>
+                        <td>jahzzar (javier suarez)</td>
+                        <td>1:46</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.jamendo.com/track/363324/highland">highland</a></td>
+                        <td><abbr title="home">jahzzar (javier suarez)</abbr></td>
+                        <td>2:50</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.youtube.com/watch?v=zHnvuutFFEY">siesta</a></td>
+                        <td><abbr title="traveller’s guide">jahzzar (javier suarez)</abbr></td>
+                        <td><a href="https://www.jamendo.com/track/876533/siesta">2:19</a></td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.youtube.com/watch?v=DC4FKDpG-CM">so easy</a></td>
+                        <td><abbr title="traveller’s guide">jahzzar (javier suarez)</abbr></td>
+                        <td><a href="https://www.tribeofnoise.com/music/listen?h=c6e30530fbf1fdb63c8b3a5173447022">2:18</a></td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.youtube.com/watch?v=33MDF5TV560">damage</a></td>
+                        <td>joel marlow</td>
+                        <td>4:00</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.youtube.com/watch?v=TrmmA0Ea0Bg">a simple love song</a></td>
+                        <td>juliush</td>
+                        <td>2:56</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.youtube.com/watch?v=AX7e3PhUmpQ">on my way</a></td>
+                        <td>kevin macleod</td>
+                        <td>4:13</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.youtube.com/watch?v=7nBJp4nv2wA">apologies</a></td>
+                        <td>last titans</td>
+                        <td>3:30</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.youtube.com/watch?v=Jkvvz-Juu9s">morning anthem</a></td>
+                        <td>last titans</td>
+                        <td>2:47</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.youtube.com/watch?v=AI9BNmwsPdQ">nothing we can do</a></td>
+                        <td>last titans</td>
+                        <td>4:33</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.youtube.com/watch?v=YjG48cvvkoo">revolution</a></td>
+                        <td>last titans</td>
+                        <td>3:20</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.youtube.com/watch?v=TUxOsd8jG4I">save me from myself</a></td>
+                        <td>last titans</td>
+                        <td>4:19</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.youtube.com/watch?v=8UpHREtvUWI">without you</a></td>
+                        <td>last titans</td>
+                        <td>4:14</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.youtube.com/watch?v=Rdqt3iMX1s8">freeling</a></td>
+                        <td>lauren duski</td>
+                        <td>1:39</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.youtube.com/watch?v=IyESNXdJmIg">rollin</a></td>
+                        <td>lauren duski</td>
+                        <td>2:04</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.youtube.com/watch?v=B5uGOJSDRUM">golden days</a></td>
+                        <td>topher mohr, alex elena</td>
+                        <td>3:08</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.youtube.com/watch?v=K-TBcIUPWVQ">reasons to smile</a></td>
+                        <td>topher mohr, alex elena</td>
+                        <td>3:12</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.youtube.com/watch?v=s0T1Te_33C0">chill acoustic</a></td>
+                        <td>oak studios</td>
+                        <td>2:53</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.youtube.com/watch?v=M3fDgo_awnE">northwest</a></td>
+                        <td>oak studios</td>
+                        <td>2:51</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.youtube.com/watch?v=HuvqpQmSaWs">once</a></td>
+                        <td>oak studios</td>
+                        <td>2:47</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.youtube.com/watch?v=IAvZjuuLAIo">run</a></td>
+                        <td>oak studios</td>
+                        <td>3:35</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.tribeofnoise.com/music/listen?h=7efdb8b322d7f959292dd5c8f01664e6">live my life right now</a></td>
+                        <td>postmark twain</td>
+                        <td>4:18</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.youtube.com/watch?v=CZGZVbg6sWA">i wanted it to be you so badly (acoustic)</a></td>
+                        <td>quinti best friend</td>
+                        <td>3:51</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.youtube.com/watch?v=dVsRkLBOARU">good morning!</a></td>
+                        <td>reed mathis</td>
+                        <td>2:12</td>
+                    </tr>
+                    <tr>
+                        <td>prove ’em wrong</td>
+                        <td>ricardo riquier</td>
+                        <td>3:17</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.youtube.com/watch?v=1W6g-DVb9lU">southern california</a></td>
+                        <td>riot</td>
+                        <td>2:14</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.youtube.com/watch?v=XUWEQC9pXr0">daisy dukes</a></td>
+                        <td>silent partner</td>
+                        <td>2:57</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.youtube.com/watch?v=DegYrnvJQDA">up all night</a></td>
+                        <td>silent partner</td>
+                        <td>2:45</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.youtube.com/watch?v=Ol_D-4AYgEE">tonto</a></td>
+                        <td>silent partner</td>
+                        <td>2:46</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.youtube.com/watch?v=8q0T4UEu41Q">creek whistle</a></td>
+                        <td>steve adams</td>
+                        <td>3:28</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.youtube.com/watch?v=OmjJg9BjUAM">lonesome avenue</a></td>
+                        <td>the 126ers</td>
+                        <td>3:05</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.youtube.com/watch?v=oR5_BYN2Y6s">rainy sundays</a></td>
+                        <td>the 126ers</td>
+                        <td>3:24</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.youtube.com/watch?v=ayqXKUVOTcE">laugh and cry</a></td>
+                        <td>the mini vandals</td>
+                        <td>2:32</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.tribeofnoise.com/music/listen?h=0c5a40bc3604f1c49644dbb9d3b78086">talk the talk</a></td>
+                        <td><abbr title="handbags">the weekend retreat</abbr></td>
+                        <td>3:05</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.youtube.com/watch?v=_TjMjbZPXMg">grunge rock</a></td>
+                        <td>wayne john bradley</td>
+                        <td>3:25</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.youtube.com/watch?v=yHIcXM1tdfQ">you can fly</a></td>
+                        <td>wayne john bradley</td>
+                        <td>4:59</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.youtube.com/watch?v=eogiTkdAiZY">modus operandi</a></td>
+                        <td>wes hutchinson</td>
+                        <td>2:28</td>
+                    </tr>
+                    <tr>
+                        <td>finland</td>
+                        <td><abbr title="rock music for studying">classic rock</abbr></td>
+                        <td>1:28</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.youtube.com/watch?v=nVQNo7FNhi0">longer distance</a></td>
+                        <td><abbr title="the places that taught us">tracktribe</abbr></td>
+                        <td>3:53</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.youtube.com/watch?v=UyGCcTFpvpM">vault</a></td>
+                        <td><abbr title="the places that taught us">tracktribe</abbr></td>
+                        <td>2:25</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.tribeofnoise.com/music/listen?h=60c77b943a819c0af853981c6fd0a02e">wayside</a></td>
+                        <td>hemi jinks</td>
+                        <td>4:22</td>
+                    </tr>
+                </table>
+                <br>
+                <br>
+
+                <table class="soundtrack4-ost"> <!-- episode 2 -->
+                    <caption>episode 2</caption>
+                    <colgroup>
+                        <col span="1" class="soundtrack4-ost-title">
+                        <col span="1" class="soundtrack4-ost-author">
+                        <col span="1">
+                    </colgroup>
+                    <tr>
+                        <td><a href="https://www.youtube.com/watch?v=-T4zgmYv4Xo">memory</a></td>
+                        <td>ashamaluevmusic</td>
+                        <td>3:32</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.youtube.com/watch?v=-ttLt7ajMYA">nature</a></td>
+                        <td>ashamaluevmusic</td>
+                        <td>2:48</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.youtube.com/watch?v=Njjcl2QGeek">subway dreams</a></td>
+                        <td>dan henig</td>
+                        <td>2:06</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.youtube.com/watch?v=CGO3HxZ1bvg">positive happy acoustic</a></td>
+                        <td>ds productions</td>
+                        <td>1:33</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.youtube.com/watch?v=An657FH_kOE">feel in</a></td>
+                        <td>ed napoli</td>
+                        <td>3:15</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.youtube.com/watch?v=x_nVK6fyK70">like it or not</a></td>
+                        <td>ed napoli</td>
+                        <td>3:15</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.youtube.com/watch?v=ZujzgD68VtU">romantism</a></td>
+                        <td>ed napoli</td>
+                        <td>3:42</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.tribeofnoise.com/music/listen?h=e7b3a916dc38f0755da5c988e77c1e06">tonight is</a></td>
+                        <td>ed napoli</td>
+                        <td>2:35</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.youtube.com/watch?v=BU_NlPeMcMk">city life</a></td>
+                        <td>forrest keller</td>
+                        <td>3:34</td>
+                    </tr>
+                    <tr>
+                        <td>fading thoughts</td>
+                        <td>forrest keller</td>
+                        <td>2:46</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.youtube.com/watch?v=3BqkWgthic8">my luck</a></td>
+                        <td>forrest keller</td>
+                        <td>1:51</td>
+                    </tr>
+                    <tr>
+                        <td>the run around</td>
+                        <td>forrest keller</td>
+                        <td>1:26</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.youtube.com/watch?v=IrcJ0CZE_dU">dream time</a></td>
+                        <td>free music (oleg mazur)</td>
+                        <td>2:42</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.youtube.com/watch?v=TcA6X4r3ds0">looking for you</a></td>
+                        <td>free music (oleg mazur)</td>
+                        <td>4:20</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.youtube.com/watch?v=S_I99VeiHfA">romantic memories</a></td>
+                        <td>free music (oleg mazur)</td>
+                        <td>3:10</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.youtube.com/watch?v=NETtYPwxOBY&t=1809s">the phantom follows</a></td>
+                        <td><abbr title="ocularium">harris heller</abbr></td>
+                        <td>2:03</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://pixabay.com/music/solo-guitar-at-the-campfire-acoustic-guitar-music-2084/">at the campfire</a></td>
+                        <td>juliush</td>
+                        <td>2:30</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.youtube.com/watch?v=KaFKdRG9CF8">waiting for my love</a></td>
+                        <td>juliush</td>
+                        <td>2:40</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://soundcloud.com/louiseiam/marry-me-unplugged">marry me</a></td>
+                        <td>loupe (louise colam)</td>
+                        <td>2:32</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.youtube.com/watch?v=uwUe8OVxcOg">sweet as honey</a></td>
+                        <td>topher mohr, alex elena</td>
+                        <td>3:21</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.youtube.com/watch?v=6TWq8rl3PPU">family travel</a></td>
+                        <td>music4video</td>
+                        <td>1:36</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.youtube.com/watch?v=5lBGpRZ1uGs">folk background</a></td>
+                        <td>music4video</td>
+                        <td>2:50</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.youtube.com/watch?v=lKL1iscXdKI">inspiring acoustic</a></td>
+                        <td>music4video</td>
+                        <td>2:30</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.youtube.com/watch?v=ubI_WdNH6DI">honolulu</a></td>
+                        <td>oak studios</td>
+                        <td>2:24</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.youtube.com/watch?v=hf8Eqa73aIU">the clear</a></td>
+                        <td>oak studios</td>
+                        <td>2:08</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.youtube.com/watch?v=6d2nz7Ais5A">dark ambient crime</a></td>
+                        <td>remorse</td>
+                        <td>2:49</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.youtube.com/watch?v=OiShSsU0h00">good feelings</a></td>
+                        <td>royalityfreemusiclibrary</td>
+                        <td>2:59</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://samgallagher1.bandcamp.com/track/whenever-you-speak">whenever you speak</a></td>
+                        <td>sam gallagher</td>
+                        <td><a href="https://www.tribeofnoise.com/music/listen?h=852593a995347064df2558c0488d4825">3:40</a></td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.youtube.com/watch?v=Zoph5P2jsZo">wanderlust</a></td>
+                        <td>scott buckley</td>
+                        <td>2:49</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.youtube.com/watch?v=FkoJJIZezD4">days are long</a></td>
+                        <td>silent partner</td>
+                        <td>3:07</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.youtube.com/watch?v=sU5gqdgpIUs">all she could be</a></td>
+                        <td>sarah solovay</td>
+                        <td>3:18</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.youtube.com/watch?v=IfyMOOQr0Pw">in my shadow</a></td>
+                        <td><abbr title="high at the planetarium">streambeats (harris heller)</abbr></td>
+                        <td>2:25</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.youtube.com/watch?v=ArVQaOZk-mo">sexy chill 2</a></td>
+                        <td>the mask of chill</td>
+                        <td><a href="https://soundcloud.com/themaskofchill/sexy-chill-2">3:33</a></td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.youtube.com/watch?v=s4mmSCKnbRk">you’ve got it kid (remix)</a></td>
+                        <td>the night</td>
+                        <td>6:04</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.youtube.com/watch?v=g-0ITRGJg7o">every day</a></td>
+                        <td>wayne john bradley</td>
+                        <td>4:02</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.youtube.com/watch?v=-I3RqVnHQtE">ghosts of california</a></td>
+                        <td>wes hutchinson</td>
+                        <td>3:02</td>
+                    </tr>
+                    <tr>
+                        <td>city life</td>
+                        <td></td>
+                        <td>3:17</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.youtube.com/watch?v=USf1xWjYn7k">groundwork</a></td>
+                        <td>kevin macleod</td>
+                        <td>2:49</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.youtube.com/watch?v=-T4zgmYv4Xo">memory</a></td>
+                        <td>ashamaluevmusic</td>
+                        <td>3:32</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.tribeofnoise.com/music/listen?h=6a7a09de416d2833cba158b0e6100449">we are</a></td>
+                        <td>nathan brumley</td>
+                        <td>3:26</td>
+                    </tr>
+                </table>
+                <br>
+                <br>
+
+                <table class="soundtrack4-ost"> <!-- episode 3 -->
+                    <caption>episode 3</caption>
+                    <colgroup>
+                        <col span="1" class="soundtrack4-ost-title">
+                        <col span="1" class="soundtrack4-ost-author">
+                        <col span="1">
+                    </colgroup>
+                    <tr>
+                        <td><a href="https://www.youtube.com/watch?v=gIPKo1TlxNs">hoist</a></td>
+                        <td><abbr title="prisma">andy g. cohen</abbr></td>
+                        <td>3:22</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.youtube.com/watch?v=9km-_RROKqI">si señorita</a></td>
+                        <td>chris haugen</td>
+                        <td>2:19</td>
+                    </tr>
+                    <tr>
+                        <td>wind</td>
+                        <td><abbr title="a day in the life of the wind">cskp (michelle leitstein)</abbr></td>
+                        <td><a href="https://soundcloud.com/shopinheaven184/digital-media-composition-a-day-in-the-life-of-the-wind">6:10</a></td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.youtube.com/watch?v=Am2a1S4IyMs">wood</a></td>
+                        <td>dan henig</td>
+                        <td>1:37</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.youtube.com/watch?v=gaBWo_iZBoo">freedom</a></td>
+                        <td>dan lebowitz</td>
+                        <td>2:19</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.youtube.com/watch?v=1Ee1uHIJvSc">alta vibracion</a></td>
+                        <td><abbr title="light rock">danosongs</abbr></td>
+                        <td>3:04</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.youtube.com/watch?v=XAwnnsRub34">joker with honey lips</a></td>
+                        <td><abbr title="light rock">danosongs</abbr></td>
+                        <td>4:07</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.youtube.com/watch?v=tuwG3uyyFE4">soft</a></td>
+                        <td>deeje</td>
+                        <td>4:53</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.youtube.com/watch?v=HCRQJr9SrvA">fool for you</a></td>
+                        <td>ed napoli</td>
+                        <td>2:04</td>
+                    </tr>
+                    <tr>
+                        <td>the opening</td>
+                        <td>forrest keller</td>
+                        <td>3:46</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.youtube.com/watch?v=GbNQoz3biZw">feel free</a></td>
+                        <td>free music (oleg mazur)</td>
+                        <td>3:04</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.jamendo.com/track/760897/last-dance">last dance</a></td>
+                        <td><abbr title="blinded by dust">jahzzar (javier suarez)</abbr></td>
+                        <td>3:00</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.youtube.com/watch?v=Ols_ERiJrbw">deadly roulette</a></td>
+                        <td>kevin macleod</td>
+                        <td>2:39</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.youtube.com/watch?v=wBMTMrTM1zg">poured</a></td>
+                        <td>lauren duski</td>
+                        <td>2:25</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://soundcloud.com/aleampe/lilies-happy-guitar-track-free-download">happy guitar</a></td>
+                        <td>lilies</td>
+                        <td>2:20</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.youtube.com/watch?v=oBG8ldpu1Pk">let’s do it</a></td>
+                        <td>topher mohr, alex elena</td>
+                        <td>3:14</td>
+                    </tr>
+                    <tr>
+                        <td>funky blues</td>
+                        <td>jam tracks</td>
+                        <td>4:22</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.youtube.com/watch?v=7pah-oCUIZY">coming home</a></td>
+                        <td>your library</td>
+                        <td>3:47</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.youtube.com/watch?v=c6Z4QuHqi7s">guitar hip hop</a></td>
+                        <td>n3beats</td>
+                        <td>3:50</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.youtube.com/watch?v=P-RzeQ8owks">cinematic mystery</a></td>
+                        <td>noiseplug</td>
+                        <td>3:00</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.youtube.com/watch?v=tSyWDmLJ9D0">angels</a></td>
+                        <td>oak studios</td>
+                        <td>2:54</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.youtube.com/watch?v=inolhdC0LVU">heading north</a></td>
+                        <td>oak studios</td>
+                        <td>2:36</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.youtube.com/watch?v=nPklckysZKs">hereafter</a></td>
+                        <td>oak studios</td>
+                        <td>4:04</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.youtube.com/watch?v=dgQjHjIzJn0">the final cut</a></td>
+                        <td>oak studios</td>
+                        <td>3:40</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.youtube.com/watch?v=exV_OW_AMZs">acoustic background</a></td>
+                        <td>rightsfreesound</td>
+                        <td>2:50</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.youtube.com/watch?v=Di0iTtvP6PU">rock you</a></td>
+                        <td>rocksound</td>
+                        <td>2:29</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.youtube.com/watch?v=DWon8hMFlcM">beautiful modern rock pop guitar</a></td>
+                        <td>royalityfreemusic</td>
+                        <td>1:49</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.youtube.com/watch?v=tYmhg5cfUgk">piano love melody</a></td>
+                        <td>sampleme</td>
+                        <td>1:20</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.youtube.com/watch?v=r8bwoL5aZ9U">acoustic calm</a></td>
+                        <td>soundaudio</td>
+                        <td>2:31</td>
+                    </tr>
+                    <tr>
+                        <td>like this</td>
+                        <td>the night</td>
+                        <td>3:27</td>
+                    </tr>
+                    <tr>
+                        <td>horror</td>
+                        <td></td>
+                        <td>0:51</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.youtube.com/watch?v=8GjtIjkFNAM">duke & luna</a></td>
+                        <td>oak studios</td>
+                        <td>3:36</td>
+                    </tr>
+                </table>
+                <br>
+                <br>
+
+                <table class="soundtrack4-ost"> <!-- episode 4 -->
+                    <caption>episode 4</caption>
+                    <colgroup>
+                        <col span="1" class="soundtrack4-ost-title">
+                        <col span="1" class="soundtrack4-ost-author">
+                        <col span="1">
+                    </colgroup>
+                    <tr>
+                        <td><a href="https://www.youtube.com/watch?v=garxIwiz7jc">mon amour</a></td>
+                        <td>amedia</td>
+                        <td>2:53</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.youtube.com/watch?v=shzqZJsPbg0">meadow of dreams</a></td>
+                        <td>alexander nakarada</td>
+                        <td>4:18</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.youtube.com/watch?v=Q3vVn3wTWiw">mountains</a></td>
+                        <td><abbr title="our forest, our empire">bells</abbr></td>
+                        <td>3:44</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.youtube.com/watch?v=tzn-HD3CXs8">living with daydream</a></td>
+                        <td><abbr title="acoustic rock">danosongs</abbr></td>
+                        <td>3:16</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.youtube.com/watch?v=XXxhsO2-FRQ">searching, waiting, longing</a></td>
+                        <td>daaren curtis</td>
+                        <td>2:00</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://sdsongster.com/your-pretty-packages/5/">real bad bar fight</a></td>
+                        <td>ds howard (the shamey jays)</td>
+                        <td>3:24</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.youtube.com/watch?v=x0lB41ktXI8">hazy</a></td>
+                        <td>fly away</td>
+                        <td>6:29</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://soundcloud.com/jugzyboi/it-follows-me">it follows me</a></td>
+                        <td>jugz</td>
+                        <td>2:57</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.youtube.com/watch?v=Ky9bmMqFeyw">acoustic guitar</a></td>
+                        <td>music4video</td>
+                        <td>2:48</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.youtube.com/watch?v=QMRTmDoI9uc">unwound</a></td>
+                        <td>oak studios</td>
+                        <td>3:04</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.youtube.com/watch?v=yASqM7wNgvw">coming home with me</a></td>
+                        <td>original copyright free music</td>
+                        <td>4:26</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.youtube.com/watch?v=Fq2CwiO3rmI">revolution</a></td>
+                        <td>reebosound</td>
+                        <td>2:23</td>
+                    </tr>
+                    <tr>
+                        <td>land of plenty</td>
+                        <td>ricardo riquier</td>
+                        <td>3:01</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.youtube.com/watch?v=eZmVSyCnpsM">before i go</a></td>
+                        <td>rkvc</td>
+                        <td>3:27</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.youtube.com/watch?v=239ou3TbGoo">turn to the blues</a></td>
+                        <td>stacy jones</td>
+                        <td>3:11</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://soundcloud.com/themaskofchill/cherry-cordial">cherry cordial</a></td>
+                        <td>the mask of chill</td>
+                        <td>3:13</td>
+                    </tr>
+                </table>
+                <br>
+                <br>
+
+                <table class="soundtrack4-ost"> <!-- episode 5 -->
+                    <caption>episode 5</caption>
+                    <colgroup>
+                        <col span="1" class="soundtrack4-ost-title">
+                        <col span="1" class="soundtrack4-ost-author">
+                        <col span="1">
+                    </colgroup>
+                    <tr>
+                        <td><a href="https://www.youtube.com/watch?v=O-B7MSBaWNc">air</a></td>
+                        <td>ashamaluevmusic</td>
+                        <td>5:59</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.youtube.com/watch?v=JLsI5Fq_Tk8">dance and spin around</a></td>
+                        <td>audiocoffee</td>
+                        <td>2:45</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.youtube.com/watch?v=tkkqfb13aWc">hot summer</a></td>
+                        <td>audiocoffee</td>
+                        <td>2:36</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.audiomicro.com/disyuntiva-franco-ft-joaco-33-royalty-free-stock-music-779474">disyuntiva</a></td>
+                        <td>franco fellegrini</td>
+                        <td>3:45</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.tribeofnoise.com/music/listen?h=62eb6f4b35a9167c14a8215c82295a32">blue</a></td>
+                        <td><abbr title="flabbergasted smoothies">geigermeister</abbr></td>
+                        <td>4:43</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.youtube.com/watch?v=2y0zBnlWVRs">almost bliss</a></td>
+                        <td>kevin macleod</td>
+                        <td>5:08</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.youtube.com/watch?v=L5vvQXCI6m0">cold and grey</a></td>
+                        <td><abbr title="monkey on my back">pot barley</abbr></td>
+                        <td>4:28</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.youtube.com/watch?v=1TejWE-IAGg">i wanted it to be you so badly</a></td>
+                        <td>quinti best friend</td>
+                        <td>3:43</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.youtube.com/watch?v=YwLtWld8gDw">cherish</a></td>
+                        <td>roa</td>
+                        <td>3:56</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.youtube.com/watch?v=hzb9DsLguJo">the great sea</a></td>
+                        <td>scott buckley</td>
+                        <td>4:43</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.youtube.com/watch?v=m7qodIwoZxI">beg</a></td>
+                        <td>stezzyxl</td>
+                        <td>3:02</td>
+                    </tr>
+                    <tr>
+                        <td>dance with his right</td>
+                        <td><abbr title="trip of forever">kierran meyer</abbr></td>
+                        <td>1:59</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.youtube.com/watch?v=r6hp-Gc5q3I">japan</a></td>
+                        <td>aylex</td>
+                        <td>2:33</td>
+                    </tr>
+                </table>
+                <br>
+                <br>
+
+                <table class="soundtrack4-ost"> <!-- episode 6 -->
+                    <caption>episode 6</caption>
+                    <colgroup>
+                        <col span="1" class="soundtrack4-ost-title">
+                        <col span="1" class="soundtrack4-ost-author">
+                        <col span="1">
+                    </colgroup>
+                    <tr>
+                        <td><a href="https://www.youtube.com/watch?v=4-fGH9d3NU0&t=1530s">we wish you a merry christmas</a></td>
+                        <td>eric harper</td>
+                        <td>2:14</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.youtube.com/watch?v=4-fGH9d3NU0&t=1665s">what child is this</a></td>
+                        <td>eric harper</td>
+                        <td>3:18</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://soundcloud.com/gabrielbazza/a-little-blue">a little blue</a></td>
+                        <td>gabriel bazza</td>
+                        <td>2:17</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://soundcloud.com/gabrielbazza/saxyness">saxyness</a></td>
+                        <td>gabriel bazza</td>
+                        <td>2:39</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.youtube.com/watch?v=FJ-zz46fQ7I">myo myo</a></td>
+                        <td>los sketches</td>
+                        <td>3:41</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.youtube.com/watch?v=FaxO0tlhxLs">static in verona – blindfold</a></td>
+                        <td>rob merz</td>
+                        <td>3:34</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://soundcloud.com/tymofii-dziuban/piano-evening">piano evening</a></td>
+                        <td>tymofii dziuban</td>
+                        <td>3:27</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://soundcloud.com/tymofii-dziuban/piano-moving">piano moving</a></td>
+                        <td>tymofii dziuban</td>
+                        <td>2:39</td>
+                    </tr>
+                </table>
+                <br>
+                <br>
+
+                <br>
+            </details>
+            <br>
+    
+            <br>
+        </article>
+        <br>
+        </region>
+
+
+        <region id="linux">
+        <article>
+        <h3><a href="#linux" target="_self"># linux</a></h3>
+    
+<div> <!-- ścieżki -->
+<header>✱ ścieżki</header>
+<pre class="listing-block">
+<code># ~/.renpy/WelcometoFreeWillCompleteEdition-1759874491</code>
+</pre>
+<ul>
+	<li><a href="https://steamdb.info/app/3930840">steamdb</a></li>
+	<li><a href="https://www.protondb.com/app/3930840">protondb</a></li>
+	<li><a href="https://vndb.org/v32286/">vndb</a></li>
+</ul>
+        <br>
+        </div>
+
+        <br>
+        </article>
+        <br>
+        </region>
+
+
+        <region id="wątki-dyskusji">
+        <article>
+            <h3><a href="#wątki-dyskusji" target="_self"># wątki dyskusji</a></h3>
+            <ul>
+                <li><a href="https://steamcommunity.com/app/3930840/discussions/0/805723552519134707/">can’t find kate’s 9th render and flavia’s 16th</a></li>
+                <li><a href="https://steamcommunity.com/app/3930840/discussions/0/589562254618438374/">riddles?</a></li>
+            </ul>
+            <br>
+        </article>
+        <br>
+        </region>
+
+        
+        <hr>
+        <footer>2026-09-05</footer>
+    </main>
+</body>
+
+</html>
