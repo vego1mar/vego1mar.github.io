@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <title>the lust city — recenzja</title>
+    <meta charset="utf-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <style>
+        @font-face {
+            font-family: "ubuntu", sans-serif;
+            src: url("../fonts/Ubuntu-Regular.ttf");
+        }
+        body {
+            font-family: "ubuntu", sans-serif;
+        }
+        h1 {
+            font-size: 25px;
+        }
+        h2 {
+            font-size: 20px;
+        }
+        h3 {
+            font-size: 17px;
+            color: rgb(255, 70, 70); /* salmon */
+        }
+        h3 a {
+            text-decoration: none;
+            color: rgb(255, 70, 70);
+        }
+
+        .main-content {
+            margin-left: 10%;
+            margin-right: 10%;
+            font-size: 14px;
+            padding: 0px 10px;
+            font-family: "ubuntu", sans-serif;
+        }
+
+        .region-grey {
+            background-color: whitesmoke;
+            border-style: hidden;
+            border-radius: 10px;
+            padding-top: 1%;
+        }
+        .region-white {
+            background-color: white;
+        }
+        a {
+            text-decoration: none;
+            color: teal;
+        }
+        p {
+            line-height: 1.4;
+        }
+        blockquote {
+            border-left: 2px solid blueviolet;
+            padding-left: 1%;
+        }
+
+        .code-line {
+            font-family: "jetbrains mono", "ubuntu mono", monospace;
+            background-color: gainsboro;
+            border: 0px solid olive;
+        }
+        pre.listing-block {
+            background-color: ghostwhite;
+            overflow-x: auto;
+            overflow-y: hidden;
+            white-space: pre;
+            word-wrap: normal;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            padding-right: 10px;
+            border: 1px solid olive;
+        }
+        pre.listing-block::before {
+            counter-reset: listing;
+        }
+        pre.listing-block code {
+            counter-increment: listing-counter;
+            font-family: "calling code", "ubuntu mono", monospace;
+            font-size: 14px;
+        }
+        pre.listing-block code::before {
+            content: counter(listing-counter) "   ";
+            display: inline-block;
+            width: 4em;
+            padding-left: 0px;
+            margin-left: auto;
+            text-align: right;
+            font-size: 12px;
+            color: olive;
+        }
+        pre {
+            margin-left: 1%;
+            margin-right: 1%;
+        }
+        
+        .images-horizontal {
+            table-layout: fixed; 
+            display: block;
+            width: 100%;
+            overflow-x: scroll; 
+            overflow-y: hidden;
+            scroll-snap-align: center;
+        }
+        .images-horizontal a {
+            text-decoration: none;
+            color: black;
+        } 
+        .images-horizontal figcaption {
+            padding-top: 5px;
+        }
+
+        img {
+            width: 50vw;
+            height: auto;
+        }
+        figcaption {
+            font-size: 12px;
+            text-align: left;
+        }
+        figure figcaption {
+            text-align: center;
+        }
+        .fighover figure {
+            display: inline-block;
+            border: 1px;
+            margin: 10px;
+        }
+        .fighover figure, .fighover img {
+            vertical-align: top;
+            width: 29vw;
+        }
+        .fighover figure, .fighover figcaption {
+            border: 1px;
+            text-align: center;
+        }
+
+        .achievements {
+            table-layout: fixed; 
+            width: 90%;
+            text-align: left;
+        }
+        .achievements--name {
+            text-align: center;
+            vertical-align: middle;
+        }
+        .achievements caption {
+            text-align: left;
+            padding-left: 1px;
+            font-weight: bold;
+        }
+        table.achievements td {
+            padding-top: 1px;
+            padding-bottom: 1px;
+            border-bottom: 1px solid rgba(128, 128, 0, 0.2);
+        }
+        .achievements td:nth-child(1) {
+            padding-left: 11px;
+            width: 70%;
+        }
+        .achievements td:nth-child(2) {
+            padding-left: 11px;
+            width: 100%;
+        }
+        .achiev-accord-desc {
+            color: gray;
+        }
+        .achievements--not-gained {
+            color: gray;
+        }
+
+        .soundtrack-ost {
+            table-layout: fixed;
+            margin: auto;
+            width: 50%;
+        }
+        .soundtrack-ost td:nth-child(2) {
+            text-align: end;
+            padding-left: 5px;
+            width: 10%;
+        }
+        .soundtrack-ost tr:nth-child(even) {
+            background-color: ghostwhite;
+        }
+        .soundtrack-ost caption {
+            font-weight: bold;
+            text-align: left;
+            margin-left: -3%;
+        }
+        .soundtrack-accordion {
+            margin-left: 1%;
+            margin-right: 1%;
+        }
+
+        .soundtrack3 {
+            table-layout: fixed;
+            margin: auto;
+            padding-left: 2%;
+            padding-right: 6%;
+            width: 100%;
+        }
+        .soundtrack3 td:nth-child(2) {
+            text-align: end;
+            padding-left: 5px;
+            width: 5%;
+        }
+        .soundtrack3 tr:nth-child(even) {
+            background-color: whitesmoke;
+        }
+        table.soundtrack3 tr td {
+            padding-left: 10px;
+            padding-right: 10px;
+            padding-top: 5px;
+            padding-bottom: 5px;
+            border-radius: 11px;
+        }
+        table.soundtrack3 td a {
+            color: blue;
+            font-size: medium;
+            font-weight: bold;
+        }
+        table.soundtrack3 td {
+            font-size: small;
+        }
+        .s3-left {
+            float: left;
+        }
+        .s3-right {
+            float: right;
+        }
+
+        .dictionary {
+            table-layout: fixed; 
+            width: 90%;
+            text-align: left;
+        }
+        .dictionary--term {
+            width: 40%;
+            text-align: center;
+            vertical-align: middle;
+        }
+        table.dictionary td {
+            padding-top: 1px;
+            padding-bottom: 2px;
+            border-bottom: 1px solid rgba(128, 128, 0, 0.2);
+        }
+
+        @media only screen and (min-width: 1px) and (max-width: 920px) {
+            .soundtrack-ost {
+                width: 100%;
+            }
+        }
+        @media only screen and (min-width: 921px) and (max-width: 1250px) {
+            .soundtrack-ost {
+                width: 70%;
+            }
+        }
+        @media only screen and (min-width: 1251px) and (max-width: 1450px) {
+            .soundtrack-ost {
+                width: 50%;
+            }
+        }
+        @media only screen and (min-width: 1451px) and (max-width: 1900px) {
+            .soundtrack-ost {
+                width: 45%;
+            }
+        }
+        @media only screen and (min-width: 1901px) {
+            .soundtrack-ost {
+                width: 30%;
+            }
+        }
+
+        details {
+            border: 1px solid olive;
+            border-radius: 8px;
+            box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.12);
+            margin-bottom: 8px;
+        }
+        details[open] summary {
+            margin-bottom: 10px;
+        }
+        summary {
+            cursor: pointer;
+            transition: all 150ms ease-in-out;
+            padding: 12px;
+        }
+        .accordion pre, .accordion p, .accordion table {
+            margin-left: 2%;
+            margin-right: 2%;
+        }
+
+        article div p, article div details, article details {
+            margin-left: 1%;
+            margin-right: 1%;
+        }
+        details figure, details figure figcaption, div figure {
+            display: block;
+            text-align: center;
+        }
+        .discussion-thread, .discussion-thread a {
+            color: gray;
+        }
+
+        figure, figure figcaption {
+            display: block;
+            text-align: center;
+        }
+        img {
+            width: 100%;
+            height: auto;
+        }
+        .maintitle {
+            font-size: x-large;
+        }
+        .subtitle {
+            font-size: small;
+            color: olive;
+        }
+
+        .soundtrack4-ost {
+            margin: auto;
+            width: 95%;
+        }
+        .soundtrack4-ost-title {
+            width: 47%;
+        }
+        .soundtrack4-ost-author {
+            width: 47%;
+        }
+        table.soundtrack4-ost td:nth-child(1) a {
+            color: blue;
+        }
+        .soundtrack4-ost td:nth-child(3) {
+            text-align: end;
+        }
+        .soundtrack4-ost tr:nth-child(even) {
+            background-color: rgb(251, 251, 251);
+        }
+
+        header {
+            font-weight: bold;
+            font-size: 14px;
+            color: darkviolet;
+        }
+    </style>
+</head>
+
+<body>
+    <main class="main-content">
+        <section id="lead-text">
+        <h1 class="maintitle">the lust city</h1>
+        <p class="subtitle">3.2</p>
+        <p>zarówno fabuła jak i sceny seksu są płytkie i nieco niemrawe, lecz jako całość jakoś się to broni; niemniej, jestem na nie – istnieją mniej siermiężne opowiadania w tej niszy, które nie marnują tak czasu, bo jednak jest to całkiem długie; bardziej nudzi niż ciekawi; jakkolwiek gra jest prosta a nie prostacka, o tyle blisko jej do tego drugiego;</p>
+        <br>
+        </section>
+        
+
+        <region id="uwagi-zebrane">
+        <article>
+            <h3><a href="#uwagi-zebrane" target="_self"># uwagi zebrane</a></h3>
+
+            <div>
+            <p>opowiadanie cechuje niespójność czy też naiwność typowa dla przesadzonej powieści wizualnej dla dorosłych, tj. skąd nagle postać wzięła wyciągnęła imbryczek zza pazuchy by zaparzyć herbatę głęboko w lesie deszczowym skoro nic ze sobą nie niosła?</p>
+            <p>wybory mają jakieś niewielkie znaczenie, lecz nijak nie wpływa to na całe opowiadanie;</p>
+            <p>w tekście od pewnego momentu pojawiają się liczne literówki; przykładowo: whit zamiast with, waned zamiast wanted, sha'awa zamiast sha'wa; to ostatnie słowo to nazwa głównej lokacji, stąd taka niespójność razi;</p>
+            <p>zdarzają się błędnie podpisane imiona do dialogów;</p>
+            <p>scen seksu jest na tyle wiele, że wręcz za dużo; przesyt nimi potęguje ziewanie; dodatkowo, recyklingują one te same pozycje z innymi dziewczętami; podczas nich ambient wycisza się i dają się słyszeć jedynie odgłosy postaci; ich zakończenie wydaje się czasem dość szybkie;</p>
+            <p>pojawia się tutaj podgląd kadru bez ubrań nazywany „primal vision”;</p>
+            <p>trzeba wpisać nie tylko imię głównej postaci, lecz i określić dwie role wobec dwóch innych postaci (w domyśle: <abbr title="stepmother">matka przyrodnia</abbr> i <abbr title="stepsister">siostra przyrodnia</abbr>); jedno i drugie nie ma absolutnie żadnego znaczenia względem fabuły;</p>
+            <p>galeria zdjęć dostępna jest od samego początku;</p>
+            <br>
+            </div>
+
+            <br>
+        </article>
+        <br>
+        </region>
+
+
+        <region id="ścieżka-dźwiękowa">
+        <article>
+            <h3><a href="#ścieżka-dźwiękowa" target="_self"># ścieżka dźwiękowa</a></h3>
+    
+            <table class="soundtrack4-ost">
+                <colgroup>
+                    <col span="1" class="soundtrack4-ost-title">
+                    <col span="1" class="soundtrack4-ost-author">
+                    <col span="1">
+                </colgroup>
+                <tr>
+                    <td>1.mp3</td>
+                    <td></td>
+                    <td>3:21</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=UxbdQXDOgsc">gamela</a></td>
+                    <td>meditation music 365</td>
+                    <td>13:09</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=2sFEIH1uoF0">simply happy</a></td>
+                    <td>quiet soundwaves studio</td>
+                    <td>10:41</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=W-xh-adL_0Y">the peace i crave</a></td>
+                    <td>quiet soundwaves studio</td>
+                    <td>7:09</td>
+                </tr>
+                <tr>
+                    <td><a href="https://open.spotify.com/track/0jW6H41yMyb6BPnNjdKxWg">shadoma</a></td>
+                    <td><abbr title="sourcherry juice new">wiffi carsia</abbr></td>
+                    <td>2:43</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=2Vo6aVzu4Go">música da fazenda</a></td>
+                    <td>musicas para alegrar o dia</td>
+                    <td>12:21</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=RCSrYct6zgM">violão alegre para se emocionar</a></td>
+                    <td>musica instrumental bonita</td>
+                    <td>7:55</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=e90Thm-T6X4">til death parts us</a></td>
+                    <td><abbr title="angel’s dream">christopher l thompson (aakash gandhi)</abbr></td>
+                    <td>2:13</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=Rdv6pFaIi_M">growing up</a></td>
+                    <td>nate blaze</td>
+                    <td>2:23</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=uLHxqS7zY9k">little drunk, quiet floats</a></td>
+                    <td>puddle of infinity</td>
+                    <td>3:03</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.nhaccuatui.com/song/6KynPR7Tx8UX">rain and thunderstorm sounds for serenity and peace</a></td>
+                    <td><abbr title="rainfall: nature’s calming symphony for relaxation and sleep">_</abbr></td>
+                    <td>9:00</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=bVPsdoW9n2o">michelle von emster</a></td>
+                    <td><abbr title="casos reais de crimes bizarros não solucionados">vinícius léscio</abbr></td>
+                    <td>2:00</td>
+                </tr>
+            </table>
+            <br>
+    
+            <br>
+        </article>
+        <br>
+        </region>
+
+
+        <region id="linux">
+        <article>
+        <h3><a href="#linux" target="_self"># linux</a></h3>
+    
+<div> <!-- ścieżki -->
+<header>✱ ścieżki</header>
+<pre class="listing-block">
+<code># ~/.renpy/TheLustCity-1741771331</code>
+</pre>
+<ul>
+<li><a href="https://steamdb.info/app/2348680/ufs/">steamdb</a></li>
+<li><a href="https://www.protondb.com/app/2348680">protondb</a></li>
+</ul>
+<br>
+</div>
+
+        <br>
+        </article>
+        <br>
+        </region>
+
+        
+        <hr>
+        <footer>2026-09-07</footer>
+    </main>
+</body>
+
+</html>
