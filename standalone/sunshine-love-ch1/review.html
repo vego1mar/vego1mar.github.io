@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <title>sunshine love chapter 1 — recenzja</title>
+    <meta charset="utf-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <style>
+        @font-face {
+            font-family: "ubuntu", sans-serif;
+            src: url("../fonts/Ubuntu-Regular.ttf");
+        }
+        body {
+            font-family: "ubuntu", sans-serif;
+        }
+        h1 {
+            font-size: 25px;
+        }
+        h2 {
+            font-size: 20px;
+        }
+        h3 {
+            font-size: 17px;
+            color: rgb(255, 70, 70); /* salmon */
+        }
+        h3 a {
+            text-decoration: none;
+            color: rgb(255, 70, 70);
+        }
+
+        .main-content {
+            margin-left: 10%;
+            margin-right: 10%;
+            font-size: 14px;
+            padding: 0px 10px;
+            font-family: "ubuntu", sans-serif;
+        }
+
+        .region-grey {
+            background-color: whitesmoke;
+            border-style: hidden;
+            border-radius: 10px;
+            padding-top: 1%;
+        }
+        .region-white {
+            background-color: white;
+        }
+        a {
+            text-decoration: none;
+            color: teal;
+        }
+        p {
+            line-height: 1.4;
+        }
+        blockquote {
+            border-left: 2px solid blueviolet;
+            padding-left: 1%;
+        }
+
+        .code-line {
+            font-family: "jetbrains mono", "ubuntu mono", monospace;
+            background-color: gainsboro;
+            border: 0px solid olive;
+        }
+        pre.listing-block {
+            background-color: ghostwhite;
+            overflow-x: auto;
+            overflow-y: hidden;
+            white-space: pre;
+            word-wrap: normal;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            padding-right: 10px;
+            border: 1px solid olive;
+        }
+        pre.listing-block::before {
+            counter-reset: listing;
+        }
+        pre.listing-block code {
+            counter-increment: listing-counter;
+            font-family: "calling code", "ubuntu mono", monospace;
+            font-size: 14px;
+        }
+        pre.listing-block code::before {
+            content: counter(listing-counter) "   ";
+            display: inline-block;
+            width: 4em;
+            padding-left: 0px;
+            margin-left: auto;
+            text-align: right;
+            font-size: 12px;
+            color: olive;
+        }
+        pre {
+            margin-left: 1%;
+            margin-right: 1%;
+        }
+        
+        .images-horizontal {
+            table-layout: fixed; 
+            display: block;
+            width: 100%;
+            overflow-x: scroll; 
+            overflow-y: hidden;
+            scroll-snap-align: center;
+        }
+        .images-horizontal a {
+            text-decoration: none;
+            color: black;
+        } 
+        .images-horizontal figcaption {
+            padding-top: 5px;
+        }
+
+        img {
+            width: 50vw;
+            height: auto;
+        }
+        figcaption {
+            font-size: 12px;
+            text-align: left;
+        }
+        figure figcaption {
+            text-align: center;
+        }
+        .fighover figure {
+            display: inline-block;
+            border: 1px;
+            margin: 10px;
+        }
+        .fighover figure, .fighover img {
+            vertical-align: top;
+            width: 29vw;
+        }
+        .fighover figure, .fighover figcaption {
+            border: 1px;
+            text-align: center;
+        }
+
+        .achievements {
+            table-layout: fixed; 
+            width: 90%;
+            text-align: left;
+        }
+        .achievements--name {
+            text-align: center;
+            vertical-align: middle;
+        }
+        .achievements caption {
+            text-align: left;
+            padding-left: 1px;
+            font-weight: bold;
+        }
+        table.achievements td {
+            padding-top: 1px;
+            padding-bottom: 1px;
+            border-bottom: 1px solid rgba(128, 128, 0, 0.2);
+        }
+        .achievements td:nth-child(1) {
+            padding-left: 11px;
+            width: 70%;
+        }
+        .achievements td:nth-child(2) {
+            padding-left: 11px;
+            width: 100%;
+        }
+        .achiev-accord-desc {
+            color: gray;
+        }
+        .achievements--not-gained {
+            color: gray;
+        }
+
+        .soundtrack-ost {
+            table-layout: fixed;
+            margin: auto;
+            width: 50%;
+        }
+        .soundtrack-ost td:nth-child(2) {
+            text-align: end;
+            padding-left: 5px;
+            width: 10%;
+        }
+        .soundtrack-ost tr:nth-child(even) {
+            background-color: ghostwhite;
+        }
+        .soundtrack-ost caption {
+            font-weight: bold;
+            text-align: left;
+            margin-left: -3%;
+        }
+        .soundtrack-accordion {
+            margin-left: 1%;
+            margin-right: 1%;
+        }
+
+        .soundtrack3 {
+            table-layout: fixed;
+            margin: auto;
+            padding-left: 2%;
+            padding-right: 6%;
+            width: 100%;
+        }
+        .soundtrack3 td:nth-child(2) {
+            text-align: end;
+            padding-left: 5px;
+            width: 5%;
+        }
+        .soundtrack3 tr:nth-child(even) {
+            background-color: whitesmoke;
+        }
+        table.soundtrack3 tr td {
+            padding-left: 10px;
+            padding-right: 10px;
+            padding-top: 5px;
+            padding-bottom: 5px;
+            border-radius: 11px;
+        }
+        table.soundtrack3 td a {
+            color: blue;
+            font-size: medium;
+            font-weight: bold;
+        }
+        table.soundtrack3 td {
+            font-size: small;
+        }
+        .s3-left {
+            float: left;
+        }
+        .s3-right {
+            float: right;
+        }
+
+        .dictionary {
+            table-layout: fixed; 
+            width: 90%;
+            text-align: left;
+        }
+        .dictionary--term {
+            width: 40%;
+            text-align: center;
+            vertical-align: middle;
+        }
+        table.dictionary td {
+            padding-top: 1px;
+            padding-bottom: 2px;
+            border-bottom: 1px solid rgba(128, 128, 0, 0.2);
+        }
+
+        @media only screen and (min-width: 1px) and (max-width: 920px) {
+            .soundtrack-ost {
+                width: 100%;
+            }
+        }
+        @media only screen and (min-width: 921px) and (max-width: 1250px) {
+            .soundtrack-ost {
+                width: 70%;
+            }
+        }
+        @media only screen and (min-width: 1251px) and (max-width: 1450px) {
+            .soundtrack-ost {
+                width: 50%;
+            }
+        }
+        @media only screen and (min-width: 1451px) and (max-width: 1900px) {
+            .soundtrack-ost {
+                width: 45%;
+            }
+        }
+        @media only screen and (min-width: 1901px) {
+            .soundtrack-ost {
+                width: 30%;
+            }
+        }
+
+        details {
+            border: 1px solid olive;
+            border-radius: 8px;
+            box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.12);
+            margin-bottom: 8px;
+        }
+        details[open] summary {
+            margin-bottom: 10px;
+        }
+        summary {
+            cursor: pointer;
+            transition: all 150ms ease-in-out;
+            padding: 12px;
+        }
+        .accordion pre, .accordion p, .accordion table {
+            margin-left: 2%;
+            margin-right: 2%;
+        }
+
+        article div p, article div details, article details {
+            margin-left: 1%;
+            margin-right: 1%;
+        }
+        details figure, details figure figcaption, div figure {
+            display: block;
+            text-align: center;
+        }
+        .discussion-thread, .discussion-thread a {
+            color: gray;
+        }
+
+        figure, figure figcaption {
+            display: block;
+            text-align: center;
+        }
+        img {
+            width: 100%;
+            height: auto;
+        }
+        .maintitle {
+            font-size: x-large;
+        }
+        .subtitle {
+            font-size: small;
+            color: olive;
+        }
+
+        .soundtrack4-ost {
+            margin: auto;
+            width: 95%;
+        }
+        .soundtrack4-ost-title {
+            width: 47%;
+        }
+        .soundtrack4-ost-author {
+            width: 47%;
+        }
+        table.soundtrack4-ost td:nth-child(1) a {
+            color: blue;
+        }
+        .soundtrack4-ost td:nth-child(3) {
+            text-align: end;
+        }
+        .soundtrack4-ost tr:nth-child(even) {
+            background-color: rgb(251, 251, 251);
+        }
+
+        header {
+            font-weight: bold;
+            font-size: 14px;
+            color: darkviolet;
+        }
+    </style>
+</head>
+
+<body>
+    <main class="main-content">
+        <section id="lead-text">
+        <h1 class="maintitle">sunshine love chapter 1</h1>
+        <p class="subtitle" hidden>1.01</p>
+        <p class="subtitle">3/10 miałka</p>
+        <p>gra z pomysłem na prowadzenie hotelu, gdzie dialogi są przegadane, fabuła wolno się rozkręca, a ambient staje się szybko dość powtarzalny; dość długie i nudne opowiadanie z niedojrzałymi postaciami głównymi; niemniej, należy przyznać iż dziejące się wydarzenia są sensowne i wystarczająco przekonujące;</p>
+        <br>
+        </section>
+        
+
+        <region id="uwagi-zebrane">
+        <article>
+            <h3><a href="#uwagi-zebrane" target="_self"># uwagi zebrane</a></h3>
+
+            <div> <!-- grafika -->
+            <p>jeżeli się przyjrzeć tłom, gdy akurat nie są rozmyte, to widać w nich przaśność o jakości dykty; z drugiej strony zdarza się pornojadło (foodporn) i to wygląda już wystarczająco dobrze;</p>
+            <details class="accordion">
+                <summary>jadłoporno</summary>
+                <figure>
+                    <source srcset="./foodporn-burger-fries.jpg" type="image/jpg">
+                    <img loading="lazy" srcset="./foodporn-burger-fries.jpg" alt="foodporn-burger-fries.jpg">
+                </figure>
+                <br>
+                <figure>
+                    <source srcset="./foodporn-eggs-bacon.jpg" type="image/jpg">
+                    <img loading="lazy" srcset="./foodporn-eggs-bacon.jpg" alt="foodporn-eggs-bacon.jpg">
+                </figure>
+                <br>
+            </details>
+            <p>sceny seksu mają ikony do wyboru pozycji i kadrowania, w tym opcję spowolnienia ruchów, lecz tylko niektóre;</p>
+            <p>jedna z wariacji na temat negliżu polega na pokazywaniu nasutników (nipple tassels);</p>
+            <p>galeria grafik bonusowych jest podzielona na dwie części: doughnut (za zbieranie pączków z kadrów) i „peeping tom” (za używanie podglądania przez ubrania); z kolei niektóre sceny seksu są odblokowane od samego początku; zbieranie tego wszystkiego jest co najmniej nużące ze względu na ilość;</p>
+            <br>
+            </div>
+
+            <div> <!-- interfejs -->
+            <p>w ramach interfejsu mamy do dyspozycji smartfon i tablet, lecz ich użyteczność jest wątpliwa; dzwonić z tabletu musimy wyłącznie dwukrotnie, zaś wybranie biogramu postaci głównej z telefonu pokazuje wyjątek pythona; dodatkowo, teoretycznie z tabletem wiąże się lista zadań do wykonania w danym tygodniu, jednakowoż nie ma to znaczenia, bo nie można ich nie wykonać;</p>
+            <p>o ile długie przejścia w czasie są sygnalizowane (3 lata później…), o tyle te krótsze nie są (od wczoraj do dziś) – po prostu wynika to z kontekstu następnego dialogu; co więcej, tych pierwszych nie można przewijać spacją, tylko trzeba kliknąć; wariacją w tym temacie są sny erotyczne, które miały takie być – przejście między rzeczywistością a snem jest niejasne;</p>
+            <p>gra zmusza do wpisania trzech imion: głównej postaci, jego przybranej siostry, jej kuzynki;</p>
+            <details class="accordion" open>
+                <summary>trisha i kuzynka</summary>
+                <figure>
+                    <source srcset="./trisha-cousin-headkiss.jpg" type="image/jpg">
+                    <img loading="lazy" srcset="./trisha-cousin-headkiss.jpg" alt="trisha-cousin-headkiss.jpg">
+                    <figcaption>trisha i jej córka, kuzynka przybranej siostry</figcaption>
+                </figure>
+                <br>
+            </details>
+            <p>gra wprowadziła własny odtwarzacz muzyczny, przy czym utworów jest łącznie 22, co oznacza iż szybko się znudzą, a jednocześnie nie reprezentują sobą wybitnej jakości;</p>
+            <br>
+            </div>
+
+            <div> <!-- opowiadanie -->
+            <p>opowiadanie jest całkiem długie, a w jego ramach uzyskujemy 3 na 5 gwiazdek hotelowych w samym tylko 1. rozdziale (intryga zasadza się bowiem na pomaganiu w prowadzeniu biznesu hotelarskiego); niemniej, należy zauważyć że odnajduje się tu jakieś tam powody by zajmować fujarę to raz jednemu dziewczęciu, a raz drugiemu;</p>
+            <p>opowiadanie posiada prolog pokazujący co działo się w dzieciństwie głównych postaci; wprowadza on tło dla wydarzeń bieżących i cechują go lekko przesadzone jednowymiarowe postaci rodziców; co zadziwiające, jako dzieci wyglądają całkiem przekonująco, tj. nie sprawiają wrażenia przeskalowanych dorosłych;</p>
+            <details class="accordion">
+                <summary>przybrana siostra</summary>
+                <figure>
+                    <source srcset="./sister-child-car.jpg" type="image/jpg">
+                    <img loading="lazy" srcset="./sister-child-car.jpg" alt="sister-child-car.jpg">
+                    <figcaption>przybrana siostra jako dziecko</figcaption>
+                </figure>
+                <br>
+                <figure>
+                    <source srcset="./sister-nightgown.jpg" type="image/jpg">
+                    <img loading="lazy" srcset="./sister-nightgown.jpg" alt="sister-nightgown.jpg">
+                    <figcaption>przybrana siostra podczas goszczenia wydarzenia w hotelu</figcaption>
+                </figure>
+                <br>
+            </details>
+            <p>problem z dialogami nie polega tylko na tym, że są niepotrzebnie przegadane; zwraca na się uwagę to iż postaci się nieco powtarzają w sztuczny sposób, tj. bardzo usilnie przytaczają te same imiona jakby się obawiano że odbiorca ich nie zapamięta (a mamy tu osiem rzeczywiście istotnych postaci); można też dorzucić do tego notorycznie brakujące przecinki dla wstawień w zdaniach; niemniej, przede wszystkim z biegiem czasu pokazuje się jak niedojrzałe a nawet miałkie charakterologicznie potrafią być przedstawiane ludziki; przejawia się to głównie w tym że są jednowymiarowe, a dwie główne postaci potrafią się obrażać na siebie o byle co, kłamać i manipulować z obawy o odbiór drugiej strony; raczej trudno się będzie czytało cały przygotowany tekst komuś kto oczekuje pewnego poziomu bajkopisarstwa;</p>
+            <details class="accordion">
+                <summary>connie</summary>
+                <figure>
+                    <source srcset="./connie-hotel.jpg" type="image/jpg">
+                    <img loading="lazy" srcset="./connie-hotel.jpg" alt="connie-hotel.jpg">
+                    <figcaption>connie, córa anthony d’amico, antagonisty i konkurenta biznesowego</figcaption>
+                </figure>
+                <br>
+            </details>
+            <p>dialogi związane z zainteresowaniami danych postaci nie wydają się być li tylko pretekstem; coś tam jednak minimalnie można dowiedzieć się o surfowaniu czy naprawianiu sprzętu;</p>
+            <details class="accordion" open>
+                <summary>yuki</summary>
+                <figure>
+                    <source srcset="./yuki-roof.jpg" type="image/jpg">
+                    <img loading="lazy" srcset="./yuki-roof.jpg" alt="yuki-roof.jpg">
+                    <figcaption>yuki na dachu, lokalna złota rączka</figcaption>
+                </figure>
+                <br>
+            </details>
+            <p>niektóre wybory są niekonsekwentne; można odrzucać ivy i lily, jednak gdy wybierze się chociaż jedną opcję nastawioną pozytywnie wobec nich, to prowadzi to pod koniec rozdziału 1. do wymuszonej sceny seksu z nimi;</p>
+            <details class="accordion">
+                <summary>ivy</summary>
+                <figure>
+                    <source srcset="./ivy.jpg" type="image/jpg">
+                    <img loading="lazy" srcset="./ivy.jpg" alt="ivy.jpg">
+                    <figcaption>ivy podczas spotkania w przerwie od pracy</figcaption>
+                </figure>
+                <br>
+            </details>
+            <br>
+            </div>
+
+            <div> <!-- inne -->
+            <p>gra nie posiada osiągnięć;</p>
+            <ul>
+                <li><a href="https://www.scribd.com/document/560206454/SL-CH1v1-00-WALKTHROUGH">sunshine love chapter 1 walkthrough</a></li>
+                <li><a href="https://steamcommunity.com/app/3095170/discussions/0/601891467285273653/">achievements?</a></li>
+                <li><a href="https://steamcommunity.com/app/3095170/discussions/0/601892242036222949/">steam achievements planned ?</a></li>
+                <li><a href="https://steamcommunity.com/app/3095170/discussions/0/4625855423768039993/">achievements, trading cards and other goodies</a></li>
+            </ul>
+            <br>
+            </div>
+
+            <br>
+        </article>
+        <br>
+        </region>
+
+
+        <region id="ścieżka-dźwiękowa">
+        <article>
+            <h3><a href="#ścieżka-dźwiękowa" target="_self"># ścieżka dźwiękowa</a></h3>
+
+            <details class="accordion-accordion"> <!-- soundtrack -->
+                <summary>soundtrack</summary>
+                <table class="soundtrack4-ost">
+                <colgroup>
+                    <col span="1" class="soundtrack4-ost-title">
+                    <col span="1" class="soundtrack4-ost-author">
+                    <col span="1">
+                </colgroup>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=SeyEwxVJEp4">let me be free</a></td>
+                    <td>sascha ende</td>
+                    <td>5:11</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=jkPar28hYWU">get happy</a></td>
+                    <td>sascha ende</td>
+                    <td>3:12</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=eknRTUS1RWw">follow the sun</a></td>
+                    <td>sascha ende</td>
+                    <td>3:55</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=VwwFlbhzSck">fliegen</a></td>
+                    <td>sascha ende</td>
+                    <td>4:08</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=cbGRnam7zQ8">just deep 2</a></td>
+                    <td>sascha ende</td>
+                    <td>3:49</td>
+                </tr>
+                <tr>
+                    <td><a href="https://ende.app/en/song/313-just-deep-3">just deep 3</a></td>
+                    <td>sascha ende</td>
+                    <td>3:34</td>
+                </tr>
+                <tr>
+                    <td><a href="https://ende.app/en/song/338-hold-on">hold on</a></td>
+                    <td>sascha ende</td>
+                    <td>4:11</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=fGXb-qnmhow">vibes in paradise</a></td>
+                    <td>sascha ende</td>
+                    <td>3:33</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=8D_HslkWuVc">the terminal</a></td>
+                    <td>luca fraula</td>
+                    <td>5:42</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=EtzssT0JEUI">stoned</a></td>
+                    <td>alexander nakarada</td>
+                    <td>3:04</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=JLmd8erJy5M">stoned (no solo guitar)</a></td>
+                    <td>alexander nakarada</td>
+                    <td>3:06</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=6rihFsby6OA">favorite</a></td>
+                    <td>alexander nakarada</td>
+                    <td>2:56</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=QkZHtt3d1Eo">fireworks</a></td>
+                    <td>alexander nakarada</td>
+                    <td>3:12</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=JzxX2s7OPwo">things</a></td>
+                    <td>alexander nakarada</td>
+                    <td>3:53</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=hsgiPy0r93c">switch</a></td>
+                    <td>sascha ende</td>
+                    <td>3:21</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=fMGv7rfDDdA">realizer</a></td>
+                    <td>kevin macleod</td>
+                    <td>5:15</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=sQc9pyWJeaI">happy clappy castagnette</a></td>
+                    <td>sascha ende</td>
+                    <td>3:09</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=WSaiRpIY2OI">flying with the wind</a></td>
+                    <td>sascha ende</td>
+                    <td>3:34</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=yHQ7h93-sWw">total happy up and sunny</a></td>
+                    <td>sascha ende</td>
+                    <td>3:12</td>
+                </tr>
+                <tr>
+                    <td><a href="_">timelapse</a></td>
+                    <td>rafael krux</td>
+                    <td>2:07</td>
+                </tr>
+                <tr>
+                    <td><a href="https://open.spotify.com/track/6VWXdoSKQVXzLC2SvkORQi">pure joy</a></td>
+                    <td>otis galloway</td>
+                    <td>1:48</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=AJ_byN0NVrg">in peace</a></td>
+                    <td>sascha ende</td>
+                    <td>3:51</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=IyeUS3QxuAg">fulcrum</a></td>
+                    <td>lilo sound</td>
+                    <td>4:47</td>
+                </tr>
+                </table>
+                <br>
+            </details>
+            <br>
+    
+            <br>
+        </article>
+        <br>
+        </region>
+
+
+        <region id="linux">
+        <article>
+        <h3><a href="#linux" target="_self"># linux</a></h3>
+    
+<div> <!-- ścieżki -->
+<header>✱ ścieżki</header>
+<pre class="listing-block">
+<code># ~/.renpy/SunshineLove-Saves</code>
+</pre>
+<ul>
+    <li><a href="https://steamdb.info/app/3095170/ufs/">steamdb – save file locations</a></li>
+    <li><a href="https://www.protondb.com/app/3095170">sunshine love ch1</a></li>
+</ul>
+<br>
+</div>
+
+        <br>
+        </article>
+        <br>
+        </region>
+
+        
+        <hr>
+        <footer>2026-10-16</footer>
+    </main>
+</body>
+
+</html>
