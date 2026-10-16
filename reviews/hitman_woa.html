@@ -5,16 +5,96 @@
     <title>hitman woa</title>
     <meta charset="utf-8"> 
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" href="../css/review-page-colorful.css">
 
     <style>
-        /* css właściwy wyłącznie dla tej strony */
-        .main-no-sidebar {
+        @font-face {
+            font-family: "ubuntu", sans-serif;
+            src: url("../fonts/Ubuntu-Regular.ttf");
+        }
+        body {
+            font-family: "ubuntu", sans-serif;
+        }
+        h1 {
+            font-size: 25px;
+        }
+        h2 {
+            font-size: 20px;
+        }
+        h3 {
+            font-size: 17px;
+            color: rgb(255, 70, 70); /* salmon */
+        }
+        h3 a {
+            text-decoration: none;
+            color: rgb(255, 70, 70);
+        }
+
+        .main-content {
             margin-left: 10%;
             margin-right: 10%;
             font-size: 14px;
             padding: 0px 10px;
             font-family: "ubuntu", sans-serif;
+        }
+
+        .region-grey {
+            background-color: whitesmoke;
+            border-style: hidden;
+            border-radius: 10px;
+            padding-top: 1%;
+        }
+        .region-white {
+            background-color: white;
+        }
+        a {
+            text-decoration: none;
+            color: teal;
+        }
+        p {
+            line-height: 1.4;
+        }
+        blockquote {
+            border-left: 2px solid blueviolet;
+            padding-left: 1%;
+        }
+
+        .code-line {
+            font-family: "jetbrains mono", "ubuntu mono", monospace;
+            background-color: gainsboro;
+            border: 0px solid olive;
+        }
+        pre.listing-block {
+            background-color: ghostwhite;
+            overflow-x: auto;
+            overflow-y: hidden;
+            white-space: pre;
+            word-wrap: normal;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            padding-right: 10px;
+            border: 1px solid olive;
+        }
+        pre.listing-block::before {
+            counter-reset: listing;
+        }
+        pre.listing-block code {
+            counter-increment: listing-counter;
+            font-family: "calling code", "ubuntu mono", monospace;
+            font-size: 14px;
+        }
+        pre.listing-block code::before {
+            content: counter(listing-counter) "   ";
+            display: inline-block;
+            width: 4em;
+            padding-left: 0px;
+            margin-left: auto;
+            text-align: right;
+            font-size: 12px;
+            color: olive;
+        }
+        pre {
+            margin-left: 1%;
+            margin-right: 1%;
         }
 
         .images-horizontal {
@@ -28,6 +108,80 @@
         .images-horizontal img caption {
             text-decoration: none;
             color: black;
+        }
+
+        img {
+            width: 50vw;
+            height: auto;
+        }
+        figcaption {
+            font-size: 12px;
+            text-align: left;
+        }
+        figure figcaption {
+            text-align: center;
+        }
+        .fighover figure {
+            display: inline-block;
+            border: 1px;
+            margin: 10px;
+        }
+        .fighover figure, .fighover img {
+            vertical-align: top;
+            width: 29vw;
+        }
+        .fighover figure, .fighover figcaption {
+            border: 1px;
+            text-align: center;
+        }
+
+        .soundtrack4-ost {
+            margin: auto;
+            width: 95%;
+        }
+        .soundtrack4-ost-title {
+            width: 47%;
+        }
+        .soundtrack4-ost-author {
+            width: 47%;
+        }
+        .soundtrack4-ost caption {
+            font-weight: bold;
+        }
+        table.soundtrack4-ost td:nth-child(1) a {
+            color: blue;
+        }
+        .soundtrack4-ost td:nth-child(2) {
+            text-align: end;
+        }
+        .soundtrack4-ost tr:nth-child(even) {
+            background-color: rgb(251, 251, 251);
+        }
+
+        @media only screen and (min-width: 1px) and (max-width: 920px) {
+            .soundtrack-ost {
+                width: 100%;
+            }
+        }
+        @media only screen and (min-width: 921px) and (max-width: 1250px) {
+            .soundtrack-ost {
+                width: 70%;
+            }
+        }
+        @media only screen and (min-width: 1251px) and (max-width: 1450px) {
+            .soundtrack-ost {
+                width: 50%;
+            }
+        }
+        @media only screen and (min-width: 1451px) and (max-width: 1900px) {
+            .soundtrack-ost {
+                width: 45%;
+            }
+        }
+        @media only screen and (min-width: 1901px) {
+            .soundtrack-ost {
+                width: 30%;
+            }
         }
 
         /* https://www.w3schools.com/CSS/css_list.asp */
@@ -127,6 +281,40 @@
             border-bottom: 1px solid rgba(128, 128, 0, 0.2);
         }
 
+        .achievements {
+            table-layout: fixed; 
+            width: 90%;
+            text-align: left;
+        }
+        .achievements--name {
+            text-align: center;
+            vertical-align: middle;
+        }
+        .achievements caption {
+            text-align: left;
+            padding-left: 1px;
+            font-weight: bold;
+        }
+        table.achievements td {
+            padding-top: 1px;
+            padding-bottom: 1px;
+            border-bottom: 1px solid rgba(128, 128, 0, 0.2);
+        }
+        .achievements td:nth-child(1) {
+            padding-left: 11px;
+            width: 70%;
+        }
+        .achievements td:nth-child(2) {
+            padding-left: 11px;
+            width: 100%;
+        }
+        .achiev-accord-desc {
+            color: gray;
+        }
+        .achievements--not-gained {
+            color: gray;
+        }
+
         /* accordion */
         details {
             border: 1px solid olive;
@@ -157,6 +345,40 @@
         .soundtrack-accordion {
             margin-left: 1%;
             margin-right: 1%;
+        }
+
+        article div p, article div details, article details {
+            margin-left: 1%;
+            margin-right: 1%;
+        }
+        details figure, details figure figcaption, div figure {
+            display: block;
+            text-align: center;
+        }
+        .discussion-thread, .discussion-thread a {
+            color: gray;
+        }
+
+        figure, figure figcaption {
+            display: block;
+            text-align: center;
+        }
+        img {
+            width: 100%;
+            height: auto;
+        }
+        .maintitle {
+            font-size: x-large;
+        }
+        .subtitle {
+            font-size: small;
+            color: olive;
+        }
+
+        header {
+            font-weight: bold;
+            font-size: 14px;
+            color: darkviolet;
         }
 
         /* roadmaps */
@@ -340,7 +562,7 @@
 </head>
 
 <body>
-    <main class="main-no-sidebar">
+    <main class="main-content">
         <section id="lead-text">
         <h2>hitman world of assassination (2023)</h2>
         <p>nie tyle recenzja, co zbiór informacji; gra wspaniała, lecz wymuszanie trybu zawsze online jest fatalne, a do tego liczne kontrowersje nie budują dobrego wizerunku twórców;</p>
@@ -359,7 +581,7 @@
         </ul>
 
         <details class="accordion">
-        <summary>trailers</summary>
+        <summary>zwiastuny</summary>
         <ul>
         <li><a href="https://www.youtube.com/watch?v=LVqxMCZ3u6k">hitman – e3 2015 trailer / announcement trailer</a></li>
         <li><a href="https://www.youtube.com/watch?v=X-lXfmWToIY">hitman – legacy opening cinematic trailer</a></li>
@@ -387,36 +609,8 @@
         </region>
 
 
-        <section id="table-of-content">
-        <div class="region-blue">
-        <h3># spis treści</h3>
-        <ul>
-            <li><a href="#roadmaps" target="_self">roadmaps</a></li>
-            <li><a href="#featured-contracts" target="_self">featured contracts</a></li>
-            <li><a href="#elusive-targets" target="_self">elusive targets</a></li>
-            <li><a href="#elusive-targets-arcade" target="_self">elusive targets arcade</a></li>
-            <li><a href="#escalations" target="_self">escalations</a></li>
-            <li><a href="#missions" target="_self">misje</a></li>
-            <li><a href="#sarajevo-six" target="_self">sarajevo six</a></li>
-            <li><a href="#challenges" target="_self">wyzwania</a></li>
-            <li><a href="#dlcs" target="_self">dlc</a></li>
-            <li><a href="#kłopoty-kolejnych-aktualizacji" target="_self">kłopoty kolejnych aktualizacji</a></li>
-            <li><a href="#poradniki-wideo" target="_self">poradniki</a></li>
-            <li><a href="#glitches-and-tricks" target="_self">usterki i sztuczki</a></li>
-            <li><a href="#osiągnięcia" target="_self">osiągnięcia</a></li>
-            <li><a href="#ścieżka-dźwiękowa" target="_self">ścieżka dźwiękowa</a></li>
-            <li><a href="#the-peacock-project" target="_self">the peacock project</a></li>
-            <li><a href="#linux" target="_self">sprawa dla linusa</a></li>
-            <li><a href="#mods" target="_self">mody</a></li>
-            <li><a href="#wątki-dyskusji" target="_self">wątki dyskusji</a></li>
-        </ul>
-        <br>
-        </div>
-        </section>
-
-
         <region id="roadmaps">
-        <article class="region-grey">
+        <article>
         <h3># harmonogram zmian</h3>
 
         <details class="accordion"> <!-- hitman 1 -->
@@ -504,7 +698,7 @@
             <br>
             </div>
 
-            <div class="region-white"> <!-- 2016 11/12 -->
+            <div> <!-- 2016 11/12 -->
             <table class="roadmap">
                 <caption>
                     november content schedule<br>
@@ -591,7 +785,7 @@
             <br>
             </div>
 
-            <div class="region-white"> <!-- 2017 01/02 -->
+            <div> <!-- 2017 01/02 -->
             <table class="roadmap">
                 <caption>
                     january content schedule<br>
@@ -682,7 +876,7 @@
             <br>
             </div>
 
-            <div class="region-white"> <!-- 2017 03/04 -->
+            <div> <!-- 2017 03/04 -->
             <table class="roadmap">
                 <caption>
                     march content schedule<br>
@@ -754,7 +948,7 @@
             <br>
             </div>
 
-            <div class="region-white"> <!-- 2017-05 -->
+            <div> <!-- 2017-05 -->
             <table class="roadmap">
                 <caption>
                     may content schedule<br>
@@ -833,7 +1027,7 @@
             <br>
             </div>
 
-            <div class="region-white"> <!-- 2017-07 -->
+            <div> <!-- 2017-07 -->
             <table class="roadmap">
                 <caption>
                     july content schedule<br>
@@ -907,7 +1101,7 @@
             <br>
             </div>
 
-            <div class="region-white"> <!-- 2017-09 -->
+            <div> <!-- 2017-09 -->
             <table class="roadmap">
                 <caption>
                     september content schedule<br>
@@ -974,7 +1168,7 @@
             <br>
             </div>
 
-            <div class="region-white"> <!-- 2017-11 -->
+            <div> <!-- 2017-11 -->
             <table class="roadmap">
                 <caption>
                     november roadmap<br>
@@ -1037,7 +1231,7 @@
             <br>
             </div>
 
-            <div class="region-white"> <!-- 2018-01 -->
+            <div> <!-- 2018-01 -->
             <table class="roadmap">
                 <caption>
                     january roadmap<br>
@@ -1099,7 +1293,7 @@
             <br>
             </div>
 
-            <div class="region-white"> <!-- 2018-03 -->
+            <div> <!-- 2018-03 -->
             <table class="roadmap">
                 <caption>
                     march roadmap<br>
@@ -1162,7 +1356,7 @@
             <br>
             </div>
 
-            <div class="region-white"> <!-- 2018-05 -->
+            <div> <!-- 2018-05 -->
             <table class="roadmap">
                 <caption>
                     may roadmap<br>
@@ -1232,7 +1426,7 @@
             <br>
             </div>
 
-            <div class="region-white"> <!-- 2018-07 -->
+            <div> <!-- 2018-07 -->
             <table class="roadmap">
                 <caption>
                     july roadmap<br>
@@ -1302,7 +1496,7 @@
             <br>
             </div>
 
-            <div class="region-white"> <!-- 2018-09 -->
+            <div> <!-- 2018-09 -->
             <table class="roadmap">
                 <caption>
                     september roadmap<br>
@@ -1370,7 +1564,7 @@
             </div>
         </details>
 
-        <details class="accordion region-white"> <!-- hitman 2 -->
+        <details class="accordion"> <!-- hitman 2 -->
             <summary>roadmaps: hitman 2</summary>
             <br>
 
@@ -1396,7 +1590,7 @@
             <br>
             </div>
 
-            <div class="region-grey"> <!-- 2018-12 -->
+            <div> <!-- 2018-12 -->
             <table class="roadmap">
                 <caption>
                     december roadmap<br>
@@ -1458,7 +1652,7 @@
                 </tr>
                 <tr>
                     <td>01-10</td>
-                    <td><span class="content-type">challenge pack</span> ➤ fishy business: miami</td>
+                    <td><span class="content-type">challenge pack</span> ➤ <a href="#cp190110-fishy-business">fishy business</a>: miami</td>
                 </tr>
                 <tr>
                     <td>01-11</td>
@@ -1484,7 +1678,7 @@
             <br>
             </div>
 
-            <div class="region-grey"> <!-- 2019-02 -->
+            <div> <!-- 2019-02 -->
             <table class="roadmap">
                 <caption>
                     february roadmap<br>
@@ -1500,11 +1694,11 @@
                 </tr>
                 <tr>
                     <td>02-14</td>
-                    <td><span class="content-type">challenge pack</span> ➤ shaman shenanigans: santa fortuna</td>
+                    <td><span class="content-type">challenge pack</span> ➤ <a href="#cp190214-shaman-shenanigans">shaman shenanigans</a>: santa fortuna</td>
                 </tr>
                 <tr>
                     <td>02-21</td>
-                    <td><span class="content-type">featured contracts</span> ➤ broken hearts: global</td>
+                    <td><span class="content-type">featured contracts</span> ➤ <a href="#fc190221">broken hearts</a>: global</td>
                 </tr>
                 <tr>
                     <td>02-xx</td>
@@ -1542,11 +1736,11 @@
                 </tr>
                 <tr>
                     <td>03-14</td>
-                    <td><span class="content-type">challenge pack</span> ➤ the butler did it: isle of sgail, unlock feather duster</td>
+                    <td><span class="content-type">challenge pack</span> ➤ <a href="#cp190314-the-butler-did-it">the butler did it</a>: isle of sgail, unlock feather duster</td>
                 </tr>
                 <tr>
                     <td>03-21</td>
-                    <td><span class="content-type">featured contracts</span> ➤ murphy's luck: global</td>
+                    <td><span class="content-type">featured contracts</span> ➤ <a href="#fc190321">murphy’s luck</a>: global</td>
                 </tr>
                 <tr>
                     <td>03-26</td>
@@ -1574,7 +1768,7 @@
             <br>
             </div>
 
-            <div class="region-grey"> <!-- 2019-04 -->
+            <div> <!-- 2019-04 april roadmap -->
             <table class="roadmap">
                 <caption>
                     april roadmap<br>
@@ -1586,19 +1780,19 @@
                 </colgroup>
                 <tr>
                     <td>04-04</td>
-                    <td><span class="content-type">challenge pack</span> ➤ mumbai master: magnesium pouch</td>
+                    <td><span class="content-type">challenge pack</span> ➤ <a href="#cp190404-mumbai-master">mumbai master</a>: magnesium pouch</td>
                 </tr>
                 <tr>
                     <td>04-12</td>
-                    <td><span class="content-type">elusive target</span> ➤ the prince: sapienza</td>
+                    <td><span class="content-type">elusive target</span> ➤ <a href="#et190412-prince">the prince</a>: sapienza</td>
                 </tr>
                 <tr>
                     <td>04-17</td>
-                    <td><span class="content-type">featured contracts</span> ➤ ghost busters</td>
+                    <td><span class="content-type">featured contracts</span> ➤ <a href="#fc190417">ghost busters</a></td>
                 </tr>
                 <tr>
                     <td>04-25</td>
-                    <td><span class="content-type">escalation</span> ➤ the nolan disinfection</td>
+                    <td><span class="content-type">escalation</span> ➤ <a href="#e190425-nolan-disinfection">the nolan disinfection</a></td>
                 </tr>
                 <tr>
                     <td>04-30</td>
@@ -1619,7 +1813,7 @@
             <br>
             </div>
 
-            <div> <!-- 2019-05 -->
+            <div> <!-- 2019-05 spring break -->
             <table class="roadmap">
                 <caption>
                     spring break<br>
@@ -1631,27 +1825,27 @@
                 </colgroup>
                 <tr>
                     <td>04-30</td>
-                    <td><span class="content-type">challenge pack</span> ➤ spring break: blue flamingo suit</td>
+                    <td><span class="content-type">challenge pack</span> ➤ <a href="#cp190430-spring-breaker">spring break</a>: blue flamingo suit</td>
                 </tr>
                 <tr>
                     <td>05-03 → 06-03</td>
-                    <td><span class="content-type">elusive target</span> ➤ the undying: lil'flashy</td>
+                    <td><span class="content-type">elusive target</span> ➤ <a href="#et190503-undying">the undying</a>: lil’flashy</td>
                 </tr>
                 <tr>
                     <td>05-09</td>
-                    <td><span class="content-type">escalation</span> ➤ the sweeney scrupulousness</td>
+                    <td><span class="content-type">escalation</span> ➤ <a href="#e190509-sweeney-scrupulousness">the sweeney scrupulousness</a></td>
                 </tr>
                 <tr>
                     <td>05-16</td>
-                    <td><span class="content-type">challenge pack</span> ➤ shinobi: tanto</td>
+                    <td><span class="content-type">challenge pack</span> ➤ <a href="#cp190516-shinobi">shinobi</a>: tanto</td>
                 </tr>
                 <tr>
                     <td>05-23</td>
-                    <td><span class="content-type">featured contracts</span> ➤ party crasher</td>
+                    <td><span class="content-type">featured contracts</span> ➤ <a href="#fc190524">party crasher</a></td>
                 </tr>
                 <tr>
                     <td>05-23</td>
-                    <td><span class="content-type">escalation</span> ➤ the chameleon anonymity</td>
+                    <td><span class="content-type">escalation</span> ➤ <a href="#e190523-chameleon-anonymity">the chameleon anonymity</a></td>
                 </tr>
                 <tr>
                     <td>05-28</td>
@@ -1659,7 +1853,7 @@
                 </tr>
                 <tr>
                     <td>05-31</td>
-                    <td><span class="content-type">elusive target</span> ➤ the deceivers</td>
+                    <td><span class="content-type">elusive target</span> ➤ <a href="#et190607-deceivers">the deceivers</a></td>
                 </tr>
             </table>
             <ul>
@@ -1668,7 +1862,7 @@
             <br>
             </div>
 
-            <div class="region-grey"> <!-- 2019-06 -->
+            <div> <!-- 2019-06 greed kills -->
             <table class="roadmap">
                 <caption>
                     greed kills<br>
@@ -1680,23 +1874,23 @@
                 </colgroup>
                 <tr>
                     <td>05-28</td>
-                    <td><span class="content-type">challenge pack</span> ➤ muffin man: blueberry muffin</td>
+                    <td><span class="content-type">challenge pack</span> ➤ <a href="#cp190528-muffin-man">muffin man</a>: blueberry muffin</td>
                 </tr>
                 <tr>
                     <td>06-07</td>
-                    <td><span class="content-type">elusive target</span> ➤ the deceivers</td>
+                    <td><span class="content-type">elusive target</span> ➤ <a href="#et190607-deceivers">the deceivers</a></td>
                 </tr>
                 <tr>
                     <td>06-13</td>
-                    <td><span class="content-type">escalation</span> ➤ the o’leary conflagration</td>
+                    <td><span class="content-type">escalation</span> ➤ <a href="#e190613-oleary-conflagration">the o’leary conflagration</a></td>
                 </tr>
                 <tr>
                     <td>06-20</td>
-                    <td><span class="content-type">escalation</span> ➤ the unpalatable termination</td>
+                    <td><span class="content-type">escalation</span> ➤ <a href="#e190620-unpalatable-termination">the unpalatable termination</a></td>
                 </tr>
                 <tr>
                     <td>06-20</td>
-                    <td><span class="content-type">featured contracts</span> ➤ assassin’s greed</td>
+                    <td><span class="content-type">featured contracts</span> ➤ <a href="#fc190620">assassin’s greed</a></td>
                 </tr>
                 <tr>
                     <td>06-24</td>
@@ -1712,11 +1906,11 @@
                 </tr>
                 <tr>
                     <td>06-27</td>
-                    <td><span class="content-type">escalation</span> ➤ the aquatic retribution</td>
+                    <td><span class="content-type">escalation</span> ➤ <a href="#e190627-aquatic-retribution">the aquatic retribution</a></td>
                 </tr>
                 <tr>
                     <td>06-28</td>
-                    <td><span class="content-type">elusive target</span> ➤ the entertainer</td>
+                    <td><span class="content-type">elusive target</span> ➤ <a href="#et190628-entertainer">the entertainer</a></td>
                 </tr>
             </table>
             <ul>
@@ -1725,7 +1919,7 @@
             <br>
             </div>
 
-            <div> <!-- 2019-07 -->
+            <div> <!-- 2019-07 jungle music -->
             <table class="roadmap">
                 <caption>
                     jungle music<br>
@@ -1737,23 +1931,23 @@
                 </colgroup>
                 <tr>
                     <td>07-04</td>
-                    <td><span class="content-type">escalation</span> ➤ the babayeva dissonance</td>
+                    <td><span class="content-type">escalation</span> ➤ <a href="#e190704-babayeva-dissonance">the babayeva dissonance</a></td>
                 </tr>
                 <tr>
                     <td>07-11</td>
-                    <td><span class="content-type">challenge pack</span> ➤ i’m with the band: violin</td>
+                    <td><span class="content-type">challenge pack</span> ➤ <a href="#cp190711-iam-with-the-band">i’m with the band</a>: violin</td>
                 </tr>
                 <tr>
                     <td>07-18</td>
-                    <td><span class="content-type">featured contracts</span> ➤ tone death</td>
+                    <td><span class="content-type">featured contracts</span> ➤ <a href="#fc190718">tone death</a></td>
                 </tr>
                 <tr>
                     <td>07-19</td>
-                    <td><span class="content-type">elusive target</span> ➤ the badboy</td>
+                    <td><span class="content-type">elusive target</span> ➤ <a href="#et190719-badboy">the badboy</a></td>
                 </tr>
                 <tr>
                     <td>07-25</td>
-                    <td><span class="content-type">escalation</span> ➤ the calvino cacophony: hot summer suit</td>
+                    <td><span class="content-type">escalation</span> ➤ <a href="#e190725-calvino-cacophony">the calvino cacophony</a>: hot summer suit</td>
                 </tr>
                 <tr>
                     <td>07-30</td>
@@ -1778,7 +1972,7 @@
             <br>
             </div>
 
-            <div class="region-grey"> <!-- 2019-08 -->
+            <div> <!-- 2019-08 social chameleon -->
             <table class="roadmap">
                 <caption>
                     social chameleon<br>
@@ -1790,31 +1984,31 @@
                 </colgroup>
                 <tr>
                     <td>08-01</td>
-                    <td><span class="content-type">escalation</span> ➤ the simmons concussion</td>
+                    <td><span class="content-type">escalation</span> ➤ <a href="#e190730-simmons-concussion">the simmons concussion</a></td>
                 </tr>
                 <tr>
                     <td>08-02</td>
-                    <td><span class="content-type">elusive target</span> ➤ the chameleon</td>
+                    <td><span class="content-type">elusive target</span> ➤ <a href="#et190802-chameleon">the chameleon</a></td>
                 </tr>
                 <tr>
                     <td>08-08</td>
-                    <td><span class="content-type">challenge pack</span> ➤ best case scenario: ica executive breifcase mk2</td>
+                    <td><span class="content-type">challenge pack</span> ➤ <a href="#cp190808-best-case-scenario">best case scenario</a>: ica executive breifcase mk2</td>
                 </tr>
                 <tr>
                     <td>08-15</td>
-                    <td><span class="content-type">escalation</span> ➤ the batty tranquility</td>
+                    <td><span class="content-type">escalation</span> ➤ <a href="#e190815-batty-tranquility">the batty tranquility</a></td>
                 </tr>
                 <tr>
                     <td>08-19</td>
-                    <td><span class="content-type">elusive target</span> ➤ the identity thief</td>
+                    <td><span class="content-type">elusive target</span> ➤ <a href="#et190816-identity-thief">the identity thief</a></td>
                 </tr>
                 <tr>
                     <td>08-22</td>
-                    <td><span class="content-type">featured contracts</span> ➤ cosplay karma</td>
+                    <td><span class="content-type">featured contracts</span> ➤ <a href="#fc190822-cosplay-karma">cosplay karma</a></td>
                 </tr>
                 <tr>
                     <td>08-22</td>
-                    <td><span class="content-type">escalation</span> ➤ the scarlett deceit</td>
+                    <td><span class="content-type">escalation</span> ➤ <a href="#e190822-scarlett-deceit">the scarlett deceit</a></td>
                 </tr>
                 <tr>
                     <td>08-26</td>
@@ -1830,7 +2024,7 @@
                 </tr>
                 <tr>
                     <td>08-30</td>
-                    <td><span class="content-type">elusive target</span> ➤ the gunrunner</td>
+                    <td><span class="content-type">elusive target</span> ➤ <a href="#et190830-gunrunner">the gunrunner</a></td>
                 </tr>
             </table>
             <ul>
@@ -1839,7 +2033,7 @@
             <br>
             </div>
 
-            <div> <!-- 2019-09 -->
+            <div> <!-- 2019-09 fierce rivalry -->
             <table class="roadmap">
                 <caption>
                     fierce rivalry<br>
@@ -1851,27 +2045,27 @@
                 </colgroup>
                 <tr>
                     <td>09-05</td>
-                    <td><span class="content-type">escalation</span> ➤ the dalton concussion</td>
+                    <td><span class="content-type">escalation</span> ➤ <a href="#e190905-dalton-dissection">the dalton concussion</a></td>
                 </tr>
                 <tr>
                     <td>09-05</td>
-                    <td><span class="content-type">escalation</span> ➤ the covert dispersal</td>
+                    <td><span class="content-type">escalation</span> ➤ <a href="#e190905-covert-dispersal">the covert dispersal</a></td>
                 </tr>
                 <tr>
                     <td>09-12</td>
-                    <td><span class="content-type">escalation</span> ➤ the dubious cohabitation: cashmerian suit</td>
+                    <td><span class="content-type">escalation</span> ➤ <a href="#e190912-dubious-cohabitation">the dubious cohabitation</a>: cashmerian suit</td>
                 </tr>
                 <tr>
                     <td>09-13</td>
-                    <td><span class="content-type">elusive target</span> ➤ the blackmailer</td>
+                    <td><span class="content-type">elusive target</span> ➤ <a href="#et190913-blackmailer">the blackmailer</a></td>
                 </tr>
                 <tr>
                     <td>09-19</td>
-                    <td><span class="content-type">featured contracts</span> ➤ competitive edge</td>
+                    <td><span class="content-type">featured contracts</span> ➤ <a href="#fc190919-competitive-edge">competitive edge</a></td>
                 </tr>
                 <tr>
                     <td>09-19</td>
-                    <td><span class="content-type">escalation</span> ➤ the merle revelation: emetic grenade</td>
+                    <td><span class="content-type">escalation</span> ➤ <a href="#e190919-merle-revelation">the merle revelation</a>: emetic grenade</td>
                 </tr>
                 <tr>
                     <td>09-23</td>
@@ -1887,7 +2081,7 @@
                 </tr>
                 <tr>
                     <td>09-27</td>
-                    <td><span class="content-type">elusive target</span> ➤ the angel of death</td>
+                    <td><span class="content-type">elusive target</span> ➤ <a href="#et190927-angel-of-death">the angel of death</a></td>
                 </tr>
             </table>
             <ul>
@@ -1896,7 +2090,7 @@
             <br>
             </div>
 
-            <div class="region-grey"> <!-- 2019-10 -->
+            <div> <!-- 2019-10 halloween -->
             <table class="roadmap">
                 <caption>
                     halloween<br>
@@ -1908,19 +2102,19 @@
                 </colgroup>
                 <tr>
                     <td>10-03</td>
-                    <td><span class="content-type">escalation</span> ➤ the riviera restoration</td>
+                    <td><span class="content-type">escalation</span> ➤ <a href="#e191003-riviera-restoration">the riviera restoration</a></td>
                 </tr>
                 <tr>
                     <td>10-10</td>
-                    <td><span class="content-type">escalation</span> ➤ the divine descendance: the imperial classic suit with gloves</td>
+                    <td><span class="content-type">escalation</span> ➤ <a href="#e191010-divine-descendance">the divine descendance</a>: the imperial classic suit with gloves</td>
                 </tr>
                 <tr>
                     <td>10-11</td>
-                    <td><span class="content-type">elusive target</span> ➤ the warlord: casual suit with gloves</td>
+                    <td><span class="content-type">elusive target</span> ➤ <a href="#et191011-warlord">the warlord</a>: casual suit with gloves</td>
                 </tr>
                 <tr>
                     <td>10-17</td>
-                    <td><span class="content-type">featured contracts</span> ➤ trick or treat</td>
+                    <td><span class="content-type">featured contracts</span> ➤ <a href="#fc191017-trick-or-treat">trick or treat</a></td>
                 </tr>
                 <tr>
                     <td>10-21</td>
@@ -1928,11 +2122,11 @@
                 </tr>
                 <tr>
                     <td>10-22</td>
-                    <td><span class="content-type">challenge pack</span> ➤ master vampire: modern sedative syringe, master scarecrow: tac-4 s/a jungle, himmapan horror: antique lethal syringe</td>
+                    <td><span class="content-type">challenge pack</span> ➤ <a href="#cp191022-master-vampire">master vampire</a>: modern sedative syringe, <a href="#cp171013-master-scarecrow">master scarecrow</a>: tac-4 s/a jungle, <a href="#cp191022-himmapan-horror">himmapan horror</a>: antique lethal syringe</td>
                 </tr>
                 <tr>
                     <td>10-22</td>
-                    <td><span class="content-type">escalation</span> ➤ themed escalation: halloween</td>
+                    <td><span class="content-type">escalation</span> ➤ themed escalation: <a href="#e191022-mills-reverie">halloween</a></td>
                 </tr>
                 <tr>
                     <td>10-22</td>
@@ -1940,7 +2134,7 @@
                 </tr>
                 <tr>
                     <td>10-25</td>
-                    <td><span class="content-type">elusive target</span> ➤ the serial killer: suburban suit with driving gloves</td>
+                    <td><span class="content-type">elusive target</span> ➤ <a href="#et191025-serial-killer">the serial killer</a>: suburban suit with driving gloves</td>
                 </tr>
                 <tr>
                     <td>10-31</td>
@@ -1948,7 +2142,7 @@
                 </tr>
                 <tr>
                     <td>10-31</td>
-                    <td><span class="content-type">challenge pack</span> ➤ uninvited: red-tie kiwi</td>
+                    <td><span class="content-type">challenge pack</span> ➤ <a href="#cp191031-uninvited">uninvited</a>: red-tie kiwi</td>
                 </tr>
             </table>
             <ul>
@@ -1957,7 +2151,7 @@
             <br>
             </div>
 
-            <div> <!-- 2019-11 -->
+            <div> <!-- 2019-11 anniversary one year -->
             <table class="roadmap">
                 <caption>
                     anniversary one year<br>
@@ -1973,19 +2167,19 @@
                 </tr>
                 <tr>
                     <td>11-07</td>
-                    <td><span class="content-type">challenge pack</span> ➤ the great heist: ica titanium crowbar</td>
+                    <td><span class="content-type">challenge pack</span> ➤ <a href="#cp191107-great-heist">the great heist</a>: ica titanium crowbar</td>
                 </tr>
                 <tr>
                     <td>11-14</td>
-                    <td><span class="content-type">escalation</span> ➤ the montague audacity</td>
+                    <td><span class="content-type">escalation</span> ➤ <a href="#e191114-montague-audacity">the montague audacity</a></td>
                 </tr>
                 <tr>
                     <td>11-14</td>
-                    <td><span class="content-type">featured contracts</span> ➤ special occasions</td>
+                    <td><span class="content-type">featured contracts</span> ➤ <a href="#fc191114-special-occasions">special occasions</a></td>
                 </tr>
                 <tr>
                     <td>11-14</td>
-                    <td><span class="content-type">challenge pack</span> ➤ legacy challenge packs: master fortune teller (tac-4 s/a desert), art of revenge (masamune)</td>
+                    <td><span class="content-type">challenge pack</span> ➤ legacy challenge packs: <a href="#cp191114-master-fortune-teller">master fortune teller</a> (tac-4 s/a desert), <a href="#cp170811-art-of-revenge">art of revenge</a> (masamune)</td>
                 </tr>
                 <tr>
                     <td>11-18</td>
@@ -1993,7 +2187,7 @@
                 </tr>
                 <tr>
                     <td>11-19</td>
-                    <td><span class="content-type">challenge pack</span> ➤ blake’s endeavour: the arkian tuxedo</td>
+                    <td><span class="content-type">challenge pack</span> ➤ <a href="#cp191119-blakes-endeavour">blake’s endeavour</a>: the arkian tuxedo</td>
                 </tr>
                 <tr>
                     <td>11-19</td>
@@ -2009,11 +2203,11 @@
                 </tr>
                 <tr>
                     <td>11-22</td>
-                    <td><span class="content-type">elusive target</span> ➤ the fixer</td>
+                    <td><span class="content-type">elusive target</span> ➤ <a href="#et191122-fixer">the fixer</a></td>
                 </tr>
                 <tr>
                     <td>11-28</td>
-                    <td><span class="content-type">escalation</span> ➤ escalations: the bartholomew hornswoggle (the buccaneer suit), the mccallister ransack, the quimby quandary</td>
+                    <td><span class="content-type">escalation</span> ➤ escalations: <a href="#e191128-bartholomew-hornswoggle">the bartholomew hornswoggle</a> (the buccaneer suit), <a href="#e191128-mccallister-ransack">the mccallister ransack</a>, <a href="#e191128-quimby-quandary">the quimby quandary</a></td>
                 </tr>
             </table>
             <ul>
@@ -2022,7 +2216,7 @@
             <br>
             </div>
 
-            <div class="region-grey"> <!-- 2019-12 -->
+            <div> <!-- 2019-12 happy holidays -->
             <table class="roadmap">
                 <caption>
                     happy holidays<br>
@@ -2034,19 +2228,19 @@
                 </colgroup>
                 <tr>
                     <td>12-05</td>
-                    <td><span class="content-type">escalations</span> ➤ the truman convention, the raaz algorithm</td>
+                    <td><span class="content-type">escalation</span> ➤ <a href="#e191205-truman-contravention">the truman convention</a>, <a href="#e191205-raaz-algorithm">the raaz algorithm</a></td>
                 </tr>
                 <tr>
                     <td>12-06</td>
-                    <td><span class="content-type">legacy elusive target</span> ➤ the chef</td>
+                    <td><span class="content-type">legacy elusive target</span> ➤ <a href="#et191206-chef">the chef</a></td>
                 </tr>
                 <tr>
                     <td>12-12</td>
-                    <td><span class="content-type">curated contracts</span> ➤ 12 days of contracts</td>
+                    <td><span class="content-type">curated contracts</span> ➤ <a href="#fc191212-12-days-of-contracts">12 days of contracts</a></td>
                 </tr>
                 <tr>
                     <td>12-12</td>
-                    <td><span class="content-type">escalation</span> ➤ the han encasement</td>
+                    <td><span class="content-type">escalation</span> ➤ <a href="#e191212-han-encasement">the han encasement</a></td>
                 </tr>
                 <tr>
                     <td>12-17</td>
@@ -2058,7 +2252,7 @@
                 </tr>
                 <tr>
                     <td>12-17</td>
-                    <td><span class="content-type">escalation</span> ➤ the rafael misadventure</td>
+                    <td><span class="content-type">escalation</span> ➤ <a href="#e191217-rafael-misadventure">the rafael misadventure</a></td>
                 </tr>
                 <tr>
                     <td>12-17</td>
@@ -2066,7 +2260,7 @@
                 </tr>
                 <tr>
                     <td>12-20 → 01-06</td>
-                    <td><span class="content-type">elusive target</span> ➤ the stowaway</td>
+                    <td><span class="content-type">elusive target</span> ➤ <a href="#et191220-stowaway">the stowaway</a></td>
                 </tr>
             </table>
             <ul>
@@ -2087,15 +2281,15 @@
                 </colgroup>
                 <tr>
                     <td>01-09</td>
-                    <td><span class="content-type">featured contracts</span> ➤ stay frosty</td>
+                    <td><span class="content-type">featured contracts</span> ➤ <a href="#fc200109-stay-frosty">stay frosty</a></td>
                 </tr>
                 <tr>
                     <td>01-17</td>
-                    <td><span class="content-type">elusive target reactivation</span> ➤ the undying</td>
+                    <td><span class="content-type">elusive target reactivation</span> ➤ <a href="#et200117-undying">the undying</a></td>
                 </tr>
                 <tr>
                     <td>01-23</td>
-                    <td><span class="content-type">curated contracts</span> ➤ by mulletpride</td>
+                    <td><span class="content-type">curated contracts</span> ➤ by <a href="#fc200123-curated-by-mulletpride">mulletpride</a></td>
                 </tr>
                 <tr>
                     <td>01-30</td>
@@ -2108,7 +2302,7 @@
             <br>
             </div>
 
-            <div class="region-grey"> <!-- 2020-02 -->
+            <div> <!-- 2020-02 -->
             <table class="roadmap">
                 <caption>
                     february content calendar<br>
@@ -2120,15 +2314,15 @@
                 </colgroup>
                 <tr>
                     <td>02-06</td>
-                    <td><span class="content-type">featured contracts</span> ➤ lost love</td>
+                    <td><span class="content-type">featured contracts</span> ➤ <a href="#fc200206-lost-love">lost love</a></td>
                 </tr>
                 <tr>
                     <td>02-14</td>
-                    <td><span class="content-type">elusive target reactivation</span> ➤ the revolutionary</td>
+                    <td><span class="content-type">elusive target reactivation</span> ➤ <a href="#et200214-revolutionary">the revolutionary</a></td>
                 </tr>
                 <tr>
                     <td>02-20</td>
-                    <td><span class="content-type">curated contracts</span> ➤ frote7</td>
+                    <td><span class="content-type">curated contracts</span> ➤ <a href="#fc200220-curated-by-frote7">frote7</a></td>
                 </tr>
                 <tr>
                     <td>02-26</td>
@@ -2153,15 +2347,15 @@
                 </colgroup>
                 <tr>
                     <td>03-05</td>
-                    <td><span class="content-type">featured contracts</span> ➤ lucky break</td>
+                    <td><span class="content-type">featured contracts</span> ➤ <a href="#fc200305-lucky-break">lucky break</a></td>
                 </tr>
                 <tr>
                     <td>03-13</td>
-                    <td><span class="content-type">elusive target reactivation</span> ➤ the appraiser</td>
+                    <td><span class="content-type">elusive target reactivation</span> ➤ <a href="#et200313-appraiser">the appraiser</a></td>
                 </tr>
                 <tr>
                     <td>03-19</td>
-                    <td><span class="content-type">curated contracts</span> ➤ thecontractor</td>
+                    <td><span class="content-type">curated contracts</span> ➤ <a href="#fc200310-curated-by-thecontractor">thecontractor</a></td>
                 </tr>
                 <tr>
                     <td>03-26</td>
@@ -2174,7 +2368,7 @@
             <br>
             </div>
 
-            <div class="region-grey"> <!-- 2020-04 -->
+            <div> <!-- 2020-04 -->
             <table class="roadmap">
                 <caption>
                     april content calendar<br>
@@ -2186,19 +2380,19 @@
                 </colgroup>
                 <tr>
                     <td>04-08</td>
-                    <td><span class="content-type">featured contracts</span> ➤ fools gambit</td>
+                    <td><span class="content-type">featured contracts</span> ➤ <a href="#fc200408-fools-gambit">fools gambit</a></td>
                 </tr>
                 <tr>
                     <td>04-10</td>
-                    <td><span class="content-type">elusive target reactivation</span> ➤ the politician</td>
+                    <td><span class="content-type">elusive target reactivation</span> ➤ <a href="#et200410-politician">the politician</a></td>
                 </tr>
                 <tr>
                     <td>04-16</td>
-                    <td><span class="content-type">curated contracts</span> ➤ kevinrudd</td>
+                    <td><span class="content-type">curated contracts</span> ➤ <a href="#fc200416-kevinrudd">kevinrudd</a></td>
                 </tr>
                 <tr>
                     <td>04-23</td>
-                    <td><span class="content-type">elusive target reactivation</span> ➤ the serial killer</td>
+                    <td><span class="content-type">elusive target reactivation</span> ➤ <a href="#et200423-serial-killer">the serial killer</a></td>
                 </tr>
                 <tr>
                     <td>04-28</td>
@@ -2223,15 +2417,15 @@
                 </colgroup>
                 <tr>
                     <td>05-07</td>
-                    <td><span class="content-type">featured contracts</span> ➤ spring cleaning</td>
+                    <td><span class="content-type">featured contracts</span> ➤ <a href="#fc200507-spring-cleaning">spring cleaning</a></td>
                 </tr>
                 <tr>
                     <td>05-15</td>
-                    <td><span class="content-type">elusive target reactivation</span> ➤ the stowaway</td>
+                    <td><span class="content-type">elusive target reactivation</span> ➤ <a href="#et200515-stowaway">the stowaway</a></td>
                 </tr>
                 <tr>
                     <td>05-21</td>
-                    <td><span class="content-type">curated contracts</span> ➤ urben</td>
+                    <td><span class="content-type">curated contracts</span> ➤ <a href="#fc200528-urben">urben</a></td>
                 </tr>
                 <tr>
                     <td>05-28</td>
@@ -2244,7 +2438,7 @@
             <br>
             </div>
             
-            <div class="region-grey"> <!-- 2020-06 -->
+            <div> <!-- 2020-06 miami heatwave -->
             <table class="roadmap">
                 <caption>
                     miami heatwave<br>
@@ -2256,15 +2450,15 @@
                 </colgroup>
                 <tr>
                     <td>06-04</td>
-                    <td><span class="content-type">featured contracts</span> ➤ crash course</td>
+                    <td><span class="content-type">featured contracts</span> ➤ <a href="#fc200604-crash-course">crash course</a></td>
                 </tr>
                 <tr>
                     <td>06-11 → 06-30</td>
-                    <td><span class="content-type">elusive target reactivation</span> ➤ the undying returns</td>
+                    <td><span class="content-type">elusive target reactivation</span> ➤ <a href="#et200611-undying-returns">the undying returns</a></td>
                 </tr>
                 <tr>
                     <td>06-18</td>
-                    <td><span class="content-type">curated contracts</span> ➤ by chaos_agent_45</td>
+                    <td><span class="content-type">curated contracts</span> ➤ by <a href="#fc200618-chaosagent45">chaos_agent_45</a></td>
                 </tr>
                 <tr>
                     <td>06-25</td>
@@ -2309,7 +2503,7 @@
 
         </details>
 
-        <details class="accordion"> <!-- hitman 3 -->
+        <details class="accordion" open> <!-- hitman 3 -->
             <summary>roadmaps: hitman 3</summary>
             <br>
 
@@ -2325,15 +2519,15 @@
                 </colgroup>
                 <tr>
                     <td>02-04</td>
-                    <td><span class="content-type">escalation</span> ➤ the baskerville barney</td>
+                    <td><span class="content-type">escalation</span> ➤ <a href="#e210204-baskerville-barney">the baskerville barney</a></td>
                 </tr>
                 <tr>
                     <td>02-11</td>
-                    <td><span class="content-type">featured contracts</span> ➤ minnmax</td>
+                    <td><span class="content-type">featured contracts</span> ➤ <a href="#fc210211-minnmax">minnmax</a></td>
                 </tr>
                 <tr>
                     <td>02-18</td>
-                    <td><span class="content-type">escalation</span> ➤ the sinbad stringent</td>
+                    <td><span class="content-type">escalation</span> ➤ <a href="#e210218-sinbad-stringent">the sinbad stringent</a></td>
                 </tr>
                 <tr>
                     <td>02-23</td>
@@ -2341,19 +2535,19 @@
                 </tr>
                 <tr>
                     <td>02-23</td>
-                    <td><span class="content-type">featured contracts</span> ➤ kinda funny</td>
+                    <td><span class="content-type">featured contracts</span> ➤ <a href="#fc210223-kinda-funny">kinda funny</a></td>
                 </tr>
                 <tr>
                     <td>02-23</td>
-                    <td><span class="content-type">deluxe escalation</span> ➤ the gauchito antiquity (the guru suit, guru's pen syringe emetic, guru's emetic syringe)</td>
+                    <td><span class="content-type">deluxe escalation</span> ➤ <a href="#e210223-gauchito-antiquity">the gauchito antiquity</a> (the guru suit, guru's pen syringe emetic, guru's emetic syringe)</td>
                 </tr>
                 <tr>
                     <td>02-23</td>
-                    <td><span class="content-type">deluxe escalation</span> ➤ the proloff parable (the white shadow suit, custom sieger 300, white katana)</td>
+                    <td><span class="content-type">deluxe escalation</span> ➤ <a href="#e210223-proloff-parable">the proloff parable</a> (the white shadow suit, custom sieger 300, white katana)</td>
                 </tr>
                 <tr>
                     <td>02-26 → 03-08</td>
-                    <td><span class="content-type">elusive target</span> ➤ the deceivers</td>
+                    <td><span class="content-type">elusive target</span> ➤ <a href="#et210226-deceivers">the deceivers</a></td>
                 </tr>
             </table>
             <ul>
@@ -2362,7 +2556,7 @@
             <br>
             </div>
 
-            <div class="region-white"> <!-- 2021-03 moral ambiguity -->
+            <div> <!-- 2021-03 moral ambiguity -->
             <table class="roadmap">
                 <caption>
                     moral ambiguity<br>
@@ -2373,19 +2567,19 @@
                 </colgroup>
                 <tr>
                     <td>03-04</td>
-                    <td><span class="content-type">escalation</span> ➤ the lesley celebration</td>
+                    <td><span class="content-type">escalation</span> ➤ <a href="#e210304-lesley-celebration">the lesley celebration</a></td>
                 </tr>
                 <tr>
                     <td>03-11</td>
-                    <td><span class="content-type">featured contracts</span> ➤ easy allies</td>
+                    <td><span class="content-type">featured contracts</span> ➤ <a href="#fc210311-easyallies">easy allies</a></td>
                 </tr>
                 <tr>
                     <td>03-19 → 03-29</td>
-                    <td><span class="content-type">elusive target</span> ➤ the stowaway</td>
+                    <td><span class="content-type">elusive target</span> ➤ <a href="#et210319-stowaway">the stowaway</a></td>
                 </tr>
                 <tr>
                     <td>03-25</td>
-                    <td><span class="content-type">featured contracts</span> ➤ eurogamer</td>
+                    <td><span class="content-type">featured contracts</span> ➤ <a href="#fc210325-eurogamer">eurogamer</a></td>
                 </tr>
                 <tr>
                     <td>03-30 → 04-12</td>
@@ -2397,7 +2591,7 @@
                 </tr>
                 <tr>
                     <td>03-30</td>
-                    <td><span class="content-type">deluxe escalation</span> ➤ the satu mare delirium (the straitjacket, the taunton dart gun, the straitjacket belt)</td>
+                    <td><span class="content-type">deluxe escalation</span> ➤ <a href="#e210330-satu-mare-delirium">the satu mare delirium</a> (the straitjacket, the taunton dart gun, the straitjacket belt)</td>
                 </tr>
             </table>
             <ul>
@@ -2418,7 +2612,7 @@
                 </colgroup>
                 <tr>
                     <td>03-30</td>
-                    <td><span class="content-type">seven deadly sins collection</span> ➤ act 1: greed</td>
+                    <td><span class="content-type">seven deadly sins collection</span> ➤ act 1: <a href="#e210330-greed-enumeration">greed</a></td>
                 </tr>
                 <tr>
                     <td>03-30 → 04-12</td>
@@ -2426,23 +2620,23 @@
                 </tr>
                 <tr>
                     <td>04-09 → 04-19</td>
-                    <td><span class="content-type">elusive target</span> ➤ the collector</td>
+                    <td><span class="content-type">elusive target</span> ➤ <a href="#et210409-collector">the collector</a></td>
                 </tr>
                 <tr>
                     <td>04-15</td>
-                    <td><span class="content-type">featured contracts</span> ➤ two angry gamers</td>
+                    <td><span class="content-type">featured contracts</span> ➤ <a href="#fc210415-two-angry-gamers">two angry gamers</a></td>
                 </tr>
                 <tr>
                     <td>04-23 → 05-03</td>
-                    <td><span class="content-type">elusive target</span> ➤ the politician</td>
+                    <td><span class="content-type">elusive target</span> ➤ <a href="#et210423-politician">the politician</a></td>
                 </tr>
                 <tr>
                     <td>04-29</td>
-                    <td><span class="content-type">escalation</span> ➤ the jinzhen incident</td>
+                    <td><span class="content-type">escalation</span> ➤ <a href="#e210429-jinzhen-incident">the jinzhen incident</a></td>
                 </tr>
                 <tr>
                     <td>05-06</td>
-                    <td><span class="content-type">featured contracts</span> ➤ matt bragg’s achievement hunter</td>
+                    <td><span class="content-type">featured contracts</span> ➤ matt bragg’s <a href="#fc210506-achievement-hunter">achievement hunter</a></td>
                 </tr>
                 <tr>
                     <td>05-10</td>
@@ -2455,7 +2649,7 @@
             <br>
             </div>
 
-            <div class="region-white"> <!-- 2021-05 season of pride -->
+            <div> <!-- 2021-05 season of pride -->
             <table class="roadmap">
                 <caption>
                     season of pride<br>
@@ -2467,15 +2661,15 @@
                 </colgroup>
                 <tr>
                     <td>05-10</td>
-                    <td><span class="content-type">seven deadly sins collection</span> ➤ pride (the narcissus suit, the pride profusion, the proud swashbuckler, the majestic)</td>
+                    <td><span class="content-type">seven deadly sins collection</span> ➤ <a href="#e210510-pride-profusion">pride</a> (the narcissus suit, the pride profusion, the proud swashbuckler, the majestic)</td>
                 </tr>
                 <tr>
                     <td>05-10</td>
-                    <td><span class="content-type">escalation</span> ➤ the sebastian principle</td>
+                    <td><span class="content-type">escalation</span> ➤ <a href="#e210510-sebastian-principle">the sebastian principle</a></td>
                 </tr>
                 <tr>
                     <td>05-12 → 05-24</td>
-                    <td><span class="content-type">elusive target</span> ➤ the iconoclast</td>
+                    <td><span class="content-type">elusive target</span> ➤ <a href="#et210512-iconoclast">the iconoclast</a></td>
                 </tr>
                 <tr>
                     <td>05-14 → 05-23</td>
@@ -2483,19 +2677,19 @@
                 </tr>
                 <tr>
                     <td>05-20</td>
-                    <td><span class="content-type">featured contracts</span> ➤ spawn on me</td>
+                    <td><span class="content-type">featured contracts</span> ➤ <a href="#fc210520-spawn-on-me">spawn on me</a></td>
                 </tr>
                 <tr>
                     <td>05-27</td>
-                    <td><span class="content-type">escalation</span> ➤ the pascal consortium</td>
+                    <td><span class="content-type">escalation</span> ➤ <a href="#e210527-pasquel-consortium">the pascal consortium</a></td>
                 </tr>
                 <tr>
                     <td>06-04 → 06-13</td>
-                    <td><span class="content-type">play for free</span> ➤ elusive target: the black hat</td>
+                    <td><span class="content-type">play for free</span> ➤ elusive target: <a href="#et210604-black-hat">the black hat</a></td>
                 </tr>
                 <tr>
                     <td>06-10</td>
-                    <td><span class="content-type">featured contracts</span> ➤ by hitman community – pride</td>
+                    <td><span class="content-type">featured contracts</span> ➤ by hitman community – <a href="#fc210610-community-pride">pride</a></td>
                 </tr>
                 <tr>
                     <td>06-14</td>
@@ -2562,7 +2756,7 @@
             <br>
             </div>
 
-            <div class="region-white"> <!-- 2021-07/08 season of lust -->
+            <div> <!-- 2021-07/08 season of lust -->
             <table class="roadmap">
                 <caption>
                     season of lust<br>
@@ -2662,7 +2856,7 @@
             <br>
             </div>
 
-            <div class="region-white"> <!-- 2021-10 season of envy -->
+            <div> <!-- 2021-10 season of envy -->
             <table class="roadmap">
                 <caption>
                     season of envy: second to one<br>
@@ -2767,7 +2961,7 @@
             <br>
             </div>
 
-            <div class="region-white"> <!-- 2021-12 winter roadmap -->
+            <div> <!-- 2021-12 winter roadmap -->
             <table class="roadmap">
                 <caption>
                     winter roadmap: ho ho ho<br>
@@ -2854,7 +3048,7 @@
             <br>
             </div>
 
-            <div class="region-white"> <!-- 2022-03 -->
+            <div> <!-- 2022-03 -->
             <table class="roadmap">
                 <caption>
                     march roadmap year two<br>
@@ -2931,7 +3125,7 @@
             <br>
             </div>
 
-            <div class="region-white"> <!-- 2022-05 -->
+            <div> <!-- 2022-05 -->
             <table class="roadmap">
                 <caption>
                     may roadmap year two<br>
@@ -3029,7 +3223,7 @@
             <br>
             </div>
 
-            <div class="region-white"> <!-- 2022-07 -->
+            <div> <!-- 2022-07 -->
             <table class="roadmap">
                 <caption>
                     july roadmap year two<br>
@@ -3115,7 +3309,7 @@
             <br>
             </div>
 
-            <div class="region-white"> <!-- 2022-09 -->
+            <div> <!-- 2022-09 -->
             <table class="roadmap">
                 <caption>
                     september 2022 roadmap year two<br>
@@ -3205,7 +3399,7 @@
             <br>
             </div>
             
-            <div class="region-white"> <!-- 2022-11 -->
+            <div> <!-- 2022-11 -->
             <table class="roadmap">
                 <caption>
                     november roadmap year two<br>
@@ -3309,7 +3503,7 @@
             </div>
         </details>
 
-        <details class="accordion region-white"> <!-- hitman woa -->
+        <details class="accordion"> <!-- hitman woa -->
             <summary>roadmaps: hitman world of assassination</summary>
             <br>
 
@@ -3406,7 +3600,7 @@
             <br>
             </div>
 
-            <div class="region-grey"> <!-- 2023-06/09 -->
+            <div> <!-- 2023-06/09 -->
             <table class="roadmap">
                 <caption>
                     summer 2023<br>
@@ -3536,7 +3730,7 @@
             <br>
             </div>
 
-            <div class="region-grey"> <!-- 2023-10 -->
+            <div> <!-- 2023-10 -->
             <table class="roadmap">
                 <caption>
                     ioi 25th anniversary roadmap</b><br>
@@ -3645,7 +3839,7 @@
             <br>
             </div>
 
-            <div class="region-grey"> <!-- season of the undying -->
+            <div> <!-- season of the undying -->
             <table class="roadmap">
                 <caption>
                     season of the undying<br>
@@ -3799,7 +3993,7 @@
             <br>
             </div>
 
-            <div class="region-grey"> <!-- season of the drop -->
+            <div> <!-- season of the drop -->
             <table class="roadmap">
                 <caption>
                     season of the drop<br>
@@ -3979,7 +4173,7 @@
             <br>
             </div>
 
-            <div class="region-grey"> <!-- season of the luck -->
+            <div> <!-- season of the luck -->
             <table class="roadmap">
                 <caption>
                     season of the luck<br>
@@ -4127,7 +4321,7 @@
             <br>
             </div>
 
-            <div class="region-grey"> <!-- season of the high-stakes -->
+            <div> <!-- season of the high-stakes -->
             <table class="roadmap">
                 <caption>
                     season of the high-stakes<br>
@@ -4317,7 +4511,7 @@
                 <br>
             </div>
 
-            <div class="region-grey"> <!-- season of eminem -->
+            <div> <!-- season of eminem -->
             <table class="roadmap">
                 <caption>
                     season of eminem vs. slim shady<br>
@@ -4537,7 +4731,7 @@
             <br>
             </div>
 
-            <div class="region-grey"> <!-- season of the royal ace -->
+            <div> <!-- season of the royal ace -->
             <table class="roadmap">
                 <caption>
                     season of the royal ace<br>
@@ -7755,7 +7949,7 @@
                     <br>
                 </div>
 
-                <div> <!-- 2019-02-21 broken hearts -->
+                <div id="fc190221"> <!-- 2019-02-21 broken hearts -->
                     <table class="featured-contracts">
                         <caption>
                             2019-02-21<br>
@@ -7796,7 +7990,7 @@
                     <br>
                 </div>
 
-                <div> <!-- 2019-03-21 murphy’s luck -->
+                <div id="fc190321"> <!-- 2019-03-21 murphy’s luck -->
                     <table class="featured-contracts">
                         <caption>
                             2019-03-21<br>
@@ -7837,7 +8031,7 @@
                     <br>
                 </div>
 
-                <div> <!-- 2019-04-17 ghost busters -->
+                <div id="fc190417"> <!-- 2019-04-17 ghost busters -->
                     <table class="featured-contracts">
                         <caption>
                             2019-04-17<br>
@@ -7882,7 +8076,7 @@
                     <br>
                 </div>
 
-                <div> <!-- 2019-05-24 party crashers -->
+                <div id="fc190524"> <!-- 2019-05-24 party crashers -->
                     <table class="featured-contracts">
                         <caption>
                             2019-05-24<br>
@@ -7949,7 +8143,7 @@
                     <br>
                 </div>
 
-                <div> <!-- 2019-06-20 assassin’s greed -->
+                <div id="fc190620"> <!-- 2019-06-20 assassin’s greed -->
                     <table class="featured-contracts">
                         <caption>
                             2019-06-20<br>
@@ -7990,7 +8184,7 @@
                     <br>
                 </div>
 
-                <div> <!-- 2019-07-18 tone death -->
+                <div id="fc190718"> <!-- 2019-07-18 tone death -->
                     <table class="featured-contracts">
                         <caption>
                             2019-07-18<br>
@@ -8056,7 +8250,7 @@
                     <br>
                 </div>
 
-                <div> <!-- 2019-08-22 cosplay karma -->
+                <div id="fc190822-cosplay-karma"> <!-- 2019-08-22 cosplay karma -->
                     <table class="featured-contracts">
                         <caption>
                             2019-08-22<br>
@@ -8122,7 +8316,7 @@
                     <br>
                 </div>
 
-                <div> <!-- 2019-09-19 competitive edge -->
+                <div id="fc190919-competitive-edge"> <!-- 2019-09-19 competitive edge -->
                     <table class="featured-contracts">
                         <caption>
                             2019-09-19<br>
@@ -8188,7 +8382,7 @@
                     <br>
                 </div>
 
-                <div> <!-- 2019-10-17 trick or treat -->
+                <div id="fc191017-trick-or-treat"> <!-- 2019-10-17 trick or treat -->
                 <table class="featured-contracts">
                     <caption>
                         2019-10-17<br>
@@ -8264,7 +8458,7 @@
                 <br>
                 </div>
 
-                <div> <!-- 2019-11-14 special occasions -->
+                <div id="fc191114-special-occasions"> <!-- 2019-11-14 special occasions -->
                     <table class="featured-contracts">
                         <caption>
                             2019-11-14<br>
@@ -8335,7 +8529,7 @@
                     <br>
                 </div>
 
-                <div> <!-- 2019-12-12 12 days of contracts -->
+                <div id="fc191212-12-days-of-contracts"> <!-- 2019-12-12 12 days of contracts -->
                     <table class="featured-contracts">
                         <caption>
                             2019-12-12<br>
@@ -8411,7 +8605,7 @@
                     <br>
                 </div>
 
-                <div> <!-- 2020-01-09 stay frosty -->
+                <div id="fc200109-stay-frosty"> <!-- 2020-01-09 stay frosty -->
                     <table class="featured-contracts">
                         <caption>
                             2020-01-09<br>
@@ -8482,7 +8676,7 @@
                     <br>
                 </div>
 
-                <div> <!-- 2020-01-23 curated by mulletpride -->
+                <div id="fc200123-curated-by-mulletpride"> <!-- 2020-01-23 curated by mulletpride -->
                     <table class="featured-contracts">
                         <caption>
                             2020-01-23<br>
@@ -8548,7 +8742,7 @@
                     <br>
                 </div>
 
-                <div> <!-- 2020-02-06 lost love -->
+                <div id="fc200206-lost-love"> <!-- 2020-02-06 lost love -->
                     <table class="featured-contracts">
                         <caption>
                             2020-02-06<br>
@@ -8614,7 +8808,7 @@
                     <br>
                 </div>
 
-                <div> <!-- 2020-02-20 curated by frote7 -->
+                <div id="fc200220-curated-by-frote7"> <!-- 2020-02-20 curated by frote7 -->
                     <table class="featured-contracts">
                         <caption>
                             2020-02-20<br>
@@ -8680,7 +8874,7 @@
                     <br>
                 </div>
 
-                <div> <!-- 2020-03-05 lucky break -->
+                <div id="fc200305-lucky-break"> <!-- 2020-03-05 lucky break -->
                     <table class="featured-contracts">
                         <caption>
                             2020-03-05<br>
@@ -8751,7 +8945,7 @@
                     <br>
                 </div>
 
-                <div> <!-- 2020-03-10 curated by thecontractor -->
+                <div id="fc200310-curated-by-thecontractor"> <!-- 2020-03-10 curated by thecontractor -->
                     <table class="featured-contracts">
                         <caption>
                             2020-03-10<br>
@@ -8817,7 +9011,7 @@
                     <br>
                 </div>
 
-                <div> <!-- 2020-04-08 fools gambit -->
+                <div id="fc200408-fools-gambit"> <!-- 2020-04-08 fools gambit -->
                     <table class="featured-contracts">
                         <caption>
                             2020-04-08<br>
@@ -8888,7 +9082,7 @@
                     <br>
                 </div>
 
-                <div> <!-- 2020-04-16 curated by kevinrudd -->
+                <div id="fc200416-kevinrudd"> <!-- 2020-04-16 curated by kevinrudd -->
                     <table class="featured-contracts">
                         <caption>
                             2020-04-16<br>
@@ -8959,7 +9153,7 @@
                     <br>
                 </div>
 
-                <div> <!-- 2020-05-07 spring cleaning -->
+                <div id="fc200507-spring-cleaning"> <!-- 2020-05-07 spring cleaning -->
                     <table class="featured-contracts">
                         <caption>
                             2020-05-07<br>
@@ -9028,7 +9222,7 @@
                     <br>
                 </div>
 
-                <div> <!-- 2020-05-28 curated by urben -->
+                <div id="fc200528-urben"> <!-- 2020-05-28 curated by urben -->
                     <table class="featured-contracts">
                         <caption>
                             2020-05-28<br>
@@ -9099,7 +9293,7 @@
                     <br>
                 </div>
 
-                <div> <!-- 2020-06-04 curated by crash course -->
+                <div id="fc200604-crash-course"> <!-- 2020-06-04 curated by crash course -->
                     <table class="featured-contracts">
                         <caption>
                             2020-06-04<br>
@@ -9160,7 +9354,7 @@
                     <br>
                 </div>
 
-                <div> <!-- 2020-06-18 curated by chaos_agent_45 -->
+                <div id="fc200618-chaosagent45"> <!-- 2020-06-18 curated by chaos_agent_45 -->
                 <table class="featured-contracts">
                     <caption>
                         2020-06-18<br>
@@ -9300,7 +9494,7 @@
                 <br>
                 </div>
 
-                <div> <!-- 2021-02-11 minnmax -->
+                <div id="fc210211-minnmax"> <!-- 2021-02-11 minnmax -->
                 <table class="featured-contracts">
                     <caption>
                         2021-02-11<br>
@@ -9348,7 +9542,7 @@
                 <br>
                 </div>
 
-                <div> <!-- 2021-02-23 kinda funny -->
+                <div id="fc210223-kinda-funny"> <!-- 2021-02-23 kinda funny -->
                 <table class="featured-contracts">
                     <caption>
                         2021-02-23<br>
@@ -9393,7 +9587,7 @@
                 <br>
                 </div>
 
-                <div> <!-- 2021-03-11 easyallies -->
+                <div id="fc210311-easyallies"> <!-- 2021-03-11 easyallies -->
                 <table class="featured-contracts">
                     <caption>
                         2021-03-11<br>
@@ -9440,7 +9634,7 @@
                 <br>
                 </div>
 
-                <div> <!-- 2021-03-25 eurogamer -->
+                <div id="fc210325-eurogamer"> <!-- 2021-03-25 eurogamer -->
                 <table class="featured-contracts">
                     <caption>
                         2021-03-25<br>
@@ -9487,7 +9681,7 @@
                 <br>
                 </div>
 
-                <div> <!-- 2021-04-15 two angry gamers -->
+                <div id="fc210415-two-angry-gamers"> <!-- 2021-04-15 two angry gamers -->
                 <table class="featured-contracts">
                     <caption>
                         2021-04-15<br>
@@ -9523,7 +9717,7 @@
                 <br>
                 </div>
 
-                <div> <!-- 2021-05-06 achievement hunter -->
+                <div id="fc210506-achievement-hunter"> <!-- 2021-05-06 achievement hunter -->
                 <table class="featured-contracts">
                     <caption>
                         2021-05-06<br>
@@ -9558,7 +9752,7 @@
                 <br>
                 </div>
 
-                <div> <!-- 2021-05-20 spawn on me -->
+                <div id="fc210520-spawn-on-me"> <!-- 2021-05-20 spawn on me -->
                 <table class="featured-contracts">
                     <caption>
                         2021-05-20<br>
@@ -9594,7 +9788,7 @@
                 <br>
                 </div>
 
-                <div> <!-- 2021-06-10 community – pride -->
+                <div id="fc210610-community-pride"> <!-- 2021-06-10 community – pride -->
                 <table class="featured-contracts">
                     <caption>
                         2021-06-10<br>
@@ -13826,6 +14020,74 @@
                     </ul>
                 </div>
 
+                <div> <!-- 2026-09-28 vehicular misfortune -->
+                    <table class="featured-contracts">
+                        <caption>
+                            vehicular misfortune<br>
+                            2026-09-28
+                        </caption>
+                        <colgroup>
+                            <col span="1" class="featured-contracts--name">
+                            <col span="1" class="featured-contracts--duration">
+                            <col span="1">
+                        </colgroup>
+                        <tr>
+                            <td><a href="https://www.youtube.com/watch?v=-sJsPVa7b5w">trolley problem</a><span class="contract-author"> – agent hashim</span></td>
+                            <td>0:08</td>
+                            <td>tools, sniper</td>
+                        </tr>
+                        <tr>
+                            <td><a href="https://www.youtube.com/watch?v=26kBPx8D160">denshassassination!</a><span class="contract-author"> – @the_elite_institute</span></td>
+                            <td>1:04</td>
+                            <td>tools, bulleteer</td>
+                        </tr>
+                        <tr>
+                            <td><a href="https://www.youtube.com/watch?v=eGpDtt8RnQM">snowpierced</a><span class="contract-author"> – @linux_penguin</span></td>
+                            <td>0:37</td>
+                            <td>tools, bulleteer</td>
+                        </tr>
+                        <tr>
+                            <td><a href="https://www.youtube.com/watch?v=Sqta1SJ9YY4">u-boot scootin’ baby</a><span class="contract-author"> – @magicdave94</span></td>
+                            <td>1:37</td>
+                            <td>tools, bulleteer</td>
+                        </tr>
+                        <tr>
+                            <td><a href="https://www.youtube.com/watch?v=qQaNhBUuAg8">well boiled machine</a><span class="contract-author"> – @ashley</span></td>
+                            <td>0:41</td>
+                            <td>tools</td>
+                        </tr>
+                        <tr>
+                            <td><a href="https://www.youtube.com/watch?v=R-Cau9KoMcc">danger from the skies</a><span class="contract-author"> – @turaku</span></td>
+                            <td>1:52</td>
+                            <td>tools, bulleteer</td>
+                        </tr>
+                        <tr>
+                            <td><a href="https://www.youtube.com/watch?v=7INwS8Cm53Y">it’s about driver</a><span class="contract-author"> – @linux_penguin</span></td>
+                            <td>1:26</td>
+                            <td>tools, cover aim trick</td>
+                        </tr>
+                        <tr>
+                            <td><a href="https://www.youtube.com/watch?v=MoZpZAbhJJA">manic mechanic</a><span class="contract-author"> – @teddyfilmore</span></td>
+                            <td>1:14</td>
+                            <td>bulleteer, tools, roaming sniper</td>
+                        </tr>
+                        <tr>
+                            <td><a href="https://www.youtube.com/watch?v=ZIjnyn-dBZM">tilting at flaming windmills</a><span class="contract-author"> – @magicdave94</span></td>
+                            <td>0:57</td>
+                            <td>bulleteer, tools, staircase slide</td>
+                        </tr>
+                        <tr>
+                            <td><a href="https://www.youtube.com/watch?v=7DkGk5-ZuOk">final derivery</a><span class="contract-author"> – @baymaymark123</span></td>
+                            <td>0:59</td>
+                            <td>tools</td>
+                        </tr>
+                    </table>
+                    <ul>
+                        <li><a href="https://www.hitmanforum.com/t/agent-hashims-vehicular-misfortune-featured-contracts-28-september-2026/27209">agent hashim’s vehicular misfortune featured contracts - 28 september 2026</a></li>
+                        <li><a href="https://hitmanforum-v6-s3-uploads.s3.dualstack.us-west-1.amazonaws.com/original/3X/0/f/0f49a16252b91601edd804146cf3fd02b5939ba1.jpeg">thumbnails</a></li>
+                    </ul>
+                </div>
+
                 <br>
             </details>
 
@@ -13842,7 +14104,7 @@
 
 
         <region id="elusive-targets">
-        <article class="region-grey">
+        <article>
             <h3># nieuchwytne cele</h3>
     
             <details class="accordion"> <!-- h1 -->
@@ -14165,7 +14427,7 @@
             <br>
             </details>
 
-            <details class="accordion region-white"> <!-- h2 -->
+            <details class="accordion"> <!-- h2 -->
                 <summary>elusive targets: hitman 2</summary>
 
                 <table class="elusive-targets">
@@ -14211,133 +14473,133 @@
                         <td>0:19</td>
                         <td>owen wagner</td>
                     </tr>
-                    <tr>
+                    <tr id="et190412-prince">
                         <td>2019-04-12</td>
                         <td><a href="https://www.youtube.com/watch?v=hF8Y0TgNk4c">the prince</a></td>
                         <td>6:30</td>
                         <td>adalrico candelaria</td>
                     </tr>
-                    <tr>
+                    <tr id="et190503-undying">
                         <td>2019-05-03</td>
                         <td><a href="https://www.youtube.com/watch?v=izRt8V1_rRg">the undying returns</a></td>
                         <td>3:36</td>
                         <td>mark faba</td>
                     </tr>
-                    <tr>
+                    <tr id="et190607-deceivers">
                         <td>2019-06-07</td>
                         <td><a href="https://www.youtube.com/watch?v=axJeUAfM_D8">the deceivers</a></td>
                         <td>1:15</td>
                         <td>richard j. magee, anthony l. troutt</td>
                     </tr>
-                    <tr>
+                    <tr id="et190628-entertainer">
                         <td>2019-06-28</td>
                         <td><a href="https://www.youtube.com/watch?v=ScixrQtz7qw">the entertainer</a></td>
                         <td>6:54</td>
                         <td>philip giggles</td>
                     </tr>
-                    <tr>
+                    <tr id="et190719-badboy">
                         <td>2019-07-19</td>
                         <td><a href="https://www.youtube.com/watch?v=RrWXcM3qtww">the badboy</a></td>
                         <td>1:59</td>
                         <td>bartholomew argus</td>
                     </tr>
-                    <tr>
+                    <tr id="et190802-chameleon">
                         <td>2019-08-02</td>
                         <td><a href="https://www.youtube.com/watch?v=aT005BWJZZg">the chameleon</a></td>
                         <td>6:22</td>
                         <td>richard m. foreman</td>
                     </tr>
-                    <tr>
+                    <tr id="et190816-identity-thief">
                         <td>2019-08-16</td>
                         <td><a href="https://www.youtube.com/watch?v=LK55Siiyx-g">the identity thief</a></td>
                         <td>1:03</td>
                         <td>brendan conner</td>
                     </tr>
-                    <tr>
+                    <tr id="et190830-gunrunner">
                         <td>2019-08-30</td>
                         <td><a href="https://www.youtube.com/watch?v=bt-JddtI9hA">the gunrunner</a></td>
                         <td>4:39</td>
                         <td>vito đurić</td>
                     </tr>
-                    <tr>
+                    <tr id="et190913-blackmailer">
                         <td>2019-09-13</td>
                         <td><a href="https://www.youtube.com/watch?v=0ayXLWy6pvs">the blackmailer</a></td>
                         <td>4:56</td>
                         <td>walter williams</td>
                     </tr>
-                    <tr>
+                    <tr id="et190927-angel-of-death">
                         <td>2019-09-27</td>
                         <td><a href="https://www.youtube.com/watch?v=Ei1oKwXzSIw">the angel of death</a></td>
                         <td>2:33</td>
                         <td>etta davis</td>
                     </tr>
-                    <tr>
+                    <tr id="et191011-warlord">
                         <td>2019-10-11</td>
                         <td><a href="https://www.youtube.com/watch?v=hd02GDaZi_E">the warlord</a></td>
                         <td>2:05</td>
                         <td>adeze oijofor</td>
                     </tr>
-                    <tr>
+                    <tr id="et191025-serial-killer">
                         <td>2019-10-25</td>
                         <td><a href="https://www.youtube.com/watch?v=XZaKswYxDo0">the serial killer</a></td>
                         <td>3:28</td>
                         <td>the censor – joseph gorski</td>
                     </tr>
-                    <tr>
+                    <tr id="et191122-fixer">
                         <td>2019-11-22</td>
                         <td><a href="https://www.youtube.com/watch?v=jS8VQi_QXEk">the fixer</a></td>
                         <td>11:48</td>
                         <td>xander haverfoek</td>
                     </tr>
-                    <tr>
+                    <tr id="et191206-chef">
                         <td>2019-12-06</td>
                         <td><a href="https://www.youtube.com/watch?v=vRlsYQ8CHYM">the chef</a></td>
                         <td>1:00</td>
                         <td>gabriel santos</td>
                     </tr>
-                    <tr>
+                    <tr id="et191220-stowaway">
                         <td>2019-12-20</td>
                         <td><a href="https://www.youtube.com/watch?v=dQ2Bx5g5oCE">the stowaway</a></td>
                         <td>1:29</td>
                         <td>jimmy chen</td>
                     </tr>
-                    <tr>
+                    <tr id="et200117-undying">
                         <td>2020-01-17</td>
                         <td><a href="https://www.youtube.com/watch?v=1eOl_6hF6Cg">the undying</a></td>
                         <td>3:47</td>
                         <td>mark faba</td>
                     </tr>
-                    <tr>
+                    <tr id="et200214-revolutionary">
                         <td>2020-02-14</td>
                         <td><a href="https://www.youtube.com/watch?v=L_6Tq10Yw0I">the revolutionary</a></td>
                         <td>3:42</td>
                         <td>vincente murillo</td>
                     </tr>
-                    <tr>
+                    <tr id="et200313-appraiser">
                         <td>2020-03-13</td>
                         <td><a href="https://www.youtube.com/watch?v=6DhWkQddZUo">the appraiser</a></td>
                         <td>4:58</td>
                         <td>miranda jamison</td>
                     </tr>
-                    <tr>
+                    <tr id="et200410-politician">
                         <td>2020-04-10</td>
                         <td><a href="https://www.youtube.com/watch?v=uM7ecxjnF9s">the politician</a></td>
                         <td>3:17</td>
                         <td>barbara e. keating</td>
                     </tr>
-                    <tr>
+                    <tr id="et200423-serial-killer">
                         <td>2020-04-23</td>
                         <td><a href="https://www.youtube.com/watch?v=icmPwQuT9QE">the serial killer</a></td>
                         <td>2:58</td>
                         <td>joseph gorski</td>
                     </tr>
-                    <tr>
+                    <tr id="et200515-stowaway">
                         <td>2020-05-15</td>
                         <td><a href="https://www.youtube.com/watch?v=aZxNBegPVF4">the stowaway</a></td>
                         <td>5:30</td>
                         <td>jimmy chen</td>
                     </tr>
-                    <tr>
+                    <tr id="et200611-undying-returns">
                         <td>2020-06-11</td>
                         <td><a href="https://www.youtube.com/watch?v=mu9VwmCaMDU">the undying returns</a></td>
                         <td>2:11</td>
@@ -14357,37 +14619,37 @@
                         <col span="1" class="elusive-targets--duration">
                         <col span="1" class="elusive-targets--target">
                     </colgroup>
-                    <tr>
+                    <tr id="et210226-deceivers">
                         <td>2021-02-26</td>
                         <td><a href="https://www.youtube.com/watch?v=N6fvGU9ishk">the deceivers</a></td>
                         <td>3:18</td>
                         <td>richard j. magee, anthony l. troutt</td>
                     </tr>
-                    <tr>
+                    <tr id="et210319-stowaway">
                         <td>2021-03-19</td>
                         <td><a href="https://www.youtube.com/watch?v=nZIpA5xve-M">the stowaway</a></td>
                         <td>5:02</td>
                         <td>jimmy chen</td>
                     </tr>
-                    <tr>
+                    <tr id="et210409-collector">
                         <td>2021-04-09</td>
                         <td><a href="https://www.youtube.com/watch?v=16CTyxdl0qI">the collector</a></td>
                         <td>4:21</td>
                         <td>kody haynes</td>
                     </tr>
-                    <tr>
+                    <tr id="et210423-politician">
                         <td>2021-04-23</td>
                         <td><a href="https://www.youtube.com/watch?v=1nQ6buC9WQY">the politician</a></td>
                         <td>3:20</td>
                         <td>barbara e. keating</td>
                     </tr>
-                    <tr>
+                    <tr id="et210512-iconoclast">
                         <td>2021-05-12</td>
                         <td><a href="https://www.youtube.com/watch?v=R9AraRRWc5c">the iconoclast</a></td>
                         <td>1:26</td>
                         <td>joanne bayswater</td>
                     </tr>
-                    <tr>
+                    <tr id="et210604-black-hat">
                         <td>2021-06-04</td>
                         <td><a href="https://www.youtube.com/watch?v=hh4YOVhwp2Q">the black hat</a></td>
                         <td>2:16</td>
@@ -14637,7 +14899,7 @@
                 <br>
             </details>
 
-            <details class="accordion region-white"> <!-- woa -->
+            <details class="accordion"> <!-- woa -->
                 <summary>elusive targets: hitman world of assassination</summary>
 
                 <table class="elusive-targets">
@@ -15280,26 +15542,26 @@
                     </tr>
                     <tr>
                         <td>2026-09-11</td>
-                        <td><a href="https://www.youtube.com/watch?v=">the politician</a></td>
-                        <td></td>
+                        <td><a href="https://www.youtube.com/watch?v=c6K6dHnKpok">the politician</a></td>
+                        <td>2:25</td>
                         <td>barbara e. keating</td>
                     </tr>
                     <tr>
                         <td>2026-09-18</td>
-                        <td><a href="https://www.youtube.com/watch?v=">the chameleon</a></td>
-                        <td></td>
+                        <td><a href="https://www.youtube.com/watch?v=7Ga-lDxusWU">the chameleon</a></td>
+                        <td>3:06</td>
                         <td>richard m. foreman</td>
                     </tr>
                     <tr>
                         <td>2026-09-25</td>
-                        <td><a href="https://www.youtube.com/watch?v=">the undying</a></td>
-                        <td></td>
+                        <td><a href="https://www.youtube.com/watch?v=lkIVToRczOU">the undying</a></td>
+                        <td>1:50</td>
                         <td>mark faba</td>
                     </tr>
                     <tr>
                         <td>2026-10-02</td>
-                        <td><a href="https://www.youtube.com/watch?v=">the ascensionist</a></td>
-                        <td></td>
+                        <td><a href="https://www.youtube.com/watch?v=u6lbAISxDfo">the ascensionist</a></td>
+                        <td>0:30</td>
                         <td>allison moretta</td>
                     </tr>
                     <tr>
@@ -15344,10 +15606,10 @@
 
         <region id="elusive-targets-arcade">
         <article>
-            <h3># elusive targets arcade</h3>
+            <h3># seria nieuchwytnych celów</h3>
     
             <details class="accordion">
-                <summary>seria nieuchwytnych celów</summary>
+                <summary>elusive targets arcade</summary>
                 <div>
                 <table class="et-arcade">
                     <colgroup>
@@ -15540,7 +15802,7 @@
 
 
         <region id="escalations">
-        <article class="region-grey">
+        <article>
         <h3># eskalacje</h3>
 
         <details class="accordion"> <!-- h1 -->
@@ -16219,7 +16481,7 @@
         <br>
         </details>
 
-        <details class="accordion region-white"> <!-- h2 -->
+        <details class="accordion"> <!-- h2 -->
         <summary>escalations: hitman 2</summary>
 
         <table class="escalations">
@@ -16308,7 +16570,7 @@
                     <a href="https://www.youtube.com/watch?v=RVeR67_m6FI">1:32</a>
                 </td>
             </tr>
-            <tr>
+            <tr id="e190425-nolan-disinfection">
                 <td>2019-04-25</td>
                 <td><a href="https://www.youtube.com/watch?v=I70yMbqCw70">the nolan disinfection</a></td>
                 <td>1:25, 1:34, 2:00</td>
@@ -16318,7 +16580,7 @@
                     <a href="https://www.youtube.com/watch?v=3tt_9YyxeCU">1:11</a>
                 </td>
             </tr>
-            <tr>
+            <tr id="e190509-sweeney-scrupulousness">
                 <td>2019-05-09</td>
                 <td><a href="https://www.youtube.com/watch?v=DeYjKR-73ec">the sweeney scrupulousness</a></td>
                 <td>0:26, 1:49, 2:44</td>
@@ -16328,7 +16590,7 @@
                     <a href="https://www.youtube.com/watch?v=Jct2Z1HIB8s">1:06</a>
                 </td>
             </tr>
-            <tr>
+            <tr id="e190523-chameleon-anonymity">
                 <td>2019-05-23</td>
                 <td><a href="https://www.youtube.com/watch?v=zQeRGtCAR9Q">the chameleon anonymity</a></td>
                 <td>0:44, 1:10, 1:25</td>
@@ -16338,7 +16600,7 @@
                     <a href="https://www.youtube.com/watch?v=Eih-LIi4PDU">1:25</a>
                 </td>
             </tr>
-            <tr>
+            <tr id="e190613-oleary-conflagration">
                 <td>2019-06-13</td>
                 <td><a href="https://www.youtube.com/watch?v=q1HDAJlLO3A">the o’leary conflagration</a></td>
                 <td>0:58, 1:52, 3:33</td>
@@ -16348,7 +16610,7 @@
                     <a href="https://www.youtube.com/watch?v=IfhViG5FIL0">1:58</a>
                 </td>
             </tr>
-            <tr>
+            <tr id="e190620-unpalatable-termination">
                 <td>2019-06-20</td>
                 <td><a href="https://www.youtube.com/watch?v=tMoTQ143XT4">the unpalatable termination</a></td>
                 <td>1:26, 2:14, 3:04</td>
@@ -16358,7 +16620,7 @@
                     <a href="https://www.youtube.com/watch?v=00UGOWYe5sc">3:49</a>
                 </td>
             </tr>
-            <tr>
+            <tr id="e190627-aquatic-retribution">
                 <td>2019-06-27</td>
                 <td><a href="https://www.youtube.com/watch?v=PfbjLmfkA10">the aquatic retribution</a></td>
                 <td>1:13, 1:58, 2:04</td>
@@ -16368,7 +16630,7 @@
                     <a href="https://www.youtube.com/watch?v=0b3_2D6aqPs">1:27</a>
                 </td>
             </tr>
-            <tr>
+            <tr id="e190704-babayeva-dissonance">
                 <td>2019-07-04</td>
                 <td><a href="https://www.youtube.com/watch?v=oeH530Ft_4c">the babayeva dissonance</a></td>
                 <td>0:49, 1:09, 1:59</td>
@@ -16378,7 +16640,7 @@
                     <a href="https://www.youtube.com/watch?v=AL096P6JNv8">1:47</a>
                 </td>
             </tr>
-            <tr>
+            <tr id="e190725-calvino-cacophony">
                 <td>2019-07-25</td>
                 <td><a href="https://www.youtube.com/watch?v=kbP0DQ9tq2k">the calvino cacophony</a></td>
                 <td>0:26, 1:06, 1:23</td>
@@ -16388,7 +16650,7 @@
                     <a href="https://www.youtube.com/watch?v=2uws2EaqzBw">1:04</a>
                 </td>
             </tr>
-            <tr>
+            <tr id="e190730-simmons-concussion">
                 <td>2019-07-30</td>
                 <td><a href="https://www.youtube.com/watch?v=TSUQZBVeVsY">the simmons concussion</a></td>
                 <td>0:53, 1:00, 1:01</td>
@@ -16398,7 +16660,7 @@
                     <a href="https://www.youtube.com/watch?v=u-4XHyMp73Y">0:53</a>
                 </td>
             </tr>
-            <tr>
+            <tr id="e190815-batty-tranquility">
                 <td>2019-08-15</td>
                 <td><a href="https://www.youtube.com/watch?v=Nh0J-1wiueA">the batty tranquility</a></td>
                 <td>1:28, 1:45, 5:38</td>
@@ -16408,7 +16670,7 @@
                     <a href="https://www.youtube.com/watch?v=2dzKcV4NNvM">2:47</a>
                 </td>
             </tr>
-            <tr>
+            <tr id="e190822-scarlett-deceit">
                 <td>2019-08-22</td>
                 <td><a href="https://www.youtube.com/watch?v=7pD4PcNQuEc">the scarlett deceit</a></td>
                 <td>0:59, 1:30, 2:02</td>
@@ -16418,7 +16680,7 @@
                     <a href="https://www.youtube.com/watch?v=pF_8f459Trs">2:48</a>
                 </td>
             </tr>
-            <tr>
+            <tr id="e190905-covert-dispersal">
                 <td>2019-09-05</td>
                 <td><a href="https://www.youtube.com/watch?v=kA4ISbWdNNM">the covert dispersal</a></td>
                 <td>0:28, 0:39, 0:48</td>
@@ -16428,7 +16690,7 @@
                     <a href="https://www.youtube.com/watch?v=C8bbUxqwpSw">0:38</a>
                 </td>
             </tr>
-            <tr>
+            <tr id="e190905-dalton-dissection">
                 <td>2019-09-05</td>
                 <td><a href="https://www.youtube.com/watch?v=5-R33EVHaBw">the dalton dissection</a></td>
                 <td>1:03, 2:12, 2:37</td>
@@ -16436,7 +16698,7 @@
                     <a href="https://www.youtube.com/watch?v=wpajKes0B-g"><span style="color: teal;">0:48, 1:58, 1:58</span></a>
                 </td>
             </tr>
-            <tr>
+            <tr id="e190912-dubious-cohabitation">
                 <td>2019-09-12</td>
                 <td><a href="https://www.youtube.com/watch?v=IzCBOvgWwtY">the dubious cohabitation</a></td>
                 <td>0:26, 0:28, 0:45</td>
@@ -16446,7 +16708,7 @@
                     <a href="https://www.youtube.com/watch?v=bQ_8MRfiVt4">0:43</a>
                 </td>
             </tr>
-            <tr>
+            <tr id="e190919-merle-revelation">
                 <td>2019-09-19</td>
                 <td><a href="https://www.youtube.com/watch?v=6-CmlmlAHOo">the merle revelation</a></td>
                 <td>0:32, 1:33, 2:20</td>
@@ -16456,7 +16718,7 @@
                     <a href="https://www.youtube.com/watch?v=j1bRM0L6vy8">1:43</a>
                 </td>
             </tr>
-            <tr>
+            <tr id="e191003-riviera-restoration">
                 <td>2019-10-03</td>
                 <td><a href="https://www.youtube.com/watch?v=tCbUKagPXKU">the riviera restoration</a></td>
                 <td>0:25, 0:58, 1:38</td>
@@ -16466,7 +16728,7 @@
                     <a href="https://www.youtube.com/watch?v=v6umjgpsvWs">0:41</a>
                 </td>
             </tr>
-            <tr>
+            <tr id="e191010-divine-descendance">
                 <td>2019-10-10</td>
                 <td><a href="https://www.youtube.com/watch?v=S1J4KjpYSr0">the divine descendance</a></td>
                 <td>0:31, 1:04, 1:13</td>
@@ -16476,7 +16738,7 @@
                     <a href="https://www.youtube.com/watch?v=WwO6N-CXUFA">0:46</a>
                 </td>
             </tr>
-            <tr>
+            <tr id="e191022-mills-reverie">
                 <td>2019-10-22</td>
                 <td><a href="https://www.youtube.com/watch?v=cbLQyMPlXhQ">the mills reverie</a></td>
                 <td>0:59, 2:10, 4:35</td>
@@ -16486,7 +16748,7 @@
                     <a href="https://www.youtube.com/watch?v=qpls6LcSA_k">7:19</a>
                 </td>
             </tr>
-            <tr>
+            <tr id="e191114-montague-audacity">
                 <td>2019-11-14</td>
                 <td><a href="https://www.youtube.com/watch?v=hJCrN2FICXc">the montague audacity</a></td>
                 <td>1:27, 1:55, 2:02</td>
@@ -16496,7 +16758,7 @@
                     <a href="https://www.youtube.com/watch?v=5FNxTWoNRmY">1:39</a>
                 </td>
             </tr>
-            <tr>
+            <tr id="e191128-mccallister-ransack">
                 <td>2019-11-28</td>
                 <td><a href="https://www.youtube.com/watch?v=_AMyyCZZnMw">the mccallister ransack</a></td>
                 <td>1:35, 1:53, 2:27</td>
@@ -16506,7 +16768,7 @@
                     <a href="https://www.youtube.com/watch?v=iUQksX7uZ6s">2:00</a>
                 </td>
             </tr>
-            <tr>
+            <tr id="e191128-quimby-quandary">
                 <td>2019-11-28</td>
                 <td><a href="https://www.youtube.com/watch?v=LM89Vq14H1s">the quimby quandary</a></td>
                 <td>1:34, 1:36, 1:42</td>
@@ -16516,7 +16778,7 @@
                     <a href="https://www.youtube.com/watch?v=psJiuYT1hwc">1:36</a>
                 </td>
             </tr>
-            <tr>
+            <tr id="e191128-bartholomew-hornswoggle">
                 <td>2019-11-28</td>
                 <td><a href="https://www.youtube.com/watch?v=9EHXUXJXik0">the bartholomew hornswoggle</a></td>
                 <td>3:30, 1:52, 2:47</td>
@@ -16526,7 +16788,7 @@
                     <a href="https://www.youtube.com/watch?v=6M_btIm1zMY">1:43</a>
                 </td>
             </tr>
-            <tr>
+            <tr id="e191205-truman-contravention">
                 <td>2019-12-05</td>
                 <td><a href="https://www.youtube.com/watch?v=cUaWLQQIWo4">the truman contravention</a></td>
                 <td>1:00, 1:08, 2:37</td>
@@ -16536,7 +16798,7 @@
                     <a href="https://www.youtube.com/watch?v=VfW5c3u0zR0">1:04</a>
                 </td>
             </tr>
-            <tr>
+            <tr id="e191205-raaz-algorithm">
                 <td>2019-12-05</td>
                 <td><a href="https://www.youtube.com/watch?v=3RZLFDXQyWs">the raaz algorithm</a></td>
                 <td>1:12, 1:36, 2:05</td>
@@ -16545,7 +16807,7 @@
                     <a href="https://www.youtube.com/watch?v=pT210SBb94E">1:31</a>
                 </td>
             </tr>
-            <tr>
+            <tr id="e191212-han-encasement">
                 <td>2019-12-12</td>
                 <td><a href="https://www.youtube.com/watch?v=WSMB4owbY3s">the han encasement</a></td>
                 <td>0:54, 0:59, 1:08</td>
@@ -16555,7 +16817,7 @@
                     <a href="https://www.youtube.com/watch?v=hFdUR2WbOIE">1:02</a>
                 </td>
             </tr>
-            <tr>
+            <tr id="e191217-rafael-misadventure">
                 <td>2019-12-17</td>
                 <td><a href="https://www.youtube.com/watch?v=yrjXHOpMu_s">the rafael misadventure</a></td>
                 <td>0:30, 1:01, 1:09</td>
@@ -16615,7 +16877,7 @@
                     <a href="https://www.youtube.com/watch?v=oXEiYmftiFY">2:17</a>
                 </td>
             </tr>
-            <tr>
+            <tr id="e210204-baskerville-barney">
                 <td>2021-02-04</td>
                 <td><a href="https://www.youtube.com/watch?v=e6eVnC4-4Hc">the baskerville barney</a></td>
                 <td>2:17, 3:30, 3:20</td>
@@ -16625,7 +16887,7 @@
                     <a href="https://www.youtube.com/watch?v=Jw-CK1c5vGU">0:57</a>
                 </td>
             </tr>
-            <tr>
+            <tr id="e210218-sinbad-stringent">
                 <td>2021-02-18</td>
                 <td><a href="https://www.youtube.com/watch?v=KOt6hio6Hmk">the sinbad stringent</a></td>
                 <td>2:18, 2:58, 4:58</td>
@@ -16635,7 +16897,7 @@
                     <a href="https://www.youtube.com/watch?v=BQrDAjZD7AQ">1:51</a>
                 </td>
             </tr>
-            <tr>
+            <tr id="e210223-gauchito-antiquity">
                 <td>2021-02-23</td>
                 <td><a href="https://www.youtube.com/watch?v=jkqjX6kfoZM">the gauchito antiquity</a></td>
                 <td>3:43, 2:41, 4:45</td>
@@ -16645,7 +16907,7 @@
                     <a href="https://www.youtube.com/watch?v=3Nv_dwqz31I">3:28</a>
                 </td>
             </tr>
-            <tr>
+            <tr id="e210223-proloff-parable">
                 <td>2021-02-23</td>
                 <td><a href="https://www.youtube.com/watch?v=R787VvTEIj4">the proloff parable</a></td>
                 <td>0:43, 3:39, 1:34</td>
@@ -16655,7 +16917,7 @@
                     <a href="https://www.youtube.com/watch?v=9J-AXXcsY2c">0:45</a>
                 </td>
             </tr>
-            <tr>
+            <tr id="e210304-lesley-celebration">
                 <td>2021-03-04</td>
                 <td><a href="https://www.youtube.com/watch?v=0Ci_cVrUALY">the lesley celebration</a></td>
                 <td>1:18, 1:25, 2:59</td>
@@ -16665,7 +16927,7 @@
                     <a href="https://www.youtube.com/watch?v=2TVrrNStICM">3:07</a>
                 </td>
             </tr>
-            <tr>
+            <tr id="e210330-greed-enumeration">
                 <td>2021-03-30</td>
                 <td><a href="https://www.youtube.com/watch?v=hrQB4DypPo4">the greed enumeration</a></td>
                 <td>3:13, 5:30, 7:22</td>
@@ -16675,7 +16937,7 @@
                     <a href="https://www.youtube.com/watch?v=IuIKBp-BX0w">4:16</a>
                 </td>
             </tr>
-            <tr>
+            <tr id="e210330-satu-mare-delirium">
                 <td>2021-03-30</td>
                 <td><a href="https://www.youtube.com/watch?v=7PUxl4w2v34">the satu mare delirium</a></td>
                 <td>3:16, 3:52, 2:45</td>
@@ -16695,7 +16957,7 @@
                     <a href="https://www.youtube.com/watch?v=4EtcWoqM1yI">2:23</a>
                 </td>
             </tr>
-            <tr>
+            <tr id="e210429-jinzhen-incident">
                 <td>2021-04-29</td>
                 <td><a href="https://www.youtube.com/watch?v=r_RlACPXfWA">the jinzhen incident</a></td>
                 <td>1:13, 3:00, 3:32</td>
@@ -16705,7 +16967,7 @@
                     <a href="https://www.youtube.com/watch?v=EFnId-qvWAY">2:46</a>
                 </td>
             </tr>
-            <tr>
+            <tr id="e210510-sebastian-principle">
                 <td>2021-05-10</td>
                 <td><a href="https://www.youtube.com/watch?v=q75Rj9TYP7A">the sebastian principle</a></td>
                 <td>0:23, 0:45, 1:31</td>
@@ -16715,7 +16977,7 @@
                     <a href="https://www.youtube.com/watch?v=sdeXVnTvkic">1:58</a>
                 </td>
             </tr>
-            <tr>
+            <tr id="e210510-pride-profusion">
                 <td>2021-05-10</td>
                 <td><a href="https://www.youtube.com/watch?v=ggfsWTKwoZE">the pride profusion</a></td>
                 <td>2:01, 1:15, 1:53</td>
@@ -16725,7 +16987,7 @@
                     <a href="https://www.youtube.com/watch?v=ca_m5wpHmnU">1:40</a>
                 </td>
             </tr>
-            <tr>
+            <tr id="e210527-pasquel-consortium">
                 <td>2021-05-27</td>
                 <td><a href="https://www.youtube.com/watch?v=Uxcj-6Fy-eA">the pasquel consortium</a></td>
                 <td>1:42, 2:33, 3:40</td>
@@ -16818,7 +17080,7 @@
 
         <region id="missions">
         <article>
-            <h3># missions / misje</h3>
+            <h3># misje</h3>
 
             <details class="accordion">
             <summary>missions</summary>
@@ -17326,7 +17588,7 @@
 
 
         <region id="sarajevo-six">
-        <article class="region-grey">
+        <article>
             <h3># szóstka z sarajewa</h3>
     
             <p>zestaw sześciu prostych <a href="https://store.steampowered.com/app/2475260/HITMAN_3__Sarajevo_Six_Campaign_Pack/">misji</a>, pierwotnie wydanych na wyłączność na playstation; zbyt trywialne w erze hitman world of assassination;</p>
@@ -17388,12 +17650,12 @@
 
         <region id="challenges">
         <article>
-            <h3># challenges / wyzwania</h3>
+            <h3># wyzwania</h3>
     
             <details class="accordion"> <!-- challenge packs -->
                 <summary>challenge packs</summary>
 
-                <div> <!-- fishy business -->
+                <div id="cp190110-fishy-business"> <!-- fishy business -->
                 <table class="challenge-pack">
                     <caption>fishy business</caption>
                     <colgroup>
@@ -17435,7 +17697,7 @@
                 <br>
                 </div>
 
-                <div> <!-- shaman shenanigans -->
+                <div id="cp190214-shaman-shenanigans"> <!-- shaman shenanigans -->
                 <table class="challenge-pack">
                     <caption>shaman shenanigans</caption>
                     <colgroup>
@@ -17480,7 +17742,7 @@
                 <br>
                 </div>
 
-                <div> <!-- the butler did it -->
+                <div id="cp190314-the-butler-did-it"> <!-- the butler did it -->
                 <table class="challenge-pack">
                     <caption>the butler did it</caption>
                     <colgroup>
@@ -17519,7 +17781,7 @@
                 <br>
                 </div>
 
-                <div> <!-- mumbai master -->
+                <div id="cp190404-mumbai-master"> <!-- mumbai master -->
                 <table class="challenge-pack">
                     <caption>mumbai master</caption>
                     <colgroup>
@@ -17558,7 +17820,7 @@
                 <br>
                 </div>
 
-                <div> <!-- spring breaker -->
+                <div id="cp190430-spring-breaker"> <!-- spring breaker -->
                 <table class="challenge-pack">
                     <caption>spring breaker</caption>
                     <colgroup>
@@ -17593,7 +17855,7 @@
                 <br>
                 </div>
 
-                <div> <!-- shinobi -->
+                <div id="cp190516-shinobi"> <!-- shinobi -->
                 <table class="challenge-pack">
                     <caption>shinobi</caption>
                     <colgroup>
@@ -17634,7 +17896,7 @@
                 <br>
                 </div>
 
-                <div> <!-- muffin man -->
+                <div id="cp190528-muffin-man"> <!-- muffin man -->
                 <table class="challenge-pack">
                     <caption>muffin man</caption>
                     <colgroup>
@@ -17679,7 +17941,7 @@
                 <br>
                 </div>
 
-                <div> <!-- i’m with the band -->
+                <div id="cp190711-iam-with-the-band"> <!-- i’m with the band -->
                 <table class="challenge-pack">
                     <caption>i’m with the band</caption>
                     <colgroup>
@@ -17718,7 +17980,7 @@
                 <br>
                 </div>
                 
-                <div> <!-- best case scenario -->
+                <div id="cp190808-best-case-scenario"> <!-- best case scenario -->
                 <table class="challenge-pack">
                     <caption>best case scenario</caption>
                     <colgroup>
@@ -17759,7 +18021,7 @@
                 <br>
                 </div>
 
-                <div> <!-- master vampire -->
+                <div id="cp191022-master-vampire"> <!-- master vampire -->
                 <table class="challenge-pack">
                     <caption>master vampire</caption>
                     <colgroup>
@@ -17871,7 +18133,7 @@
                 <br>
                 </div>
 
-                <div> <!-- himmapan horror -->
+                <div id="cp191022-himmapan-horror"> <!-- himmapan horror -->
                 <table class="challenge-pack">
                     <caption>himmapan horror</caption>
                     <colgroup>
@@ -17922,7 +18184,7 @@
                 <br>
                 </div>
 
-                <div> <!-- uninvited (thriller night) -->
+                <div id="cp191031-uninvited"> <!-- uninvited (thriller night) -->
                 <table class="challenge-pack">
                     <caption>uninvited</caption>
                     <colgroup>
@@ -17962,7 +18224,7 @@
                 <br>
                 </div>
 
-                <div> <!-- the great heist (breaking and entering) -->
+                <div id="cp191107-great-heist"> <!-- the great heist (breaking and entering) -->
                 <table class="challenge-pack">
                     <caption>the great heist</caption>
                     <colgroup>
@@ -17998,7 +18260,7 @@
                 <br>
                 </div>
 
-                <div> <!-- master fortune teller -->
+                <div id="cp191114-master-fortune-teller"> <!-- master fortune teller -->
                 <table class="challenge-pack">
                     <caption>master fortune teller</caption>
                     <colgroup>
@@ -18095,7 +18357,7 @@
                 <br>
                 </div>
 
-                <div> <!-- blake’s endeavour -->
+                <div id="cp191119-blakes-endeavour"> <!-- blake’s endeavour -->
                 <table class="challenge-pack">
                     <caption>blake’s endeavour</caption>
                     <colgroup>
@@ -18596,6 +18858,7 @@
                     <li><a href="https://www.youtube.com/watch?v=HYsDEIEwxCo">undying assignment (2:27)</a></li>
                     <li><a href="https://www.youtube.com/watch?v=DCLKIFShF7U">undying assignment – the classics all-in-one</a></li>
                     <li><a href="https://www.youtube.com/watch?v=JRY3JnnZLZM">undying assignment – for science! & local knowledge</a></li>
+                    <li><a href="https://www.youtube.com/watch?v=SvS6mlqSHGY">undying assignment – 100% walkthrough</a></li>
                 </ul>
                 <br>
                 <br>
@@ -18614,7 +18877,7 @@
                         <col span="1">
                     </colgroup>
                     <tr>
-                        <td>hammer time</td>
+                        <td><a href="https://www.youtube.com/watch?v=aepr972Hinc">hammer time</a></td>
                         <td>this challenge was inspired by bongeh & tommy from twoangrygamerstv</td>
                     </tr>
                     <tr>
@@ -18638,11 +18901,11 @@
                         <col span="1">
                     </colgroup>
                     <tr>
-                        <td>bull in a china shop</td>
+                        <td><a href="https://www.youtube.com/watch?v=ywDlyD1TD6o">bull in a china shop</a></td>
                         <td>[redacted]</td>
                     </tr>
                     <tr>
-                        <td>careful what you wish for</td>
+                        <td><a href="https://www.youtube.com/watch?v=e1uR82uxJxM">careful what you wish for</a></td>
                         <td>[redacted]</td>
                     </tr>
                 </table>
@@ -18658,7 +18921,7 @@
                         <col span="1">
                     </colgroup>
                     <tr>
-                        <td>the gift that keeps on giving</td>
+                        <td><a href="https://www.youtube.com/watch?v=Bqe8up2vu3U">the gift that keeps on giving</a></td>
                         <td>
                             eliminate both targets with lethal poison during a single playthrough;<br>
                             exit via a chimney;<br>
@@ -18666,11 +18929,11 @@
                         </td>
                     </tr>
                     <tr>
-                        <td>oh, deer</td>
+                        <td><a href="https://www.youtube.com/watch?v=V1l4SzSjyJY">oh, deer</a></td>
                         <td>assassinate both marv “slick” gonif and harry “smokey” bagnato with a propane explosion after they return empty-handed</td>
                     </tr>
                     <tr>
-                        <td>gift and take</td>
+                        <td><a href="https://www.youtube.com/watch?v=evHEXvTIo0c">gift and take</a></td>
                         <td>
                             eliminate harry or marv with the explosive xmas gift while dressed as santa claus;<br>
                             <span class="feat-reward">➤ explosive xmas gift</span>
@@ -18685,14 +18948,14 @@
                         </td>
                     </tr>
                     <tr>
-                        <td>share the love</td>
+                        <td><a href="https://www.youtube.com/watch?v=p4xZGqYZX5E">share the love</a></td>
                         <td>
                             open 5 presents<br>
                             <span class="feat-reward">➤ lil’ flashy</span>
                         </td>
                     </tr>
                     <tr>
-                        <td>santa’s little helper</td>
+                        <td><a href="https://www.youtube.com/watch?v=ZB53z1A16kI">santa’s little helper</a></td>
                         <td>
                             collect all 12 items the burglars want to steal, before they do;<br>
                             do not eliminate the targets before collecting the items;
@@ -18711,11 +18974,11 @@
                         <col span="1">
                     </colgroup>
                     <tr>
-                        <td>an eye for an eye</td>
+                        <td><a href="https://www.youtube.com/watch?v=KBmdBMBVOoE">an eye for an eye</a></td>
                         <td>[redacted]</td>
                     </tr>
                     <tr>
-                        <td>sapienza sports club</td>
+                        <td><a href="https://www.youtube.com/watch?v=ZGkr5_sSW0E">sapienza sports club</a></td>
                         <td>
                             eliminate francesca de santis with an explosive golf ball;<br>
                             eliminate silvio caruso with an explosive baseball;<br>
@@ -18725,41 +18988,41 @@
                         </td>
                     </tr>
                     <tr>
-                        <td>.45 therapy</td>
+                        <td><a href="https://www.youtube.com/watch?v=_AOwJP8qepg">.45 therapy</a></td>
                         <td>[redacted]</td>
                     </tr>
                     <tr>
-                        <td>watch the skies</td>
+                        <td><a href="https://www.youtube.com/watch?v=KUX1N-zzZP4">watch the skies</a></td>
                         <td>[redacted]</td>
                     </tr>
                     <tr>
-                        <td>investigator</td>
+                        <td><a href="https://www.youtube.com/watch?v=qycOTsClFi8">investigator</a></td>
                         <td>find and destroy six crocodiles</td>
                     </tr>
                     <tr>
-                        <td>the living dead</td>
+                        <td><a href="https://www.youtube.com/watch?v=XUd_8Sn8gOs">the living dead</a></td>
                         <td>
                             [redacted]<br>
                             <span class="feat-reward">➤ church morgue</span>
                         </td>
                     </tr>
                     <tr>
-                        <td>unleash the kraken</td>
+                        <td><a href="https://www.youtube.com/watch?v=LEr_gYJkptQ">unleash the kraken</a></td>
                         <td>[redacted]</td>
                     </tr>
                     <tr>
-                        <td>luck alone is worthless</td>
+                        <td><a href="https://www.youtube.com/watch?v=KPKkKK_L234">luck alone is worthless</a></td>
                         <td>[redacted]</td>
                     </tr>
                     <tr>
-                        <td>bend it like 47</td>
+                        <td><a href="https://www.youtube.com/watch?v=UQ2kKYyS6U4">bend it like 47</a></td>
                         <td>
                             [redacted]<br>
                             <span class="feat-reward">➤ the sapienza fc-sanguine boot</span>
                         </td>
                     </tr>
                     <tr>
-                        <td>surgical procedure</td>
+                        <td><a href="https://www.youtube.com/watch?v=khMYl4ACNOA">surgical procedure</a></td>
                         <td>
                             eliminate three guards in sapienza with the amputation knife dressed as the plague doctor;<br>
                             <span class="feat-reward">➤ plague doctor</span>
@@ -18778,7 +19041,7 @@
                         <col span="1">
                     </colgroup>
                     <tr>
-                        <td>how about a magic trick?</td>
+                        <td><a href="https://www.youtube.com/watch?v=P8bCnu_-aWs">how about a magic trick?</a></td>
                         <td>[redacted]</td>
                     </tr>
                 </table>
@@ -18794,14 +19057,14 @@
                         <col span="1">
                     </colgroup>
                     <tr>
-                        <td>true fan</td>
+                        <td><a href="https://www.youtube.com/watch?v=xb_OQ42WlXY">true fan</a></td>
                         <td>
                             eliminate craig black disguised as the super fan;<br>
                             <span class="feat-reward">➤ super fan</span>
                         </td>
                     </tr>
                     <tr>
-                        <td>boom beats blah</td>
+                        <td><a href="https://www.youtube.com/watch?v=gXpOkSgfOrM">boom beats blah</a></td>
                         <td>
                             eliminate craig black in an explosion while he is reading;<br>
                             complete the mission;<br>
@@ -18809,11 +19072,11 @@
                         </td>
                     </tr>
                     <tr>
-                        <td>the pen is mightier then the sword</td>
+                        <td><a href="https://www.youtube.com/watch?v=6uc-6HOY1yw">the pen is mightier then the sword</a></td>
                         <td>[redacted]</td>
                     </tr>
                     <tr>
-                        <td>the gravedigger</td>
+                        <td><a href="https://www.youtube.com/watch?v=x0h7ZMWyRBs">the gravedigger</a></td>
                         <td>
                             eliminate craig black in the crypt;<br>
                             burry craig black in the graveyard;
@@ -18832,30 +19095,30 @@
                         <col span="1">
                     </colgroup>
                     <tr>
-                        <td>dance till you drop</td>
+                        <td><a href="https://www.youtube.com/watch?v=KNRuJaTqfB4">dance till you drop</a></td>
                         <td>[redacted]</td>
                     </tr>
                     <tr>
-                        <td>.50 syndrome</td>
+                        <td><a href="https://www.youtube.com/watch?v=02PLGcjh9UQ">.50 syndrome</a></td>
                         <td>assassinate both claus hugo strandberg and general reza zaydan with the apc turret</td>
                     </tr>
                     <tr>
-                        <td>floor it!</td>
+                        <td><a href="https://www.youtube.com/watch?v=Z_0xjaCEvJg">floor it!</a></td>
                         <td>
                             [redacted]<br>
                             <span class="feat-reward">➤ consulate parking garage</span>
                         </td>
                     </tr>
                     <tr>
-                        <td>slam dunk</td>
+                        <td><a href="https://www.youtube.com/watch?v=ZuVMFbjXTiQ">slam dunk</a></td>
                         <td>[redacted]</td>
                     </tr>
                     <tr>
-                        <td>let’s dance</td>
+                        <td><a href="https://www.youtube.com/watch?v=bNczb0gFb4Y">let’s dance</a></td>
                         <td>[redacted]</td>
                     </tr>
                     <tr>
-                        <td>begging for it</td>
+                        <td><a href="https://www.youtube.com/watch?v=IP9dRZO3Kq4">begging for it</a></td>
                         <td>[redacted]</td>
                     </tr>
                 </table>
@@ -18871,11 +19134,11 @@
                         <col span="1">
                     </colgroup>
                     <tr>
-                        <td>license to ill</td>
+                        <td><a href="https://www.youtube.com/watch?v=xhLZhAD-Btk">license to ill</a></td>
                         <td>[redacted]</td>
                     </tr>
                     <tr>
-                        <td>dropping the f-bomb</td>
+                        <td><a href="https://www.youtube.com/watch?v=oMXO5MfIS4w">dropping the f-bomb</a></td>
                         <td>[redacted]</td>
                     </tr>
                 </table>
@@ -18891,35 +19154,35 @@
                         <col span="1">
                     </colgroup>
                     <tr>
-                        <td>oh, snap!</td>
+                        <td><a href="https://www.youtube.com/watch?v=uSuxYcdBjUU">oh, snap!</a></td>
                         <td>[redacted]</td>
                     </tr>
                     <tr>
-                        <td>oops! i did it again!</td>
+                        <td><a href="https://www.youtube.com/watch?v=bthvBycSgjY">oops! i did it again!</a></td>
                         <td>[redacted]</td>
                     </tr>
                     <tr>
-                        <td>smooth operator</td>
+                        <td><a href="https://www.youtube.com/watch?v=kKNsKsmzmkw">smooth operator</a></td>
                         <td>[redacted]</td>
                     </tr>
                     <tr>
-                        <td>power chord</td>
+                        <td><a href="https://www.youtube.com/watch?v=jhcgN9TSMbM">power chord</a></td>
                         <td>[redacted]</td>
                     </tr>
                     <tr>
-                        <td>ordering in</td>
+                        <td><a href="https://www.youtube.com/watch?v=fEw1sgPhMZc">ordering in</a></td>
                         <td>[redacted]</td>
                     </tr>
                     <tr>
-                        <td>put the lime in the cocunut</td>
+                        <td><a href="https://www.youtube.com/watch?v=LVyn8UAgfpM">put the lime in the cocunut</a></td>
                         <td>[redacted]</td>
                     </tr>
                     <tr>
-                        <td>looking into the distance</td>
+                        <td><a href="https://www.youtube.com/watch?v=bBk37dggpVM">looking into the distance</a></td>
                         <td>[redacted]</td>
                     </tr>
                     <tr>
-                        <td>la cucaracha</td>
+                        <td><a href="https://www.youtube.com/watch?v=aVOLH-wgkfo">la cucaracha</a></td>
                         <td>[redacted]</td>
                     </tr>
                 </table>
@@ -18935,7 +19198,7 @@
                         <col span="1">
                     </colgroup>
                     <tr>
-                        <td>call interrupted</td>
+                        <td><a href="https://www.youtube.com/watch?v=jOQlMlHc6P0">call interrupted</a></td>
                         <td>[redacted]</td>
                     </tr>
                 </table>
@@ -18951,19 +19214,19 @@
                         <col span="1">
                     </colgroup>
                     <tr>
-                        <td>name your poison</td>
+                        <td><a href="https://www.youtube.com/watch?v=TksrIS0fHd0">name your poison</a></td>
                         <td>assassinate sean rose, ezra berg, penelope graves and maya parvati with lethal poison</td>
                     </tr>
                     <tr>
-                        <td>string quartet</td>
+                        <td><a href="https://www.youtube.com/watch?v=opxbPXPQ4rg">string quartet</a></td>
                         <td>assassinate sean rose, ezra berg, penelope graves and maya parvati with the fiber wire</td>
                     </tr>
                     <tr>
-                        <td>the long way out</td>
+                        <td><a href="https://www.youtube.com/watch?v=Fb595lMrpUg">the long way out</a></td>
                         <td>[redacted]</td>
                     </tr>
                     <tr>
-                        <td>plot twist</td>
+                        <td><a href="https://www.youtube.com/watch?v=C1SVSy5OR9c">plot twist</a></td>
                         <td>[redacted]</td>
                     </tr>
                     <tr>
@@ -18971,30 +19234,30 @@
                         <td>dump all 4 targets in the slurry pit</td>
                     </tr>
                     <tr>
-                        <td>body double</td>
+                        <td><a href="https://www.youtube.com/watch?v=y6YZMwRw0_I">body double</a></td>
                         <td>[redacted]</td>
                     </tr>
                     <tr>
-                        <td>right in the pie hole</td>
+                        <td><a href="https://www.youtube.com/watch?v=fBIabf1TMWM">right in the pie hole</a></td>
                         <td>
                             knockdown three targets by throwing a small pumpkin while disguised as a militia cook;<br>
                             <span class="feat-reward">➤ pretzel</span>
                         </td>
                     </tr>
                     <tr>
-                        <td>rep tires</td>
+                        <td><a href="https://www.youtube.com/watch?v=TT9edu943ts">rep tires</a></td>
                         <td>[redacted]</td>
                     </tr>
                     <tr>
-                        <td>wicker man</td>
+                        <td><a href="https://www.youtube.com/watch?v=Q34N8l-u0Sw">wicker man</a></td>
                         <td>[redacted]</td>
                     </tr>
                     <tr>
-                        <td>no birds here</td>
+                        <td><a href="https://www.youtube.com/watch?v=TctuIb9VtZM">no birds here</a></td>
                         <td>[redacted]</td>
                     </tr>
                     <tr>
-                        <td>howdy, partner</td>
+                        <td><a href="https://www.youtube.com/watch?v=0jMmjE57tWc">howdy, partner</a></td>
                         <td>[redacted]</td>
                     </tr>
                 </table>
@@ -19010,7 +19273,7 @@
                         <col span="1">
                     </colgroup>
                     <tr>
-                        <td>unsafe work environment</td>
+                        <td><a href="https://www.youtube.com/watch?v=-eN_URJHHnY">unsafe work environment</a></td>
                         <td>complete “the vector” by eliminating all targets in accidents</td>
                     </tr>
                 </table>
@@ -19026,15 +19289,15 @@
                         <col span="1">
                     </colgroup>
                     <tr>
-                        <td>(not) malpractice</td>
+                        <td><a href="https://www.youtube.com/watch?v=rY1qdn-Rl2U">(not) malpractice</a></td>
                         <td>assassinate erich soders by making the chief surgeon fail the operation on purpose</td>
                     </tr>
                     <tr>
-                        <td>a personal goodbye</td>
+                        <td><a href="https://www.youtube.com/watch?v=OepTod1Rzl0">a personal goodbye</a></td>
                         <td>[redacted]</td>
                     </tr>
                     <tr>
-                        <td>silent ninja</td>
+                        <td><a href="https://www.youtube.com/watch?v=6Zi8jm2k5VY">silent ninja</a></td>
                         <td>
                             complete “situs inversus” while disguised as a ninja;<br>
                             only eliminate the targets;<br>
@@ -19044,7 +19307,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <td>ice cold cowboy</td>
+                        <td><a href="https://www.youtube.com/watch?v=NWoAO4CxuqU">ice cold cowboy</a></td>
                         <td>
                             eliminate yuki yamazaki while disguised as amos dexter;<br>
                             complete “situs inversus”;<br>
@@ -19053,46 +19316,53 @@
                         </td>
                     </tr>
                     <tr>
-                        <td>i think he is dead now</td>
+                        <td><a href="https://www.youtube.com/watch?v=sEIb99iQEqE">i think he is dead now</a></td>
                         <td>[redacted]</td>
                     </tr>
                     <tr>
-                        <td>overkill</td>
+                        <td><a href="https://www.youtube.com/watch?v=ys-8J_sccFQ">overkill</a></td>
                         <td>[redacted]</td>
                     </tr>
                     <tr>
-                        <td>kick back kimono</td>
+                        <td><a href="https://www.youtube.com/watch?v=QCJsYrJqOlk">kick back kimono</a></td>
                         <td>
                             lie down on all morgue tables and 47’s bed while wearing the vip patient kimono;<br>
                             <span class="feat-reward">➤ vip patient</span>
                         </td>
                     </tr>
                     <tr>
-                        <td>namaste</td>
+                        <td><a href="https://www.youtube.com/watch?v=VmmeW5S1kps">namaste</a></td>
                         <td>[redacted]</td>
                     </tr>
                     <tr>
-                        <td>techman</td>
+                        <td><a href="https://www.youtube.com/watch?v=GOcAASQwipc">techman</a></td>
                         <td>[redacted]</td>
                     </tr>
                     <tr>
-                        <td>hanami hitman</td>
+                        <td><a href="#https://www.youtube.com/watch?v=cpTdDtDAFrI">hanami hitman</a></td>
                         <td>
                             [redacted]<br>
                             <span class="feat-reward">➤ the cherry blossom baller</span>
                         </td>
                     </tr>
                     <tr>
-                        <td>guardian angel</td>
+                        <td><a href="#https://www.youtube.com/watch?v=6aCUQCKZRLs">guardian angel</a></td>
                         <td>[redacted]</td>
                     </tr>
                     <tr>
-                        <td>impossible heights</td>
+                        <td><a href="#https://www.youtube.com/watch?v=EV7HFayuh9g">impossible heights</a></td>
                         <td>[redacted]</td>
                     </tr>
                     <tr>
-                        <td>we meet again</td>
+                        <td><a href="https://www.youtube.com/watch?v=KfiXJuClWug">we meet again</a></td>
                         <td>[redacted]</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.youtube.com/watch?v=MyFVZaG_yC4">fortune favors the bald</a></td>
+                        <td>
+                            [redacted]<br>
+                            <span class="feat-reward">➤ the lucky coin</span>
+                        </td>
                     </tr>
                 </table>
                 <br>
@@ -20136,7 +20406,7 @@
 
 
         <region id="dlcs">
-        <article class="region-grey">
+        <article>
             <h3># dodatki</h3>
 
             <details class="accordion">
@@ -20240,7 +20510,7 @@
             </div>
 
             <!-- kłopoty aktualizacji 3.210 -->
-            <div class="region-grey">
+            <div>
             <h3>## kłopoty aktualizacji 3.210</h3>
 
             <p>aktualizacja 3.210.0 wprowadziła po raz kolejny losowe krasze, włączając w to cichy błąd podczas uruchamiania gry na windowsie; do tego wprowadzenie dodatku „the splitter” zepsuło strój flaminga; ale za to przynajmniej w końcu rozwiązano problem nieistniejącej monety w kryjówce w trybie freelancer (ica outstanding service coin);</p>
@@ -20317,7 +20587,7 @@
             </div>
 
             <!-- kontrowersje wokół „the disruptor pack” -->
-            <div class="region-grey">
+            <div>
             <h3>## kontrowersje wokół „the disruptor pack”</h3>
 
             <p>dlc „the disruptor pack” wprowadza postać connora mcgregora, boksera, który później został oficjalnie skazany za gwałt; ioi zareagowało na to dość panicznie (w październiku 2024 r.), powodując iż zawartość stała się niedostępna do kupienia jak i do grania dla posiadaczy;</p>
@@ -20369,7 +20639,7 @@
             <br>
             </div>
 
-            <div class="region-grey"> <!-- aktualizacja 3.250.0 -->
+            <div> <!-- aktualizacja 3.250.0 -->
             <h3>## aktualizacja 3.250.0</h3>
             <p>kolejny zestaw kraszy, tym razem losowych albo wywoływanych nadmiernym restartowaniem kontraktu; wydaje się iż coś się zmieniło nie tylko z konfiguracją gry, lecz i z samym silnikiem gry; do tego w międzyczasie pokazano rozgrywkę z jamesa bonda, a do hitmana ma zawitać kolejna celebrytka w postaci nieuchwytnego celu; poza tym zmieniło się nieco w świecie protona, tj. dodano obsługę fsr4 czy ntsync;</p>
 
@@ -20431,7 +20701,7 @@
 
 
         <region id="poradniki-wideo">
-        <article class="region-grey">
+        <article>
         <h3># poradniki</h3>
 
         <details>
@@ -20501,6 +20771,8 @@
             <li><a href="https://www.youtube.com/watch?v=KXosSHq0CsA">sapienza mastery level 20 in 18 minutes</a></li>
             <li><a href="https://www.youtube.com/watch?v=-fhGlDKvc-8">marrakesh mastery level 20 in 21 minutes</a></li>
             <li><a href="https://www.youtube.com/watch?v=0V9v50f7rn8">bangkok mastery level 20 in 20 minutes</a></li>
+            <li><a href="https://www.youtube.com/watch?v=6BeAZAaBIBg">colorado mastery level 20 in 18 minutes</a></li>
+            <li><a href="https://www.youtube.com/watch?v=0_kuCMOsLfE">hokkaido mastery level 20 in 22 minutes</a></li>
         </ul>
 
         <ul> <!-- mods -->
@@ -20518,9 +20790,9 @@
 
         <region id="glitches-and-tricks">
         <article>
-            <h3># glitches and tricks / usterki i sztuczki</h3>
+            <h3># usterki i sztuczki</h3>
     
-            <p>❓</p>
+            <p>❓✘✖️</p>
             <br>
 
             <br>
@@ -20529,7 +20801,7 @@
 
 
         <region id="osiągnięcia">
-        <article class="region-grey">
+        <article>
         <h3># osiągnięcia</h3>
 
         <details class="accordion">
@@ -20933,10 +21205,10 @@
         <summary>soundtrack</summary>
 
         <!-- hitman 1 -->
-        <table class="soundtrack-ost">
+        <table class="soundtrack4-ost">
             <caption>hitman 1</caption>
             <tr>
-                <td class="soundtrack-ost--name"></td>
+                <td class="soundtrack4-ost-title"></td>
                 <td></td>
             </tr>
             <tr>
@@ -20999,10 +21271,10 @@
         <br>
 
         <!-- hitman 2 -->
-        <table class="soundtrack-ost">
+        <table class="soundtrack4-ost">
             <caption>hitman 2</caption>
             <tr>
-                <td class="soundtrack-ost--name"></td>
+                <td class="soundtrack4-ost-title"></td>
                 <td></td>
             </tr>
             <tr>
@@ -21093,10 +21365,10 @@
         <br>
 
         <!-- hitman 3 -->
-        <table class="soundtrack-ost">
+        <table class="soundtrack4-ost">
             <caption>hitman 3</caption>
             <tr>
-                <td class="soundtrack-ost--name"></td>
+                <td class="soundtrack4-ost-title"></td>
                 <td></td>
             </tr>
             <tr>
@@ -21159,10 +21431,10 @@
         <br>
 
         <!-- hitman woa -->
-        <table class="soundtrack-ost">
+        <table class="soundtrack4-ost">
             <caption>hitman world of aasassination</caption>
             <tr>
-                <td class="soundtrack-ost--name"></td>
+                <td class="soundtrack4-ost-title"></td>
                 <td></td>
             </tr>
             <tr>
@@ -21280,9 +21552,9 @@
         </region>
 
 
-        <region id="the-peacock-project">
-        <article class="region-grey">
-        <h3># the peacock project</h3>
+        <region id="peacock-project">
+        <article>
+        <h3># peacock project</h3>
     
         <p>“<quote>Peacock is essentially a Hitman <a href="https://thepeacockproject.org/wiki/intel/what-is-peacock">server emulator</a> that runs on your own PC.</quote>”</p>
         <p>“<quote>The Peacock Project is a HITMAN World of Assassination Trilogy <a href="https://github.com/thepeacockproject/Peacock">server replacement</a>. The primary purpose is preservation of the game, but it also adds new features and content to the game, and allows for other enhancements to be made while in online mode.</quote>”</p>
@@ -21461,193 +21733,13 @@
         </region>
 
 
-        <region id="mods">
-        <article class="region-grey">
-        <h3># mody</h3>
-
-        <details>
-        <summary>modyfikacje</summary>
-
-        <ul class="plain-list">
-        <li><a href="https://www.nexusmods.com/hitman3/mods/200">simple mod framework</a></li>
-        <li><a href="https://www.nexusmods.com/hitman3/mods/784">hitman world of assassination unofficial community patch</a></li>
-        </ul>
-
-        <ul class="plain-list">
-        <li><a href="https://www.nexusmods.com/hitman3/mods/1098">low-end pc config for hitman 3 (potato mode)</a></li>
-        <li><a href="https://www.nexusmods.com/hitman3/mods/45">lighting ultimate</a></li>
-        <li><a href="https://www.nexusmods.com/hitman3/mods/1002">renodx - hdr fix for hitman world of assassination</a></li>
-        <li><a href="https://www.nexusmods.com/hitman3/mods/994">minimalist hud</a></li>
-        <li><a href="https://www.nexusmods.com/hitman3/mods/934">hitman iii cinematic edition(rtgi)</a></li>
-        <li><a href="https://www.nexusmods.com/hitman3/mods/733">realistic visual hitman 3</a></li>
-        <li><a href="https://www.nexusmods.com/hitman3/mods/667">reflection spheres</a></li>
-        <li><a href="https://www.nexusmods.com/hitman3/mods/614">nomixreshade</a></li>
-        <li><a href="https://www.nexusmods.com/hitman3/mods/590">hitman 3 - rei</a></li>
-        <li><a href="https://www.nexusmods.com/hitman3/mods/9">hitman 3 ripjaws reshade rtgi optimised</a></li>
-        <li><a href="https://www.nexusmods.com/hitman3/mods/970">hitman 2 ui conversion</a></li>
-        <li><a href="https://www.nexusmods.com/hitman3/mods/943">hitman 3 ui and menu for woa</a></li>
-        <li><a href="https://www.nexusmods.com/hitman3/mods/624">hitman 2016 ui conversion</a></li>
-        </ul>
-
-        <ul class="plain-list">
-        <li><a href="https://www.nexusmods.com/hitman3/mods/871">first person view collision fix updated to current game version</a></li>
-        <li><a href="https://www.nexusmods.com/hitman3/mods/427">first person view</a></li>
-        <li><a href="https://www.nexusmods.com/hitman3/mods/8">first person view - vr mode</a></li>
-        <li><a href="https://www.nexusmods.com/hitman3/mods/434">custom fov and camera</a></li>
-        </ul>
-
-        <ul class="plain-list">
-        <li><a href="https://www.nexusmods.com/hitman3/mods/1088">font collection</a></li>
-        <li><a href="https://www.nexusmods.com/hitman3/mods/1111">asian font fixes</a></li>
-        <li><a href="https://www.nexusmods.com/hitman3/mods/777">better russian font</a></li>
-        <li><a href="https://www.nexusmods.com/hitman3/mods/761">an enhanced chinese localisation for hitman - world of assassination</a></li>
-        </ul>
-
-        <ul class="plain-list">
-        <li><a href="https://www.nexusmods.com/hitman3/mods/241">realistic ai</a></li>
-        <li><a href="https://www.nexusmods.com/hitman3/mods/455">reality control</a></li>
-        <li><a href="https://www.nexusmods.com/hitman3/mods/645">ai sight modifications</a></li>
-        </ul>
-        
-        <ul class="plain-list">
-        <li><a href="https://www.nexusmods.com/hitman3/mods/354">chongqing noodle massacre</a></li>
-        <li><a href="https://www.nexusmods.com/hitman3/mods/571">methlab - cut content</a></li>
-        <li><a href="https://www.nexusmods.com/hitman3/mods/791">passenger train</a></li>
-        <li><a href="https://www.nexusmods.com/hitman3/mods/589">the evil plan</a></li>
-        <li><a href="https://www.nexusmods.com/hitman3/mods/579">water campany</a></li>
-        <li><a href="https://www.nexusmods.com/hitman3/mods/417">dinozafr's mission pack</a></li>
-        <li><a href="https://www.nexusmods.com/hitman3/mods/383">elusive target - the spymaster</a></li>
-        <li><a href="https://www.nexusmods.com/hitman3/mods/114">the witness</a></li>
-        <li><a href="https://www.nexusmods.com/hitman3/mods/55">the red circle eradication</a></li>
-        <li><a href="https://www.nexusmods.com/hitman3/mods/52">the hostess</a></li>
-        <li><a href="https://www.nexusmods.com/hitman3/mods/493">deadly operation</a></li>
-        </ul>
-
-        <ul class="plain-list">
-        <li><a href="https://www.nexusmods.com/hitman3/mods/38">offline mode enhanced and custom mission pack</a></li>
-        <li><a href="https://www.nexusmods.com/hitman3/mods/17">offline experience refined</a></li>
-        <li><a href="https://www.nexusmods.com/hitman3/mods/5">offline missions</a></li>
-        <li><a href="https://www.nexusmods.com/hitman3/mods/550">offllne elusive target arcade</a></li>
-        <li><a href="https://www.nexusmods.com/hitman3/mods/441">offline unlocks</a></li>
-        <li><a href="https://www.nexusmods.com/hitman3/mods/620">offline elusives redux smf edition</a></li>
-        </ul>
-
-        <ul class="plain-list">
-        <li><a href="https://www.nexusmods.com/hitman3/mods/437">freelancer variations</a></li>
-        <li><a href="https://www.nexusmods.com/hitman3/mods/1076">shut up couriers</a></li>
-        <li><a href="https://www.nexusmods.com/hitman3/mods/1031">safehouse visitors</a></li>
-        <li><a href="https://www.nexusmods.com/hitman3/mods/1013">freelancer save scum</a></li>
-        <li><a href="https://www.nexusmods.com/hitman3/mods/985">freelancer - uncut and unrestricted</a></li>
-        <li><a href="https://www.nexusmods.com/hitman3/mods/1032">briefcase carousel</a></li>
-        <li><a href="https://www.nexusmods.com/hitman3/mods/500">silent handlers -- freelancer edition</a></li>
-        <li><a href="https://www.nexusmods.com/hitman3/mods/485">less (or more) rigged stock market</a></li>
-        </ul>
-
-        <ul class="plain-list">
-        <li><a href="https://www.nexusmods.com/hitman3/mods/717">bonfire</a></li>
-        <li><a href="https://www.nexusmods.com/hitman3/mods/1108">unique outfits collection - peacock supported</a></li>
-        <li><a href="https://www.nexusmods.com/hitman3/mods/946">switch 2 exclusive mario suit</a></li>
-        <li><a href="https://www.nexusmods.com/hitman3/mods/945">switch 2 exclusive luigi suit</a></li>
-        <li><a href="https://www.nexusmods.com/hitman3/mods/661">hitman ladies replacement pack (replaces vanilla suits)</a></li>
-        <li><a href="https://www.nexusmods.com/hitman3/mods/687">any npc replaces signature suit</a></li>
-        <li><a href="https://www.nexusmods.com/hitman3/mods/649">play as diana</a></li>
-        <li><a href="https://www.nexusmods.com/hitman3/mods/643">andrea martinez over signature suit</a></li>
-        <li><a href="https://www.nexusmods.com/hitman3/mods/570">play as cornelia stuyvesant</a></li>
-        <li><a href="https://www.nexusmods.com/hitman3/mods/552">live wardrobe</a></li>
-        <li><a href="https://www.nexusmods.com/hitman3/mods/472">poncho</a></li>
-        <li><a href="https://www.nexusmods.com/hitman3/mods/429">woman npc (changes signature suit)</a></li>
-        <li><a href="https://www.nexusmods.com/hitman3/mods/409">elusive target suits</a></li>
-        <li><a href="https://www.nexusmods.com/hitman3/mods/397">knight (andrea morgan) with customizations</a></li>
-        <li><a href="https://www.nexusmods.com/hitman3/mods/276">skeleton 47</a></li>
-        <li><a href="https://www.nexusmods.com/hitman3/mods/163">alma reynard replaces classic all black</a></li>
-        <li><a href="https://www.nexusmods.com/hitman3/mods/159">joanne bayswater outfit replaces 47 signature suit</a></li>
-        <li><a href="https://www.nexusmods.com/hitman3/mods/157">ljudmila vetrova replaces winter sport suit</a></li>
-        <li><a href="https://www.nexusmods.com/hitman3/mods/138">re thak outfit replaces 47 signature suit</a></li>
-        <li><a href="https://www.nexusmods.com/hitman3/mods/112">olivia hall (replaces smart casual suit)</a></li>
-        <li><a href="https://www.nexusmods.com/hitman3/mods/105">many faces of lucas grey</a></li>
-        <li><a href="https://www.nexusmods.com/hitman3/mods/27">the constant (replaces 47 signature suit) and providence pin shuriken (replaces shuriken model)</a></li>
-        </ul>
-
-        <ul class="plain-list">
-        <li><a href="https://www.nexusmods.com/hitman3/mods/1103">customballer gunsmith</a></li>
-        <li><a href="https://www.nexusmods.com/hitman3/mods/1026">realistic snipers</a></li>
-        <li><a href="https://www.nexusmods.com/hitman3/mods/1017">aly's realistic weapon names</a></li>
-        <li><a href="https://www.nexusmods.com/hitman3/mods/989">minigun</a></li>
-        <li><a href="https://www.nexusmods.com/hitman3/mods/980">rpg</a></li>
-        <li><a href="https://www.nexusmods.com/hitman3/mods/491">flamethrower</a></li>
-        </ul>
-
-        <ul class="plain-list">
-        <li><a href="https://www.nexusmods.com/hitman3/mods/260">ghost mode</a></li>
-        <li><a href="https://www.nexusmods.com/hitman3/mods/890">ghost mode - haven island</a></li>
-        <li><a href="https://www.nexusmods.com/hitman3/mods/558">ghost mode emotes</a></li>
-        <li><a href="https://www.nexusmods.com/hitman3/mods/444">sniper co-op</a></li>
-        <li><a href="https://www.nexusmods.com/hitman3/mods/47">sniperplus (free-roam in sniper maps)</a></li>
-        <li><a href="https://www.nexusmods.com/hitman3/mods/588">sandbox hantu port</a></li>
-        <li><a href="https://www.nexusmods.com/hitman3/mods/385">sandbox the vector</a></li>
-        <li><a href="https://www.nexusmods.com/hitman3/mods/263">rocco renegades in siberia</a></li>
-        </ul>
-
-        <ul class="plain-list">
-        <li><a href="https://www.nexusmods.com/hitman3/mods/690">randomised everything</a></li>
-        <li><a href="https://www.nexusmods.com/hitman3/mods/652">featured contracts improvements</a></li>
-        <li><a href="https://www.nexusmods.com/hitman3/mods/212">time of day mod</a></li>
-        <li><a href="https://www.nexusmods.com/hitman3/mods/666">peacock roulette</a></li>
-        <li><a href="https://www.nexusmods.com/hitman3/mods/867">real yacht</a></li>
-        <li><a href="https://www.nexusmods.com/hitman3/mods/625">choose side</a></li>
-        <li><a href="https://www.nexusmods.com/hitman3/mods/598">chaos</a></li>
-        <li><a href="https://www.nexusmods.com/hitman3/mods/419">project realism - codename 47</a></li>
-        <li><a href="https://www.nexusmods.com/hitman3/mods/292">all npcs are zombies</a></li>
-        <li><a href="https://www.nexusmods.com/hitman3/mods/271">all npcs follow hitman</a></li>
-        <li><a href="https://www.nexusmods.com/hitman3/mods/689">poorly translated</a></li>
-        <li><a href="https://www.nexusmods.com/hitman3/mods/606">ica facility elusive targets</a></li>
-        <li><a href="https://www.nexusmods.com/hitman3/mods/386">patient zero worldwide</a></li>
-        <li><a href="https://www.nexusmods.com/hitman3/mods/192">hellorado - colorado but worse</a></li>
-        </ul>
-
-        <ul class="plain-list">
-        <li><a href="https://www.nexusmods.com/hitman3/mods/748">portable toilet</a></li>
-        <li><a href="https://www.nexusmods.com/hitman3/mods/453">portable chair</a></li>
-        <li><a href="https://www.nexusmods.com/hitman3/mods/1109">dual back support for all items</a></li>
-        <li><a href="https://www.nexusmods.com/hitman3/mods/1099">impact poison vials</a></li>
-        <li><a href="https://www.nexusmods.com/hitman3/mods/1093">enhanced default loadout</a></li>
-        <li><a href="https://www.nexusmods.com/hitman3/mods/1087">pickpocket and plant items mod</a></li>
-        <li><a href="https://www.nexusmods.com/hitman3/mods/1080">ducky vending machines</a></li>
-        <li><a href="https://www.nexusmods.com/hitman3/mods/1066">female animation for hitman 3 (reupload)</a></li>
-        <li><a href="https://www.nexusmods.com/hitman3/mods/860">surveillance system reworked</a></li>
-        <li><a href="https://www.nexusmods.com/hitman3/mods/745">keyboard keypad input</a></li>
-        <li><a href="https://www.nexusmods.com/hitman3/mods/622">crowd improvements (friendly fire and marrakesh crowd shadows)</a></li>
-        <li><a href="https://www.nexusmods.com/hitman3/mods/577">dangerous extinguishers</a></li>
-        <li><a href="https://www.nexusmods.com/hitman3/mods/569">dramatic aiming mod</a></li>
-        <li><a href="https://www.nexusmods.com/hitman3/mods/504">slowed down aiming modular</a></li>
-        <li><a href="https://www.nexusmods.com/hitman3/mods/299">pure instinct</a></li>
-        <li><a href="https://www.nexusmods.com/hitman3/mods/535">open doors with pistols</a></li>
-        <li><a href="https://www.nexusmods.com/hitman3/mods/494">smaller timer (and objectives)</a></li>
-        <li><a href="https://www.nexusmods.com/hitman3/mods/370">accident-only molotov</a></li>
-        <li><a href="https://www.nexusmods.com/hitman3/mods/313">hitman 2 movement</a></li>
-        <li><a href="https://www.nexusmods.com/hitman3/mods/305">infinite ammo</a></li>
-        <li><a href="https://www.nexusmods.com/hitman3/mods/295">jump</a></li>
-        <li><a href="https://www.nexusmods.com/hitman3/mods/41">no-freeze inventory</a></li>
-        </ul>
-        </details>
-        <br>
-
-        <ul>
-        <li><a href="https://gamerant.com/best-hitman-world-of-assassination-mods/">best hitman: world of assassination mods</a></li>
-        <li><a href="https://glaciermodding.org/featured-mods/">visuals and graphics</a></li>
-        <li><a href="https://steamcommunity.com/sharedfiles/filedetails/?id=2726056077">hitman 3 featured mods list [updated for 2023 mk ii]</a></li>
-        </ul>
-
-        <br>
-        </article>  
-        </region>
-
-
         <region id="wątki-dyskusji">
         <article>
         <h3># wątki dyskusji</h3>
         
         <ul>
+            <li><a href="https://steamcommunity.com/app/1659040/discussions/0/583936001036014398/">game crashing when trying to load a manual save</a></li>
+            <li><a href="https://steamcommunity.com/app/1659040/discussions/0/583936001036007054/">trouble starting in linux</a></li>
             <li><a href="https://steamcommunity.com/app/1659040/discussions/0/760680996704196674/">why miami dolphin exit is inconsistent?</a></li>
             <li><a href="https://steamcommunity.com/app/1659040/discussions/0/684117900292848280/">dear io interactive… please fix the game freezing on linux</a></li>
             <li><a href="https://steamcommunity.com/app/1659040/discussions/0/705506553887861187/">game crashes after about an hour of play, nearly every single time</a></li>
@@ -21674,7 +21766,7 @@
 
         
         <hr>
-        <footer>2026-09-15</footer>
+        <footer>2026-10-10</footer>
     </main>
 </body>
 
